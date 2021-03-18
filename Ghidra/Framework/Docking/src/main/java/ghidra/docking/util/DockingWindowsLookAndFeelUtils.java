@@ -46,6 +46,11 @@ public class DockingWindowsLookAndFeelUtils {
 	public final static String USE_INVERTED_COLORS_KEY = "LookAndFeel.UseInvertedColors";
 
 	/**
+	 * Preference name for global cursor blink rate.
+	 */
+	public static final String CURSOR_BLINK_RATE_KEY = "LookAndFeel.CursorBlinkRate";
+
+	/**
 	 * Metal is the non-system, generic Java Look and Feel.
 	 */
 	public final static String METAL_LOOK_AND_FEEL = "Metal";
@@ -79,6 +84,9 @@ public class DockingWindowsLookAndFeelUtils {
 		boolean useInvertedColors = getUseInvertedColorsPreference();
 		setUseInvertedColors(useInvertedColors);
 
+		int cursorBlinkRate = getCursorBlinkRatePreference();
+		setCursorBlinkRate(cursorBlinkRate);
+
 		//
 		// Users can change this via the SystemUtilities.FONT_SIZE_OVERRIDE_PROPERTY_NAME
 		// system property.
@@ -107,6 +115,20 @@ public class DockingWindowsLookAndFeelUtils {
 	 */
 	public static String getInstalledLookAndFeelName() {
 		return UIManager.getLookAndFeel().getName();
+	}
+
+	/**
+	 * Returns the {@link Preferences} value for the global cursor blink rate.
+	 * @return the {@link Preferences} value for the global cursor blink rate.
+	 */
+	public static int getCursorBlinkRatePreference() {
+		boolean useHistoricalValue = true;
+		Object defaultBlinkRate = UIManager.get("TextArea.caretBlinkRate");
+		if (defaultBlinkRate == null) defaultBlinkRate = "500";
+		String cursorBlinkRateString = Preferences.getProperty(CURSOR_BLINK_RATE_KEY,
+			defaultBlinkRate.toString(), useHistoricalValue);
+		int cursorBlinkRate = Integer.parseInt(cursorBlinkRateString);
+		return cursorBlinkRate;
 	}
 
 	/**
@@ -193,6 +215,17 @@ public class DockingWindowsLookAndFeelUtils {
 			}
 			RepaintManager.setCurrentManager(rm);
 		});
+	}
+
+	public static void setCursorBlinkRate(int cursorBlinkRate) {
+		// these prefixes are for text components
+		String[] UIPrefixValues =
+			{ "TextField", "FormattedTextField", "TextArea", "TextPane", "EditorPane", "PasswordField" };
+
+		UIDefaults defaults = UIManager.getDefaults();
+		for (String propertyPrefix : UIPrefixValues) {
+			defaults.put(propertyPrefix + ".caretBlinkRate", cursorBlinkRate);
+		}
 	}
 
 	/**

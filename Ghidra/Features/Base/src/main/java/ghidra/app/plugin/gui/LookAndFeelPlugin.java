@@ -48,8 +48,10 @@ public class LookAndFeelPlugin extends Plugin implements FrontEndOnly, OptionsCh
 
 	private String selectedLookAndFeel;
 	private boolean useInvertedColors;
+	private int cursorBlinkRate;
 	public final static String LOOK_AND_FEEL_NAME = "Swing Look And Feel";
 	private final static String USE_INVERTED_COLORS_NAME = "Use Inverted Colors";
+	private final static String CURSOR_BLINK_RATE_NAME = "Cursor Blink Rate";
 	private final static String OPTIONS_TITLE = ToolConstants.TOOL_OPTIONS;
 
 	private static boolean issuedLafNotification;
@@ -87,6 +89,13 @@ public class LookAndFeelPlugin extends Plugin implements FrontEndOnly, OptionsCh
 				"<U>unreadable</U>.");
 		useInvertedColors = opt.getBoolean(USE_INVERTED_COLORS_NAME, useInvertedColors);
 
+		cursorBlinkRate = getCursorBlinkRatePreference();
+		opt.registerOption(CURSOR_BLINK_RATE_NAME, OptionType.INT_TYPE, cursorBlinkRate,
+			null,
+			"Set the cursor blink rate for all text fields, in milliseconds.  Setting this to 0 " +
+				"disables cursor blinking completely.");
+		cursorBlinkRate = opt.getInt(CURSOR_BLINK_RATE_NAME, cursorBlinkRate);
+
 		opt.addOptionsChangeListener(this);
 	}
 
@@ -117,6 +126,17 @@ public class LookAndFeelPlugin extends Plugin implements FrontEndOnly, OptionsCh
 			if (useInvertedColors) {
 				issuePreferredDarkThemeLaFNotification();
 			}
+		}
+
+		if (optionName.equals(CURSOR_BLINK_RATE_NAME)) {
+			int newCursorBlinkRate = (Integer) newValue;
+			if (newCursorBlinkRate != cursorBlinkRate) {
+				issueLaFNotification();
+			}
+
+			cursorBlinkRate = newCursorBlinkRate;
+			Preferences.setProperty(CURSOR_BLINK_RATE_KEY, Integer.toString(cursorBlinkRate));
+			Preferences.store();
 		}
 	}
 

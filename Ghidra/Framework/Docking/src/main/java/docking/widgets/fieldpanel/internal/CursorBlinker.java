@@ -25,6 +25,7 @@ import javax.swing.Timer;
 import docking.widgets.fieldpanel.FieldPanel;
 import docking.widgets.fieldpanel.support.AnchoredLayout;
 import docking.widgets.fieldpanel.support.FieldLocation;
+import ghidra.docking.util.DockingWindowsLookAndFeelUtils;
 
 public class CursorBlinker {
 	private Timer timer;
@@ -35,10 +36,10 @@ public class CursorBlinker {
 	private AnchoredLayout layout;
 	int layoutYpos = 0;
 
-	public CursorBlinker(FieldPanel panel) {
+	public CursorBlinker(FieldPanel panel, int blinkRate) {
 		this.fieldPanel = panel;
 
-		timer = new Timer(500, new ActionListener() {
+		timer = new Timer(blinkRate, new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (paintBounds != null) {
 					showCursor = !showCursor;
@@ -51,7 +52,7 @@ public class CursorBlinker {
 		});
 
 		// the initial painting is laggy for some reason, so shorten the delay
-		timer.setInitialDelay(100);
+		timer.setInitialDelay(Math.min(blinkRate, 100));
 		timer.start();
 
 	}

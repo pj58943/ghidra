@@ -38,6 +38,7 @@ import docking.widgets.fieldpanel.listener.*;
 import docking.widgets.fieldpanel.support.*;
 import docking.widgets.indexedscrollpane.IndexScrollListener;
 import docking.widgets.indexedscrollpane.IndexedScrollable;
+import ghidra.docking.util.DockingWindowsLookAndFeelUtils;
 import ghidra.util.Msg;
 import ghidra.util.SystemUtilities;
 
@@ -1815,16 +1816,23 @@ public class FieldPanel extends JPanel
 		private CursorBlinker cursorBlinker;
 
 		CursorHandler() {
-			cursorBlinker = new CursorBlinker(FieldPanel.this);
+			enableBlinking();
 		}
 
 		public void setBlinkCursor(Boolean blinkCursor) {
 			if (blinkCursor && cursorBlinker == null) {
-				cursorBlinker = new CursorBlinker(FieldPanel.this);
+				enableBlinking();
 			}
 			else if (!blinkCursor && cursorBlinker != null) {
 				cursorBlinker.dispose();
 				cursorBlinker = null;
+			}
+		}
+
+		private void enableBlinking() {
+			int blinkRate = DockingWindowsLookAndFeelUtils.getCursorBlinkRatePreference();
+			if (blinkRate != 0) {
+				cursorBlinker = new CursorBlinker(FieldPanel.this, blinkRate);
 			}
 		}
 
