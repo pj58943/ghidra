@@ -61,6 +61,14 @@ public class DomainObjectChangedEvent extends EventObject
 	}
 
 	/**
+	 * Return a copy of the event bit set.
+	 * @return BitSet; this is a copy, so the caller can manipulate it safely.
+	 */
+	public BitSet getEventBits() {
+		return (BitSet) eventBits.clone();
+	}
+
+	/**
 	 * Get the specified change record within this event.
 	 * @param i change record number
 	 * @return change record

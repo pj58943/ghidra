@@ -37,11 +37,9 @@ import ghidra.app.plugin.core.decompile.actions.*;
 import ghidra.app.services.*;
 import ghidra.app.util.HelpTopics;
 import ghidra.app.util.HighlightProvider;
-import ghidra.framework.model.*;
 import ghidra.framework.options.*;
 import ghidra.framework.plugintool.NavigatableComponentProviderAdapter;
 import ghidra.framework.plugintool.util.ServiceListener;
-import ghidra.program.database.SpecExtension;
 import ghidra.program.model.address.*;
 import ghidra.program.model.listing.Function;
 import ghidra.program.model.listing.Program;
@@ -56,7 +54,7 @@ import resources.ResourceManager;
 import utility.function.Callback;
 
 public class DecompilerProvider extends NavigatableComponentProviderAdapter
-		implements DomainObjectListener, OptionsChangeListener, DecompilerCallbackHandler,
+		implements OptionsChangeListener, DecompilerCallbackHandler,
 		DecompilerHighlightService {
 	final static String OPTIONS_TITLE = "Decompiler";
 
@@ -71,7 +69,7 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 	private final DecompilePlugin plugin;
 	private ClipboardService clipboardService;
 	private DecompilerClipboardProvider clipboardProvider;
-	private DecompileOptions decompilerOptions;
+	private final DecompileOptions decompilerOptions;
 
 	private Program program;
 	private ProgramLocation currentLocation;
@@ -83,6 +81,7 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 
 	private ViewerPosition pendingViewerPosition;
 
+	private DecompilerChangeHandler changeHandler;
 	private SwingUpdateManager redecompileUpdater;
 
 	// Follow-up work can be items that need to happen after a pending decompile is finished, such
@@ -146,6 +145,8 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 		redecompileUpdater = new SwingUpdateManager(500, 5000, () -> doRefresh());
 		followUpWorkUpdater = new SwingUpdateManager(() -> doFollowUpWork());
 
+		changeHandler = new DecompilerChangeHandler(this, decompilerOptions);
+
 		plugin.getTool().addServiceListener(serviceListener);
 	}
 
@@ -178,6 +179,7 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 		if (program != null && currentLocation != null) {
 			ToolOptions opt = tool.getOptions(OPTIONS_TITLE);
 			decompilerOptions.grabFromToolAndProgram(plugin, opt, program);
+			changeHandler.optionsChanged();
 			controller.setOptions(decompilerOptions);
 			controller.display(program, currentLocation, null);
 		}
@@ -268,47 +270,18 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 		tool.toFront(this);
 	}
 
-//==================================================================================================
-// DomainObjectListener methods
-//==================================================================================================
-
-	@Override
-	public void domainObjectChanged(DomainObjectChangedEvent ev) {
-		// Check for events that signal that a decompiler process' data is stale
-		// and if so force a new process to be spawned
-		if (ev.containsEvent(ChangeManager.DOCR_MEMORY_BLOCK_ADDED) ||
-			ev.containsEvent(ChangeManager.DOCR_MEMORY_BLOCK_REMOVED) ||
-			ev.containsEvent(DomainObject.DO_OBJECT_RESTORED)) {
-			controller.resetDecompiler();
-		}
-		else if (ev.containsEvent(DomainObject.DO_PROPERTY_CHANGED)) {
-			Iterator<DomainObjectChangeRecord> iter = ev.iterator();
-			while (iter.hasNext()) {
-				DomainObjectChangeRecord record = iter.next();
-				if (record.getEventType() == DomainObject.DO_PROPERTY_CHANGED) {
-					if (record.getOldValue() instanceof String) {
-						String value = (String) record.getOldValue();
-						if (value.startsWith(SpecExtension.SPEC_EXTENSION)) {
-							controller.resetDecompiler();
-							break;
-						}
-					}
-				}
-			}
-		}
-
-		// Trigger a redecompile an any program change if the window is active
-		if (isVisible()) {
-			redecompileUpdater.update();
-		}
+	void requestRefresh() {
+		redecompileUpdater.update();
 	}
 
 	private void doRefresh() {
 		ToolOptions opt = tool.getOptions(OPTIONS_TITLE);
 		decompilerOptions.grabFromToolAndProgram(plugin, opt, program);
-		controller.setOptions(decompilerOptions);
-		if (currentLocation != null) {
-			controller.requestRefreshDisplay(currentLocation);
+		if (changeHandler.optionsChanged()) {
+			controller.setOptions(decompilerOptions);
+			if (currentLocation != null) {
+				controller.requestRefreshDisplay(currentLocation);
+			}
 		}
 	}
 
@@ -377,13 +350,13 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 	void doSetProgram(Program newProgram) {
 		controller.clear();
 		if (program != null) {
-			program.removeListener(this);
+			program.removeListener(changeHandler);
 		}
 		program = newProgram;
 		currentLocation = null;
 		currentSelection = null;
 		if (program != null) {
-			program.addListener(this);
+			program.addListener(changeHandler);
 			ToolOptions opt = tool.getOptions(OPTIONS_TITLE);
 			decompilerOptions.grabFromToolAndProgram(plugin, opt, program);
 		}
