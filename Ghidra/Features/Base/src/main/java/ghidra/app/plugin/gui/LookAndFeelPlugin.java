@@ -141,8 +141,10 @@ public class LookAndFeelPlugin extends Plugin implements FrontEndOnly, OptionsCh
 	}
 
 	private void saveLookAndFeel(String lookAndFeelName) {
+		// Store the class name, not the LaF name, so we can load the LaF at startup
+		// even if it is not installed by default.
 		selectedLookAndFeel = lookAndFeelName;
-		Preferences.setProperty(LAST_LOOK_AND_FEEL_KEY, selectedLookAndFeel);
+		Preferences.setProperty(LAST_LOOK_AND_FEEL_KEY, findLookAndFeelClassName(selectedLookAndFeel));
 		Preferences.store();
 	}
 

@@ -25,6 +25,7 @@ import docking.framework.ApplicationInformationDisplayFactory;
 import docking.framework.SplashScreen;
 import docking.widgets.PopupKeyStorePasswordProvider;
 import ghidra.docking.util.DockingWindowsLookAndFeelUtils;
+import ghidra.docking.util.ThemeProvider;
 import ghidra.framework.main.GhidraApplicationInformationDisplayFactory;
 import ghidra.framework.main.UserAgreementDialog;
 import ghidra.framework.preferences.Preferences;
@@ -45,7 +46,7 @@ public class GhidraApplicationConfiguration extends HeadlessGhidraApplicationCon
 	@Override
 	protected void initializeApplication() {
 
-		DockingWindowsLookAndFeelUtils.loadFromPreferences();
+		ThemeProvider.initialize();
 
 		platformSpecificFixups();
 

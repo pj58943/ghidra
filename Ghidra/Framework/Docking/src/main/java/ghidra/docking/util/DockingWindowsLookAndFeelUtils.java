@@ -29,6 +29,7 @@ import ghidra.framework.OperatingSystem;
 import ghidra.framework.Platform;
 import ghidra.framework.preferences.Preferences;
 import ghidra.util.*;
+import ghidra.util.classfinder.ClassSearcher;
 
 /**
  * A utility class to manage LookAndFeel (LaF) settings.
@@ -75,11 +76,13 @@ public class DockingWindowsLookAndFeelUtils {
 	 * Loads settings from {@link Preferences}.
 	 */
 	public static void loadFromPreferences() {
-
-		boolean useHistoricalValue = true;
-		String laf = Preferences.getProperty(LAST_LOOK_AND_FEEL_KEY, getDefaultLookAndFeelName(),
-			useHistoricalValue);
-		setLookAndFeel(laf);
+		// Initialize LaF the traditional way if no theme was installed.
+		if (!Theming.isThemed()) {
+			boolean useHistoricalValue = true;
+			String laf = Preferences.getProperty(LAST_LOOK_AND_FEEL_KEY,
+					getDefaultLookAndFeelName(), useHistoricalValue);
+			setLookAndFeel(laf);
+		}
 
 		boolean useInvertedColors = getUseInvertedColorsPreference();
 		setUseInvertedColors(useInvertedColors);
@@ -168,6 +171,8 @@ public class DockingWindowsLookAndFeelUtils {
 		List<String> list = new ArrayList<>();
 		list.add(DockingWindowsLookAndFeelUtils.SYSTEM_LOOK_AND_FEEL);
 
+		ClassSearcher.getInstances(ThemeProvider.class).forEach(ThemeProvider::installLafInfos);
+
 		LookAndFeelInfo[] installedLookAndFeels = UIManager.getInstalledLookAndFeels();
 		for (LookAndFeelInfo info : installedLookAndFeels) {
 			list.add(info.getName());
@@ -184,7 +189,7 @@ public class DockingWindowsLookAndFeelUtils {
 		fixupLookAndFeelIssues();
 	}
 
-	private static String findLookAndFeelClassName(String lookAndFeelName) {
+	public static String findLookAndFeelClassName(String lookAndFeelName) {
 		if (lookAndFeelName.equalsIgnoreCase(SYSTEM_LOOK_AND_FEEL)) {
 			return UIManager.getSystemLookAndFeelClassName();
 		}
