@@ -56,7 +56,7 @@ public abstract class ByteViewerComponentProvider extends ComponentProviderAdapt
 	static final int DEFAULT_BYTES_PER_LINE = 16;
 	static final Color DEFAULT_MISSING_VALUE_COLOR = themed(Color.blue);
 	static final Color DEFAULT_EDIT_COLOR = themed(Color.red);
-	static final Color DEFAULT_CURRENT_CURSOR_COLOR = themed(Color.magenta.brighter());
+	static final Color DEFAULT_CURRENT_CURSOR_COLOR = themed(Color.magenta);
 	static final Color DEFAULT_CURSOR_COLOR = themed(Color.black);
 	static final Color DEFAULT_NONFOCUS_CURSOR_COLOR = themed(Color.darkGray);
 	private static final Color DEFAULT_CURSOR_LINE_COLOR = GhidraOptions.DEFAULT_CURSOR_LINE_COLOR;

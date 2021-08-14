@@ -51,7 +51,7 @@ import ghidra.util.table.GhidraTable;
 class EnumEditorPanel extends JPanel {
 
 	// Normal color for selecting components in the table.
-	//private static final Color SELECTION_COLOR = themed(Color.YELLOW.brighter().brighter());
+	//private static final Color SELECTION_COLOR = themed(Color.YELLOW);
 
 	private JTable table;
 	private JTextField nameField;

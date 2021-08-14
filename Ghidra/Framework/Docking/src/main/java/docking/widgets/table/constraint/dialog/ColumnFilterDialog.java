@@ -383,7 +383,7 @@ public class ColumnFilterDialog<R> extends DialogComponentProvider
 		headerPanel.add(new GLabel("Filter Value", SwingConstants.CENTER));
 
 		headerPanel.setBorder(new CompoundBorder(
-			BorderFactory.createMatteBorder(0, 0, 1, 0, themed(Color.DARK_GRAY.brighter().brighter())),
+			BorderFactory.createMatteBorder(0, 0, 1, 0, themed(Color.GRAY)),
 			BorderFactory.createEmptyBorder(4, 0, 4, 0)));
 		return headerPanel;
 	}

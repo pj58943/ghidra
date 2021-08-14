@@ -87,7 +87,7 @@ public class ImageDialogProvider extends DialogComponentProvider {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				if (dragShape != null) {
-					dragShape.setColor(themed(Color.green.brighter()));
+					dragShape.setColor(themed(Color.green));
 					shapeList.add(dragShape);
 					dragShape = null;
 					glassPane.repaint();

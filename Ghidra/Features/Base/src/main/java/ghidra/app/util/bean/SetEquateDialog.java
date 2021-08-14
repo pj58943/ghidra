@@ -154,7 +154,7 @@ public class SetEquateDialog extends DialogComponentProvider {
 					else {
 						Equate e = eqRowObject.getEquate();
 						if (e != null && !e.isEnumBased()) {
-							c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.BLUE.brighter()));
+							c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.BLUE));
 						}
 					}
 				}
