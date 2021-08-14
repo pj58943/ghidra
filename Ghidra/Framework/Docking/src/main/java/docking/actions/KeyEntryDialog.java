@@ -15,6 +15,8 @@
  */
 package docking.actions;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -172,7 +174,7 @@ public class KeyEntryDialog extends DialogComponentProvider {
 		textAttrSet = new SimpleAttributeSet();
 		textAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
 		textAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
-		textAttrSet.addAttribute(StyleConstants.Foreground, Color.BLUE);
+		textAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLUE));
 
 		tabAttrSet = new SimpleAttributeSet();
 		TabStop tabs = new TabStop(20, StyleConstants.ALIGN_LEFT, TabStop.LEAD_NONE);

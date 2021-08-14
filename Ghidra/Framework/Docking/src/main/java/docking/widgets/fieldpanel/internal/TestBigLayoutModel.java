@@ -15,6 +15,8 @@
  */
 package docking.widgets.fieldpanel.internal;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -83,9 +85,9 @@ public class TestBigLayoutModel implements LayoutModel {
 		}
 		String text = name + ": This is line " + index +
 			" More text to make line longer abcdefghijklmnopqrstuvwxyzabcdefghijk";
-		FieldElement fe1 = new TextFieldElement(new AttributedString(text, Color.BLACK, fm), 0, 0);
+		FieldElement fe1 = new TextFieldElement(new AttributedString(text, themed(Color.BLACK), fm), 0, 0);
 		FieldElement fe2 =
-			new TextFieldElement(new AttributedString("More text", Color.BLACK, fm), 0, 0);
+			new TextFieldElement(new AttributedString("More text", themed(Color.BLACK), fm), 0, 0);
 		SingleRowLayout layout = new SingleRowLayout(new ClippingTextField(20, 300, fe1, hlFactory),
 			new ClippingTextField(330, 100, fe2, hlFactory));
 

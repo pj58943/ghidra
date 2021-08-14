@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.totd;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
@@ -94,9 +96,9 @@ class TipOfTheDayDialog extends DialogComponentProvider {
 		JPanel panel = new JPanel(new BorderLayout());
 		Border panelBorder =
 			BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10),
-				BorderFactory.createLineBorder(Color.BLACK));
+				BorderFactory.createLineBorder(themed(Color.BLACK)));
 		panel.setBorder(panelBorder);
-		panel.setBackground(Color.WHITE);
+		panel.setBackground(themed(Color.WHITE));
 
 		JLabel label = new GLabel("Did you know...", tipIcon, SwingConstants.LEFT);
 		label.setFont(new Font("dialog", Font.BOLD, 12));

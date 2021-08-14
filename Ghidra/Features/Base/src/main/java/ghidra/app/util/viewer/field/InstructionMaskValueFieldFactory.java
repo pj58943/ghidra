@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 
@@ -36,9 +38,9 @@ import ghidra.util.StringUtilities;
 public class InstructionMaskValueFieldFactory extends FieldFactory {
 
 	public static final String FIELD_NAME = "Instr Mask/Value";
-	public static final Color MASK_COLOR = new Color(0, 0, 128);
-	public static final Color VALUE_COLOR = new Color(0, 128, 0);
-	public static final Color LABEL_COLOR = new Color(0, 0, 0);
+	public static final Color MASK_COLOR = themed(new Color(0, 0, 128));
+	public static final Color VALUE_COLOR = themed(new Color(0, 128, 0));
+	public static final Color LABEL_COLOR = themed(new Color(0, 0, 0));
 
 	/**
 	 * Default constructor.
@@ -191,6 +193,6 @@ public class InstructionMaskValueFieldFactory extends FieldFactory {
 	 */
 	@Override
 	public Color getDefaultColor() {
-		return Color.black;
+		return themed(Color.black);
 	}
 }

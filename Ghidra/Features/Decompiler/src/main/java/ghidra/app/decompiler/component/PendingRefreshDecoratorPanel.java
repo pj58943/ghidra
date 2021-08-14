@@ -25,6 +25,8 @@ import java.awt.event.*;
 import java.time.Duration;
 import java.util.Arrays;
 
+import static ghidra.docking.util.Theming.themed;
+
 public class PendingRefreshDecoratorPanel extends DecoratorPanel {
 
 	// TODO make sure the refresh action has a keyboard shortcut!
@@ -55,7 +57,7 @@ public class PendingRefreshDecoratorPanel extends DecoratorPanel {
 		});
 
 		var dismiss = new EmptyBorderButton(Icons.get("images/close16.gif"));
-		dismiss.setBackground(new Color(0xffff96));
+		dismiss.setBackground(themed(new Color(0xffff96)));
 		dismiss.setToolTipText("Dismiss this message without refreshing.");
 		dismiss.addActionListener(event -> hideBanner());
 
@@ -70,7 +72,7 @@ public class PendingRefreshDecoratorPanel extends DecoratorPanel {
 
 		var banner = new JPanel(new BorderLayout());
 		banner.setBorder(BorderFactory.createEmptyBorder(2, 5, 2, 5));
-		banner.setBackground(new Color(0xffff96));
+		banner.setBackground(themed(new Color(0xffff96)));
 		banner.add(message, BorderLayout.CENTER);
 		banner.add(dismiss, BorderLayout.LINE_END);
 		glass.add(banner, BorderLayout.PAGE_START);

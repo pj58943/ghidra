@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.progmgr;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -38,7 +40,7 @@ import resources.ResourceManager;
  */
 public class MultiTabPanel extends JPanel {
 
-	private final static Color SELECTED_TAB_COLOR = new Color(120, 140, 189);
+	private final static Color SELECTED_TAB_COLOR = themed(new Color(120, 140, 189));
 	private final static Color HIGHLIGHTED_TAB_COLOR = SELECTED_TAB_COLOR.brighter();
 	private final static Icon EMPTY16_ICON = ResourceManager.loadImage("images/EmptyIcon16.gif");
 	private final static Icon EMPTY8_ICON = ResourceManager.loadImage("images/empty8x16.png");
@@ -47,7 +49,7 @@ public class MultiTabPanel extends JPanel {
 	private final static Icon LIST_ICON = ResourceManager.loadImage("images/VCRFastForward.gif");
 	private final static Icon TRANSIENT_ICON = ResourceManager.loadImage("images/link.png", 8, 16);
 
-	private final static Color TEXT_SELECTION_COLOR = Color.WHITE;
+	private final static Color TEXT_SELECTION_COLOR = themed(Color.WHITE);
 	private final static Color TEXT_NON_SELECTION_COLOR = UIManager.getColor("Tree.textForeground");
 	private final static Color BG_SELECTION_COLOR = SELECTED_TAB_COLOR;
 	private final static Color BG_NON_SELECTION_COLOR = UIManager.getColor("Panel.background");
@@ -636,7 +638,7 @@ public class MultiTabPanel extends JPanel {
 		newLabel.setBorder(BorderFactory.createEmptyBorder(4, 4, 0, 4));
 		newLabel.setToolTipText("Show Tab List");
 		newLabel.setName("showList");
-		newLabel.setBackground(new Color(255, 226, 213));
+		newLabel.setBackground(themed(new Color(255, 226, 213)));
 
 		defaultListLabelBorder = newLabel.getBorder();
 		final Border hoverBorder = BorderFactory.createBevelBorder(BevelBorder.RAISED);
@@ -985,9 +987,9 @@ public class MultiTabPanel extends JPanel {
 		@Override
 		void paintHighlightedColor(boolean paintHighlight) {
 			super.paintHighlightedColor(paintHighlight);
-			Color foreground = Color.WHITE;
+			Color foreground = themed(Color.WHITE);
 			if (paintHighlight) {
-				foreground = Color.BLACK;
+				foreground = themed(Color.BLACK);
 			}
 
 			// this tab is selected, so change the foreground to be readable

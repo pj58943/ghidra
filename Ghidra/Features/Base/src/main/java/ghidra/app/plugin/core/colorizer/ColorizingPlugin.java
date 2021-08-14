@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.colorizer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +63,7 @@ public class ColorizingPlugin extends ProgramPlugin implements DomainObjectListe
 
 	private static final String MARKER_DESCRIPTION = "Shows the location of user-applied colors";
 	private static final int PRIORITY = MarkerService.CHANGE_PRIORITY - 1; // lowest priority
-	private static final Color MARKER_COLOR = Color.PINK;
+	private static final Color MARKER_COLOR = themed(Color.PINK);
 	private static final String COLOR_HISTORY_XML_NAME = "COLOR_HISTORY";
 	private static final String COLOR_HISTORY_LIST_XML_NAME = "COLOR_HISTORY";
 

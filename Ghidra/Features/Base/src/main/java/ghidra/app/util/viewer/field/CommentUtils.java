@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +98,7 @@ public class CommentUtils {
 		Font dummyFont = new Font("monospaced", Font.PLAIN, 12);
 		@SuppressWarnings("deprecation")
 		FontMetrics fontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(dummyFont);
-		return new AttributedString("", Color.BLACK, fontMetrics);
+		return new AttributedString("", themed(Color.BLACK), fontMetrics);
 	}
 
 	/**

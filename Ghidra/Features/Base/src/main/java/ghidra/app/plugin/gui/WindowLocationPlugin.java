@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.gui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
@@ -124,7 +126,7 @@ public class WindowLocationPlugin extends Plugin {
 			Dimension size = getSize();
 			double panelWidth = size.getWidth();
 			double panelHeight = size.getHeight();
-			setBackground(Color.BLACK);
+			setBackground(themed(Color.BLACK));
 			g.fillRect(0, 0, (int) panelWidth, (int) panelHeight);
 
 			Graphics2D g2d = (Graphics2D) g;
@@ -135,9 +137,9 @@ public class WindowLocationPlugin extends Plugin {
 				clone.concatenate(newxform);
 				g2d.setTransform(clone);
 
-				paintVirtualBounds(g2d, Color.RED);
-				paintVisibleBounds(g2d, Color.GREEN);
-				paintScreens(g2d, Color.ORANGE);
+				paintVirtualBounds(g2d, themed(Color.RED));
+				paintVisibleBounds(g2d, themed(Color.GREEN));
+				paintScreens(g2d, themed(Color.ORANGE));
 				paintWindows(g2d, newxform);
 			}
 			finally {
@@ -183,7 +185,7 @@ public class WindowLocationPlugin extends Plugin {
 			Font f = g2d.getFont();
 			Font biggerFont = f.deriveFont(40f);
 			g2d.setFont(biggerFont);
-			g2d.setColor(Color.GRAY);
+			g2d.setColor(themed(Color.GRAY));
 
 			Window[] windows = Window.getWindows();
 
@@ -380,7 +382,7 @@ public class WindowLocationPlugin extends Plugin {
 
 				Color bg = g2d.getColor();
 				try {
-					Color withAlpha = new Color(0, 255, 0, 200);
+					Color withAlpha = themed(new Color(0, 255, 0, 200));
 					g2d.setColor(withAlpha);
 					g2d.fill(b);
 				}

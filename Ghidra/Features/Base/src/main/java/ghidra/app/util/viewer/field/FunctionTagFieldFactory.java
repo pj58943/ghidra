@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.*;
@@ -44,7 +46,7 @@ import ghidra.program.util.ProgramLocation;
 public class FunctionTagFieldFactory extends FieldFactory {
 
 	public static final String FIELD_NAME = "Function Tags";
-	public static final Color DEFAULT_COLOR = new Color(130, 0, 75);
+	public static final Color DEFAULT_COLOR = themed(new Color(130, 0, 75));
 
 	private Color literalColor;
 

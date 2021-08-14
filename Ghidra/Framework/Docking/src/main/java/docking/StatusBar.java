@@ -15,6 +15,8 @@
  */
 package docking;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -196,7 +198,7 @@ public class StatusBar extends JPanel {
 		String updatedText = fixupMultilineText(text);
 		statusLabel.setText(updatedText);
 		statusLabel.setToolTipText(getToolTipText());
-		statusLabel.setForeground(Color.BLACK);
+		statusLabel.setForeground(themed(Color.BLACK));
 
 		if (StringUtils.isBlank(updatedText)) {
 			return;
@@ -308,13 +310,13 @@ public class StatusBar extends JPanel {
 		}
 
 		private void initFadeColors() {
-			fadeColorMap.put(Color.BLACK, new Color(16, 16, 16));
-			fadeColorMap.put(new Color(16, 16, 16), new Color(32, 32, 32));
-			fadeColorMap.put(new Color(32, 32, 32), new Color(64, 64, 64));
-			fadeColorMap.put(new Color(64, 64, 64), new Color(80, 80, 80));
-			fadeColorMap.put(new Color(80, 80, 80), new Color(96, 96, 96));
-			fadeColorMap.put(new Color(96, 96, 96), new Color(112, 112, 112));
-			fadeColorMap.put(new Color(112, 112, 112), new Color(128, 128, 128));
+			fadeColorMap.put(themed(Color.BLACK), themed(new Color(16, 16, 16)));
+			fadeColorMap.put(themed(new Color(16, 16, 16)), themed(new Color(32, 32, 32)));
+			fadeColorMap.put(themed(new Color(32, 32, 32)), themed(new Color(64, 64, 64)));
+			fadeColorMap.put(themed(new Color(64, 64, 64)), themed(new Color(80, 80, 80)));
+			fadeColorMap.put(themed(new Color(80, 80, 80)), themed(new Color(96, 96, 96)));
+			fadeColorMap.put(themed(new Color(96, 96, 96)), themed(new Color(112, 112, 112)));
+			fadeColorMap.put(themed(new Color(112, 112, 112)), themed(new Color(128, 128, 128)));
 		}
 
 		@Override

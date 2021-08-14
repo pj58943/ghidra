@@ -15,6 +15,8 @@
  */
 package ghidra.app.decompiler.component;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.*;
 import java.util.function.Function;
@@ -47,7 +49,7 @@ import util.CollectionUtils;
  */
 public abstract class ClangHighlightController {
 
-	public static Color DEFAULT_HIGHLIGHT_COLOR = new Color(255, 255, 0, 128);
+	public static Color DEFAULT_HIGHLIGHT_COLOR = themed(new Color(255, 255, 0, 128));
 
 	public static ClangHighlightController dummyIfNull(ClangHighlightController c) {
 		if (c == null) {

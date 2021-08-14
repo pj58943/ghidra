@@ -15,6 +15,8 @@
  */
 package ghidra.app.script;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
@@ -3737,7 +3739,7 @@ public abstract class GhidraScript extends FlatProgramAPI {
 				state.getTool(), currentProgram, addresses);
 			TableComponentProvider<Address> tableProvider =
 				table.showTableWithMarkers(title + " " + model.getName(), "GhidraScript", model,
-					Color.GREEN, null, "Script Results", null);
+					themed(Color.GREEN), null, "Script Results", null);
 			tableProvider.installRemoveItemsAction();
 		};
 		Swing.runLater(runnable);
@@ -3755,7 +3757,7 @@ public abstract class GhidraScript extends FlatProgramAPI {
 			AddressSetTableModel model =
 				new AddressSetTableModel(title, state.getTool(), currentProgram, addresses, null);
 			TableComponentProvider<Address> tableProvider = table.showTableWithMarkers(title,
-				"GhidraScript", model, Color.GREEN, null, "Script Results", null);
+				"GhidraScript", model, themed(Color.GREEN), null, "Script Results", null);
 			tableProvider.installRemoveItemsAction();
 		};
 		Swing.runLater(runnable);

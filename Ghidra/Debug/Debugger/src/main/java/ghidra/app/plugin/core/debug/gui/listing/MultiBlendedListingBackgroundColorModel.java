@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.debug.gui.listing;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -80,7 +82,7 @@ public class MultiBlendedListingBackgroundColorModel implements ListingBackgroun
 	@Override
 	public Color getDefaultBackgroundColor() {
 		if (models.isEmpty()) {
-			return Color.WHITE;
+			return themed(Color.WHITE);
 		}
 		return models.get(0).getDefaultBackgroundColor();
 	}

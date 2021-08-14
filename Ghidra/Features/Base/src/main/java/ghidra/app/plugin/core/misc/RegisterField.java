@@ -16,6 +16,8 @@
  */
 package ghidra.app.plugin.core.misc;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
@@ -28,7 +30,7 @@ import javax.swing.text.*;
  * 
  */
 public class RegisterField extends JTextField {
-//	private static Color UNSET_COLOR = new Color(204,0,204);
+//	private static Color UNSET_COLOR = themed(new Color(204,0,204));
 	private int bitSize;
 	private Long currentValue;
 	private long maxValue;
@@ -36,8 +38,8 @@ public class RegisterField extends JTextField {
 	private boolean inFocus;
 	private boolean skipFilter;
 	private ChangeListener listener;
-	private Color noValueColor = Color.LIGHT_GRAY;
-	private Color valueColor = Color.BLACK;
+	private Color noValueColor = themed(Color.LIGHT_GRAY);
+	private Color valueColor = themed(Color.BLACK);
     private boolean useNoValue;
     /**
      * Constructor for RegisterField.

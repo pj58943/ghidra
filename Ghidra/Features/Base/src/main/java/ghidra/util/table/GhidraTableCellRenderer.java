@@ -16,6 +16,8 @@
  */
 package ghidra.util.table;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.program.model.address.Address;
 import ghidra.program.model.listing.Program;
 import ghidra.program.model.mem.Memory;
@@ -33,8 +35,8 @@ import docking.widgets.table.GTableCellRenderer;
 public class GhidraTableCellRenderer extends GTableCellRenderer {
 
 	// Defaults as defined by OptionsGui class - would be nice to use the tool options
-	private static final Color BAD_REF_ADDR_COLOR = Color.red;
-	private static final Color EXT_REF_RESOLVED_COLOR = Color.CYAN.darker().darker();
+	private static final Color BAD_REF_ADDR_COLOR = themed(Color.red);
+	private static final Color EXT_REF_RESOLVED_COLOR = themed(Color.CYAN.darker().darker());
 
 	public GhidraTableCellRenderer() {
 		// default constructor

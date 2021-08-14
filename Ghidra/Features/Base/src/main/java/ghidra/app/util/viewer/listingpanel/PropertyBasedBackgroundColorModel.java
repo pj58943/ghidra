@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.listingpanel;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -40,7 +42,7 @@ public class PropertyBasedBackgroundColorModel
 	public static final String COLOR_PROPERTY_NAME = "LISTING_COLOR";
 	private IntRangeMap colorMap;
 	private AddressIndexMap indexMap;
-	private Color defaultBackgroundColor = Color.WHITE;
+	private Color defaultBackgroundColor = themed(Color.WHITE);
 	private Map<Integer, Color> colorCache = new HashMap<>();
 	private Program program;
 	private boolean enabled = false;

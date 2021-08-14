@@ -15,6 +15,8 @@
  */
 package docking.util.image;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.RectangularShape;
@@ -25,7 +27,7 @@ import generic.util.image.ImageUtils;
 
 public class Callout {
 
-	private static final Color CALLOUT_SHAPE_COLOR = new Color(0xB5, 0xDE, 0x2F);
+	private static final Color CALLOUT_SHAPE_COLOR = themed(new Color(0xB5, 0xDE, 0x2F));
 	private static final int CALLOUT_BORDER_PADDING = 20;
 
 	public Image createCallout(CalloutComponentInfo calloutInfo) {
@@ -111,13 +113,13 @@ public class Callout {
 		//
 		// Debug
 		//
-//		g2d.setColor(Color.RED);
+//		g2d.setColor(themed(Color.RED));
 //		g2d.draw(fullBounds);
 //
-//		g2d.setColor(Color.CYAN);
+//		g2d.setColor(themed(Color.CYAN));
 //		g2d.draw(calloutBounds);
 //
-//		g2d.setColor(Color.BLUE);
+//		g2d.setColor(themed(Color.BLUE));
 //		g2d.draw(cBounds);
 
 //		return image;
@@ -214,7 +216,7 @@ public class Callout {
 			bottomPadding = overlap;
 		}
 
-		image = ImageUtils.padImage(image, Color.WHITE, topPadding, 0, rightPadding, bottomPadding);
+		image = ImageUtils.padImage(image, themed(Color.WHITE), topPadding, 0, rightPadding, bottomPadding);
 		Graphics g = image.getGraphics();
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -228,30 +230,30 @@ public class Callout {
 		//
 		// Debug
 		//
-//		g2d.setColor(Color.RED);
+//		g2d.setColor(themed(Color.RED));
 //		g2d.draw(fullBounds);
 //
-//		g2d.setColor(Color.CYAN);
+//		g2d.setColor(themed(Color.CYAN));
 //		g2d.draw(calloutBounds);
 //
-//		g2d.setColor(Color.BLUE);
+//		g2d.setColor(themed(Color.BLUE));
 //		g2d.draw(componentBounds);
 //
-//		g2d.setColor(Color.MAGENTA);
+//		g2d.setColor(themed(Color.MAGENTA));
 //		g2d.draw(completeBounds);
 //
-//		g2d.setColor(Color.GRAY);
+//		g2d.setColor(themed(Color.GRAY));
 //		g2d.draw(dropShadowBounds);
 //
 //		Point cLocation = componentBounds.getLocation();
 //		Point convertedCLocation = calloutInfo.convertPointToParent(cLocation);
-//		g2d.setColor(Color.PINK);
+//		g2d.setColor(themed(Color.PINK));
 //		componentBounds.setLocation(convertedCLocation);
 //		g2d.draw(componentBounds);
 //
 //		Point convertedFBLocation = calloutInfo.convertPointToParent(fullBounds.getLocation());
 //		fullBounds.setLocation(convertedFBLocation);
-//		g2d.setColor(Color.ORANGE);
+//		g2d.setColor(themed(Color.ORANGE));
 //		g2d.draw(fullBounds);
 
 		return image;
@@ -404,7 +406,7 @@ public class Callout {
 		// render the clip shape into the image
 		g.setComposite(AlphaComposite.Src);
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		g.setColor(Color.WHITE);
+		g.setColor(themed(Color.WHITE));
 
 		g.fill(imageShape);
 

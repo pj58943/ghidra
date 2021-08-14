@@ -15,6 +15,8 @@
  */
 package docking.util.image;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -25,7 +27,7 @@ import javax.swing.JPanel;
 
 public class DropShadow {
 
-	private Color shadowColor = new Color(0x000000);
+	private Color shadowColor = themed(new Color(0x000000));
 	private float shadowOpacity = 0.85f;
 
 	public static void main(String[] args) {
@@ -40,7 +42,7 @@ public class DropShadow {
 			@Override
 			protected void paintComponent(Graphics g) {
 				Graphics2D g2d = (Graphics2D) g;
-				Color background = Color.WHITE;
+				Color background = themed(Color.WHITE);
 				g.setColor(background);
 				Dimension size = getSize();
 				g.fillRect(0, 0, size.width, size.height);
@@ -59,14 +61,14 @@ public class DropShadow {
 				g2d.setComposite(AlphaComposite.Src);
 				g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 					RenderingHints.VALUE_ANTIALIAS_ON);
-				g2d.setColor(Color.WHITE);
+				g2d.setColor(themed(Color.WHITE));
 				g2d.fillOval(size.width / 4, size.height / 4, size.width / 2, size.height / 2);
 
 				// Using ScrAtop uses the alpha value as a coverage for each pixel stored in
 				// the destination.  For the areas outside the clip shape, the destination alpha will
 				// be zero, so nothing is rendered in those areas.
 				g2d.setComposite(AlphaComposite.SrcAtop);
-				g2d.setPaint(new GradientPaint(0, 0, Color.RED, 0, size.height, Color.YELLOW));
+				g2d.setPaint(new GradientPaint(0, 0, themed(Color.RED), 0, size.height, themed(Color.YELLOW)));
 				g2d.fillRect(0, 0, size.width, size.height);
 				g2d.dispose();
 

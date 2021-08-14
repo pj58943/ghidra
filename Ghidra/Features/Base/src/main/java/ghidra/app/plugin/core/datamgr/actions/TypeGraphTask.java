@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.datamgr.actions;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 import ghidra.app.util.ToolTipUtils;
@@ -25,6 +27,7 @@ import ghidra.util.exception.CancelledException;
 import ghidra.util.exception.GraphException;
 import ghidra.util.task.Task;
 import ghidra.util.task.TaskMonitor;
+
 
 /*
  * Task to recursively graph and display a data type
@@ -64,9 +67,9 @@ public class TypeGraphTask extends Task {
 				.build();
 
 		GraphDisplayOptions options = new GraphDisplayOptionsBuilder(graphType)
-				.defaultVertexColor(Color.BLUE)
-				.edge(COMPOSITE, Color.MAGENTA)
-				.edge(REFERENCE, Color.BLUE)
+				.defaultVertexColor(themed(Color.BLUE))
+				.edge(COMPOSITE, themed(Color.MAGENTA))
+				.edge(REFERENCE, themed(Color.BLUE))
 				.build();
 
 		AttributedGraph graph = new AttributedGraph(graphTitle, graphType);

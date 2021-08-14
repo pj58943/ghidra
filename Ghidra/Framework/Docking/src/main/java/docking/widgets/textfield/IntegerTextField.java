@@ -15,6 +15,8 @@
  */
 package docking.widgets.textfield;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -630,7 +632,7 @@ public class IntegerTextField {
 
 			Font savedFont = g.getFont();
 			g.setFont(hintFont);
-			g.setColor(Color.LIGHT_GRAY);
+			g.setColor(themed(Color.LIGHT_GRAY));
 
 			Dimension size = getSize();
 			Insets insets = getInsets();

@@ -16,6 +16,8 @@
  */
 package ghidra.framework.task.gui.taskview;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.framework.task.*;
 import ghidra.framework.task.gui.GProgressBar;
 import ghidra.util.SystemUtilities;
@@ -270,7 +272,7 @@ public class TaskViewer {
 
 			Font font = new Font("Sanf Serif", Font.BOLD, 36);
 			g.setFont(font);
-			g.setColor(new Color(0, 0, 200));
+			g.setColor(themed(new Color(0, 0, 200)));
 			if (messageDimension == null) {
 				FontMetrics fontMetrics = getFontMetrics(font);
 				messageDimension = fontMetrics.getStringBounds(TEXT, g2).getBounds();

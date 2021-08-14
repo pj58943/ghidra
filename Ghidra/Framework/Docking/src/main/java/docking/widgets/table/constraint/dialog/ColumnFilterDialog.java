@@ -15,6 +15,8 @@
  */
 package docking.widgets.table.constraint.dialog;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -369,7 +371,7 @@ public class ColumnFilterDialog<R> extends DialogComponentProvider
 
 	private GLabel createLogicalOperationLabel(LogicOperation op) {
 		GLabel label = new GLabel("<" + op + ">", SwingConstants.CENTER);
-		label.setForeground(Color.GRAY);
+		label.setForeground(themed(Color.GRAY));
 		return label;
 	}
 
@@ -381,7 +383,7 @@ public class ColumnFilterDialog<R> extends DialogComponentProvider
 		headerPanel.add(new GLabel("Filter Value", SwingConstants.CENTER));
 
 		headerPanel.setBorder(new CompoundBorder(
-			BorderFactory.createMatteBorder(0, 0, 1, 0, Color.DARK_GRAY.brighter().brighter()),
+			BorderFactory.createMatteBorder(0, 0, 1, 0, themed(Color.DARK_GRAY.brighter().brighter())),
 			BorderFactory.createEmptyBorder(4, 0, 4, 0)));
 		return headerPanel;
 	}

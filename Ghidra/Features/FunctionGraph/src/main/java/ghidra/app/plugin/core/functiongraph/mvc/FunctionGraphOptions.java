@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.functiongraph.mvc;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.*;
 import java.util.Map.Entry;
@@ -85,20 +87,20 @@ public class FunctionGraphOptions extends VisualGraphOptions {
 		"Signals that any user color changes to a group vertex will apply that same color to " +
 			"all grouped vertices as well.";
 
-	public static final Color DEFAULT_VERTEX_BACKGROUND_COLOR = Color.WHITE;
-	public static final Color DEFAULT_GROUP_BACKGROUND_COLOR = new Color(226, 255, 155);
-	private static final Color HOVER_HIGHLIGHT_FALL_THROUGH_COLOR = new Color(255, 127, 127);
-	private static final Color HOVER_HIGHLIGHT_UNCONDITIONAL_COLOR = new Color(127, 127, 255);
-	private static final Color HOVER_HIGHLIGHT_CONDITIONAL_COLOR = Color.GREEN;
+	public static final Color DEFAULT_VERTEX_BACKGROUND_COLOR = themed(Color.WHITE);
+	public static final Color DEFAULT_GROUP_BACKGROUND_COLOR = themed(new Color(226, 255, 155));
+	private static final Color HOVER_HIGHLIGHT_FALL_THROUGH_COLOR = themed(new Color(255, 127, 127));
+	private static final Color HOVER_HIGHLIGHT_UNCONDITIONAL_COLOR = themed(new Color(127, 127, 255));
+	private static final Color HOVER_HIGHLIGHT_CONDITIONAL_COLOR = themed(Color.GREEN);
 
 	private Color defaultVertexBackgroundColor = DEFAULT_VERTEX_BACKGROUND_COLOR;
 
 	private boolean updateGroupColorsAutomatically = true;
 	private Color defaultGroupBackgroundColor = DEFAULT_GROUP_BACKGROUND_COLOR;
 
-	private Color fallthroughEdgeColor = Color.RED;
-	private Color unconditionalJumpEdgeColor = Color.BLUE;
-	private Color conditionalJumpEdgeColor = Color.GREEN.darker().darker();
+	private Color fallthroughEdgeColor = themed(Color.RED);
+	private Color unconditionalJumpEdgeColor = themed(Color.BLUE);
+	private Color conditionalJumpEdgeColor = themed(Color.GREEN.darker().darker());
 
 	private Color fallthroughEdgeHighlightColor = HOVER_HIGHLIGHT_FALL_THROUGH_COLOR;
 	private Color unconditionalJumpEdgeHighlightColor = HOVER_HIGHLIGHT_UNCONDITIONAL_COLOR;
@@ -266,7 +268,7 @@ public class FunctionGraphOptions extends VisualGraphOptions {
 			return getConditionalJumpEdgeColor();
 		}
 
-		return Color.BLACK;
+		return themed(Color.BLACK);
 	}
 
 	public Color getHighlightColor(FlowType flowType) {
@@ -280,7 +282,7 @@ public class FunctionGraphOptions extends VisualGraphOptions {
 			return getConditionalJumpEdgeHighlightColor();
 		}
 
-		return Color.BLACK;
+		return themed(Color.BLACK);
 	}
 
 	public boolean optionChangeRequiresRelayout(String optionName) {

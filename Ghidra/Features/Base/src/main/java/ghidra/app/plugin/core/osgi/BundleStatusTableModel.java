@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.osgi;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -40,11 +42,11 @@ import ghidra.util.table.column.*;
  */
 public class BundleStatusTableModel
 		extends GDynamicColumnTableModel<BundleStatus, List<BundleStatus>> {
-	private static final Color COLOR_BUNDLE_ERROR = Color.RED;
-	private static final Color COLOR_BUNDLE_DISABLED = Color.DARK_GRAY;
-	private static final Color COLOR_BUNDLE_BUSY = Color.GRAY;
-	private static final Color COLOR_BUNDLE_INACTIVE = Color.BLACK;
-	private static final Color COLOR_BUNDLE_ACTIVE = new Color(0.0f, .6f, 0.0f); // a dark green
+	private static final Color COLOR_BUNDLE_ERROR = themed(Color.RED);
+	private static final Color COLOR_BUNDLE_DISABLED = themed(Color.DARK_GRAY);
+	private static final Color COLOR_BUNDLE_BUSY = themed(Color.GRAY);
+	private static final Color COLOR_BUNDLE_INACTIVE = themed(Color.BLACK);
+	private static final Color COLOR_BUNDLE_ACTIVE = themed(new Color(0.0f, .6f, 0.0f)); // a dark green
 
 	private BundleHost bundleHost;
 	private BundleStatusComponentProvider provider;

@@ -16,6 +16,7 @@
 package ghidra.graph.viewer.vertex;
 
 import static ghidra.graph.viewer.GraphViewerUtils.INTERACTION_ZOOM_THRESHOLD;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -97,7 +98,7 @@ public class AbstractVisualVertexRenderer<V extends VisualVertex, E extends Visu
 		Paint oldPaint = g.getPaint();
 
 		int halfishTransparency = 150;
-		Color yellowWithTransparency = new Color(255, 255, 0, halfishTransparency);
+		Color yellowWithTransparency = themed(new Color(255, 255, 0, halfishTransparency));
 		g.setPaint(yellowWithTransparency);
 
 		int offset = 10;
@@ -124,14 +125,14 @@ public class AbstractVisualVertexRenderer<V extends VisualVertex, E extends Visu
 			return;
 		}
 
-		g.setColor(Color.GRAY);
+		g.setColor(themed(Color.GRAY));
 		int grayOffset = 15;
 		int blackOffset = 5;
 
 		AffineTransform xform = AffineTransform.getTranslateInstance(grayOffset, grayOffset);
 		Shape xShape = xform.createTransformedShape(shape);
 		g.fill(xShape);
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		AffineTransform xform2 = AffineTransform.getTranslateInstance(blackOffset, blackOffset);
 		Shape xShape2 = xform2.createTransformedShape(shape);
 		g.fill(xShape2);

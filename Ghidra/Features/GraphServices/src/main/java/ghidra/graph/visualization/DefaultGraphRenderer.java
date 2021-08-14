@@ -15,6 +15,7 @@
  */
 package ghidra.graph.visualization;
 
+import static ghidra.docking.util.Theming.*;
 import static org.jungrapht.visualization.renderers.BiModalRenderer.*;
 
 import java.awt.*;
@@ -77,8 +78,8 @@ public class DefaultGraphRenderer implements GraphRenderer {
 		this.options = options;
 		renderingHints.put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		label = new JLabel();
-		label.setForeground(Color.black);
-		label.setBackground(Color.white);
+		label.setForeground(themed(Color.black));
+		label.setBackground(themed(Color.white));
 		label.setOpaque(false);
 		Border marginBorder = BorderFactory.createEmptyBorder(labelBorderSize, 2 * labelBorderSize,
 			labelBorderSize, 2 * labelBorderSize);
@@ -158,7 +159,7 @@ public class DefaultGraphRenderer implements GraphRenderer {
 		}
 
 		renderContext.setVertexFontFunction(this::getFont);
-		renderContext.setVertexLabelRenderer(new JLabelVertexLabelRenderer(Color.black));
+		renderContext.setVertexLabelRenderer(new JLabelVertexLabelRenderer(themed(Color.black)));
 		renderContext.setVertexDrawPaintFunction(this::getVertexColor);
 		renderContext.setVertexFillPaintFunction(this::getVertexColor);
 		renderContext.setVertexStrokeFunction(n -> new BasicStroke(3.0f));
@@ -245,7 +246,7 @@ public class DefaultGraphRenderer implements GraphRenderer {
 		Rectangle bounds = unitShape.getBounds();
 
 		// this variable attempts to keep the shape's height from being too out of proportion
-		// from the width. 
+		// from the width.
 		int maxWidthToHeightRatio = vertexShape.getMaxWidthToHeightRatio();
 		double sizeFactor = vertexShape.getShapeToLabelRatio();
 
@@ -285,7 +286,7 @@ public class DefaultGraphRenderer implements GraphRenderer {
 
 		// shapes are centered at the origin, so translate the graphics to compensate
 		graphics.translate(-bounds.x + strokeThickness, -bounds.y + strokeThickness);
-		graphics.setPaint(Color.WHITE);
+		graphics.setPaint(themed(Color.WHITE));
 		graphics.fill(scaledShape);
 		graphics.setPaint(vertexColor);
 		graphics.setStroke(new BasicStroke(strokeThickness));
@@ -299,7 +300,7 @@ public class DefaultGraphRenderer implements GraphRenderer {
 		int yOffset = (int) ((iconHeight - label.getHeight()) * labelOffsetRatio);
 
 		graphics.translate(xOffset, yOffset);
-		graphics.setPaint(Color.black);
+		graphics.setPaint(themed(Color.black));
 		label.paint(graphics);
 
 		graphics.setTransform(graphicsTransform); // restore the original transform
@@ -314,7 +315,7 @@ public class DefaultGraphRenderer implements GraphRenderer {
 	}
 
 	private void prepareLabel(String vertexName, Color vertexColor) {
-		// The label is just used as a renderer and never parented, so no need to be 
+		// The label is just used as a renderer and never parented, so no need to be
 		// on the swing thread
 		Font font = options.getFont();
 		label.setFont(font);

@@ -15,6 +15,8 @@
  */
 package ghidra.app.merge.listing;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -719,12 +721,12 @@ public class FunctionTagMerger implements MergeResolver, ListingMergeConstants {
 		buf.append(HTMLUtilities.HTML_NEW_LINE);
 		buf.append("Tag Id:");
 		buf.append(HTMLUtilities.spaces(21));
-		buf.append(HTMLUtilities.colorString(Color.BLUE, String.valueOf(currentlyMergingTagID)));
+		buf.append(HTMLUtilities.colorString(themed(Color.BLUE), String.valueOf(currentlyMergingTagID)));
 		buf.append(HTMLUtilities.HTML_NEW_LINE);
 		buf.append("Reason for Conflict:");
 		buf.append(HTMLUtilities.spaces(1));
 		buf.append(
-			HTMLUtilities.colorString(Color.BLUE, tagConflicts.get(currentlyMergingTagID)));
+			HTMLUtilities.colorString(themed(Color.BLUE), tagConflicts.get(currentlyMergingTagID)));
 		buf.append(HTMLUtilities.HTML_NEW_LINE);
 		buf.append(HTMLUtilities.HTML_NEW_LINE);
 

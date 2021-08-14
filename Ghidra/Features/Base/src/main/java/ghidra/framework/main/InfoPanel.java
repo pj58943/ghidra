@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -41,7 +43,7 @@ import utilities.util.FileUtilities;
  */
 class InfoPanel extends JPanel {
 
-	private final static Color RED = new Color(199, 0, 0);
+	private final static Color RED = themed(new Color(199, 0, 0));
 
 	private final static int MARGIN = 10;
 
@@ -58,7 +60,7 @@ class InfoPanel extends JPanel {
 
 	InfoPanel() {
 		getAboutInfo();
-		bgColor = new Color(243, 250, 255);
+		bgColor = themed(new Color(243, 250, 255));
 		create();
 	}
 
@@ -174,7 +176,7 @@ class InfoPanel extends JPanel {
 		Font font = versionLabel.getFont();
 		font = font.deriveFont(14f).deriveFont(Font.BOLD);
 		versionLabel.setFont(font);
-		versionLabel.setForeground(Color.BLACK);
+		versionLabel.setForeground(themed(Color.BLACK));
 		return versionLabel;
 	}
 

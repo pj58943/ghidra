@@ -15,6 +15,8 @@
  */
 package ghidra.framework.task.gui.taskview;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.*;
@@ -38,13 +40,13 @@ public class ScheduledTaskPanel extends JPanel {
 		layout = new ScheduledElementLayout();
 		setLayout(layout);
 		label = new GDLabel(labelText);
-		setBackground(Color.WHITE);
+		setBackground(themed(Color.WHITE));
 		add(label);
 	}
 
 	void addProgressBar() {
 		progressBar = new GProgressBar(null, true, true, false, 12);
-		progressBar.setBackgroundColor(Color.WHITE);
+		progressBar.setBackgroundColor(themed(Color.WHITE));
 		add(progressBar);
 		layout.clearPreferredSize();
 		invalidate();

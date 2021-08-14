@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.functiongraph;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.*;
@@ -138,7 +140,7 @@ class IndependentColorProvider implements FGColorProvider {
 //==================================================================================================
 	private class RecentColorCache extends LinkedHashMap<Color, Color> implements Iterable<Color> {
 		private static final int MAX_SIZE = 10;
-		private Color mostRecentColor = Color.blue;
+		private Color mostRecentColor = themed(Color.blue);
 
 		RecentColorCache() {
 			super(16, 0.75f, true);

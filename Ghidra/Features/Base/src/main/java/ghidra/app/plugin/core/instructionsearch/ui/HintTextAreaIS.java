@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.instructionsearch.ui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Font;
 
@@ -62,7 +64,7 @@ public class HintTextAreaIS extends HintTextArea {
 	 */
 	private void setErrorAttributes() {
 		this.setFont(getFont().deriveFont(Font.PLAIN));
-		setForeground(Color.RED);
+		setForeground(themed(Color.RED));
 	}
 
 }

@@ -16,6 +16,8 @@
  */
 package ghidra.app.util.viewer.format;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.app.util.HighlightProvider;
 import ghidra.app.util.viewer.field.*;
 import ghidra.app.util.viewer.proxy.ProxyObj;
@@ -33,7 +35,7 @@ public class ErrorListingField extends ListingTextField {
 
 		public Highlight[] getHighlights(String text, Object obj,
 				Class<? extends FieldFactory> fieldFactoryClass, int cursorTextOffset) {
-			return new Highlight[] { new Highlight(0, text.length() - 1, new Color(245, 158, 158)) };
+			return new Highlight[] { new Highlight(0, text.length() - 1, themed(new Color(245, 158, 158))) };
 		}
 	};
 
@@ -53,7 +55,7 @@ public class ErrorListingField extends ListingTextField {
 		String message = t.getMessage() == null ? t.toString() : t.getMessage();
 		AttributedString as =
 			new AttributedString("*Error*: " + message + ".  Double click for Details.",
-				Color.BLACK, ff.getMetrics());
+				themed(Color.BLACK), ff.getMetrics());
 		return new TextFieldElement(as, 0, 0);
 	}
 

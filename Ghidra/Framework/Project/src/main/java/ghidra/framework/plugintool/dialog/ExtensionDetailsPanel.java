@@ -15,6 +15,8 @@
  */
 package ghidra.framework.plugintool.dialog;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Point;
 
@@ -120,12 +122,12 @@ class ExtensionDetailsPanel extends AbstractDetailsPanel {
 
 	@Override
 	protected void createFieldAttributes() {
-		titleAttrSet = createAttributeSet(new Color(140, 0, 0));
-		nameAttrSet = createAttributeSet(new Color(0, 204, 51));
-		descrAttrSet = createAttributeSet(Color.BLUE);
-		authorAttrSet = createAttributeSet(Color.BLUE);
-		createdOnAttrSet = createAttributeSet(Color.BLUE);
-		versionAttrSet = createAttributeSet(Color.BLUE);
-		pathAttrSet = createAttributeSet(Color.BLUE);
+		titleAttrSet = createAttributeSet(themed(new Color(140, 0, 0)));
+		nameAttrSet = createAttributeSet(themed(new Color(0, 204, 51)));
+		descrAttrSet = createAttributeSet(themed(Color.BLUE));
+		authorAttrSet = createAttributeSet(themed(Color.BLUE));
+		createdOnAttrSet = createAttributeSet(themed(Color.BLUE));
+		versionAttrSet = createAttributeSet(themed(Color.BLUE));
+		pathAttrSet = createAttributeSet(themed(Color.BLUE));
 	}
 }

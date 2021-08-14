@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.listingpanel;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -1396,7 +1398,7 @@ public class ListingCodeComparisonPanel
 
 			String programStr =
 				HTMLUtilities.friendlyEncodeHTML(program.getDomainFile().getPathname());
-			String specialProgramStr = HTMLUtilities.colorString(Color.DARK_GRAY, programStr);
+			String specialProgramStr = HTMLUtilities.colorString(themed(Color.DARK_GRAY), programStr);
 			buf.append(specialProgramStr);
 			buf.append(padStr);
 		}
@@ -1431,7 +1433,7 @@ public class ListingCodeComparisonPanel
 
 			String programStr =
 				HTMLUtilities.friendlyEncodeHTML(program.getDomainFile().getPathname());
-			String specialProgramStr = HTMLUtilities.colorString(Color.DARK_GRAY, programStr);
+			String specialProgramStr = HTMLUtilities.colorString(themed(Color.DARK_GRAY), programStr);
 			buf.append(specialProgramStr);
 			buf.append(padStr);
 		}
@@ -1451,7 +1453,7 @@ public class ListingCodeComparisonPanel
 		String padStr = HTMLUtilities.spaces(4);
 		buf.append(padStr);
 		String programStr = HTMLUtilities.friendlyEncodeHTML(program.getDomainFile().getPathname());
-		String specialProgramStr = HTMLUtilities.colorString(Color.DARK_GRAY, programStr);
+		String specialProgramStr = HTMLUtilities.colorString(themed(Color.DARK_GRAY), programStr);
 		buf.append(specialProgramStr);
 		buf.append(padStr);
 		return HTMLUtilities.wrapAsHTML(buf.toString());

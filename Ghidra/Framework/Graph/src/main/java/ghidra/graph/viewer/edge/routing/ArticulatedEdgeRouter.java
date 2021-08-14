@@ -16,6 +16,7 @@
 package ghidra.graph.viewer.edge.routing;
 
 import static ghidra.graph.viewer.GraphViewerUtils.*;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.geom.PathIterator;
@@ -319,31 +320,31 @@ class ArticulatedEdgeRouter<V extends VisualVertex, E extends VisualEdge<V>>
 
 	private Color getRoutingBoxColor(E edge) {
 		if (isTrueEdge(edge)) {
-			return Color.MAGENTA;
+			return themed(Color.MAGENTA);
 		}
-		return Color.ORANGE;
+		return themed(Color.ORANGE);
 	}
 
 //
 //	private Color getIntersectingBoxColor(E edge) {
 //		if (isTrueEdge(edge)) {
-//			return Color.RED;
+//			return themed(Color.RED);
 //		}
-//		return Color.PINK;
+//		return themed(Color.PINK);
 //	}
 
 	private Color getPhantomEdgeColor(E edge, boolean isLeft) {
 		if (isLeft) {
 			if (isTrueEdge(edge)) {
-				return new Color(0x999900);
+				return themed(new Color(0x999900));
 			}
 
-			return new Color(0x009900);
+			return themed(new Color(0x009900));
 		}
 		if (isTrueEdge(edge)) {
-			return new Color(0x3300CC);
+			return themed(new Color(0x3300CC));
 		}
-		return new Color(0x3399FF);
+		return themed(new Color(0x3399FF));
 	}
 
 	private boolean isTrueEdge(E edge) {

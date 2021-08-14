@@ -15,6 +15,8 @@
  */
 package ghidra.app.decompiler.component;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -67,7 +69,7 @@ public class ClangLayoutController implements LayoutModel, LayoutModelListener {
 
 	private ClangFieldElement createEmptyLineNumberSpacer() {
 		ClangToken lineNumberToken = ClangToken.buildSpacer(null, 0, "");
-		AttributedString as = new AttributedString("", Color.WHITE, metrics);
+		AttributedString as = new AttributedString("", themed(Color.WHITE), metrics);
 		return new ClangFieldElement(lineNumberToken, as, 0);
 	}
 
@@ -576,7 +578,7 @@ public class ClangLayoutController implements LayoutModel, LayoutModelListener {
 //==================================================================================================	
 
 	private static class LineNumberFieldElement extends ClangFieldElement {
-		private static final Color FOREGROUND_COLOR = new Color(125, 125, 125);
+		private static final Color FOREGROUND_COLOR = themed(new Color(125, 125, 125));
 		private int uniformWidth;
 
 		private LineNumberFieldElement(int lineNumber, int lineCount, FontMetrics fontMetrics) {

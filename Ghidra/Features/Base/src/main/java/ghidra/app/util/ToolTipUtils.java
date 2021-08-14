@@ -16,6 +16,7 @@
 package ghidra.app.util;
 
 import static ghidra.util.HTMLUtilities.*;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ import ghidra.util.StringUtilities;
  */
 public class ToolTipUtils {
 
-	private static final Color PARAM_NAME_COLOR = new Color(155, 50, 155);
+	private static final Color PARAM_NAME_COLOR = themed(new Color(155, 50, 155));
 	private static final Color PARAM_CUSTOM_STORAGE_COLOR =
 		OptionsGui.PARAMETER_CUSTOM.getDefaultColor();
 	private static final Color PARAM_DYNAMIC_STORAGE_COLOR =
@@ -164,7 +165,7 @@ public class ToolTipUtils {
 			dt = DataType.DEFAULT;
 		}
 
-		buf.append(colorString(Color.BLACK, friendlyEncodeHTML(dt.getName())));
+		buf.append(colorString(themed(Color.BLACK), friendlyEncodeHTML(dt.getName())));
 		buf.append(HTML_SPACE);
 		buf.append(friendlyEncodeHTML(s.getName()));
 
@@ -258,7 +259,7 @@ public class ToolTipUtils {
 		StringBuilder buf = new StringBuilder();
 		buf.append("<tr><td width=10>&nbsp;</td>"); // indent
 		buf.append("<td width=\"1%\">");
-		buf.append(colorString(Color.BLACK, friendlyEncodeHTML(type)));
+		buf.append(colorString(themed(Color.BLACK), friendlyEncodeHTML(type)));
 		buf.append("</td><td width=\"1%\">");
 		Color paramColor =
 			param.getFunction().hasCustomVariableStorage() ? PARAM_CUSTOM_STORAGE_COLOR
@@ -297,7 +298,7 @@ public class ToolTipUtils {
 		}
 
 		String functionName = StringUtilities.trimMiddle(function.getName(), LINE_LENGTH);
-		buffy.append(colorString(Color.BLUE, friendlyEncodeHTML(functionName)));
+		buffy.append(colorString(themed(Color.BLUE), friendlyEncodeHTML(functionName)));
 		buffy.append(HTML_SPACE).append("(");
 
 		buildParameterPreview(function, buffy);
@@ -395,7 +396,7 @@ public class ToolTipUtils {
 		}
 
 		StringBuilder pb = new StringBuilder();
-		pb.append(colorString(Color.BLACK, friendlyEncodeHTML(type)));
+		pb.append(colorString(themed(Color.BLACK), friendlyEncodeHTML(type)));
 		pb.append(HTML_SPACE);
 
 		pb.append(colorString(PARAM_NAME_COLOR, friendlyEncodeHTML(name)));

@@ -15,6 +15,8 @@
  */
 package ghidra.program.util;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.*;
@@ -43,17 +45,17 @@ public class ProgramDiffDetails {
 	private static final int INDENT_SIZE = 4;
 	private static final String STANDARD_NEW_LINE = "\n";
 
-	public static Color RED = new Color(0xff, 0x00, 0x00);
-	public static Color MAROON = new Color(0x99, 0x00, 0x00);
-	public static Color GREEN = new Color(0x00, 0x99, 0x00);
-	public static Color BLUE = new Color(0x00, 0x00, 0x99);
-	public static Color PURPLE = new Color(0x99, 0x00, 0x99);
-	public static Color DARK_CYAN = new Color(0x00, 0x99, 0x99);
-	public static Color OLIVE = new Color(0x99, 0x99, 0x00);
-	public static Color ORANGE = new Color(0xff, 0x99, 0x00);
-	public static Color PINK = new Color(0xff, 0x99, 0x99);
-	public static Color YELLOW = new Color(0xff, 0xff, 0x00);
-	public static Color GRAY = new Color(0x88, 0x88, 0x88);
+	public static Color RED = themed(new Color(0xff, 0x00, 0x00));
+	public static Color MAROON = themed(new Color(0x99, 0x00, 0x00));
+	public static Color GREEN = themed(new Color(0x00, 0x99, 0x00));
+	public static Color BLUE = themed(new Color(0x00, 0x00, 0x99));
+	public static Color PURPLE = themed(new Color(0x99, 0x00, 0x99));
+	public static Color DARK_CYAN = themed(new Color(0x00, 0x99, 0x99));
+	public static Color OLIVE = themed(new Color(0x99, 0x99, 0x00));
+	public static Color ORANGE = themed(new Color(0xff, 0x99, 0x00));
+	public static Color PINK = themed(new Color(0xff, 0x99, 0x99));
+	public static Color YELLOW = themed(new Color(0xff, 0xff, 0x00));
+	public static Color GRAY = themed(new Color(0x88, 0x88, 0x88));
 	private static final Color EMPHASIZE_COLOR = GREEN;
 	private static final Color ADDRESS_COLOR = DARK_CYAN;
 	private static final Color COMMENT_COLOR = GREEN;

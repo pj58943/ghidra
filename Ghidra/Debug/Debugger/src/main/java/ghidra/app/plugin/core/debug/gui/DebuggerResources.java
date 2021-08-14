@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.debug.gui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.*;
@@ -250,38 +252,38 @@ public interface DebuggerResources {
 	String BOOKMARK_CATEGORY_MEMORY_READ_ERROR = "Debugger Memory Read Error";
 
 	String OPTION_NAME_COLORS_STALE_MEMORY = "Colors.Stale Memory";
-	Color DEFAULT_COLOR_BACKGROUND_STALE = Color.LIGHT_GRAY;
+	Color DEFAULT_COLOR_BACKGROUND_STALE = themed(Color.LIGHT_GRAY);
 
 	String OPTION_NAME_COLORS_ERROR_MEMORY = "Colors.Error Memory";
-	Color DEFAULT_COLOR_BACKGROUND_ERROR = new Color(1.0f, 0.75f, 0.75f);
+	Color DEFAULT_COLOR_BACKGROUND_ERROR = themed(new Color(1.0f, 0.75f, 0.75f));
 
 	int PRIORITY_REGISTER_MARKER = 10;
 	// TODO: Is this the right name? Used by Location Tracking, which could be anything
 	// Close enough for now
 	String OPTION_NAME_COLORS_REGISTER_MARKERS = "Colors.Register Markers";
-	Color DEFAULT_COLOR_REGISTER_MARKERS = new Color(0.75f, 0.875f, 0.75f);
+	Color DEFAULT_COLOR_REGISTER_MARKERS = themed(new Color(0.75f, 0.875f, 0.75f));
 	ImageIcon ICON_REGISTER_MARKER = ResourceManager.loadImage("images/register-marker.png");
 
 	String OPTION_NAME_COLORS_REGISTER_STALE = "Colors.Stale Registers";
-	Color DEFAULT_COLOR_REGISTER_STALE = Color.GRAY;
+	Color DEFAULT_COLOR_REGISTER_STALE = themed(Color.GRAY);
 	String OPTION_NAME_COLORS_REGISTER_STALE_SEL = "Colors.Stale Registers (selected)";
-	Color DEFAULT_COLOR_REGISTER_STALE_SEL = Color.LIGHT_GRAY;
+	Color DEFAULT_COLOR_REGISTER_STALE_SEL = themed(Color.LIGHT_GRAY);
 	String OPTION_NAME_COLORS_REGISTER_CHANGED = "Colors.Changed Registers";
-	Color DEFAULT_COLOR_REGISTER_CHANGED = Color.RED;
+	Color DEFAULT_COLOR_REGISTER_CHANGED = themed(Color.RED);
 	String OPTION_NAME_COLORS_REGISTER_CHANGED_SEL = "Colors.Changed Registers (selected)";
-	Color DEFAULT_COLOR_REGISTER_CHANGED_SEL = ColorUtils.blend(Color.RED, Color.WHITE, 0.5f);
+	Color DEFAULT_COLOR_REGISTER_CHANGED_SEL = ColorUtils.blend(themed(Color.RED), themed(Color.WHITE), 0.5f);
 
 	String OPTION_NAME_COLORS_WATCH_STALE = "Colors.Stale Watches";
-	Color DEFAULT_COLOR_WATCH_STALE = Color.GRAY;
+	Color DEFAULT_COLOR_WATCH_STALE = themed(Color.GRAY);
 	String OPTION_NAME_COLORS_WATCH_STALE_SEL = "Colors.Stale Watches (selected)";
-	Color DEFAULT_COLOR_WATCH_STALE_SEL = Color.LIGHT_GRAY;
+	Color DEFAULT_COLOR_WATCH_STALE_SEL = themed(Color.LIGHT_GRAY);
 	String OPTION_NAME_COLORS_WATCH_CHANGED = "Colors.Changed Watches";
-	Color DEFAULT_COLOR_WATCH_CHANGED = Color.RED;
+	Color DEFAULT_COLOR_WATCH_CHANGED = themed(Color.RED);
 	String OPTION_NAME_COLORS_WATCH_CHANGED_SEL = "Colors.Changed Watches (selected)";
-	Color DEFAULT_COLOR_WATCH_CHANGED_SEL = ColorUtils.blend(Color.RED, Color.WHITE, 0.5f);
+	Color DEFAULT_COLOR_WATCH_CHANGED_SEL = ColorUtils.blend(themed(Color.RED), themed(Color.WHITE), 0.5f);
 
 	String OPTION_NAME_COLORS_PCODE_COUNTER = "Colors.Pcode Counter";
-	Color DEFAULT_COLOR_PCODE_COUNTER = new Color(0.75f, 0.875f, 0.75f);
+	Color DEFAULT_COLOR_PCODE_COUNTER = themed(new Color(0.75f, 0.875f, 0.75f));
 
 	String MARKER_NAME_BREAKPOINT_ENABLED = "Enabled Breakpoint";
 	String MARKER_NAME_BREAKPOINT_DISABLED = "Disabled Breakpoint";
@@ -317,12 +319,12 @@ public interface DebuggerResources {
 	Icon ICON_UNIQUE_REF_RW = new MultiIcon(ICON_UNIQUE_REF_READ, ICON_UNIQUE_REF_WRITE); // TODO
 
 	String OPTION_NAME_COLORS_ENABLED_BREAKPOINT_MARKERS = "Colors.Enabled Breakpoint Markers";
-	Color DEFAULT_COLOR_ENABLED_BREAKPOINT_MARKERS = new Color(0.875f, 0.75f, 0.75f);
+	Color DEFAULT_COLOR_ENABLED_BREAKPOINT_MARKERS = themed(new Color(0.875f, 0.75f, 0.75f));
 	String OPTION_NAME_COLORS_DISABLED_BREAKPOINT_MARKERS = "Colors.Disabled Breakpoint Markers";
 	Color DEFAULT_COLOR_DISABLED_BREAKPOINT_MARKERS = DEFAULT_COLOR_ENABLED_BREAKPOINT_MARKERS;
 	String OPTION_NAME_COLORS_INEFFECTIVE_E_BREAKPOINT_MARKERS =
 		"Colors.Ineffective Enabled Breakpoint Markers";
-	Color DEFAULT_COLOR_INEFFECTIVE_E_BREAKPOINT_MARKERS = new Color(0.75f, 0.75f, 0.75f);
+	Color DEFAULT_COLOR_INEFFECTIVE_E_BREAKPOINT_MARKERS = themed(new Color(0.75f, 0.75f, 0.75f));
 	String OPTION_NAME_COLORS_INEFFECTIVE_D_BREAKPOINT_MARKERS =
 		"Colors.Ineffective Disabled Breakpoint Markers";
 	Color DEFAULT_COLOR_INEFFECTIVE_D_BREAKPOINT_MARKERS =

@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.programtree;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -82,7 +84,7 @@ public abstract class DragNDropTree extends JTree implements Draggable, Droppabl
 		dndCellRenderer = new DnDTreeCellRenderer();
 		setCellRenderer(dndCellRenderer);
 		plafSelectionColor = dndCellRenderer.getBackgroundSelectionColor();
-		nonSelectionDragColor = new Color(204, 204, 255);
+		nonSelectionDragColor = themed(new Color(204, 204, 255));
 		initDragNDrop();
 		ToolTipManager.sharedInstance().registerComponent(this);
 		autoscroller = new AutoscrollAdapter(this, getRowHeight());
@@ -263,8 +265,8 @@ public abstract class DragNDropTree extends JTree implements Draggable, Droppabl
 			}
 			else {
 				destinationNode = null;
-				dndCellRenderer.setSelectionForDrag(Color.red);
-				dndCellRenderer.setNonSelectionForDrag(Color.red);
+				dndCellRenderer.setSelectionForDrag(themed(Color.red));
+				dndCellRenderer.setNonSelectionForDrag(themed(Color.red));
 			}
 			Point p = e.getLocation();
 			dndCellRenderer.setRowForFeedback(getRowForLocation(p.x, p.y));

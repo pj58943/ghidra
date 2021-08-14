@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.*;
@@ -95,7 +97,7 @@ public class LogPanel extends JPanel implements LogListener {
 	public void messageLogged(String message, boolean isError) {
 
 		messageUpdater.run(() -> {
-			label.setForeground(isError ? Color.RED : defaultColor);
+			label.setForeground(isError ? themed(Color.RED) : defaultColor);
 			String text = message.replace("\n", " ");
 			label.setText(text);
 			label.setToolTipText(text);

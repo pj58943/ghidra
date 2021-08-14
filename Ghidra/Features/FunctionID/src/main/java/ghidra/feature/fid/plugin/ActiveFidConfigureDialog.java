@@ -15,6 +15,8 @@
  */
 package ghidra.feature.fid.plugin;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -89,7 +91,7 @@ public class ActiveFidConfigureDialog extends DialogComponentProvider {
 	private Component buildCheckBoxPanel() {
 		JPanel panel = new JPanel(new VerticalLayout(5));
 		panel.setOpaque(true);
-		panel.setBackground(Color.WHITE);
+		panel.setBackground(themed(Color.WHITE));
 		panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		for (FidFile fidFile : fidFiles) {
 			GCheckBox checkbox = new GCheckBox(fidFile.getName(), fidFile.isActive());

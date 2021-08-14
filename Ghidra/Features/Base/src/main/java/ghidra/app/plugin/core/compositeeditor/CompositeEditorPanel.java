@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.compositeeditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
@@ -71,7 +73,7 @@ public abstract class CompositeEditorPanel extends JPanel
 
 	// Normal color for selecting components in the table.
 	// TODO: Why do we choose a different selection color?
-	//private static final Color SELECTION_COLOR = Color.YELLOW.brighter().brighter();
+	//private static final Color SELECTION_COLOR = themed(Color.YELLOW.brighter().brighter());
 	//protected static final Insets TEXTFIELD_INSETS = new JTextField().getInsets();
 
 	protected static final Border BEVELED_BORDER = BorderFactory.createLoweredBevelBorder();
@@ -594,7 +596,7 @@ public abstract class CompositeEditorPanel extends JPanel
 		table.setPreferredScrollableViewportSize(new Dimension(model.getWidth(), 250));
 		table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		//table.setSelectionBackground(SELECTION_COLOR);
-		//table.setSelectionForeground(Color.black);
+		//table.setSelectionForeground(themed(Color.black));
 		tablePanel.add(sp, BorderLayout.CENTER);
 		SearchControlPanel searchPanel = new SearchControlPanel(this);
 
@@ -624,7 +626,7 @@ public abstract class CompositeEditorPanel extends JPanel
 			// This can happen on the Mac and is usually white.  This is a simple solution for
 			// that scenario.  If this fails on other platforms, then do something more advanced
 			// at that point.
-			table.setGridColor(Color.GRAY);
+			table.setGridColor(themed(Color.GRAY));
 		}
 	}
 
@@ -656,7 +658,7 @@ public abstract class CompositeEditorPanel extends JPanel
 		JPanel panel = new JPanel(new BorderLayout());
 		statusLabel = new GDLabel(" ");
 		statusLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		statusLabel.setForeground(Color.blue);
+		statusLabel.setForeground(themed(Color.blue));
 		statusLabel.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {

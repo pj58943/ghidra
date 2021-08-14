@@ -15,6 +15,8 @@
  */
 package ghidra.program.database.data;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -818,7 +820,7 @@ public class DataTypeArchiveTransformer implements GhidraLaunchable {
 					statusLabel.setToolTipText(inProgressMessage);
 					filePanel.transform(monitor);
 					File destinationFile = filePanel.getDestinationFile();
-					statusLabel.setForeground(Color.blue);
+					statusLabel.setForeground(themed(Color.blue));
 					String message = "Transformation successfully created " +
 						destinationFile.getAbsolutePath() + ".";
 					statusLabel.setText(message);
@@ -830,7 +832,7 @@ public class DataTypeArchiveTransformer implements GhidraLaunchable {
 					statusLabel.setToolTipText(cancelMessage);
 				}
 				catch (Exception exc) {
-					statusLabel.setForeground(Color.red);
+					statusLabel.setForeground(themed(Color.red));
 					statusLabel.setText(exc.getMessage());
 					statusLabel.setToolTipText(exc.getMessage());
 					exc.printStackTrace();

@@ -21,6 +21,8 @@
 
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 
@@ -46,8 +48,8 @@ import ghidra.util.HelpLocation;
 public class BytesFieldFactory extends FieldFactory {
 	private static final int CHARS_IN_BYTE = 2;
 	public static final String FIELD_NAME = "Bytes";
-	public static final Color DEFAULT_COLOR = Color.BLUE;
-	public static final Color ALIGNMENT_BYTES_COLOR = Color.gray;
+	public static final Color DEFAULT_COLOR = themed(Color.BLUE);
+	public static final Color ALIGNMENT_BYTES_COLOR = themed(Color.gray);
 	public final static String GROUP_TITLE = "Bytes Field";
 	public final static String MAX_DISPLAY_LINES_MSG =
 		GROUP_TITLE + Options.DELIMITER + "Maximum Lines To Display";

@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.debug.gui.objects.components;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.Map;
 
@@ -87,7 +89,7 @@ class ObjectTreeCellRenderer extends GTreeRenderer {
 			if (container.isSubscribed()) {
 				Color color = provider
 						.getColor(DebuggerObjectsProvider.OPTION_NAME_SUBSCRIBED_FOREGROUND_COLOR);
-				if (!color.equals(Color.BLACK)) {
+				if (!color.equals(themed(Color.BLACK))) {
 					component.setForeground(color);
 				}
 			}
@@ -97,7 +99,7 @@ class ObjectTreeCellRenderer extends GTreeRenderer {
 				if (last instanceof ObjectNode) {
 					ObjectContainer selection = ((ObjectNode) last).getContainer();
 					if (container.equals(selection)) {
-						component.setForeground(Color.WHITE);
+						component.setForeground(themed(Color.WHITE));
 					}
 				}
 			}

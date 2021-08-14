@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.functiongraph.graph.vertex;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
@@ -39,7 +41,7 @@ import ghidra.program.util.ProgramSelection;
  */
 public interface FGVertex extends VisualVertex {
 
-	static final Color TOOLTIP_BACKGROUND_COLOR = new Color(255, 255, 230);
+	static final Color TOOLTIP_BACKGROUND_COLOR = themed(new Color(255, 255, 230));
 
 	public FGVertex cloneVertex(FGController newController);
 

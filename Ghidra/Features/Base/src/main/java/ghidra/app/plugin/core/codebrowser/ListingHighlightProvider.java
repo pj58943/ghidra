@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.codebrowser;
 
 import static ghidra.GhidraOptions.*;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -871,11 +872,11 @@ public class ListingHighlightProvider
 		ToolOptions opt = tool.getOptions(CATEGORY_BROWSER_FIELDS);
 		HelpLocation hl = new HelpLocation("CodeBrowserPlugin", "Cursor_Text_Highlight");
 
-		opt.registerOption(HIGHLIGHT_COLOR_NAME, Color.YELLOW, hl,
+		opt.registerOption(HIGHLIGHT_COLOR_NAME, themed(Color.YELLOW), hl,
 			"The color to use to highlight text.");
-		opt.registerOption(SCOPED_WRITE_HIGHLIGHT_COLOR, new Color(204, 204, 0), hl,
+		opt.registerOption(SCOPED_WRITE_HIGHLIGHT_COLOR, themed(new Color(204, 204, 0)), hl,
 			"The color to use for showing a register being written.");
-		opt.registerOption(SCOPED_READ_HIGHLIGHT_COLOR, new Color(0, 255, 0), hl,
+		opt.registerOption(SCOPED_READ_HIGHLIGHT_COLOR, themed(new Color(0, 255, 0)), hl,
 			"The color to use for showing a register being read.");
 
 		opt.registerOption(SCOPE_REGISTER_OPERAND, true, hl,
@@ -895,11 +896,11 @@ public class ListingHighlightProvider
 			setHighlightString(null, null);
 		}
 
-		textMatchingHighlightColor = opt.getColor(HIGHLIGHT_COLOR_NAME, Color.YELLOW);
+		textMatchingHighlightColor = opt.getColor(HIGHLIGHT_COLOR_NAME, themed(Color.YELLOW));
 
 		scopeWriteHighlightColor =
-			opt.getColor(SCOPED_WRITE_HIGHLIGHT_COLOR, new Color(204, 204, 0));
-		scopeReadHighlightColor = opt.getColor(SCOPED_READ_HIGHLIGHT_COLOR, new Color(0, 255, 0));
+			opt.getColor(SCOPED_WRITE_HIGHLIGHT_COLOR, themed(new Color(204, 204, 0)));
+		scopeReadHighlightColor = opt.getColor(SCOPED_READ_HIGHLIGHT_COLOR, themed(new Color(0, 255, 0)));
 
 		/////////////////////////////////////////////////////
 

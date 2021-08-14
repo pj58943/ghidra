@@ -16,14 +16,16 @@
  */
 package ghidra.app.plugin.core.datamgr.tree;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.Icon;
 
 class BackgroundIcon implements Icon {
 
-	private static Color VERSION_ICON_COLOR_DARK = new Color(0x82, 0x82, 0xff);
-	private static Color VERSION_ICON_COLOR_LIGHT = new Color(0x9f, 0x9f, 0xff);
+	private static Color VERSION_ICON_COLOR_DARK = themed(new Color(0x82, 0x82, 0xff));
+	private static Color VERSION_ICON_COLOR_LIGHT = themed(new Color(0x9f, 0x9f, 0xff));
 
 	private static final int WIDTH = 18;
 	private static final int HEIGHT = 17;

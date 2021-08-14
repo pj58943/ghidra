@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.programtree;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.*;
@@ -343,7 +345,7 @@ class DnDTreeCellRenderer extends DefaultTreeCellRenderer {
 			cutImage.getHeight(null), BufferedImage.TYPE_INT_ARGB);
 		Graphics2D g2d = bufferedImage.createGraphics();
 		g2d.drawImage(cutImage, 0, 0, null);
-		g2d.setColor(new Color(255, 255, 255, 128));
+		g2d.setColor(themed(new Color(255, 255, 255, 128)));
 		g2d.fillRect(0, 0, bufferedImage.getWidth(), bufferedImage.getHeight());
 		return ResourceManager.getImageIconFromImage(imageName, bufferedImage);
 	}

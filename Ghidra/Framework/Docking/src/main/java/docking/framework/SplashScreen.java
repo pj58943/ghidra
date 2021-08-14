@@ -15,6 +15,8 @@
  */
 package docking.framework;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
@@ -37,7 +39,7 @@ import utility.application.ApplicationLayout;
  */
 public class SplashScreen extends JWindow {
 
-	private static final Color DEFAULT_BACKGROUND_COLOR = new Color(243, 250, 255);
+	private static final Color DEFAULT_BACKGROUND_COLOR = themed(new Color(243, 250, 255));
 
 	private static SplashScreen splashWindow; // splash window displayed while ghidra is coming up
 	private static DockingFrame hiddenFrame;
@@ -306,7 +308,7 @@ public class SplashScreen extends JWindow {
 
 		JPanel titlePanel = new JPanel();
 		if (backgroundColor == null) {
-			backgroundColor = new Color(0, 0, 255);
+			backgroundColor = themed(new Color(0, 0, 255));
 		}
 		titlePanel.setBackground(backgroundColor);
 		titlePanel.setLayout(new BorderLayout());
@@ -317,7 +319,7 @@ public class SplashScreen extends JWindow {
 		font = new Font(font.getName(), Font.BOLD, 11);
 		titleLabel.setFont(font);
 		if (foregroundColor == null) {
-			foregroundColor = Color.white;
+			foregroundColor = themed(Color.white);
 		}
 		titleLabel.setForeground(foregroundColor);
 		titlePanel.add(titleLabel, BorderLayout.CENTER);

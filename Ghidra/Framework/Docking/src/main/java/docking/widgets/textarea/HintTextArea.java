@@ -15,6 +15,8 @@
  */
 package docking.widgets.textarea;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.JTextArea;
@@ -56,7 +58,7 @@ public class HintTextArea extends JTextArea {
 		if (getText().isEmpty()) {
 			if (g instanceof Graphics2D) {
 				Graphics2D g2 = (Graphics2D) g;
-				g2.setColor(Color.gray);
+				g2.setColor(themed(Color.gray));
 				g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 					RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -76,7 +78,7 @@ public class HintTextArea extends JTextArea {
 	 */
 	protected void setAttributes() {
 		this.setFont(getFont().deriveFont(Font.PLAIN));
-		setForeground(Color.BLACK);
+		setForeground(themed(Color.BLACK));
 	}
 
 }

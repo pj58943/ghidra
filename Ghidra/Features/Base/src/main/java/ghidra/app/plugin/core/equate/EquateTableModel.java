@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.equate;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
@@ -150,9 +152,9 @@ class EquateTableModel extends GDynamicColumnTableModel<Equate, Object> {
 				}
 
 				if (!eq.isValidUUID()) { // Error equate
-					label.setForeground((isSelected) ? Color.WHITE : Color.RED);
+					label.setForeground((isSelected) ? themed(Color.WHITE) : themed(Color.RED));
 				} else if (!eq.isEnumBased()) { // User label
-					label.setForeground((isSelected) ? Color.WHITE : Color.BLUE.brighter());
+					label.setForeground((isSelected) ? themed(Color.WHITE) : themed(Color.BLUE.brighter()));
 				}
 
 				String tooltip = getEquateToolTip(eq);

@@ -15,6 +15,8 @@
  */
 package ghidra.program.util;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.*;
 
@@ -381,7 +383,7 @@ public class FunctionUtility {
 
 			String programStr =
 				HTMLUtilities.friendlyEncodeHTML(program.getDomainFile().getPathname());
-			String specialProgramStr = HTMLUtilities.colorString(Color.DARK_GRAY, programStr);
+			String specialProgramStr = HTMLUtilities.colorString(themed(Color.DARK_GRAY), programStr);
 			buf.append(specialProgramStr);
 			buf.append(padStr);
 		}

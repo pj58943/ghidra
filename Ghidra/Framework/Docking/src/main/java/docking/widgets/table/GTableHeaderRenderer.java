@@ -15,6 +15,8 @@
  */
 package docking.widgets.table;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.font.TextAttribute;
 import java.awt.geom.Rectangle2D;
@@ -38,10 +40,10 @@ import resources.icons.TranslateIcon;
 public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 	private static final int PADDING_FOR_COLUMN_NUMBER = 10;
 
-	private static final Color PRIMARY_SORT_GRADIENT_START = new Color(205, 227, 244);
-	private static final Color PRIMARY_SORT_GRADIENT_END = new Color(126, 186, 233);
-	private static final Color DEFAULT_GRADIENT_START = Color.WHITE;
-	private static final Color DEFAULT_GRADIENT_END = new Color(215, 215, 215);
+	private static final Color PRIMARY_SORT_GRADIENT_START = themed(new Color(205, 227, 244));
+	private static final Color PRIMARY_SORT_GRADIENT_END = themed(new Color(126, 186, 233));
+	private static final Color DEFAULT_GRADIENT_START = themed(Color.WHITE);
+	private static final Color DEFAULT_GRADIENT_END = themed(new Color(215, 215, 215));
 
 	private static final Icon UP_ICON =
 		ResourceManager.getScaledIcon(Icons.SORT_ASCENDING_ICON, 14, 14);
@@ -188,10 +190,10 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 	private void setOuterBorder(CustomPaddingBorder border, int column) {
 		if (paintAquaHeaders()) {
 			if (column == 0) {
-				customBorder.setOuterBorder(new NoSidesLineBorder(Color.GRAY));
+				customBorder.setOuterBorder(new NoSidesLineBorder(themed(Color.GRAY)));
 				return;
 			}
-			customBorder.setOuterBorder(new NoRightSideLineBorder(Color.GRAY));
+			customBorder.setOuterBorder(new NoRightSideLineBorder(themed(Color.GRAY)));
 		}
 		else {
 			customBorder.setOuterBorder(UIManager.getBorder("TableHeader.cellBorder"));
@@ -405,7 +407,7 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 			int textBaseline = numberHeight;
 
 			AttributedString as = new AttributedString(numberText);
-			as.addAttribute(TextAttribute.FOREGROUND, Color.BLACK);
+			as.addAttribute(TextAttribute.FOREGROUND, themed(Color.BLACK));
 			as.addAttribute(TextAttribute.WEIGHT, TextAttribute.WEIGHT_BOLD);
 			as.addAttribute(TextAttribute.FAMILY, fontFamily);
 			as.addAttribute(TextAttribute.SIZE, (float) fontSize);

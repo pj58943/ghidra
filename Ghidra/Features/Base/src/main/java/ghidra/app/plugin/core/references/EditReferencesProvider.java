@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.references;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -76,7 +78,7 @@ public class EditReferencesProvider extends ComponentProviderAdapter
 
 	static int MNEMONIC_OPINDEX = ReferenceManager.MNEMONIC;
 
-	static Color HIGHLIGHT_COLOR = new Color(205, 205, 205);
+	static Color HIGHLIGHT_COLOR = themed(new Color(205, 205, 205));
 
 	private static final DataFlavor[] ACCEPTABLE_DROP_FLAVORS =
 		new DataFlavor[] { SelectionTransferable.localProgramSelectionFlavor };
@@ -1047,7 +1049,7 @@ public class EditReferencesProvider extends ComponentProviderAdapter
 
 			if (isSelected) {
 				if (bad) {
-					setForeground(Color.pink);
+					setForeground(themed(Color.pink));
 					setFont(boldFont);
 				}
 				else {
@@ -1060,7 +1062,7 @@ public class EditReferencesProvider extends ComponentProviderAdapter
 				// set color to red if address does not exist in memory
 
 				if (bad) {
-					setForeground(Color.red);
+					setForeground(themed(Color.red));
 					setFont(boldFont);
 				}
 				else {

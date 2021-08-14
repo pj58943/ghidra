@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -343,7 +345,7 @@ class ToolConnectionPanel extends JPanel implements ListSelectionListener {
 		for (int i = 0; i < checkboxes.length; i++) {
 
 			checkboxes[i] = new GCheckBox(eventNames[i]);
-			checkboxes[i].setBackground(Color.white);
+			checkboxes[i].setBackground(themed(Color.white));
 
 			boolean isConnected = tc.isConnected(eventNames[i]);
 

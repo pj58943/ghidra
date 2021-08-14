@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -62,7 +64,7 @@ public class EolCommentFieldFactory extends FieldFactory {
 		GROUP_TITLE + Options.DELIMITER + "Show Function Reference Automatic Comments";
 	public final static String ENABLE_PREPEND_REF_ADDRESS_MSG =
 		GROUP_TITLE + Options.DELIMITER + "Prepend the Address to Each Referenced Comment";
-	public static final Color DEFAULT_COLOR = Color.BLUE;
+	public static final Color DEFAULT_COLOR = themed(Color.BLUE);
 
 	private boolean isWordWrap;
 	private int maxDisplayLines;

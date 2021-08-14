@@ -15,6 +15,8 @@
  */
 package docking.widgets.pathmanager;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.io.File;
 import java.util.Arrays;
@@ -168,7 +170,7 @@ public class PathnameTablePanel extends JPanel {
 	}
 
 	private void create() {
-		selectionColor = new Color(204, 204, 255);
+		selectionColor = themed(new Color(204, 204, 255));
 
 		upButton = new JButton(ResourceManager.loadImage("images/up.png"));
 		upButton.setName("UpArrow");
@@ -223,7 +225,7 @@ public class PathnameTablePanel extends JPanel {
 
 		pathnameTable.setPreferredScrollableViewportSize(new Dimension(330, 200));
 		pathnameTable.setSelectionBackground(selectionColor);
-		pathnameTable.setSelectionForeground(Color.BLACK);
+		pathnameTable.setSelectionForeground(themed(Color.BLACK));
 		pathnameTable.setTableHeader(null);
 		pathnameTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		JScrollPane scrollPane = new JScrollPane(pathnameTable);
@@ -283,7 +285,7 @@ public class PathnameTablePanel extends JPanel {
 
 				label.setText(pathName.toString());
 				Color fg = isSelected ? table.getSelectionForeground() : table.getForeground();
-				label.setForeground(!fileExists ? Color.RED : fg);
+				label.setForeground(!fileExists ? themed(Color.RED) : fg);
 
 				return label;
 			}

@@ -16,6 +16,7 @@
 package ghidra.graph.viewer.vertex;
 
 import static ghidra.graph.viewer.GraphViewerUtils.PAINT_ZOOM_THRESHOLD;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 
@@ -146,7 +147,7 @@ public class VisualVertexRenderer<V extends VisualVertex, E extends VisualEdge<V
 		g.fill(shape);
 
 		// an outline
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.draw(shape);
 
 		g.setPaint(oldPaint);

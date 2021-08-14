@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.xml;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.*;
 
@@ -129,7 +131,7 @@ class FunctionsXmlMgr {
 							if (bt == null) {
 								ImageIcon icon =
 									ResourceManager.loadImage("images/imported_bookmark.gif");
-								bt = bm.defineType("IMPORTED", icon, Color.DARK_GRAY, 0);
+								bt = bm.defineType("IMPORTED", icon, themed(Color.DARK_GRAY), 0);
 							}
 							bm.setBookmark(entryPoint, "IMPORTED", LIB_BOOKMARK_CATEGORY,
 								"Library function");

@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.compositeeditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -179,7 +181,7 @@ public class BitFieldEditorPanel extends JPanel {
 
 		statusTextField = new GDLabel(" ");
 		statusTextField.setHorizontalAlignment(SwingConstants.CENTER);
-		statusTextField.setForeground(Color.red);
+		statusTextField.setForeground(themed(Color.red));
 
 		// use a strut panel so the size of the message area does not change if we make
 		// the message label not visible

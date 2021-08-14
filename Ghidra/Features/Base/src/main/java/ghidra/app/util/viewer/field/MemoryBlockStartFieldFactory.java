@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -41,7 +43,7 @@ import ghidra.program.util.ProgramLocation;
 public class MemoryBlockStartFieldFactory extends FieldFactory {
 
 	private static final String FIELD_NAME = "Memory Block Start";
-	private static final Color BLOCK_COLOR = new Color(75, 0, 130);
+	private static final Color BLOCK_COLOR = themed(new Color(75, 0, 130));
 
 	/**
 	 * Constructor

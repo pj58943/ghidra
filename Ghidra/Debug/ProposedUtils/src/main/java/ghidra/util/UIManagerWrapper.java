@@ -15,6 +15,8 @@
  */
 package ghidra.util;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,11 +30,11 @@ public class UIManagerWrapper {
 	private static Map<String, Border> borderMap = new HashMap<>();
 
 	static {
-		colorMap.put("Table[Enabled+Selected].textForeground", new Color(255, 255, 255));
-		colorMap.put("Table[Enabled+Selected].textBackground", new Color(57, 105, 138));
-		colorMap.put("Table.textForeground", new Color(35, 35, 36));
-		colorMap.put("Table.alternateRowColor", new Color(237, 243, 254));
-		colorMap.put("Table:\"Table.cellRenderer\".background", new Color(255, 255, 255));
+		colorMap.put("Table[Enabled+Selected].textForeground", themed(new Color(255, 255, 255)));
+		colorMap.put("Table[Enabled+Selected].textBackground", themed(new Color(57, 105, 138)));
+		colorMap.put("Table.textForeground", themed(new Color(35, 35, 36)));
+		colorMap.put("Table.alternateRowColor", themed(new Color(237, 243, 254)));
+		colorMap.put("Table:\"Table.cellRenderer\".background", themed(new Color(255, 255, 255)));
 
 		borderMap.put("Table.focusCellHighlightBorder",
 			BorderFactory.createEmptyBorder(2, 5, 2, 5));

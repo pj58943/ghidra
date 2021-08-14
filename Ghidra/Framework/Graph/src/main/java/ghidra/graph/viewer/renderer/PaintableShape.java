@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.renderer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.Objects;
 
@@ -24,7 +26,7 @@ import java.util.Objects;
 public class PaintableShape {
 
 	protected Shape shape;
-	protected Color color = new Color(255, 200, 0, 127);  // orange with alpha;
+	protected Color color = themed(new Color(255, 200, 0, 127));  // orange with alpha;
 	protected Stroke stroke;
 
 	protected double tx;

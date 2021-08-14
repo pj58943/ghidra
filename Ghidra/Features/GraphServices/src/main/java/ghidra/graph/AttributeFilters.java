@@ -15,6 +15,8 @@
  */
 package ghidra.graph;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -60,7 +62,7 @@ public class AttributeFilters implements ItemSelectable {
 		/**
 		 * a {@link Function} to allow custom coloring of the individual toolkit button foreground
 		 */
-		private Function<String, Paint> paintFunction = v -> Color.black;
+		private Function<String, Paint> paintFunction = v -> themed(Color.black);
 
 
 		/**

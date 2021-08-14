@@ -15,6 +15,8 @@
  */
 package docking;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.dnd.*;
 import java.awt.event.InputEvent;
@@ -538,7 +540,7 @@ public class DockableHeader extends GenericHeader
 			g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION,
 				RenderingHints.VALUE_INTERPOLATION_BILINEAR);
 
-			Color background = new Color(218, 232, 250);
+			Color background = themed(new Color(218, 232, 250));
 			g.setColor(background);
 
 			Rectangle othersBounds = null;

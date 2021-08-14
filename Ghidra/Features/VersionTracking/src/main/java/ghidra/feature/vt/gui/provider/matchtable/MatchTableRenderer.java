@@ -15,6 +15,8 @@
  */
 package ghidra.feature.vt.gui.provider.matchtable;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 
@@ -25,7 +27,7 @@ import ghidra.feature.vt.api.main.*;
 import ghidra.util.table.CompositeGhidraTableCellRenderer;
 
 public class MatchTableRenderer extends CompositeGhidraTableCellRenderer {
-	private static final Color LOCKED_OUT_BACKGROUND_COLOR = new Color(239, 239, 239);
+	private static final Color LOCKED_OUT_BACKGROUND_COLOR = themed(new Color(239, 239, 239));
 
 	@Override
 	public Component getTableCellRendererComponent(GTableCellRenderingData data) {

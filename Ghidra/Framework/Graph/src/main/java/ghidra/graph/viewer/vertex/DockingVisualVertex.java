@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.vertex;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -54,8 +56,8 @@ public class DockingVisualVertex extends AbstractVisualVertex {
 		};
 		textArea.setText(name);
 		textArea.setPreferredSize(new Dimension(200, 50));
-		textArea.setBackground(Color.YELLOW.darker());
-		textArea.setCaretColor(Color.PINK);
+		textArea.setBackground(themed(Color.YELLOW.darker()));
+		textArea.setCaretColor(themed(Color.PINK));
 		textArea.setBorder(BorderFactory.createRaisedBevelBorder());
 		textArea.setLineWrap(true);
 

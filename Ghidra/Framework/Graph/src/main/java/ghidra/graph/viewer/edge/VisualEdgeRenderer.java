@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.edge;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
@@ -88,8 +90,8 @@ public abstract class VisualEdgeRenderer<V extends VisualVertex, E extends Visua
 
 	private float dashingPatternOffset;
 
-	private Color defaultBaseColor = Color.BLACK;
-	private Color defaultHighlightColor = Color.GRAY;
+	private Color defaultBaseColor = themed(Color.BLACK);
+	private Color defaultHighlightColor = themed(Color.GRAY);
 
 	private VisualEdgeArrowRenderingSupport<V, E> arrowRenderingSupport =
 		new VisualEdgeArrowRenderingSupport<>();
@@ -313,7 +315,7 @@ public abstract class VisualEdgeRenderer<V extends VisualVertex, E extends Visua
 
 		// debug - draw a box around the edge
 		//Rectangle shapeBounds = edgeShape.getBounds();
-		//g.setPaint(Color.ORANGE);
+		//g.setPaint(themed(Color.ORANGE));
 		//g.draw(shapeBounds);
 
 		// can add this feature as needed to speed up painting 

@@ -15,6 +15,8 @@
  */
 package functioncalls.graph.view;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 import edu.uci.ics.jung.visualization.RenderContext;
@@ -37,16 +39,16 @@ public class FcgComponent extends GraphComponent<FcgVertex, FcgEdge, FunctionCal
 	private FcgVertexPaintTransformer vertexPaintTransformer =
 		new FcgVertexPaintTransformer(FcgVertex.DEFAULT_VERTEX_SHAPE_COLOR);
 
-	private Color lightGreen = new Color(143, 197, 143);
-	private Color lightGray = new Color(233, 233, 233);
+	private Color lightGreen = themed(new Color(143, 197, 143));
+	private Color lightGray = themed(new Color(233, 233, 233));
 
 	// the satellite gets too cluttered, so wash out the edges
-	private Color washedOutBlack = new Color(0, 0, 0, 25);
+	private Color washedOutBlack = themed(new Color(0, 0, 0, 25));
 
 	private FcgEdgePaintTransformer edgePaintTransformer =
 		new FcgEdgePaintTransformer(lightGreen, lightGray);
 	private FcgEdgePaintTransformer satelliteEdgePaintTransformer =
-		new FcgEdgePaintTransformer(washedOutBlack, new Color(125, 125, 125, 25));
+		new FcgEdgePaintTransformer(washedOutBlack, themed(new Color(125, 125, 125, 25)));
 
 	FcgComponent(FunctionCallGraph g) {
 

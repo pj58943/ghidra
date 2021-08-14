@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.function.tags;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -58,7 +60,7 @@ import resources.ResourceManager;
 public class FunctionTagProvider extends ComponentProviderAdapter
 		implements DomainObjectListener {
 
-	private Color BORDER_COLOR = Color.GRAY;
+	private Color BORDER_COLOR = themed(Color.GRAY);
 
 	private SourceTagsPanel sourcePanel;
 	private TargetTagsPanel targetPanel;

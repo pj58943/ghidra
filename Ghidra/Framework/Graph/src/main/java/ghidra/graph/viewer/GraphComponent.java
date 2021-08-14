@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Point2D;
@@ -198,15 +200,15 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 
 		RenderContext<V, E> renderContext = viewer.getRenderContext();
 
-		Color normal = Color.GREEN.darker().darker();
-		Color selected = Color.GREEN;
+		Color normal = themed(Color.GREEN.darker().darker());
+		Color selected = themed(Color.GREEN);
 		renderContext.setEdgeDrawPaintTransformer(e -> e.isSelected() ? selected : normal);
 		renderContext.setArrowDrawPaintTransformer(e -> e.isSelected() ? selected : normal);
 		renderContext.setArrowFillPaintTransformer(e -> e.isSelected() ? selected : normal);
 
 		PickedState<V> pickedVertexState = viewer.getPickedVertexState();
 		renderContext.setVertexFillPaintTransformer(
-			new PickableVertexPaintTransformer<>(pickedVertexState, Color.WHITE, Color.YELLOW));
+			new PickableVertexPaintTransformer<>(pickedVertexState, themed(Color.WHITE), themed(Color.YELLOW)));
 
 		viewer.setGraphOptions(vgOptions);
 
@@ -374,7 +376,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 
 		mainPanel.add(layeredPane, BorderLayout.CENTER);
 
-		satellite.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		satellite.setBorder(BorderFactory.createLineBorder(themed(Color.BLACK)));
 
 		undockedSatellitePanel = new JPanel(new BorderLayout());
 		undockedSatellitePanel.addComponentListener(new ComponentAdapter() {
@@ -966,7 +968,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 
 	private class MessagePaintable implements Paintable {
 
-		private final Color backgroundColor = new Color(134, 180, 238);
+		private final Color backgroundColor = themed(new Color(134, 180, 238));
 		private String message = null;
 
 		@Override
@@ -1009,7 +1011,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 			g2.setPaint(bottomToTopGradiant);
 			g2.fillRect(backgroundX, upperY, backgroundWidth, backgroundHeight);
 
-			g2.setPaint(Color.BLACK);
+			g2.setPaint(themed(Color.BLACK));
 			int textX =
 				startX + (isGraphViewStale() ? staleGraphViewPanel.getBounds().width + 5 : 0);
 			g2.drawString(message, textX, startY);

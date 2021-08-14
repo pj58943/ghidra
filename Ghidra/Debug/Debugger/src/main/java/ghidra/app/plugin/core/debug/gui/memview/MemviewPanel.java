@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.debug.gui.memview;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -60,7 +62,7 @@ public class MemviewPanel extends JPanel implements MouseListener, MouseMotionLi
 		this.provider = provider;
 		setPreferredSize(new Dimension(barWidth, barHeight));
 		setSize(getPreferredSize());
-		setBorder(BorderFactory.createLineBorder(Color.BLACK, 1));
+		setBorder(BorderFactory.createLineBorder(themed(Color.BLACK), 1));
 		setFocusable(true);
 
 		addMouseListener(this);
@@ -129,7 +131,7 @@ public class MemviewPanel extends JPanel implements MouseListener, MouseMotionLi
 			g.translate(currentPixelAddr, currentPixelTime);
 		}
 
-		g.setColor(Color.RED);
+		g.setColor(themed(Color.RED));
 		g.fillPolygon(locXs, locYs, locXs.length);
 
 		if (vertical) {
@@ -149,7 +151,7 @@ public class MemviewPanel extends JPanel implements MouseListener, MouseMotionLi
 		int y = currentRectangle.y;
 		int w = currentRectangle.width;
 		int h = currentRectangle.height;
-		g.setColor(Color.RED);
+		g.setColor(themed(Color.RED));
 		g.fillRect(x - 1, y - 1, 1, h + 2);
 		g.fillRect(x - 1, y - 1, w + 2, 1);
 		g.fillRect(x + w + 1, y - 1, 1, h + 2);

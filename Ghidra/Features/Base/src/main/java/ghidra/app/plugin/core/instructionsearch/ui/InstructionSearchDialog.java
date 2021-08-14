@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.instructionsearch.ui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.*;
@@ -136,7 +138,7 @@ public class InstructionSearchDialog extends DialogComponentProvider implements 
 		if (selection == null && getMessagePanel() != null) {
 			getMessagePanel().setMessageText(
 				"Select instructions from the listing (and hit reload) to populate the table.",
-				Color.BLUE);
+				themed(Color.BLUE));
 		}
 
 		if (selection != null && plugin.isSelectionValid(selection, this)) {
@@ -498,7 +500,7 @@ public class InstructionSearchDialog extends DialogComponentProvider implements 
 			model.setSelectionSize(matchSize);
 			TableComponentProvider<Address> tableProvider =
 				table.showTableWithMarkers(title + " " + model.getName(), "InstructionSearch",
-					model, Color.GREEN, null, "Instruction Search Results", null);
+					model, themed(Color.GREEN), null, "Instruction Search Results", null);
 			tableProvider.installRemoveItemsAction();
 		};
 		SystemUtilities.runSwingLater(runnable);

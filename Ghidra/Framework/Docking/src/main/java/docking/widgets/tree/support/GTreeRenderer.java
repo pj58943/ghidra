@@ -15,6 +15,8 @@
  */
 package docking.widgets.tree.support;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.Icon;
@@ -28,7 +30,7 @@ import docking.widgets.tree.GTreeNode;
 
 public class GTreeRenderer extends DefaultTreeCellRenderer implements GComponent {
 
-	private static final Color VALID_DROP_TARGET_COLOR = new Color(200, 200, 255);
+	private static final Color VALID_DROP_TARGET_COLOR = themed(new Color(200, 200, 255));
 	private static final int DEFAULT_MIN_ICON_WIDTH = 22;
 
 	private Object dropTarget;

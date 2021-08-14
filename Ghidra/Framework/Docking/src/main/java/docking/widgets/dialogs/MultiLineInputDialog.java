@@ -15,6 +15,8 @@
  */
 package docking.widgets.dialogs;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -87,7 +89,7 @@ public class MultiLineInputDialog extends DialogComponentProvider {
 		Font smallerFont = font.deriveFont(12F);
 		Font smallItalicFont = smallerFont.deriveFont(Font.ITALIC);
 		hintLabel.setFont(smallItalicFont);
-		hintLabel.setForeground(Color.LIGHT_GRAY);
+		hintLabel.setForeground(themed(Color.LIGHT_GRAY));
 
 		dataPanel.add(messageLabel, BorderLayout.NORTH);
 		dataPanel.add(new JScrollPane(inputTextArea), BorderLayout.CENTER);

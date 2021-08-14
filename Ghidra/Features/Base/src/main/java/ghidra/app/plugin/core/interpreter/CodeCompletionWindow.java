@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.interpreter;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
@@ -37,7 +39,7 @@ import ghidra.app.plugin.core.console.CodeCompletion;
 public class CodeCompletionWindow extends JDialog {
 	private static final long serialVersionUID = 1L;
 	/* from ReferenceHoverPlugin */
-	private static final Color BACKGROUND_COLOR = new Color(255, 255, 230);
+	private static final Color BACKGROUND_COLOR = themed(new Color(255, 255, 230));
 
 	protected final InterpreterPanel console;
 	protected final JTextPane outputTextField;

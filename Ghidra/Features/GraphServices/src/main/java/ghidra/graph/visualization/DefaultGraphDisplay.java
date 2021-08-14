@@ -16,6 +16,7 @@
 package ghidra.graph.visualization;
 
 import static org.jungrapht.visualization.MultiLayerTransformer.Layer.*;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -1327,7 +1328,7 @@ public class DefaultGraphDisplay implements GraphDisplay {
 		graphRenderer.initializeViewer(vv);
 
 		vv.getComponent().requestFocus();
-		vv.setBackground(Color.WHITE);
+		vv.setBackground(BACKGROUND);
 		MouseListener[] mouseListeners = vv.getComponent().getMouseListeners();
 		for (MouseListener mouseListener : mouseListeners) {
 			vv.getComponent().removeMouseListener(mouseListener);

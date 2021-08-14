@@ -15,19 +15,21 @@
  */
 package ghidra.graph.viewer.renderer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class MouseDraggedPaintableShape extends PaintableShape {
 
-	private static final Color START_COLOR = new Color(200, 0, 80, 25);
-	private static final Color END_COLOR = new Color(200, 0, 80, 200);
+	private static final Color START_COLOR = themed(new Color(200, 0, 80, 25));
+	private static final Color END_COLOR = themed(new Color(200, 0, 80, 200));
 
 	private Paint paint;
 
 	public MouseDraggedPaintableShape(Point start, Point end, double tx, double ty) {
 		super(tx, ty);
-		this.color = new Color(200, 0, 80, 147);
+		this.color = themed(new Color(200, 0, 80, 147));
 		this.stroke = new BasicStroke(15);
 
 		int x1 = start.x;

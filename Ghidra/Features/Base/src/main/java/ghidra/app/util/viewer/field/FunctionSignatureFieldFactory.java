@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -99,18 +101,18 @@ public class FunctionSignatureFieldFactory extends FieldFactory {
 	public void displayOptionsChanged(Options options, String optionName, Object oldValue,
 			Object newValue) {
 		super.displayOptionsChanged(options, optionName, oldValue, newValue);
-		funRetColor = options.getColor(OptionsGui.FUN_RET_TYPE.getColorOptionName(), Color.BLACK);
-		funNameColor = options.getColor(OptionsGui.FUN_NAME.getColorOptionName(), Color.BLACK);
+		funRetColor = options.getColor(OptionsGui.FUN_RET_TYPE.getColorOptionName(), themed(Color.BLACK));
+		funNameColor = options.getColor(OptionsGui.FUN_NAME.getColorOptionName(), themed(Color.BLACK));
 		unresolvedThunkRefColor =
 			displayOptions.getColor(OptionsGui.BAD_REF_ADDR.getColorOptionName(),
 				OptionsGui.BAD_REF_ADDR.getDefaultColor());
 		resolvedThunkRefColor =
 			displayOptions.getColor(OptionsGui.EXT_REF_RESOLVED.getColorOptionName(),
 				OptionsGui.EXT_REF_RESOLVED.getDefaultColor());
-		funParamsColor = options.getColor(OptionsGui.FUN_PARAMS.getColorOptionName(), Color.BLACK);
+		funParamsColor = options.getColor(OptionsGui.FUN_PARAMS.getColorOptionName(), themed(Color.BLACK));
 		autoParamColor =
-			options.getColor(OptionsGui.FUN_AUTO_PARAMS.getColorOptionName(), Color.GRAY);
-		literalColor = options.getColor(OptionsGui.SEPARATOR.getColorOptionName(), Color.BLACK);
+			options.getColor(OptionsGui.FUN_AUTO_PARAMS.getColorOptionName(), themed(Color.GRAY));
+		literalColor = options.getColor(OptionsGui.SEPARATOR.getColorOptionName(), themed(Color.BLACK));
 	}
 
 	@Override

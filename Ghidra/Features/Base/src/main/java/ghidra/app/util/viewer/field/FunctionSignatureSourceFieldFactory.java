@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 
@@ -70,7 +72,7 @@ public class FunctionSignatureSourceFieldFactory extends FieldFactory {
 	public void displayOptionsChanged(Options options, String optionName, Object oldValue,
 			Object newValue) {
 		super.displayOptionsChanged(options, optionName, oldValue, newValue);
-		literalColor = options.getColor(OptionsGui.SEPARATOR.getColorOptionName(), Color.BLACK);
+		literalColor = options.getColor(OptionsGui.SEPARATOR.getColorOptionName(), themed(Color.BLACK));
 	}
 
 	@Override

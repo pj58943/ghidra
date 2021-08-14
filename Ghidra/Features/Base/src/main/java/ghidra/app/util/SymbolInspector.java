@@ -15,6 +15,8 @@
  */
 package ghidra.app.util;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.HashMap;
@@ -431,7 +433,7 @@ public class SymbolInspector implements OptionsChangeListener {
 
 	private Color getColor(ScreenElement se) {
 		if (se == null) {
-			return Color.BLACK;
+			return themed(Color.BLACK);
 		}
 		String optionName = se.getColorOptionName();
 		Color color = (Color) cache.get(optionName);

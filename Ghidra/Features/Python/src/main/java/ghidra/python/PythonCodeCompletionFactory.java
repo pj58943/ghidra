@@ -15,6 +15,8 @@
  */
 package ghidra.python;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -57,19 +59,19 @@ public class PythonCodeCompletionFactory {
 	private final static boolean INCLUDE_TYPES_DEFAULT = true;
 	private static boolean includeTypes = INCLUDE_TYPES_DEFAULT;
 
-	public static final Color NULL_COLOR = new Color(255, 0, 0);
-	public static final Color FUNCTION_COLOR = new Color(0, 128, 0);
-	public static final Color PACKAGE_COLOR = new Color(128, 0, 0);
-	public static final Color CLASS_COLOR = new Color(0, 0, 255);
-	public static final Color METHOD_COLOR = new Color(0, 128, 128);
+	public static final Color NULL_COLOR = themed(new Color(255, 0, 0));
+	public static final Color FUNCTION_COLOR = themed(new Color(0, 128, 0));
+	public static final Color PACKAGE_COLOR = themed(new Color(128, 0, 0));
+	public static final Color CLASS_COLOR = themed(new Color(0, 0, 255));
+	public static final Color METHOD_COLOR = themed(new Color(0, 128, 128));
 	/* anonymous code chunks */
-	public static final Color CODE_COLOR = new Color(0, 64, 0);
-	public static final Color INSTANCE_COLOR = new Color(128, 0, 128);
-	public static final Color SEQUENCE_COLOR = new Color(128, 96, 64);
-	public static final Color MAP_COLOR = new Color(64, 96, 128);
-	public static final Color NUMBER_COLOR = new Color(64, 64, 64);
+	public static final Color CODE_COLOR = themed(new Color(0, 64, 0));
+	public static final Color INSTANCE_COLOR = themed(new Color(128, 0, 128));
+	public static final Color SEQUENCE_COLOR = themed(new Color(128, 96, 64));
+	public static final Color MAP_COLOR = themed(new Color(64, 96, 128));
+	public static final Color NUMBER_COLOR = themed(new Color(64, 64, 64));
 	/* for weird Jython-specific stuff */
-	public static final Color SPECIAL_COLOR = new Color(64, 96, 64);
+	public static final Color SPECIAL_COLOR = themed(new Color(64, 96, 64));
 
 	static {
 		/* Order matters!  This is the order in which classes are checked for

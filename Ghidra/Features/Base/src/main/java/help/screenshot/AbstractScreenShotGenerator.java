@@ -16,6 +16,7 @@
 package help.screenshot;
 
 import static org.junit.Assert.assertNotNull;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
@@ -421,7 +422,7 @@ public abstract class AbstractScreenShotGenerator extends AbstractGhidraHeadedIn
 				captureComponent(window);
 			}
 		}
-		drawBorder(Color.BLACK);
+		drawBorder(themed(Color.BLACK));
 	}
 
 	public JPopupMenu getPopupMenu() {
@@ -785,20 +786,20 @@ public abstract class AbstractScreenShotGenerator extends AbstractGhidraHeadedIn
 		BufferedImage combinedImage =
 			new BufferedImage(rect.width, rect.height, BufferedImage.TYPE_INT_ARGB);
 		Graphics g = combinedImage.getGraphics();
-		g.setColor(Color.WHITE);
+		g.setColor(themed(Color.WHITE));
 		g.fillRect(0, 0, rect.width, rect.height);
 
 		for (Component component : comps) {
 			int pad = 6;
 			Point p = component.getLocationOnScreen();
-			g.setColor(new Color(250, 250, 250));
+			g.setColor(themed(new Color(250, 250, 250)));
 			g.fillRoundRect(p.x - rect.x - pad, p.y - rect.y - pad, component.getWidth() + pad * 2,
 				component.getHeight() + pad * 2, pad * 2, pad * 2);
 		}
 		for (Component component : comps) {
 			int pad = 3;
 			Point p = component.getLocationOnScreen();
-			g.setColor(new Color(240, 240, 240));
+			g.setColor(themed(new Color(240, 240, 240)));
 			g.fillRoundRect(p.x - rect.x - pad, p.y - rect.y - pad, component.getWidth() + pad * 2,
 				component.getHeight() + pad * 2, pad * 2, pad * 2);
 		}
@@ -1370,7 +1371,7 @@ public abstract class AbstractScreenShotGenerator extends AbstractGhidraHeadedIn
 	}
 
 	public void drawRectangleWithDropShadowAround(JComponent component, Color color, int padding) {
-		Rectangle r = drawRectangleAround(component, Color.BLACK, padding);
+		Rectangle r = drawRectangleAround(component, themed(Color.BLACK), padding);
 
 		// move it back a bit to create the drop-shadow effect
 		r.x -= padding;
@@ -1592,7 +1593,7 @@ public abstract class AbstractScreenShotGenerator extends AbstractGhidraHeadedIn
 	public Image takeSnippet(Rectangle bounds) {
 		int margin = 20;
 		int topMargin = 4;
-		padImage(Color.WHITE, 0, margin, 0, margin);
+		padImage(themed(Color.WHITE), 0, margin, 0, margin);
 		int rise = 8;
 		bounds.width += 2 * margin;
 
@@ -1623,7 +1624,7 @@ public abstract class AbstractScreenShotGenerator extends AbstractGhidraHeadedIn
 
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-		g2.setColor(Color.BLACK);
+		g2.setColor(themed(Color.BLACK));
 		g2.setStroke(new BasicStroke(3f));
 		g2.draw(topPath);
 		g2.draw(bottomPath);

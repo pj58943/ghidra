@@ -15,6 +15,8 @@
  */
 package docking.resources.icons;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
@@ -42,9 +44,9 @@ public class NumberIcon implements Icon {
 
 	@Override
 	public void paintIcon(Component c, Graphics g, int x, int y) {
-		g.setColor(Color.WHITE);
+		g.setColor(themed(Color.WHITE));
 		g.fillRect(x, y, getIconWidth(), getIconHeight());
-		g.setColor(new Color(0xb5d5ff));
+		g.setColor(themed(new Color(0xb5d5ff)));
 		g.drawRect(x, y, getIconWidth(), getIconHeight());
 
 		float fontSize = getMaxFontSize(g, getIconWidth() - 1, getIconHeight());
@@ -66,7 +68,7 @@ public class NumberIcon implements Icon {
 		int halfTextWidth = textWidth >> 1;
 		int baselineX = x + (halfWidth - halfTextWidth);
 
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		JComponent jc = null;
 		if (c instanceof JComponent) {
 			jc = (JComponent) c;

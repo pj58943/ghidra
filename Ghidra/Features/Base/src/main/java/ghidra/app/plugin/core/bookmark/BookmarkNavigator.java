@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.bookmark;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 import javax.swing.ImageIcon;
@@ -52,12 +54,12 @@ public class BookmarkNavigator {
 	final static int ANALYSIS_PRIORITY = MarkerService.BOOKMARK_PRIORITY + 6;
 	final static int DEFAULT_PRIORITY = MarkerService.BOOKMARK_PRIORITY + 8;
 
-	final static Color NOTE_COLOR = new Color(128, 0, 255);     // Purple
-	final static Color INFO_COLOR = new Color(0, 255, 255);     // Cyan
-	final static Color WARNING_COLOR = new Color(255, 196, 51); // Dark Yellow
-	final static Color ERROR_COLOR = new Color(204, 0, 51);     // Dark Red
-	final static Color ANALYSIS_COLOR = new Color(255, 128, 0); // Orange
-	final static Color DEFAULT_COLOR = new Color(255, 0, 255);  // Magenta
+	final static Color NOTE_COLOR = themed(new Color(128, 0, 255));     // Purple
+	final static Color INFO_COLOR = themed(new Color(0, 255, 255));     // Cyan
+	final static Color WARNING_COLOR = themed(new Color(255, 196, 51)); // Dark Yellow
+	final static Color ERROR_COLOR = themed(new Color(204, 0, 51));     // Dark Red
+	final static Color ANALYSIS_COLOR = themed(new Color(255, 128, 0)); // Orange
+	final static Color DEFAULT_COLOR = themed(new Color(255, 0, 255));  // Magenta
 
 	private String type;
 	private MarkerService markerService;

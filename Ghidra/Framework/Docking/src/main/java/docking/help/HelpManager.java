@@ -15,6 +15,8 @@
  */
 package docking.help;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -673,7 +675,7 @@ public class HelpManager implements HelpService {
 	 * you can see the highlights when you do a search in the JavaHelp.
 	 */
 	private void setColorResources() {
-		UIManager.put("EditorPane.selectionBackground", new Color(204, 204, 255));
+		UIManager.put("EditorPane.selectionBackground", themed(new Color(204, 204, 255)));
 		UIManager.put("EditorPane.selectionForeground", UIManager.get("EditorPane.foreground"));
 	}
 

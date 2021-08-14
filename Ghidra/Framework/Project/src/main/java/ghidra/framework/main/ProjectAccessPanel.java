@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -64,8 +66,8 @@ public class ProjectAccessPanel extends AbstractWizardJPanel {
 	protected String repositoryName;
 	protected HelpLocation helpLoc;
 
-	protected final Color SELECTION_BG_COLOR = new Color(204, 204, 255);
-	protected final Color SELECTION_FG_COLOR = Color.BLACK;
+	protected final Color SELECTION_BG_COLOR = themed(new Color(204, 204, 255));
+	protected final Color SELECTION_FG_COLOR = themed(Color.BLACK);
 
 	protected PluginTool tool;
 

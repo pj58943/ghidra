@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.byteviewer;
 
 import static ghidra.GhidraOptions.*;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.math.BigInteger;
@@ -53,11 +54,11 @@ public abstract class ByteViewerComponentProvider extends ComponentProviderAdapt
 
 	static final Font DEFAULT_FONT = new Font("Monospaced", Font.PLAIN, 12);
 	static final int DEFAULT_BYTES_PER_LINE = 16;
-	static final Color DEFAULT_MISSING_VALUE_COLOR = Color.blue;
-	static final Color DEFAULT_EDIT_COLOR = Color.red;
-	static final Color DEFAULT_CURRENT_CURSOR_COLOR = Color.magenta.brighter();
-	static final Color DEFAULT_CURSOR_COLOR = Color.black;
-	static final Color DEFAULT_NONFOCUS_CURSOR_COLOR = Color.darkGray;
+	static final Color DEFAULT_MISSING_VALUE_COLOR = themed(Color.blue);
+	static final Color DEFAULT_EDIT_COLOR = themed(Color.red);
+	static final Color DEFAULT_CURRENT_CURSOR_COLOR = themed(Color.magenta.brighter());
+	static final Color DEFAULT_CURSOR_COLOR = themed(Color.black);
+	static final Color DEFAULT_NONFOCUS_CURSOR_COLOR = themed(Color.darkGray);
 	private static final Color DEFAULT_CURSOR_LINE_COLOR = GhidraOptions.DEFAULT_CURSOR_LINE_COLOR;
 
 	static final String DEFAULT_INDEX_NAME = "Addresses";
@@ -257,7 +258,7 @@ public abstract class ByteViewerComponentProvider extends ComponentProviderAdapt
 			CURSOR_HIGHLIGHT_BUTTON_NAME, GhidraOptions.CURSOR_MOUSE_BUTTON_NAMES.MIDDLE);
 		panel.setHighlightButton(mouseButton.getMouseEventID());
 
-		panel.setMouseButtonHighlightColor(opt.getColor(HIGHLIGHT_COLOR_NAME, Color.YELLOW));
+		panel.setMouseButtonHighlightColor(opt.getColor(HIGHLIGHT_COLOR_NAME, themed(Color.YELLOW)));
 
 		opt.addOptionsChangeListener(this);
 	}

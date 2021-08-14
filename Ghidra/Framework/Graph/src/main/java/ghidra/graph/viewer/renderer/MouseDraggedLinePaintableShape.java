@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.renderer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.GeneralPath;
 import java.util.ArrayList;
@@ -27,7 +29,7 @@ public class MouseDraggedLinePaintableShape extends PaintableShape {
 
 	public MouseDraggedLinePaintableShape(Point start, Point end, double tx, double ty) {
 		super(tx, ty);
-		this.color = new Color(0, 200, 0, 137);
+		this.color = themed(new Color(0, 200, 0, 137));
 		this.stroke = new BasicStroke(20);
 
 		points.add(start);
@@ -89,7 +91,7 @@ public class MouseDraggedLinePaintableShape extends PaintableShape {
 		g.draw(shape);
 //			g.fill(shape);
 
-//			g.setColor(new Color(20, 200, 20, 147));
+//			g.setColor(themed(new Color(20, 200, 20, 147)));
 //			controls.forEach(c -> {
 		//
 //				int x = c.x;
@@ -101,7 +103,7 @@ public class MouseDraggedLinePaintableShape extends PaintableShape {
 //				g.fill(r);
 //			});
 		//
-//			g.setColor(Color.pink);
+//			g.setColor(themed(Color.pink));
 //			points.forEach(p -> {
 //				int x = p.x;
 //				int y = p.y;

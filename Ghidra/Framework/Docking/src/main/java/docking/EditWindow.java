@@ -16,6 +16,8 @@
  */
 package docking;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -132,7 +134,7 @@ public class EditWindow extends JWindow {
 	private void create() {
 		textField = new JTextField(" ");
 		JPanel panel = new JPanel(new BorderLayout());
-		Color bgColor = new Color(255, 255, 195);
+		Color bgColor = themed(new Color(255, 255, 195));
 		panel.setBackground(bgColor);
 		panel.add(textField, BorderLayout.CENTER);	
 

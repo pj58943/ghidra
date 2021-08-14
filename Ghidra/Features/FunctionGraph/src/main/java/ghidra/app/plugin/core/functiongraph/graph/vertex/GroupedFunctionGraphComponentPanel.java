@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.functiongraph.graph.vertex;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.Set;
@@ -139,8 +141,8 @@ public class GroupedFunctionGraphComponentPanel extends AbstractGraphComponentPa
 
 		BevelBorder beveledBorder =
 			(BevelBorder) BorderFactory.createBevelBorder(BevelBorder.RAISED,
-				new Color(225, 225, 225), new Color(155, 155, 155), new Color(96, 96, 96),
-				new Color(0, 0, 0));
+				themed(new Color(225, 225, 225)), themed(new Color(155, 155, 155)), themed(new Color(96, 96, 96)),
+				themed(new Color(0, 0, 0)));
 		setBorder(beveledBorder);
 
 		createActions();

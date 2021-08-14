@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.checksums;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -97,7 +99,7 @@ public class ComputeChecksumsProvider extends ComponentProviderAdapter {
 		errorStatus = new GDLabel(" ");
 		errorStatus.setName("message");
 		errorStatus.setHorizontalAlignment(SwingConstants.CENTER);
-		errorStatus.setForeground(Color.RED);
+		errorStatus.setForeground(themed(Color.RED));
 		errorStatus.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
 		main.add(errorStatus, BorderLayout.SOUTH);
 

@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -44,7 +46,7 @@ public class PlateFieldFactory extends FieldFactory {
 
 	private static final String EMPTY_STRING = "";
 	public static final String FIELD_NAME = "Plate Comment";
-	public static final Color DEFAULT_COLOR = Color.BLUE;
+	public static final Color DEFAULT_COLOR = themed(Color.BLUE);
 	private final static String FIELD_GROUP_TITLE = "Plate Comments Field";
 	public final static String ENABLE_WORD_WRAP_MSG =
 		FIELD_GROUP_TITLE + Options.DELIMITER + "Enable Word Wrapping";

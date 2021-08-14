@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.renderer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import edu.uci.ics.jung.algorithms.layout.Layout;
@@ -85,7 +87,7 @@ public class VisualVertexSatelliteRenderer<V extends VisualVertex, E extends Vis
 		Paint oldPaint = g.getPaint();
 
 		int halfishTransparency = 150;
-		Color yellowWithTransparency = new Color(255, 255, 0, halfishTransparency);
+		Color yellowWithTransparency = themed(new Color(255, 255, 0, halfishTransparency));
 		g.setPaint(yellowWithTransparency);
 
 //		int offset = (int) adjustValueForCurrentScale(rc, 10D, .25);
@@ -98,7 +100,7 @@ public class VisualVertexSatelliteRenderer<V extends VisualVertex, E extends Vis
 			bounds.height + (offset * 2));
 
 		if (isGraphScaledEnoughToBeDifficultToSee(rc)) {
-			g.setColor(Color.BLACK);
+			g.setColor(themed(Color.BLACK));
 			g.drawOval(bounds.x - offset, bounds.y - offset, bounds.width + (offset * 2),
 				bounds.height + (offset * 2));
 			g.drawOval(bounds.x - offset - 1, bounds.y - offset - 1,

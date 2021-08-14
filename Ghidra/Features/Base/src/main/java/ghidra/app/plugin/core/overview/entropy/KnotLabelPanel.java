@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.overview.entropy;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -52,7 +54,7 @@ public class KnotLabelPanel extends JPanel {
 		int fontOffset = ascent / 3;  // this looks about right
 		ArrayList<KnotRecord> knots = palette.getKnots();
 
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.drawLine(5, topBottomMargin - 6, 10, topBottomMargin - ascent + 2);
 		g.drawString("min entropy (0.0)", 20, topBottomMargin - ascent - descent);
 
@@ -67,7 +69,7 @@ public class KnotLabelPanel extends JPanel {
 			g.drawLine(5, y, 10, y);
 		}
 
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.drawLine(5, height + topBottomMargin + 4, 10, height + topBottomMargin + 8);
 		g.drawString("max entropy (8.0)", 20, topBottomMargin + height + ascent + descent);
 

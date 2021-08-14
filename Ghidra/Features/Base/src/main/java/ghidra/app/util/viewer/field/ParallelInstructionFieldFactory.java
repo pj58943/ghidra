@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 
@@ -38,7 +40,7 @@ import ghidra.program.util.ProgramLocation;
 public class ParallelInstructionFieldFactory extends FieldFactory {
 
 	public static final String FIELD_NAME = "Parallel ||";
-	public static final Color DEFAULT_COLOR = new Color(0, 0, 128);
+	public static final Color DEFAULT_COLOR = themed(new Color(0, 0, 128));
 
 	/**
 	 * Default constructor.
@@ -145,6 +147,6 @@ public class ParallelInstructionFieldFactory extends FieldFactory {
 	 */
 	@Override
 	public Color getDefaultColor() {
-		return Color.black;
+		return themed(Color.black);
 	}
 }

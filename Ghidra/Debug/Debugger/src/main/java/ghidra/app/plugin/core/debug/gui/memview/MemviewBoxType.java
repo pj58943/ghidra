@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.debug.gui.memview;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 public enum MemviewBoxType {
@@ -35,21 +37,21 @@ public enum MemviewBoxType {
 	BREAKPOINT;
 
 	Color[] colors = { //
-		new Color(128, 000, 000), // INSTRUCTIONS
-		new Color(200, 200, 255), // PROCESS
-		new Color(200, 255, 255), // THREAD
-		Color.GREEN, //new Color(000, 150, 200), // MODULE
-		Color.YELLOW, //new Color(000, 150, 200), // REGION
-		Color.MAGENTA, //new Color(050, 100, 255), // IMAGE
-		Color.LIGHT_GRAY, // VIRTUAL_ALLOC
-		Color.BLUE, // HEAP_CREATE
-		new Color(000, 100, 050), // HEAP_ALLOC
-		new Color(100, 000, 150), // POOL
-		Color.CYAN, // STACK
-		Color.LIGHT_GRAY, // PERFINFO
-		Color.DARK_GRAY, // READ_MEMORY
-		Color.BLUE,  // WRITE_MEMORY
-		Color.RED,  // WRITE_MEMORY
+		themed(new Color(128, 000, 000)), // INSTRUCTIONS
+		themed(new Color(200, 200, 255)), // PROCESS
+		themed(new Color(200, 255, 255)), // THREAD
+		themed(Color.GREEN), //themed(new Color(000, 150, 200)), // MODULE
+		themed(Color.YELLOW), //themed(new Color(000, 150, 200)), // REGION
+		themed(Color.MAGENTA), //themed(new Color(050, 100, 255)), // IMAGE
+		themed(Color.LIGHT_GRAY), // VIRTUAL_ALLOC
+		themed(Color.BLUE), // HEAP_CREATE
+		themed(new Color(000, 100, 050)), // HEAP_ALLOC
+		themed(new Color(100, 000, 150)), // POOL
+		themed(Color.CYAN), // STACK
+		themed(Color.LIGHT_GRAY), // PERFINFO
+		themed(Color.DARK_GRAY), // READ_MEMORY
+		themed(Color.BLUE),  // WRITE_MEMORY
+		themed(Color.RED),  // WRITE_MEMORY
 	};
 
 	public Color getColor() {

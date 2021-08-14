@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.beans.PropertyEditor;
 import java.math.BigInteger;
@@ -39,7 +41,7 @@ import ghidra.util.exception.AssertException;
   */
 public class AddressFieldFactory extends FieldFactory {
 	public static final String FIELD_NAME = "Address";
-	public static final Color DEFAULT_COLOR = Color.BLACK;
+	public static final Color DEFAULT_COLOR = themed(Color.BLACK);
 	private final static String GROUP_TITLE = "Address Field";
 	public final static String DISPLAY_BLOCK_NAME =
 		GROUP_TITLE + Options.DELIMITER + "Display Block Name";

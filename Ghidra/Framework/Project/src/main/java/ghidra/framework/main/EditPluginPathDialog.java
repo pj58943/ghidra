@@ -17,6 +17,8 @@
 
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -57,9 +59,9 @@ class EditPluginPathDialog extends DialogComponentProvider {
 	static final String ADD_DIR_BUTTON_TEXT = "Add Dir ...";
 	static final String ADD_JAR_BUTTON_TEXT = "Add Jar ...";
 	private final static int SIDE_MARGIN = 5;
-	private final static Color INVALID_PATH_COLOR = Color.red.brighter();
-	private final static Color INVALID_SELECTED_PATH_COLOR = Color.pink;
-	private final static Color STATUS_MESSAGE_COLOR = Color.blue.brighter();
+	private final static Color INVALID_PATH_COLOR = themed(Color.red.brighter());
+	private final static Color INVALID_SELECTED_PATH_COLOR = themed(Color.pink);
+	private final static Color STATUS_MESSAGE_COLOR = themed(Color.blue.brighter());
 	final static String EMPTY_STATUS = " ";
 
 	private ExtensionFileFilter JAR_FILTER =

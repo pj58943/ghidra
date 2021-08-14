@@ -15,6 +15,8 @@
  */
 package docking.widgets.table.constrainteditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 
@@ -50,7 +52,7 @@ public final class DummyConstraintEditor<T> implements ColumnConstraintEditor<T>
 		JPanel panel = new JPanel();
 
 		JLabel errorLabel = new GDHtmlLabel(
-			"<html>" + HTMLUtilities.bold(HTMLUtilities.colorString(Color.RED, message)));
+			"<html>" + HTMLUtilities.bold(HTMLUtilities.colorString(themed(Color.RED), message)));
 
 		panel.add(errorLabel);
 

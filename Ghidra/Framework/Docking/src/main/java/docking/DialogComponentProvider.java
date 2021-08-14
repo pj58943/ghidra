@@ -15,6 +15,8 @@
  */
 package docking;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -45,7 +47,7 @@ import utility.function.Callback;
 public class DialogComponentProvider
 		implements ActionContextProvider, StatusListener, TaskListener {
 
-	private static final Color WARNING_COLOR = new Color(0xff9900);
+	private static final Color WARNING_COLOR = themed(new Color(0xff9900));
 
 	private final static int DEFAULT_DELAY = 750;
 
@@ -700,13 +702,13 @@ public class DialogComponentProvider
 	protected Color getStatusColor(MessageType type) {
 		switch (type) {
 			case ALERT:
-				return Color.orange;
+				return themed(Color.orange);
 			case WARNING:
 				return WARNING_COLOR;
 			case ERROR:
-				return Color.red;
+				return themed(Color.red);
 			default:
-				return Color.blue;
+				return themed(Color.blue);
 		}
 	}
 
@@ -915,7 +917,7 @@ public class DialogComponentProvider
 		statusLabel = new GDHtmlLabel(" ");
 		statusLabel.setName("statusLabel");
 		statusLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		statusLabel.setForeground(Color.blue);
+		statusLabel.setForeground(themed(Color.blue));
 		statusLabel.setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 5));
 		statusLabel.addComponentListener(new ComponentAdapter() {
 			@Override

@@ -15,6 +15,8 @@
  */
 package ghidra.app.nav;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Point;
 
@@ -50,7 +52,7 @@ public class NavigatableIconFactory {
 	private static ImageIcon getHighlightIcon(Icon primaryIcon) {
 		int primaryWidth = primaryIcon.getIconWidth();
 		int primaryHeight = primaryIcon.getIconHeight();
-		Color color = new Color(255, 255, 0, 255);
+		Color color = themed(new Color(255, 255, 0, 255));
 		return ResourceManager.getImageIcon(
 			new OvalColorIcon(color, primaryWidth + 4, primaryHeight + 4));
 	}

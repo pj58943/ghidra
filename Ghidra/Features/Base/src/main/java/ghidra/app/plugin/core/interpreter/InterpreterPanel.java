@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.interpreter;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -46,8 +48,8 @@ public class InterpreterPanel extends JPanel implements OptionsChangeListener {
 		"This is the font that will be used in the Console.  " +
 			"Double-click the font example to change it.";
 
-	private static final Color NORMAL_COLOR = Color.black;
-	private static final Color ERROR_COLOR = Color.red;
+	private static final Color NORMAL_COLOR = themed(Color.black);
+	private static final Color ERROR_COLOR = themed(Color.red);
 
 	public enum TextType {
 		STDOUT, STDERR, STDIN;

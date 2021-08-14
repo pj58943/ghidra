@@ -15,6 +15,8 @@
  */
 package docking.options.editor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.Serializable;
@@ -119,7 +121,7 @@ public class SettableColorSwatchChooserPanel extends AbstractColorChooserPanel {
 		recentSwatchPanel.addMouseListener(recentSwatchListener);
 
 		Border border =
-			new CompoundBorder(new LineBorder(Color.black), new LineBorder(Color.white));
+			new CompoundBorder(new LineBorder(themed(Color.black)), new LineBorder(themed(Color.white)));
 		swatchPanel.setBorder(border);
 		gbc.weightx = 1.0;
 		gbc.gridwidth = 2;
@@ -222,7 +224,7 @@ class SwatchPanel extends JPanel {
 		initColors();
 		setToolTipText(""); // register for events
 		setOpaque(true);
-		setBackground(Color.white);
+		setBackground(themed(Color.white));
 		setRequestFocusEnabled(false);
 	}
 
@@ -251,7 +253,7 @@ class SwatchPanel extends JPanel {
 				}
 				int y = row * (swatchSize.height + gap.height);
 				g.fillRect(x, y, swatchSize.width, swatchSize.height);
-				g.setColor(Color.black);
+				g.setColor(themed(Color.black));
 				g.drawLine(x + swatchSize.width - 1, y, x + swatchSize.width - 1,
 					y + swatchSize.height - 1);
 				g.drawLine(x, y + swatchSize.height - 1, x + swatchSize.width - 1,

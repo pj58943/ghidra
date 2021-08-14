@@ -15,6 +15,8 @@
  */
 package docking.widgets.table.constrainteditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.text.Collator;
 import java.util.*;
@@ -214,7 +216,7 @@ public class AutocompletingStringConstraintEditor extends DataLoadingConstraintE
 
 			Matcher matcher = model.lastConstraint.getHighlightMatcher(value);
 
-			Color color = isSelected ? Color.YELLOW : Color.MAGENTA;
+			Color color = isSelected ? themed(Color.YELLOW) : themed(Color.MAGENTA);
 
 			StringBuilder sb = new StringBuilder("<html>");
 			// find and highlight all instances of the user-defined pattern

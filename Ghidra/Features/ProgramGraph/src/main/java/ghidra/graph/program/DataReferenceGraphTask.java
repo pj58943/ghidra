@@ -32,6 +32,8 @@ import ghidra.util.exception.GraphException;
 import ghidra.util.task.Task;
 import ghidra.util.task.TaskMonitor;
 
+import static ghidra.docking.util.Theming.themed;
+
 /*
  * Task for creating and displaying a data reference graph
  */
@@ -120,7 +122,7 @@ public class DataReferenceGraphTask extends Task {
 				/* TODO
 				 * Want to make initial vertex easy to find, is this the best way?
 				 */
-				centerVertex.setAttribute(VERTEX_COLOR_OVERRIDE, "Orange");
+				centerVertex.setAttribute(VERTEX_COLOR_OVERRIDE, themed("Orange"));
 			}
 		}
 		catch (CancelledException e) {

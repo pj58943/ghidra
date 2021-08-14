@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.function;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 
@@ -94,14 +96,14 @@ public class StackDepthFieldFactory extends FieldFactory {
 		// This can be used to display the value of any register symbolically flowing over the program.
 		// depthString = depth.getRegValueRepresentation(cu.getMinAddress(), cu.getProgram().getRegister("ESP"));
 
-		AttributedString as = new AttributedString(depthString, Color.BLUE, getMetrics());
+		AttributedString as = new AttributedString(depthString, themed(Color.BLUE), getMetrics());
 
 		Integer overrideDepth =
 			CallDepthChangeInfo.getStackDepthChange(cu.getProgram(), cu.getMinAddress());
 		if (overrideDepth != null) {
 			String grows = (func.getStackFrame().growsNegative() ? " - " : " + ");
 			depthString = depthString + grows + Integer.toString(overrideDepth, 16);
-			as = new AttributedString(depthString, Color.RED, getMetrics());
+			as = new AttributedString(depthString, themed(Color.RED), getMetrics());
 		}
 
 		FieldElement text = new TextFieldElement(as, 0, 0);

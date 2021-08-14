@@ -15,6 +15,8 @@
  */
 package docking.widgets;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.BorderFactory;
@@ -32,7 +34,7 @@ import docking.widgets.label.GDHtmlLabel;
  */
 public abstract class AbstractGCellRenderer extends GDHtmlLabel {
 
-	private static final Color ALTERNATE_BACKGROUND_COLOR = new Color(237, 243, 254);
+	private static final Color ALTERNATE_BACKGROUND_COLOR = themed(new Color(237, 243, 254));
 
 	/** Allows the user to disable alternating row colors on JLists and JTables */
 	private static final String DISABLE_ALTERNATING_ROW_COLORS_PROPERTY =
@@ -56,7 +58,7 @@ public abstract class AbstractGCellRenderer extends GDHtmlLabel {
 	public AbstractGCellRenderer() {
 		noFocusBorder = BorderFactory.createEmptyBorder(0, 5, 0, 5);
 		Border innerBorder = BorderFactory.createEmptyBorder(0, 4, 0, 4);
-		Border outerBorder = BorderFactory.createLineBorder(Color.YELLOW, 1);
+		Border outerBorder = BorderFactory.createLineBorder(themed(Color.YELLOW), 1);
 		focusBorder = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
 		setBorder(noFocusBorder);
 
@@ -156,7 +158,7 @@ public abstract class AbstractGCellRenderer extends GDHtmlLabel {
 	}
 
 	protected Color getDefaultBackgroundColor() {
-		return Color.WHITE;
+		return themed(Color.WHITE);
 	}
 
 	protected Color getBackgroundColorForRow(int row) {

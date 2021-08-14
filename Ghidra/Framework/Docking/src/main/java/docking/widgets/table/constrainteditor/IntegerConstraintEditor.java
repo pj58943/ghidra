@@ -15,6 +15,8 @@
  */
 package docking.widgets.table.constrainteditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.*;
@@ -73,7 +75,7 @@ public class IntegerConstraintEditor<T extends Number> extends AbstractColumnCon
 		panel.add(spinner.getSpinner(), BorderLayout.CENTER);
 		statusLabel = new GDHtmlLabel();
 		panel.add(statusLabel, BorderLayout.SOUTH);
-		statusLabel.setForeground(Color.RED);
+		statusLabel.setForeground(themed(Color.RED));
 		statusLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		return panel;

@@ -15,6 +15,8 @@
  */
 package ghidra.plugins.fsbrowser;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
@@ -155,7 +157,7 @@ class FileSystemBrowserComponentProvider extends ComponentProviderAdapter {
 				setIcon(ico);
 				if (ProgramMappingService.isFileOpen(fsrl)) {
 					// TODO: change this to a OVERLAY_OPEN option when fetching icon
-					setForeground(selected ? Color.CYAN : Color.MAGENTA);
+					setForeground(selected ? themed(Color.CYAN) : themed(Color.MAGENTA));
 				}
 			}
 

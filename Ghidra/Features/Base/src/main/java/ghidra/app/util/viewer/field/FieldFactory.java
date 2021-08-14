@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.math.BigInteger;
 
@@ -46,7 +48,7 @@ public abstract class FieldFactory implements ExtensionPoint {
 	protected int startX;
 	protected int width;
 	protected Color color;
-	protected Color underlineColor = Color.BLUE;
+	protected Color underlineColor = themed(Color.BLUE);
 	private FontMetrics defaultMetrics;
 	private FontMetrics[] fontMetrics = new FontMetrics[4];
 	protected Font baseFont;
@@ -89,7 +91,7 @@ public abstract class FieldFactory implements ExtensionPoint {
 		// For most fields (defined in optionsGui) these will be set. But "ad hoc" fields won't,
 		// so register something.  A second registration won't change the original
 
-		displayOptions.registerOption(colorOptionName, Color.BLACK, null,
+		displayOptions.registerOption(colorOptionName, themed(Color.BLACK), null,
 			"Sets the " + colorOptionName);
 		displayOptions.registerOption(styleOptionName, -1, null, "Sets the " + style);
 
@@ -194,7 +196,7 @@ public abstract class FieldFactory implements ExtensionPoint {
 	 * Returns the default field color.
 	 */
 	public Color getDefaultColor() {
-		return Color.BLACK;
+		return themed(Color.BLACK);
 	}
 
 	/**

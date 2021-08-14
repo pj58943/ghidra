@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.assembler;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -176,8 +178,8 @@ public class AssemblyDualTextField {
 		public AssemblyInstruction(String text, byte[] data, int preference) {
 			// TODO?: Description to display constructor tree information
 			super("", NumericUtilities.convertBytesToString(data, " "),
-				preference == 10000 ? Color.BLUE
-						: preference == 5000 ? new Color(0, 0, 128) : new Color(0, 128, 0),
+				preference == 10000 ? themed(Color.BLUE)
+						: preference == 5000 ? themed(new Color(0, 0, 128)) : themed(new Color(0, 128, 0)),
 				-preference);
 			this.data = data;
 		}
@@ -214,7 +216,7 @@ public class AssemblyDualTextField {
 		private String text;
 
 		public AssemblyError(String text, String desc) {
-			super(text, desc, Color.RED, 1);
+			super(text, desc, themed(Color.RED), 1);
 			this.text = text;
 		}
 

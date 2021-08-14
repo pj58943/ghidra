@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.help;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.Transferable;
@@ -116,7 +118,7 @@ public class AboutDomainObjectUtils {
 			auxArea.setCaretPosition(0); // move cursor to BOF...
 			JScrollPane sp = new JScrollPane(auxArea);
 			sp.setBorder(BorderFactory.createTitledBorder(
-				BorderFactory.createLineBorder(Color.black), "Additional Information"));
+				BorderFactory.createLineBorder(themed(Color.black)), "Additional Information"));
 			sp.setPreferredSize(new Dimension(1, 175)); //width is ignored by border layout...
 
 			JScrollBar sb = sp.getVerticalScrollBar();

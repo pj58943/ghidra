@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.*;
 import java.util.List;
@@ -298,7 +300,7 @@ class SetToolAssociationsDialog extends DialogComponentProvider {
 				return;
 			}
 
-			renderer.setForeground(Color.LIGHT_GRAY);
+			renderer.setForeground(themed(Color.LIGHT_GRAY));
 
 			Icon icon = null;
 			if (template.getName().equals(info.getAssociatedToolName())) {

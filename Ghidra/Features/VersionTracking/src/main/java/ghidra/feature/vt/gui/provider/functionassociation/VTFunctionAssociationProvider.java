@@ -21,6 +21,7 @@ import static ghidra.feature.vt.api.impl.VTChangeManager.DOCR_VT_MATCH_DELETED;
 import static ghidra.feature.vt.gui.provider.functionassociation.FilterSettings.SHOW_ALL;
 import static ghidra.feature.vt.gui.provider.functionassociation.FilterSettings.SHOW_UNACCEPTED;
 import static ghidra.feature.vt.gui.provider.functionassociation.FilterSettings.SHOW_UNMATCHED;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -361,7 +362,7 @@ public class VTFunctionAssociationProvider extends ComponentProviderAdapter
 		JPanel statusPanel = new JPanel(new BorderLayout());
 		statusLabel = new GDLabel(NO_ERROR_MESSAGE);
 		statusLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		statusLabel.setForeground(Color.RED.darker());
+		statusLabel.setForeground(themed(Color.RED.darker()));
 		statusLabel.addComponentListener(new ComponentAdapter() {
 			@Override
 			public void componentResized(ComponentEvent e) {

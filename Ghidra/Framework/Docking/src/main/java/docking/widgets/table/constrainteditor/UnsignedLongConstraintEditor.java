@@ -15,6 +15,8 @@
  */
 package docking.widgets.table.constrainteditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.math.BigInteger;
 
@@ -60,7 +62,7 @@ public class UnsignedLongConstraintEditor extends AbstractColumnConstraintEditor
 		panel.add(field.getComponent(), BorderLayout.CENTER);
 		statusLabel = new GDHtmlLabel();
 		panel.add(statusLabel, BorderLayout.SOUTH);
-		statusLabel.setForeground(Color.RED);
+		statusLabel.setForeground(themed(Color.RED));
 		statusLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		return panel;

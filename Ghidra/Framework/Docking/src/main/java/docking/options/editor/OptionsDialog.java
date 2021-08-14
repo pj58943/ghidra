@@ -15,6 +15,8 @@
  */
 package docking.options.editor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -55,7 +57,7 @@ public class OptionsDialog extends DialogComponentProvider {
 			new OptionsPropertyChangeListener());
 
 		setTitle(title);
-		setBackground(Color.lightGray);
+		setBackground(themed(Color.lightGray));
 
 		addWorkPanel(panel);
 		addOKButton();

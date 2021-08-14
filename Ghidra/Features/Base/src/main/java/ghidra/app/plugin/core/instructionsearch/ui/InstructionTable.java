@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.instructionsearch.ui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.event.*;
 import java.util.List;
@@ -518,7 +520,7 @@ public class InstructionTable extends AbstractInstructionTable {
 				if (dialog.getMessagePanel() != null) {
 					dialog.getMessagePanel().setMessageText(
 						"Instruction was loaded manually, no address in the listing to navigate to.",
-						Color.BLUE);
+						themed(Color.BLUE));
 				}
 			}
 		}

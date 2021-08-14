@@ -18,6 +18,8 @@
  */
 package docking.widgets.textfield;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -234,7 +236,7 @@ public class LocalDateTextField {
 				Font font = new Font("Monospaced", Font.PLAIN, 10);
 				Font savedFont = g.getFont();
 				g.setFont(font);
-				g.setColor(Color.LIGHT_GRAY);
+				g.setColor(themed(Color.LIGHT_GRAY));
 				FontMetrics fontMetrics = getFontMetrics(font);
 				String label = isMonthMode ? MONTH_LABEL : DAY_LABEL;
 				int stringWidth = fontMetrics.stringWidth(label);

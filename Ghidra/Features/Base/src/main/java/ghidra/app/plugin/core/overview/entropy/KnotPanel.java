@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.overview.entropy;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
@@ -63,7 +65,7 @@ public class KnotPanel extends JPanel implements ComponentListener {
 			return;
 		}
 
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.setFont(FONT);
 		int height = getHeight();
 		int width = getWidth();
@@ -136,7 +138,7 @@ public class KnotPanel extends JPanel implements ComponentListener {
 		for (KnotRecord record : knots) {
 			JLabel label = new GLabel(record.name);
 			label.setFont(FONT);
-			label.setBorder(new ToplessLineBorder(Color.BLACK));
+			label.setBorder(new ToplessLineBorder(themed(Color.BLACK)));
 			label.setHorizontalAlignment(SwingConstants.CENTER);
 			label.setToolTipText(record.name);
 

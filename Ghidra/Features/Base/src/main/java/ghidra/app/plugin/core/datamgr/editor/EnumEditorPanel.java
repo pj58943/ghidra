@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.datamgr.editor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -49,7 +51,7 @@ import ghidra.util.table.GhidraTable;
 class EnumEditorPanel extends JPanel {
 
 	// Normal color for selecting components in the table.
-	//private static final Color SELECTION_COLOR = Color.YELLOW.brighter().brighter();
+	//private static final Color SELECTION_COLOR = themed(Color.YELLOW.brighter().brighter());
 
 	private JTable table;
 	private JTextField nameField;

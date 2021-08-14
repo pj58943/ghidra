@@ -15,6 +15,8 @@
  */
 package docking.widgets.filechooser;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -115,7 +117,7 @@ class FileEditor extends AbstractCellEditor implements TableCellEditor {
 		// match the spacing of non-editing cells
 		editor.setBorder(
 			BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0),
-				BorderFactory.createLineBorder(Color.GRAY)));
+				BorderFactory.createLineBorder(themed(Color.GRAY))));
 	}
 
 	private void handleDoubleClick(Point p) {

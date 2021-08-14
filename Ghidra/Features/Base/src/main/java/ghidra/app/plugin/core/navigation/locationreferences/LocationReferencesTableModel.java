@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.navigation.locationreferences;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.*;
@@ -179,7 +181,7 @@ class LocationReferencesTableModel extends AddressBasedTableModel<LocationRefere
 			Object value = data.getValue();
 
 			if (value.toString().indexOf(ContextTableColumn.OFFCUT_STRING) >= 0) {
-				setForeground(Color.RED);
+				setForeground(themed(Color.RED));
 			}
 
 			return this;

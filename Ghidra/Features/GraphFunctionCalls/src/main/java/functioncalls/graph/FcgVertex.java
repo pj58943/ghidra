@@ -15,6 +15,8 @@
  */
 package functioncalls.graph;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
@@ -42,8 +44,8 @@ import resources.ResourceManager;
 public class FcgVertex extends AbstractVisualVertex implements VertexShapeProvider {
 
 	// TODO to be made an option in an upcoming ticket
-	public static final Color DEFAULT_VERTEX_SHAPE_COLOR = new Color(110, 197, 174);
-	private static final Color TOO_BIG_VERTEX_SHAPE_COLOR = Color.LIGHT_GRAY;
+	public static final Color DEFAULT_VERTEX_SHAPE_COLOR = themed(new Color(110, 197, 174));
+	private static final Color TOO_BIG_VERTEX_SHAPE_COLOR = themed(Color.LIGHT_GRAY);
 
 	public static final Icon NOT_ALLOWED_ICON = Icons.ERROR_ICON;
 	private static final Icon EXPAND_ICON =
@@ -156,7 +158,7 @@ public class FcgVertex extends AbstractVisualVertex implements VertexShapeProvid
 
 		// calculate the needed size
 		layeredPane = new JLayeredPane();
-		Border border = createDebugBorder(new LineBorder(Color.YELLOW.darker(), 1));
+		Border border = createDebugBorder(new LineBorder(themed(Color.YELLOW.darker()), 1));
 		layeredPane.setBorder(border);
 
 		updateLayeredPaneSize();
@@ -246,7 +248,7 @@ public class FcgVertex extends AbstractVisualVertex implements VertexShapeProvid
 		compactShape = (Double) vertexShape.clone();
 		vertexImageLabel.setIcon(new ImageIcon(image));
 
-		Border border = createDebugBorder(new LineBorder(Color.PINK, 1));
+		Border border = createDebugBorder(new LineBorder(themed(Color.PINK), 1));
 		vertexImageLabel.setBorder(border);
 	}
 
@@ -295,7 +297,7 @@ public class FcgVertex extends AbstractVisualVertex implements VertexShapeProvid
 
 	private void addNameLabel() {
 
-		Border border = createDebugBorder(new LineBorder(Color.GREEN, 1));
+		Border border = createDebugBorder(new LineBorder(themed(Color.GREEN), 1));
 		nameLabel.setBorder(border);
 
 		// assume the vertex label has been bounded

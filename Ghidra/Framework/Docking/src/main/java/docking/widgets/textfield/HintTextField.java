@@ -15,6 +15,8 @@
  */
 package docking.widgets.textfield;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.InputVerifier;
@@ -39,8 +41,8 @@ public class HintTextField extends JTextField {
 	// some indication of what the field should contain.
 	private String hint;
 
-	private Color INVALID_COLOR = new Color(255, 225, 225);
-	private Color VALID_COLOR = Color.WHITE;
+	private Color INVALID_COLOR = themed(new Color(255, 225, 225));
+	private Color VALID_COLOR = themed(Color.WHITE);
 	private Color defaultBackgroundColor;
 
 	/**
@@ -125,7 +127,7 @@ public class HintTextField extends JTextField {
 		}
 
 		Graphics2D g2 = (Graphics2D) g;
-		g2.setColor(Color.LIGHT_GRAY);
+		g2.setColor(themed(Color.LIGHT_GRAY));
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 			RenderingHints.VALUE_ANTIALIAS_ON);
 
@@ -179,7 +181,7 @@ public class HintTextField extends JTextField {
 	 */
 	private void setAttributes() {
 		setFont(getFont().deriveFont(Font.PLAIN));
-		setForeground(Color.BLACK);
+		setForeground(themed(Color.BLACK));
 	}
 
 	/**

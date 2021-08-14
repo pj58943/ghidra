@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.instructionsearch.ui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -290,7 +292,7 @@ public class InsertBytesWidget extends DialogComponentProvider implements KeyLis
 				// there's a problem with the input. Just print a message to the user and
 				// exit.
 				if (allBytes.size() < instruction.getLength()) {
-					msgPanel.setMessageText("Input invalid: unknown disassembly error.", Color.RED);
+					msgPanel.setMessageText("Input invalid: unknown disassembly error.", themed(Color.RED));
 					return;
 				}
 				allBytes.subList(0, instruction.getLength()).clear();
@@ -300,7 +302,7 @@ public class InsertBytesWidget extends DialogComponentProvider implements KeyLis
 
 				// If there's an exception, just stop and let the user figure out what went
 				// wrong - no need to continue.
-				msgPanel.setMessageText("Input invalid: unknown disassembly error.", Color.RED);
+				msgPanel.setMessageText("Input invalid: unknown disassembly error.", themed(Color.RED));
 				Msg.debug(this, "Error disassembling instruction", e);
 
 				return;

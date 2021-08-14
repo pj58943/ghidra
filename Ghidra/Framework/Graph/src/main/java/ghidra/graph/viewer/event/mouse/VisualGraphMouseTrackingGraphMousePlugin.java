@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.event.mouse;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.event.*;
@@ -115,7 +117,7 @@ public class VisualGraphMouseTrackingGraphMousePlugin<V extends VisualVertex,
 
 		// we get a lot of these events, so don't record them all
 		if (++mouseMovedCount % 5 == 0) {
-			addPointMousePaintable(e, new Color(0, 255, 0, 127)); // greenish	
+			addPointMousePaintable(e, themed(new Color(0, 255, 0, 127))); // greenish	
 		}
 	}
 
@@ -128,7 +130,7 @@ public class VisualGraphMouseTrackingGraphMousePlugin<V extends VisualVertex,
 			return;
 		}
 
-		addPointMousePaintable(e, Color.ORANGE);
+		addPointMousePaintable(e, themed(Color.ORANGE));
 	}
 
 	private void addPointMousePaintable(MouseEvent e, Color color) {

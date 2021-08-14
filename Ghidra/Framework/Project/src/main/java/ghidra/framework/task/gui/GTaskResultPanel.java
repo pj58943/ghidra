@@ -15,6 +15,8 @@
  */
 package ghidra.framework.task.gui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.*;
@@ -55,7 +57,7 @@ public class GTaskResultPanel extends JPanel {
 		public Component getListCellRendererComponent(JList<? extends GTaskResultInfo> list,
 				GTaskResultInfo value, int index, boolean isSelected, boolean cellHasFocus) {
 			setIcon(getIcon(value.getResult()));
-			setBackground(Color.white);
+			setBackground(themed(Color.white));
 			return this;
 		}
 

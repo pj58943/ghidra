@@ -14,6 +14,8 @@
  */
 package ghidra.graph.viewer.event.mouse;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Point2D;
@@ -94,7 +96,7 @@ public class JungPickingGraphMousePlugin<V, E> extends AbstractGraphMousePlugin
 	/**
 	 * color for the picking rectangle
 	 */
-	protected Color lensColor = Color.cyan;
+	protected Color lensColor = themed(Color.cyan);
 
 	/**
 	 * create an instance with default settings

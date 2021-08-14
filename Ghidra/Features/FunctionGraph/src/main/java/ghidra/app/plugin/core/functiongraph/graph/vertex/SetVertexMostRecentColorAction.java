@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.functiongraph.graph.vertex;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,7 +49,7 @@ public class SetVertexMostRecentColorAction extends MultiActionDockingAction {
 		this.controller = controller;
 		this.vertex = vertex;
 		setDescription("Set this block's background color");
-		colorIcon = new ColorIcon3D(new Color(189, 221, 252), 12, 12) {
+		colorIcon = new ColorIcon3D(themed(new Color(189, 221, 252)), 12, 12) {
 			@Override
 			public Color getColor() {
 				return controller.getMostRecentColor();

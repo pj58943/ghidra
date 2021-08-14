@@ -15,6 +15,8 @@
  */
 package ghidra;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 
@@ -156,7 +158,7 @@ public interface GhidraOptions {
 
 	final String HIGHLIGHT_CURSOR_LINE_COLOR = "Cursor." + HIGHLIGHT_CURSOR_LINE_COLOR_OPTION_NAME;
 
-	final Color DEFAULT_CURSOR_LINE_COLOR = new Color(232, 242, 254);
+	final Color DEFAULT_CURSOR_LINE_COLOR = themed(new Color(232, 242, 254));
 
 	final String HIGHLIGHT_CURSOR_LINE_OPTION_NAME = "Highlight Cursor Line";
 
@@ -190,10 +192,10 @@ public interface GhidraOptions {
 	// end cursor highlight
 
 	final String OPTION_SELECTION_COLOR = "Selection Colors.Selection Color";
-	final Color DEFAULT_SELECTION_COLOR = new Color(180, 255, 180);
+	final Color DEFAULT_SELECTION_COLOR = themed(new Color(180, 255, 180));
 
 	final String OPTION_HIGHLIGHT_COLOR = "Selection Colors.Highlight Color";
-	final Color DEFAULT_HIGHLIGHT_COLOR = new Color(255, 255, 180);
+	final Color DEFAULT_HIGHLIGHT_COLOR = themed(new Color(255, 255, 180));
 	final String APPLY_ENABLED = "apply.enabled";
 
 }

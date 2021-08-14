@@ -15,6 +15,8 @@
  */
 package help.screenshot;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -85,7 +87,7 @@ public class ImageDialogProvider extends DialogComponentProvider {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				if (dragShape != null) {
-					dragShape.setColor(Color.green.brighter());
+					dragShape.setColor(themed(Color.green.brighter()));
 					shapeList.add(dragShape);
 					dragShape = null;
 					glassPane.repaint();
@@ -143,12 +145,12 @@ public class ImageDialogProvider extends DialogComponentProvider {
 					String selectedItem = (String) shapeCombo.getSelectedItem();
 					if ("Rectangle".equals(selectedItem)) {
 						Rectangle r = new Rectangle(startPoint, new Dimension(width, height));
-						dragShape = new ShapePainter(r, Color.RED);
+						dragShape = new ShapePainter(r, themed(Color.RED));
 					}
 					else if ("Oval".equals(selectedItem)) {
 						Ellipse2D ellipse =
 							new Ellipse2D.Double(startPoint.x, startPoint.y, width, height);
-						dragShape = new ShapePainter(ellipse, Color.RED);
+						dragShape = new ShapePainter(ellipse, themed(Color.RED));
 					}
 					else if ("Arrow".equals(selectedItem)) {
 						// TODO
@@ -174,25 +176,25 @@ public class ImageDialogProvider extends DialogComponentProvider {
 
 		newImageLabel = new GIconLabel(new ImageIcon(newImage));
 		newImageLabel.setOpaque(true);
-		newImageLabel.setBackground(Color.BLACK);
+		newImageLabel.setBackground(themed(Color.BLACK));
 		JPanel newLabelPanel = new JPanel(new BorderLayout());
 
 		if (oldImage != null) {
 			oldImageLabel = new GIconLabel(new ImageIcon(oldImage));
 			oldImageLabel.setOpaque(true);
-			oldImageLabel.setBackground(Color.BLACK);
+			oldImageLabel.setBackground(themed(Color.BLACK));
 		}
 		else {
 			oldImageLabel = new GLabel("     Old image not found     ");
 		}
 
 		newLabelPanel.add(createImageLabelComponent("New Image"), BorderLayout.NORTH);
-		newLabelPanel.setBorder(BorderFactory.createLineBorder(Color.black, 20));
+		newLabelPanel.setBorder(BorderFactory.createLineBorder(themed(Color.black), 20));
 		newLabelPanel.add(newImageLabel, BorderLayout.CENTER);
 
 		JPanel oldLabelPanel = new JPanel(new BorderLayout());
 		oldLabelPanel.add(createImageLabelComponent("Old Image"), BorderLayout.NORTH);
-		oldLabelPanel.setBorder(BorderFactory.createLineBorder(Color.black, 20));
+		oldLabelPanel.setBorder(BorderFactory.createLineBorder(themed(Color.black), 20));
 		oldLabelPanel.add(oldImageLabel, BorderLayout.CENTER);
 
 		imagePanel.add(oldLabelPanel, BorderLayout.WEST);
@@ -217,8 +219,8 @@ public class ImageDialogProvider extends DialogComponentProvider {
 	private JLabel createNameLabel(String name) {
 		JLabel label = new GDHtmlLabel("<html><b><font color='yellow' size='8'>" + name);
 		label.setOpaque(true);
-		//	label.setForeground(Color.YELLOW);
-		label.setBackground(Color.BLACK);
+		//	label.setForeground(themed(Color.YELLOW));
+		label.setBackground(themed(Color.BLACK));
 		label.setHorizontalTextPosition(SwingConstants.CENTER);
 		return label;
 	}

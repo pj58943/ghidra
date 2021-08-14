@@ -15,6 +15,8 @@
  */
 package ghidra.feature.vt.gui.duallisting;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.app.plugin.core.codebrowser.ListingHighlightProvider;
 import ghidra.app.util.HighlightProvider;
 import ghidra.app.util.viewer.field.*;
@@ -39,14 +41,14 @@ import docking.widgets.fieldpanel.support.Highlight;
 
 public class VTDualListingHighlightProvider implements HighlightProvider {
 
-	private static Color APPLIED_MARKUP_COLOR = new Color(150, 220, 150); // green
-	private static Color UNAPPLIED_MARKUP_COLOR = new Color(255, 170, 85); // orange
-	private static Color IGNORED_MARKUP_COLOR = new Color(220, 220, 220); // gray
-	private static Color REJECTED_MARKUP_COLOR = new Color(250, 200, 200); // pink
-	private static Color FAILED_MARKUP_COLOR = new Color(255, 80, 80); // red
-	private static Color NO_ADDRESS_MARKUP_COLOR = new Color(205, 185, 220); // purple
-	private static Color SAME_MARKUP_COLOR = new Color(175, 225, 255); // light blue
-	private static Color CONFLICT_MARKUP_COLOR = new Color(255, 225, 105); // gold
+	private static Color APPLIED_MARKUP_COLOR = themed(new Color(150, 220, 150)); // green
+	private static Color UNAPPLIED_MARKUP_COLOR = themed(new Color(255, 170, 85)); // orange
+	private static Color IGNORED_MARKUP_COLOR = themed(new Color(220, 220, 220)); // gray
+	private static Color REJECTED_MARKUP_COLOR = themed(new Color(250, 200, 200)); // pink
+	private static Color FAILED_MARKUP_COLOR = themed(new Color(255, 80, 80)); // red
+	private static Color NO_ADDRESS_MARKUP_COLOR = themed(new Color(205, 185, 220)); // purple
+	private static Color SAME_MARKUP_COLOR = themed(new Color(175, 225, 255)); // light blue
+	private static Color CONFLICT_MARKUP_COLOR = themed(new Color(255, 225, 105)); // gold
 
 	private HashMap<Address, HashMap<VTMarkupType, VTMarkupItem>> map =
 		new HashMap<Address, HashMap<VTMarkupType, VTMarkupItem>>();

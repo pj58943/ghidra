@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.app.nav.Navigatable;
 import ghidra.framework.plugintool.ServiceProvider;
 import ghidra.program.model.listing.Program;
@@ -42,7 +44,7 @@ public class InvalidAnnotatedStringHandler implements AnnotatedStringHandler {
 	@Override
 	public AttributedString createAnnotatedString(AttributedString prototypeString, String[] text,
 			Program program) throws AnnotationException {
-		return new AttributedString(errorText, Color.RED, prototypeString.getFontMetrics(0));
+		return new AttributedString(errorText, themed(Color.RED), prototypeString.getFontMetrics(0));
 	}
 
 	@Override

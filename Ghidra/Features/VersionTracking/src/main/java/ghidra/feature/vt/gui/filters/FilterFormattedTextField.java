@@ -18,6 +18,7 @@ package ghidra.feature.vt.gui.filters;
 
 import static ghidra.feature.vt.gui.filters.Filter.FilterEditingStatus.APPLIED;
 import static ghidra.feature.vt.gui.filters.Filter.FilterEditingStatus.NONE;
+import static ghidra.docking.util.Theming.themed;
 import ghidra.feature.vt.gui.filters.Filter.FilterEditingStatus;
 import ghidra.util.SystemUtilities;
 
@@ -34,9 +35,9 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 public class FilterFormattedTextField extends JFormattedTextField {
-	private static final Color ERROR_BACKGROUND_COLOR = new Color(218, 217, 206);
+	private static final Color ERROR_BACKGROUND_COLOR = themed(new Color(218, 217, 206));
 	private static final String TEXT_FIELD_BACKGROUND_COLOR_KEY = "TextField.background";
-	protected static final Color EDITING_BACKGROUND_COLOR = new Color(243, 242, 131);
+	protected static final Color EDITING_BACKGROUND_COLOR = themed(new Color(243, 242, 131));
 
 	private Set<FilterStatusListener> listeners = new HashSet<FilterStatusListener>();
 

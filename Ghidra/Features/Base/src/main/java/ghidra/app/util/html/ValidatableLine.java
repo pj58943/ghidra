@@ -16,6 +16,8 @@
  */
 package ghidra.app.util.html;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 /**
@@ -27,7 +29,7 @@ import java.awt.Color;
  */
 public interface ValidatableLine {
 
-	public static final Color INVALID_COLOR = Color.RED;
+	public static final Color INVALID_COLOR = themed(Color.RED);
 
 	public void updateColor(ValidatableLine otherLine, Color invalidColor);
 

@@ -16,6 +16,7 @@
 package help.screenshot;
 
 import static org.junit.Assert.assertNotNull;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -256,7 +257,7 @@ public abstract class GhidraScreenShotGenerator extends AbstractScreenShotGenera
 
 		int x = (width / 2) - (stringWidth / 2);
 		int y = (height / 2) + (stringHeight / 2);
-		g.setColor(new Color(0, 0, 200, 100));
+		g.setColor(themed(new Color(0, 0, 200, 100)));
 		g.drawString(text, x, y);
 
 		return gifImage;
@@ -280,7 +281,7 @@ public abstract class GhidraScreenShotGenerator extends AbstractScreenShotGenera
 
 		int x = (width / 2) - (stringWidth / 2);
 		int y = (height / 2) + (stringHeight / 2);
-		g.setColor(new Color(0, 0, 200, 100));
+		g.setColor(themed(new Color(0, 0, 200, 100)));
 		g.drawString(text, x, y);
 
 		return gifImage;

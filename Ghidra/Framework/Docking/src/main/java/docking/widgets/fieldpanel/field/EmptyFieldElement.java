@@ -16,6 +16,8 @@
  */
 package docking.widgets.fieldpanel.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -45,7 +47,7 @@ public class EmptyFieldElement implements FieldElement {
 	}
 
 	public Color getColor(int charIndex) {
-		return Color.BLACK;
+		return themed(Color.BLACK);
 	}
 
 	public RowColLocation getDataLocationForCharacterIndex(int characterIndex) {

@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.debug.gui.objects;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -117,68 +119,68 @@ public class DebuggerObjectsProvider extends ComponentProviderAdapter
 		description = "The default foreground color of items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color defaultForegroundColor = Color.BLACK;
+	Color defaultForegroundColor = themed(Color.BLACK);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_DEFAULT_BACKGROUND_COLOR, //
 		description = "The default background color of items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color defaultBackgroundColor = Color.WHITE;
+	Color defaultBackgroundColor = themed(Color.WHITE);
 
 	@AutoOptionDefined( //
 		name = OPTION_NAME_INVISIBLE_FOREGROUND_COLOR, //
 		description = "The foreground color for items normally not visible (toggleable)", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color invisibleForegroundColor = Color.LIGHT_GRAY;
+	Color invisibleForegroundColor = themed(Color.LIGHT_GRAY);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_INVALIDATED_FOREGROUND_COLOR, //
 		description = "The foreground color for items no longer valid", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color invalidatedForegroundColor = Color.LIGHT_GRAY;
+	Color invalidatedForegroundColor = themed(Color.LIGHT_GRAY);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_MODIFIED_FOREGROUND_COLOR, //
 		description = "The foreground color for modified items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color modifiedForegroundColor = Color.RED;
+	Color modifiedForegroundColor = themed(Color.RED);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_SUBSCRIBED_FOREGROUND_COLOR, //
 		description = "The foreground color for subscribed items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color subscribedForegroundColor = Color.BLACK;
+	Color subscribedForegroundColor = themed(Color.BLACK);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_ERROR_FOREGROUND_COLOR, //
 		description = "The foreground color for items in error", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color errorForegroundColor = Color.RED;
+	Color errorForegroundColor = themed(Color.RED);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_INTRINSIC_FOREGROUND_COLOR, //
 		description = "The foreground color for intrinsic items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color intrinsicForegroundColor = Color.BLUE;
+	Color intrinsicForegroundColor = themed(Color.BLUE);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_TARGET_FOREGROUND_COLOR, //
 		description = "The foreground color for target object items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color targetForegroundColor = Color.MAGENTA;
+	Color targetForegroundColor = themed(Color.MAGENTA);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_ACCESSOR_FOREGROUND_COLOR, //
 		description = "The foreground color for property accessor items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color accessorForegroundColor = Color.LIGHT_GRAY;
+	Color accessorForegroundColor = themed(Color.LIGHT_GRAY);
 	@AutoOptionDefined( //
 		name = OPTION_NAME_LINK_FOREGROUND_COLOR, //
 		description = "The foreground color for links to items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color linkForegroundColor = Color.GREEN.darker();
+	Color linkForegroundColor = themed(Color.GREEN.darker());
 
 	@AutoOptionDefined( //
 		name = "Default Extended Step", //
@@ -1711,7 +1713,7 @@ public class DebuggerObjectsProvider extends ComponentProviderAdapter
 			case OPTION_NAME_TARGET_FOREGROUND_COLOR:
 				return targetForegroundColor;
 			default:
-				return Color.BLACK;
+				return themed(Color.BLACK);
 		}
 	}
 

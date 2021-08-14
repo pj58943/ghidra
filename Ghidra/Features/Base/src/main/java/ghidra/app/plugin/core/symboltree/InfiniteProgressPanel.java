@@ -16,6 +16,8 @@
  */
 package ghidra.app.plugin.core.symboltree;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -195,7 +197,7 @@ public class InfiniteProgressPanel extends JComponent implements MouseListener {
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHints(hints);
 
-        g2.setColor( new Color( 255, 255, 255, (int) (alphaLevel * shield) ) );
+        g2.setColor( themed(new Color( 255, 255, 255, (int) (alphaLevel * shield) )) );
         g2.fillRect(0, 0, width, height);
 
 double textPosition = 0.0;
@@ -208,7 +210,7 @@ for ( Area element : ticker ) {
         
         int channel = 0;
         int blue = 255;
-        Color textColor = Color.BLACK;
+        Color textColor = themed(Color.BLACK);
         for ( int i = 0; i < ticker.length; i++ ) {
             
             
@@ -239,7 +241,7 @@ private void paintText( Graphics2D graphics, Color color, double textPosition ) 
     FontRenderContext context = graphics.getFontRenderContext();
     TextLayout layout = new TextLayout( text, getFont(), context );
     Rectangle2D bounds = layout.getBounds();
-    graphics.setColor( Color.BLACK );
+    graphics.setColor( themed(Color.BLACK) );
     layout.draw( graphics, (float) (getWidth() - bounds.getWidth()) / 2,
         (float) (textPosition + layout.getLeading() + 2 * layout.getAscent() ) );
 }    

@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main.datatree;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -52,7 +54,7 @@ class DomainFilesPanel extends JPanel {
 		for (int i = 0; i < fileList.size(); i++) {
 			DomainFile df = fileList.get(i);
 			checkboxes[i] = new GCheckBox(df.getPathname(), true);
-			checkboxes[i].setBackground(Color.white);
+			checkboxes[i].setBackground(themed(Color.white));
 		}
 
 		//

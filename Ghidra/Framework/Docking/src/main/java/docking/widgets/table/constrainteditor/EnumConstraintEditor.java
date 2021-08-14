@@ -15,6 +15,8 @@
  */
 package docking.widgets.table.constrainteditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -79,7 +81,7 @@ public class EnumConstraintEditor<T extends Enum<T>> extends AbstractColumnConst
 		outerPanel.add(panel, BorderLayout.CENTER);
 
 		infoLabel = new GDHtmlLabel("");
-		infoLabel.setForeground(Color.GRAY);
+		infoLabel.setForeground(themed(Color.GRAY));
 		infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		outerPanel.add(infoLabel, BorderLayout.SOUTH);
 

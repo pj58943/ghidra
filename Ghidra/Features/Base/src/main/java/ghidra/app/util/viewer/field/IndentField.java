@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.app.util.viewer.format.FieldFormatModel;
 import ghidra.app.util.viewer.proxy.EmptyProxy;
 import ghidra.app.util.viewer.proxy.ProxyObj;
@@ -178,7 +180,7 @@ public class IndentField implements ListingField {
 	@Override
 	public void paint(JComponent c, Graphics g, PaintContext context,
 			Rectangle clip, FieldBackgroundColorManager map, RowColLocation cursorLoc, int rowHeight) {
-		g.setColor(Color.LIGHT_GRAY);
+		g.setColor(themed(Color.LIGHT_GRAY));
 
 		// draw the vertical lines to the left of the data (these are shown when there are vertical
 		// bars drawn for inset data)

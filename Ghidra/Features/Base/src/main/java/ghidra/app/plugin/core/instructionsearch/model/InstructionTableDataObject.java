@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.instructionsearch.model;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;
@@ -68,11 +70,11 @@ public class InstructionTableDataObject {
 	// cell represents a mnemonic then this does not apply.
 	private OperandMetadata operandCase;
 
-	private static final Color BACKGROUND_COLOR = new Color(237, 243, 254);
-	private static final Color BACKGROUND_COLOR_DARKER = new Color(188, 212, 254);
-	private static final Color BACKGROUND_COLOR_NON_INSTRUCTION = new Color(255, 242, 214);
-	private static final Color BACKGROUND_COLOR_DARKER_NON_INSTRUCTION = new Color(203, 186, 150);
-	private static final Color PANEL_COLOR = new Color(214, 217, 223);
+	private static final Color BACKGROUND_COLOR = themed(new Color(237, 243, 254));
+	private static final Color BACKGROUND_COLOR_DARKER = themed(new Color(188, 212, 254));
+	private static final Color BACKGROUND_COLOR_NON_INSTRUCTION = themed(new Color(255, 242, 214));
+	private static final Color BACKGROUND_COLOR_DARKER_NON_INSTRUCTION = themed(new Color(203, 186, 150));
+	private static final Color PANEL_COLOR = themed(new Color(214, 217, 223));
 
 	/**
 	 * Constructor.
@@ -125,13 +127,13 @@ public class InstructionTableDataObject {
 			case MASKED:
 				backgroundColor =
 					isInstruction ? BACKGROUND_COLOR : BACKGROUND_COLOR_NON_INSTRUCTION;
-				foregroundColor = Color.BLACK;
+				foregroundColor = themed(Color.BLACK);
 				border = BorderFactory.createLoweredSoftBevelBorder();
 				break;
 			case NOT_MASKED:
 				backgroundColor = isInstruction ? BACKGROUND_COLOR_DARKER
 						: BACKGROUND_COLOR_DARKER_NON_INSTRUCTION;
-				foregroundColor = Color.BLACK;
+				foregroundColor = themed(Color.BLACK);
 				border = BorderFactory.createRaisedSoftBevelBorder();
 				break;
 			case NA:

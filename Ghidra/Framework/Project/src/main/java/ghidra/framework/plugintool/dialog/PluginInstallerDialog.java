@@ -15,6 +15,8 @@
  */
 package ghidra.framework.plugintool.dialog;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.List;
 
@@ -265,7 +267,7 @@ public class PluginInstallerDialog extends DialogComponentProvider {
 
 			if (isSelected) {
 				if (hasDependents) {
-					renderer.setForeground(Color.pink);
+					renderer.setForeground(themed(Color.pink));
 					renderer.setFont(boldFont);
 				}
 				else {
@@ -276,7 +278,7 @@ public class PluginInstallerDialog extends DialogComponentProvider {
 			else {
 				// set color to red if other plugins depend on this plugin
 				if (hasDependents) {
-					renderer.setForeground(Color.red);
+					renderer.setForeground(themed(Color.red));
 					renderer.setFont(boldFont);
 				}
 				else {

@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.renderer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.geom.Ellipse2D;
@@ -24,7 +26,7 @@ import java.awt.geom.Ellipse2D;
  */
 public class MouseClickedPaintableShape extends PaintableShape {
 
-	private static final Color DEFAULT_COLOR = new Color(255, 200, 0, 127); // orangish
+	private static final Color DEFAULT_COLOR = themed(new Color(255, 200, 0, 127)); // orangish
 
 	public MouseClickedPaintableShape(Point p, double tx, double ty) {
 		this(p, tx, ty, DEFAULT_COLOR);

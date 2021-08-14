@@ -16,6 +16,8 @@
  */
 package ghidra.app.plugin.core.spaceview;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.image.IndexColorModel;
 
@@ -89,8 +91,8 @@ public class GhidraColorMap {
 
 	public IndexColorModel getColorModel() {
 		Color[] colors =
-			new Color[] { new Color(190, 255, 0), Color.red, new Color(128, 128, 128), Color.cyan,
-				Color.magenta, };
+			new Color[] { themed(new Color(190, 255, 0)), themed(Color.red), themed(new Color(128, 128, 128)), themed(Color.cyan),
+				themed(Color.magenta), };
 
 		byte[] red = new byte[colors.length];
 		byte[] grn = new byte[colors.length];

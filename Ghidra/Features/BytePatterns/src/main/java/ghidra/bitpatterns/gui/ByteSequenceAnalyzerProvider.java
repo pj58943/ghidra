@@ -15,6 +15,8 @@
  */
 package ghidra.bitpatterns.gui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.List;
 
@@ -175,9 +177,9 @@ public abstract class ByteSequenceAnalyzerProvider extends DialogComponentProvid
 				}
 				mergedSeqTextField.setText(merged.getHexString());
 				bitsOfCheckField.setText(Integer.toString(merged.getNumFixedBits()));
-				mergedSeqTextField.setBackground(Color.WHITE);
-				bitsOfCheckField.setBackground(Color.WHITE);
-				noteField.setBackground(Color.WHITE);
+				mergedSeqTextField.setBackground(themed(Color.WHITE));
+				bitsOfCheckField.setBackground(themed(Color.WHITE));
+				noteField.setBackground(themed(Color.WHITE));
 				mergedToSend = true;
 			}
 
@@ -211,9 +213,9 @@ public abstract class ByteSequenceAnalyzerProvider extends DialogComponentProvid
 					mergedInfo.setNote(note);
 					plugin.addPattern(mergedInfo);
 					plugin.updateClipboard();
-					mergedSeqTextField.setBackground(Color.lightGray);
-					bitsOfCheckField.setBackground(Color.LIGHT_GRAY);
-					noteField.setBackground(Color.LIGHT_GRAY);
+					mergedSeqTextField.setBackground(themed(Color.lightGray));
+					bitsOfCheckField.setBackground(themed(Color.LIGHT_GRAY));
+					noteField.setBackground(themed(Color.LIGHT_GRAY));
 					mergedToSend = false;
 				}
 			}

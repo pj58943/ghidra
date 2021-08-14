@@ -15,6 +15,8 @@
  */
 package ghidra.plugin.importer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -84,7 +86,7 @@ public class NewLanguagePanel extends JPanel {
 
 		formatLabel = new GDLabel();
 		formatLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		formatLabel.setForeground(Color.BLUE);
+		formatLabel.setForeground(themed(Color.BLUE));
 	}
 
 	private void layoutEverything() {

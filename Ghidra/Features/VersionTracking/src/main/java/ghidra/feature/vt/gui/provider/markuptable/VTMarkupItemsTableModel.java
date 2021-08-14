@@ -15,6 +15,8 @@
  */
 package ghidra.feature.vt.gui.provider.markuptable;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.*;
@@ -336,7 +338,7 @@ public class VTMarkupItemsTableModel extends AddressBasedTableModel<VTMarkupItem
 				if (address != null && address != Address.NO_ADDRESS && symbolInspector != null) {
 					s = program.getSymbolTable().getPrimarySymbol(address);
 				}
-				Color c = Color.RED;
+				Color c = themed(Color.RED);
 				if (symbolInspector != null) {
 					symbolInspector.setProgram(program);
 					c = symbolInspector.getColor(s);
@@ -471,7 +473,7 @@ public class VTMarkupItemsTableModel extends AddressBasedTableModel<VTMarkupItem
 				if (address != null && address != Address.NO_ADDRESS && symbolInspector != null) {
 					s = program.getSymbolTable().getPrimarySymbol(address);
 				}
-				Color c = Color.RED;
+				Color c = themed(Color.RED);
 				if (symbolInspector != null) {
 					symbolInspector.setProgram(program);
 					c = symbolInspector.getColor(s);
@@ -510,10 +512,10 @@ public class VTMarkupItemsTableModel extends AddressBasedTableModel<VTMarkupItem
 				JLabel renderer = (JLabel) super.getTableCellRendererComponent(renderData);
 
 				if (NO_SOURCE_TEXT.equals(addressSource)) {
-					setForeground(Color.RED);
+					setForeground(themed(Color.RED));
 				}
 				else if (VTMarkupItem.USER_DEFINED_ADDRESS_SOURCE.equals(addressSource)) {
-					setForeground(isSelected ? Color.CYAN : Color.CYAN.darker());
+					setForeground(isSelected ? themed(Color.CYAN) : themed(Color.CYAN.darker()));
 				}
 
 				renderer.setOpaque(true);

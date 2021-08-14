@@ -16,6 +16,7 @@
 package docking.widgets.fieldpanel;
 
 import static docking.widgets.EventTrigger.INTERNAL_ONLY;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -52,7 +53,7 @@ public class FieldPanel extends JPanel
 	private boolean inFocus;
 
 	private BackgroundColorModel backgroundColorModel =
-		new DefaultBackgroundColorModel(Color.WHITE);
+		new DefaultBackgroundColorModel(themed(Color.WHITE));
 	private PaintContext paintContext = new PaintContext();
 
 	private AnchoredLayoutHandler layoutHandler;
@@ -1131,7 +1132,7 @@ public class FieldPanel extends JPanel
 		Color defaultBackgroundColor = backgroundColorModel.getDefaultBackgroundColor();
 		g.setColor(defaultBackgroundColor);
 		g.fillRect(r.x, layout.getYPos() - layout.getHeight(), r.width, layout.getHeight());
-		g.setColor(Color.RED);
+		g.setColor(themed(Color.RED));
 		GraphicsUtils.drawString(this, g, "Error Painting Field", r.x, layout.getYPos());
 		Msg.error(this, "Unexpected Exception: " + e.getMessage(), e);
 	}

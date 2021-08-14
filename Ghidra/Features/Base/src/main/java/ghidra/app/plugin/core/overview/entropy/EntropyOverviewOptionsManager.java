@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.overview.entropy;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 import ghidra.app.plugin.core.overview.OverviewColorPlugin;
@@ -28,7 +30,7 @@ import ghidra.util.HelpLocation;
  * the color Palette for that service.
  */
 public class EntropyOverviewOptionsManager implements OptionsChangeListener {
-	private static final Color uninitializedColor = Color.decode("0x0000ff");
+	private static final Color uninitializedColor = themed(Color.decode("0x0000ff"));
 	private static final String OPTIONS_NAME = "Entropy";
 	private final static String CHUNKSIZE_STRING = "Chunk size";
 	private final static String CHUNKSIZE_DESC_STRING = "Number of bytes per entropy score";
@@ -38,23 +40,23 @@ public class EntropyOverviewOptionsManager implements OptionsChangeListener {
 	private final static String KNOT_TYPE_STRING = "Type of range to highlight";
 	private final static String KNOT1_COLOR_STRING = "Range 1 color";
 	private final static String KNOT1_TYPE_STRING = "Entropy Range 1";
-	private final static Color knot1_def_color = Color.decode("0xff0000");
+	private final static Color knot1_def_color = themed(Color.decode("0xff0000"));
 	private final static EntropyKnot knot1_def_type = EntropyKnot.COMPRESSED;
 	private final static String KNOT2_COLOR_STRING = "Range 2 color";
 	private final static String KNOT2_TYPE_STRING = "Entropy Range 2";
-	private final static Color knot2_def_color = Color.decode("0x0000ff");
+	private final static Color knot2_def_color = themed(Color.decode("0x0000ff"));
 	private final static EntropyKnot knot2_def_type = EntropyKnot.X86;
 	private final static String KNOT3_COLOR_STRING = "Range 3 color";
 	private final static String KNOT3_TYPE_STRING = "Entropy Range 3";
-	private final static Color knot3_def_color = Color.decode("0x00ff00");
+	private final static Color knot3_def_color = themed(Color.decode("0x00ff00"));
 	private final static EntropyKnot knot3_def_type = EntropyKnot.ASCII;
 	private final static String KNOT4_COLOR_STRING = "Range 4 color";
 	private final static String KNOT4_TYPE_STRING = "Entropy Range 4";
-	private final static Color knot4_def_color = Color.decode("0xffff00");
+	private final static Color knot4_def_color = themed(Color.decode("0xffff00"));
 	private final static EntropyKnot knot4_def_type = EntropyKnot.UTF16;
 	private final static String KNOT5_COLOR_STRING = "Range 5 color";
 	private final static String KNOT5_TYPE_STRING = "Entropy Range 5";
-	private final static Color knot5_def_color = Color.decode("0x0000ff");
+	private final static Color knot5_def_color = themed(Color.decode("0x0000ff"));
 	private final static EntropyKnot knot5_def_type = EntropyKnot.NONE;
 	private EntropyChunkSize chunksize;
 	private Color knot1color;
@@ -135,7 +137,7 @@ public class EntropyOverviewOptionsManager implements OptionsChangeListener {
 	}
 
 	private void updatePalettes() {
-		palette.setBase(Color.decode("0x000000"), Color.decode("0xffffff"));
+		palette.setBase(themed(Color.decode("0x000000")), themed(Color.decode("0xffffff")));
 		addPaletteKnots();
 		service.paletteChanged();
 	}

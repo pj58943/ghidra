@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.disassemble;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -130,7 +132,7 @@ public class ExternalDisassemblyFieldFactory extends FieldFactory {
 			if (disassembly == null) {
 				return null;
 			}
-			AttributedString text = new AttributedString(disassembly, Color.black, getMetrics());
+			AttributedString text = new AttributedString(disassembly, themed(Color.black), getMetrics());
 			FieldElement fieldElement = new TextFieldElement(text, 0, 0);
 			return ListingTextField.createSingleLineTextField(this, proxy, fieldElement,
 				startX + varWidth, width, hlProvider);
@@ -162,7 +164,7 @@ public class ExternalDisassemblyFieldFactory extends FieldFactory {
 		if (message == null) {
 			message = e.toString();
 		}
-		AttributedString errorText = new AttributedString(message, Color.red, getMetrics());
+		AttributedString errorText = new AttributedString(message, themed(Color.red), getMetrics());
 		FieldElement fieldElement = new TextFieldElement(errorText, 0, 0);
 		return ListingTextField.createSingleLineTextField(this, proxy, fieldElement,
 			startX + varWidth, width, hlProvider);

@@ -15,6 +15,8 @@
  */
 package docking.wizard;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -471,7 +473,7 @@ if (!visitedMap.containsKey(currWizPanel)) {
 			}
 
 			titledBorder.setTitleFont(font.deriveFont(10f));
-			titledBorder.setTitleColor(Color.BLUE);
+			titledBorder.setTitleColor(themed(Color.BLUE));
 			titledBorder.setTitlePosition(TitledBorder.BOTTOM);
 			titledBorder.setTitleJustification(TitledBorder.TRAILING);
 

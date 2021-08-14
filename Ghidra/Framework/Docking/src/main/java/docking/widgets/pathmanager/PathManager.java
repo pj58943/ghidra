@@ -15,6 +15,8 @@
  */
 package docking.widgets.pathmanager;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.io.File;
 import java.util.ArrayList;
@@ -164,7 +166,7 @@ public class PathManager {
 	private void create(List<Path> paths) {
 		panel = new JPanel(new BorderLayout(5, 5));
 
-		selectionColor = new Color(204, 204, 255);
+		selectionColor = themed(new Color(204, 204, 255));
 
 		if (allowOrdering) {
 			upButton = new JButton(ResourceManager.loadImage("images/up.png"));
@@ -216,7 +218,7 @@ public class PathManager {
 		pathTable = new GTable(pathModel);
 		pathTable.setName("PATH_TABLE");
 		pathTable.setSelectionBackground(selectionColor);
-		pathTable.setSelectionForeground(Color.BLACK);
+		pathTable.setSelectionForeground(themed(Color.BLACK));
 		pathTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
 		//make the 'enabled' column very skinny...
@@ -240,7 +242,7 @@ public class PathManager {
 				if (column == PathManagerModel.COLUMN_PATH) {
 					Path path = (Path) value;
 					if (!isValidPath(path)) {
-						renderer.setForeground(Color.RED);
+						renderer.setForeground(themed(Color.RED));
 					}
 				}
 				return renderer;

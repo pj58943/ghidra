@@ -15,6 +15,8 @@
  */
 package docking;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -38,7 +40,7 @@ public class SplitPanel extends JPanel {
 		this.rightComp = rightComp;
 		this.isHorizontal = isHorizontal;
 		divider = new Divider();
-		divider.setBackground(Color.LIGHT_GRAY);
+		divider.setBackground(themed(Color.LIGHT_GRAY));
 		add(leftComp);
 		add(divider);
 		add(rightComp);

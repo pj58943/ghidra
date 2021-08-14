@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.progmgr;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -39,7 +41,7 @@ import ghidra.program.model.listing.Program;
  */
 class ProgramListPanel extends JPanel {
 
-	private static final Color BACKGROUND_COLOR = new Color(255, 255, 230);
+	private static final Color BACKGROUND_COLOR = themed(new Color(255, 255, 230));
 	private List<Program> hiddenList;
 	private List<Program> shownList;
 	private JList<Program> programList;
@@ -147,7 +149,7 @@ class ProgramListPanel extends JPanel {
 
 		// add some padding around the panel
 		Border innerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-		Border outerBorder = BorderFactory.createLineBorder(Color.BLACK);
+		Border outerBorder = BorderFactory.createLineBorder(themed(Color.BLACK));
 		Border compoundBorder = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
 		setBorder(compoundBorder);
 

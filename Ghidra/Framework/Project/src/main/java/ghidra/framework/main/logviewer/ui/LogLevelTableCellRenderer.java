@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main.logviewer.ui;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 
@@ -30,12 +32,12 @@ import docking.widgets.table.GTableCellRenderingData;
  */
 public class LogLevelTableCellRenderer extends GTableCellRenderer {
 
-	private static final Color TRACE_COLOR = Color.WHITE;
-	private static final Color DEBUG_COLOR = new Color(135, 191, 212);
-	private static final Color INFO_COLOR = new Color(225, 225, 225);
-	private static final Color WARN_COLOR = new Color(255, 236, 50);
-	private static final Color ERROR_COLOR = Color.RED;
-	private static final Color FATAL_COLOR = Color.RED.darker();
+	private static final Color TRACE_COLOR = themed(Color.WHITE);
+	private static final Color DEBUG_COLOR = themed(new Color(135, 191, 212));
+	private static final Color INFO_COLOR = themed(new Color(225, 225, 225));
+	private static final Color WARN_COLOR = themed(new Color(255, 236, 50));
+	private static final Color ERROR_COLOR = themed(Color.RED);
+	private static final Color FATAL_COLOR = themed(Color.RED.darker());
 
 	@Override
 	public Component getTableCellRendererComponent(GTableCellRenderingData data) {
@@ -44,7 +46,7 @@ public class LogLevelTableCellRenderer extends GTableCellRenderer {
 
 		Object value = data.getValue();
 
-		setForeground(Color.black);
+		setForeground(themed(Color.black));
 
 		if (value.toString().equalsIgnoreCase(Level.DEBUG.toString())) {
 			setBackground(DEBUG_COLOR);

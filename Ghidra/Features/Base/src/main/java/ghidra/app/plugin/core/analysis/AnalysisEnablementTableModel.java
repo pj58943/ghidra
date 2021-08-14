@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.analysis;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.List;
@@ -36,8 +38,8 @@ import ghidra.util.table.column.GColumnRenderer;
 public class AnalysisEnablementTableModel
 		extends GDynamicColumnTableModel<AnalyzerEnablementState, Object> {
 
-	private static Color BG_COLOR_NOT_DEFAULT_ENABLEMENT = new Color(255, 255, 200);
-	private static Color BG_COLOR_NOT_DEFAULT_ENABLEMENT_SELECTED = new Color(177, 212, 236);
+	private static Color BG_COLOR_NOT_DEFAULT_ENABLEMENT = themed(new Color(255, 255, 200));
+	private static Color BG_COLOR_NOT_DEFAULT_ENABLEMENT_SELECTED = themed(new Color(177, 212, 236));
 
 	private List<AnalyzerEnablementState> analyzerStates;
 	private AnalysisPanel panel;
@@ -218,7 +220,7 @@ public class AnalysisEnablementTableModel
 			// not the default enablement			
 			if (data.isSelected()) {
 				component.setBackground(BG_COLOR_NOT_DEFAULT_ENABLEMENT_SELECTED);
-				component.setForeground(Color.BLACK);
+				component.setForeground(themed(Color.BLACK));
 			}
 			else {
 				component.setBackground(BG_COLOR_NOT_DEFAULT_ENABLEMENT);

@@ -15,6 +15,8 @@
  */
 package ghidra.framework.plugintool.dialog;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 
@@ -27,7 +29,7 @@ import docking.widgets.list.GListCellRenderer;
 
 class ToolIconUrlRenderer extends GListCellRenderer<ToolIconURL> {
 	private Border emptyBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-	private Border blueLineBorder = BorderFactory.createLineBorder(Color.BLUE, 2);
+	private Border blueLineBorder = BorderFactory.createLineBorder(themed(Color.BLUE), 2);
 	private Border emptyBlueBorder = BorderFactory.createEmptyBorder(3, 3, 3, 3);
 	private Border blueCompoundBorder =
 		BorderFactory.createCompoundBorder(emptyBlueBorder, blueLineBorder);

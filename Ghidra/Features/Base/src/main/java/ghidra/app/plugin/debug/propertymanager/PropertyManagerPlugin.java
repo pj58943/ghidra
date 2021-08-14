@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.debug.propertymanager;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.app.CorePluginPackage;
 import ghidra.app.plugin.PluginCategoryNames;
 import ghidra.app.plugin.ProgramPlugin;
@@ -176,7 +178,7 @@ public class PropertyManagerPlugin extends ProgramPlugin implements DomainObject
 		if (searchMarks == null && currentProgram != null) {
 			searchMarks = markerService.createPointMarker(PROPERTY_MARKER_NAME,
 			    "Locations where properties are set", currentProgram,
-			    MarkerService.PROPERTY_PRIORITY, true, true, false, Color.pink, propIcon);
+			    MarkerService.PROPERTY_PRIORITY, true, true, false, themed(Color.pink), propIcon);
 		}
 		return searchMarks;
 	}

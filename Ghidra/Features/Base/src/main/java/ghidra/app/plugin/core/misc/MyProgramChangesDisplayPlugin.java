@@ -21,6 +21,8 @@
 
 package ghidra.app.plugin.core.misc;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.io.IOException;
 
@@ -191,7 +193,7 @@ public class MyProgramChangesDisplayPlugin extends ProgramPlugin implements Doma
 	private void createMarkerSets(Program program) {
 		currentMyChangeMarks =
 			markerService.createAreaMarker("Changes: Unsaved", "My changes not yet saved", program,
-				MY_CHANGE_PRIORITY, true, true, false, Color.darkGray);
+				MY_CHANGE_PRIORITY, true, true, false, themed(Color.darkGray));
 
 		if (program.getDomainFile().isCheckedOut()) {
 			trackServerChanges(program);
@@ -201,15 +203,15 @@ public class MyProgramChangesDisplayPlugin extends ProgramPlugin implements Doma
 	private void trackServerChanges(Program program) {
 		currentChangesSinceCheckoutMarks = markerService.createAreaMarker("Changes: Not Checked-In",
 			"My saved changes made since I checked it out", program, CHANGES_SINCE_CO_PRIORITY,
-			true, true, false, Color.GREEN);
+			true, true, false, themed(Color.GREEN));
 
 		currentOtherChangeMarks = markerService.createAreaMarker("Changes: Latest Version",
 			"Changes made by others to this program since I checked it out", program,
-			OTHER_CHANGES_PRIORITY, true, true, false, Color.BLUE);
+			OTHER_CHANGES_PRIORITY, true, true, false, themed(Color.BLUE));
 
 		currentConflictChangeMarks = markerService.createAreaMarker("Changes: Conflicting",
 			"Changes made by others to this program that conflict with my changes", program,
-			CONFLICT_PRIORITY, true, true, false, Color.RED);
+			CONFLICT_PRIORITY, true, true, false, themed(Color.RED));
 	}
 
 	private void disposeMarkerSets(Program program) {

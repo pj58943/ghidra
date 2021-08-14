@@ -15,6 +15,8 @@
  */
 package docking.options.editor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -163,7 +165,7 @@ public class ColorEditor extends PropertyEditorSupport {
 			gfx.setColor(color);
 		}
 		else {
-			gfx.setColor(Color.black);
+			gfx.setColor(themed(Color.black));
 		}
 		gfx.fillRect(box.x, box.y, box.width, box.height);
 	}

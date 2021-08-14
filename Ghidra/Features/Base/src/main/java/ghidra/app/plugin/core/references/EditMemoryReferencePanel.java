@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.references;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
@@ -153,7 +155,7 @@ class EditMemoryReferencePanel extends EditReferencePanel {
 	private void enableOffsetField(boolean state) {
 		offsetCheckbox.setSelected(state);
 		offsetField.setEnabled(state);
-		offsetField.setBackground(state ? Color.WHITE : getBackground());
+		offsetField.setBackground(state ? themed(Color.WHITE) : getBackground());
 		if (!state) {
 			offsetField.setText("0x0");
 		}
@@ -540,7 +542,7 @@ class EditMemoryReferencePanel extends EditReferencePanel {
 		model = new HistoryTableModel(fromCodeUnit.getProgram());
 		displayTable = new JTable(model);
 		displayTable.setTableHeader(null);
-		displayTable.setBorder(new LineBorder(Color.BLACK));
+		displayTable.setBorder(new LineBorder(themed(Color.BLACK)));
 		displayTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		displayTable.addMouseListener(new MouseAdapter() {

@@ -16,6 +16,8 @@
  */
 package ghidra.app.nav;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.app.util.viewer.util.TitledPanel;
 
 import java.awt.BorderLayout;
@@ -48,7 +50,7 @@ public class ListingPanelContainer extends JPanel {
 
 	public void setConnnected( boolean isConnected ) {
 		if ( !isConnected ) {
-			setBorder( BorderFactory.createLineBorder( Color.ORANGE, 2 ) );
+			setBorder( BorderFactory.createLineBorder( themed(Color.ORANGE), 2 ) );
 		}
 		else {
 			setBorder( BorderFactory.createEmptyBorder() );

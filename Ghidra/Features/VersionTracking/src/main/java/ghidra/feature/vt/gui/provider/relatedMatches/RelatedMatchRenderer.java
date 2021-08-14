@@ -15,6 +15,8 @@
  */
 package ghidra.feature.vt.gui.provider.relatedMatches;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -99,9 +101,9 @@ public class RelatedMatchRenderer extends GhidraTableCellRenderer {
 		return renderer;
 	}
 
-	private static final Color GOOD = Color.green;
-	private static final Color MEDIUM = Color.yellow;
-	private static final Color BAD = Color.red;
+	private static final Color GOOD = themed(Color.green);
+	private static final Color MEDIUM = themed(Color.yellow);
+	private static final Color BAD = themed(Color.red);
 
 	private Color findBackgroundColor(VTRelatedMatchType value) {
 		double goodness = value.getGoodness() / 100.0;

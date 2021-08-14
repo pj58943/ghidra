@@ -15,6 +15,8 @@
  */
 package docking.framework;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -29,7 +31,7 @@ import docking.DockingWindowManager;
  * initialization is complete, the splash screen is dismissed. 
  */
 public class AboutDialog extends DialogComponentProvider {
-	private static final Color DEFAULT_BACKGROUND_COLOR = new Color(243, 250, 255);
+	private static final Color DEFAULT_BACKGROUND_COLOR = themed(new Color(243, 250, 255));
 
 	public AboutDialog() {
 		super(ApplicationInformationDisplayFactory.createAboutTitle(), true, false, true, false);

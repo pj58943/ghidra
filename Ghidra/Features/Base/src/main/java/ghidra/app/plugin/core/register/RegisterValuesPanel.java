@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.register;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -45,7 +47,7 @@ class RegisterValuesPanel extends JPanel {
 	private static final String VALUE_COLUMN_NAME = "Value";
 	private static final String START_ADDRESS_COLUMN_NAME = "Start Address";
 	private static final String END_ADDRESS_COLUMN_NAME = "End Address";
-	private static final Color REGISTER_MARKER_COLOR = new Color(0, 153, 153);
+	private static final Color REGISTER_MARKER_COLOR = themed(new Color(0, 153, 153));
 
 	private Program currentProgram;
 	private GhidraTable table;
@@ -490,7 +492,7 @@ class RegisterValueRange {
 
 class RegisterValueRenderer extends GTableCellRenderer {
 
-	private Color defaultColor = Color.LIGHT_GRAY;
+	private Color defaultColor = themed(Color.LIGHT_GRAY);
 
 	RegisterValueRenderer(JTable table) {
 		setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));

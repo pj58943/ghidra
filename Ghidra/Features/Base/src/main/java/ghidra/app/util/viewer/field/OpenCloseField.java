@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.ImageIcon;
@@ -176,7 +178,7 @@ public class OpenCloseField implements ListingField {
 			}
 		}
 
-		g.setColor(Color.LIGHT_GRAY);
+		g.setColor(themed(Color.LIGHT_GRAY));
 
 		// draw the vertical lines to the left of the toggle handle (these are shown when 
 		// there are vertical bars drawn for inset data)

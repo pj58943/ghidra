@@ -16,6 +16,8 @@
  */
 package ghidra.app.merge;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 
@@ -29,8 +31,8 @@ public interface MergeConstants {
     public static final String LATEST_TITLE = "Latest";
     public static final String MY_TITLE = "Checked Out"; 
     
-    public Color CONFLICT_COLOR = new Color(140, 0, 0);
-    public static final Color HIGHLIGHT_COLOR = new Color(230,230,230);
+    public Color CONFLICT_COLOR = themed(new Color(140, 0, 0));
+    public static final Color HIGHLIGHT_COLOR = themed(new Color(230,230,230));
     
     // The following are standardized names for use in passing resolve 
     // information between individual merge managers.

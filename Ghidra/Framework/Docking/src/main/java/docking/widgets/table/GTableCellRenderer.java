@@ -15,6 +15,8 @@
  */
 package docking.widgets.table;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -155,7 +157,7 @@ public class GTableCellRenderer extends AbstractGCellRenderer implements TableCe
 			setForegroundColor(table, model, value);
 
 			if (row == dropRow) {
-				setBackground(Color.CYAN);
+				setBackground(themed(Color.CYAN));
 			}
 			else {
 				setBackground(getOSDependentBackgroundColor(table, row));

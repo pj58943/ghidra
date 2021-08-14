@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.format;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -80,7 +82,7 @@ public class FieldHeaderComp extends JPanel {
 		label.setBorder(BorderFactory.createCompoundBorder(border2, border1));
 		label.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		Dimension d = label.getPreferredSize();
-		highlightButtonColor = new Color(244, 221, 183);
+		highlightButtonColor = themed(new Color(244, 221, 183));
 		rowHeight = d.height;
 		this.setMinimumSize(new Dimension(0, 2 * rowHeight));
 		renderPane = new CellRendererPane();

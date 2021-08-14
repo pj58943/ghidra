@@ -18,6 +18,8 @@
  */
 package ghidra.app.plugin.core.functiongraph.graph.vertex;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.math.BigInteger;
@@ -135,8 +137,8 @@ public class ListingGraphComponentPanel extends AbstractGraphComponentPanel {
 
 		BevelBorder beveledBorder =
 			(BevelBorder) BorderFactory.createBevelBorder(BevelBorder.RAISED,
-				new Color(225, 225, 225), new Color(155, 155, 155), new Color(96, 96, 96),
-				new Color(0, 0, 0));
+				themed(new Color(225, 225, 225)), themed(new Color(155, 155, 155)), themed(new Color(96, 96, 96)),
+				themed(new Color(0, 0, 0)));
 		setBorder(beveledBorder);
 
 		addKeyListener(new FieldPanelKeyListener());
@@ -224,7 +226,7 @@ public class ListingGraphComponentPanel extends AbstractGraphComponentPanel {
 
 		JPanel headerPanel = new JPanel(new BorderLayout());
 		headerPanel.add(tooltipTitleLabel);
-		headerPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		headerPanel.setBorder(BorderFactory.createLineBorder(themed(Color.BLACK)));
 
 		panel.add(headerPanel, BorderLayout.NORTH);
 		panel.add(previewListingPanel, BorderLayout.CENTER);

@@ -16,6 +16,8 @@
  */
 package ghidra.app.merge.util;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 
@@ -81,7 +83,7 @@ public class ConflictCountPanel extends JPanel {
 		
 		SimpleAttributeSet set = new SimpleAttributeSet();
 		set.addAttribute(StyleConstants.Bold, Boolean.TRUE);
-		set.addAttribute(StyleConstants.Foreground, Color.RED);
+		set.addAttribute(StyleConstants.Foreground, themed(Color.RED));
 
 		textAttrSet = new SimpleAttributeSet();
 		textAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));

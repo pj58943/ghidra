@@ -16,6 +16,8 @@
  */
 package ghidra.feature.vt.gui.provider.matchtable;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.feature.vt.api.main.VTAssociationMarkupStatus;
 
 import java.awt.*;
@@ -63,7 +65,7 @@ public class VTMarkupStatusIcon implements Icon {
 			drawBar(g, x + startX + BORDER + 1, y + BORDER + 1, width, colors.get(i));
 		}
 
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.drawRect(x, y, WIDTH, HEIGHT);
 //		g.drawRect(x, y, WIDTH / 2, HEIGHT);
 		g.drawRect(x + WIDTH, y + HEIGHT / 2 - 3, KNOB_WIDTH, 6);
@@ -76,12 +78,12 @@ public class VTMarkupStatusIcon implements Icon {
 	}
 
 	private List<Color> getColors(VTAssociationMarkupStatus status) {
-		Color ORANGE = new Color(255, 150, 0);
-		Color GREEN = new Color(0, 180, 0);
-		Color BLUE = new Color(80, 80, 240);
+		Color ORANGE = themed(new Color(255, 150, 0));
+		Color GREEN = themed(new Color(0, 180, 0));
+		Color BLUE = themed(new Color(80, 80, 240));
 		List<Color> list = new ArrayList<Color>(4);
 		if (status.hasRejectedMarkup()) {
-			list.add(Color.RED);
+			list.add(themed(Color.RED));
 		}
 		if (status.hasAppliedMarkup() || status.isFullyApplied()) {
 			list.add(GREEN);

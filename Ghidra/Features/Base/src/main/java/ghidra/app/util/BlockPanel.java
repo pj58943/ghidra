@@ -15,6 +15,8 @@
  */
 package ghidra.app.util;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
@@ -34,7 +36,7 @@ public class BlockPanel extends JPanel implements ComponentListener {
 
 	public BlockPanel() {
 		super();
-		setBackground(Color.WHITE);
+		setBackground(themed(Color.WHITE));
 		addComponentListener(this);
 		metrics = getFontMetrics(FONT);
 		setPreferredSize(
@@ -44,7 +46,7 @@ public class BlockPanel extends JPanel implements ComponentListener {
 	@Override
 	public void paintComponent(Graphics g) {
 
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.setFont(FONT);
 		int height = getHeight();
 

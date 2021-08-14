@@ -16,6 +16,7 @@
 package ghidra.framework.plugintool.dialog;
 
 import static ghidra.util.HTMLUtilities.*;
+import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 
@@ -118,7 +119,7 @@ public abstract class AbstractDetailsPanel extends JPanel {
 
 		textLabel.setVerticalAlignment(SwingConstants.TOP);
 		textLabel.setOpaque(true);
-		textLabel.setBackground(Color.WHITE);
+		textLabel.setBackground(themed(Color.WHITE));
 		sp = new JScrollPane(textLabel);
 		sp.getVerticalScrollBar().setUnitIncrement(10);
 		sp.setPreferredSize(new Dimension(MIN_WIDTH, 200));

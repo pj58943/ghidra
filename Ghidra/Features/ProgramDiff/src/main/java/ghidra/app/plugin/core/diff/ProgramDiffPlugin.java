@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.diff;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -96,7 +98,7 @@ public class ProgramDiffPlugin extends ProgramPlugin
 	private static final String SELECTION_GROUP = "Selection Colors";
 	private static final String DIFF_HIGHLIGHT_COLOR_NAME =
 		SELECTION_GROUP + Options.DELIMITER + "Difference Color";
-	private Color diffHighlightColor = new Color(255, 230, 180); // light orange
+	private Color diffHighlightColor = themed(new Color(255, 230, 180)); // light orange
 	private Color cursorHighlightColor;
 	protected static final HelpService help = Help.getHelpService();
 

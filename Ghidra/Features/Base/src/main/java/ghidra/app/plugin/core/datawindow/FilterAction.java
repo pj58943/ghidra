@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.datawindow;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -302,7 +304,7 @@ class FilterAction extends ToggleDockingAction {
 			typeButtonPanel.add(selectNoneButton);
 
 			checkboxPanel = new JPanel();
-			checkboxPanel.setBackground(Color.WHITE);
+			checkboxPanel.setBackground(themed(Color.WHITE));
 			checkboxPanel.setLayout(new BoxLayout(checkboxPanel, BoxLayout.Y_AXIS));
 
 			buildCheckBoxList();

@@ -15,6 +15,8 @@
  */
 package docking.util;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -392,7 +394,7 @@ public class AnimationUtils {
 
 		@Override
 		public void paint(GGlassPane glassPane, Graphics g) {
-			Color gray = Color.GRAY;
+			Color gray = themed(Color.GRAY);
 //			double darknessFudge = .95;
 //			double progress = percentComplete * darknessFudge; // emphasis starts at 1			
 //			int alpha = Math.min(255, (int) (255 * progress));
@@ -819,7 +821,7 @@ public class AnimationUtils {
 		@Override
 		public void paint(GGlassPane glassPane, Graphics g) {
 
-			Color background = new Color(218, 232, 250);
+			Color background = themed(new Color(218, 232, 250));
 			g.setColor(background);
 
 			Rectangle defaultBounds = component.getBounds();
@@ -877,7 +879,7 @@ public class AnimationUtils {
 			double cx = emphasizedBounds.getCenterX();
 			double cy = emphasizedBounds.getCenterY();
 			g2d.rotate(rad, cx, cy);
-			g.setColor(Color.BLACK);
+			g.setColor(themed(Color.BLACK));
 
 			int iw = emphasizedBounds.width;
 			int ih = emphasizedBounds.height;

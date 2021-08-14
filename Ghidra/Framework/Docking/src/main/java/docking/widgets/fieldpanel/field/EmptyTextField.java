@@ -15,6 +15,8 @@
  */
 package docking.widgets.fieldpanel.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.JComponent;
@@ -171,7 +173,7 @@ public class EmptyTextField implements Field {
 	 * was called.
 	 */
 	public Color getForeground() {
-		return Color.WHITE;
+		return themed(Color.WHITE);
 	}
 
 	@Override

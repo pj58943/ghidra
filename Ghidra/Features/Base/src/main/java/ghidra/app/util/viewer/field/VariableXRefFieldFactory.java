@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 import java.util.*;
@@ -106,7 +108,7 @@ public class VariableXRefFieldFactory extends XRefFieldFactory {
 		int totalXrefs = xrefs.size() + offcuts.size();
 		boolean tooMany = totalXrefs > maxXRefs;
 
-		AttributedString delimiter = new AttributedString(delim, Color.BLACK, getMetrics());
+		AttributedString delimiter = new AttributedString(delim, themed(Color.BLACK), getMetrics());
 
 		FieldElement[] elements = new FieldElement[tooMany ? maxXRefs : totalXrefs];
 		int count = 0;

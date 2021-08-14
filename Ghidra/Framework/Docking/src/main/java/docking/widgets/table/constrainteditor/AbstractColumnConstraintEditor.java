@@ -15,6 +15,8 @@
  */
 package docking.widgets.table.constrainteditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 
@@ -45,7 +47,7 @@ public abstract class AbstractColumnConstraintEditor<T> implements ColumnConstra
 	/** Color indicating a valid value is defined by the editor widget(s) */
 	protected static final Color VALID_INPUT_COLOR = UIManager.getColor("TextField.background");
 	/** Color indicating a invalid value is defined by the editor widget(s) */
-	protected static final Color INVALID_INPUT_COLOR = new Color(255, 0, 51, 40);
+	protected static final Color INVALID_INPUT_COLOR = themed(new Color(255, 0, 51, 40));
 
 	/**
 	 * Constructor.
@@ -206,7 +208,7 @@ public abstract class AbstractColumnConstraintEditor<T> implements ColumnConstra
 	 * @return an HTML string suitable for a JLabel.
 	 */
 	protected final static String formatStatus(String message, boolean error) {
-		Color color = error ? Color.RED : Color.BLACK;
+		Color color = error ? themed(Color.RED) : themed(Color.BLACK);
 		String messageWithFont = HTMLUtilities.setFont(message, color, 12);
 		String html = HTMLUtilities.wrapAsHTML(messageWithFont);
 		return html;

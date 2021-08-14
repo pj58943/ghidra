@@ -34,6 +34,8 @@ import ghidra.util.HelpLocation;
 import ghidra.util.WebColors;
 import ghidra.util.bean.opteditor.OptionsVetoException;
 
+import static ghidra.docking.util.Theming.themed;
+
 /**
  * Class for managing graph display options. This includes color options for each vertex
  * and edge type and shapes for vertex types.
@@ -68,10 +70,10 @@ public class GraphDisplayOptions implements OptionsChangeListener {
 	private Map<String, Integer> edgePriorityMap = new HashMap<>();
 	private List<ChangeListener> changeListeners = new CopyOnWriteArrayList<>();
 
-	private Color vertexSelectionColor = Color.green;
-	private Color edgeSelectionColor = Color.green;
-	private Color defaultVertexColor = Color.blue;
-	private Color defaultEdgeColor = Color.blue;
+	private Color vertexSelectionColor = themed(Color.green, "vertex");
+	private Color edgeSelectionColor = themed(Color.green, "edge");
+	private Color defaultVertexColor = themed(Color.blue, "vertex");
+	private Color defaultEdgeColor = themed(Color.blue, "edge");
 	private String favoredEdgeType;
 
 	private VertexShape defaultVertexShape = VertexShape.RECTANGLE;

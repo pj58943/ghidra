@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.debug.gui.memview;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.HashMap;
@@ -35,7 +37,7 @@ public class MemoryBox {
 	protected long stopAddr = -1;
 	protected long startTime;
 	protected long stopTime = -1;
-	protected Color color = Color.BLUE;
+	protected Color color = themed(Color.BLUE);
 
 	protected int pixAstart;
 	protected int pixAend;
@@ -150,7 +152,7 @@ public class MemoryBox {
 		int w = vertical ? getTimePixelWidth() : getAddressPixelWidth();
 		int y = vertical ? getAddressPixelStart() : getTimePixelStart();
 		int h = vertical ? getAddressPixelWidth() : getTimePixelWidth();
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.fillRect(x - 1, y - 1, w + 2, h + 2);
 		g.setColor(color);
 		g.fillRect(x, y, w, h);
@@ -161,7 +163,7 @@ public class MemoryBox {
 		int w = vertical ? sz : getAddressPixelWidth();
 		int y = vertical ? getAddressPixelStart() : 0;
 		int h = vertical ? getAddressPixelWidth() : sz;
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.fillRect(x - 1, y - 1, w + 2, h + 2);
 		g.setColor(color);
 		g.fillRect(x, y, w, h);
@@ -172,7 +174,7 @@ public class MemoryBox {
 		int w = vertical ? 1 : sz;
 		int y = vertical ? 0 : getTimePixelStart();
 		int h = vertical ? sz : 1;
-		g.setColor(Color.BLACK);
+		g.setColor(themed(Color.BLACK));
 		g.fillRect(x - 1, y - 1, w + 2, h + 2);
 		g.setColor(color);
 		g.fillRect(x, y, w, h);

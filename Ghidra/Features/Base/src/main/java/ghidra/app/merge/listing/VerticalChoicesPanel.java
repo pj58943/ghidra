@@ -15,6 +15,8 @@
  */
 package ghidra.app.merge.listing;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -209,7 +211,7 @@ public class VerticalChoicesPanel extends ConflictPanel {
 				headerComps[i] = new MyLabel(items[i]);
 				headerComps[i].setName(getComponentName(0, i));
 				setRowComponent(headerComps[i], 0, i, defaultInsets);
-				headerComps[i].setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK));
+				headerComps[i].setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, themed(Color.BLACK)));
 			}
 		}
 		rowPanel.validate();

@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -174,7 +176,7 @@ class ImportGhidraToolsDialog extends DialogComponentProvider {
 		while (itr.hasNext()) {
 			tools[count] = itr.next();
 			checkboxes[count] = new GCheckBox(tools[count], false);
-			checkboxes[count].setBackground(Color.WHITE);
+			checkboxes[count].setBackground(themed(Color.WHITE));
 			count++;
 		}
 
@@ -182,7 +184,7 @@ class ImportGhidraToolsDialog extends DialogComponentProvider {
 		while (itr.hasNext()) {
 			tools[count] = itr.next();
 			checkboxes[count] = new GCheckBox(tools[count], false);
-			checkboxes[count].setBackground(Color.LIGHT_GRAY);
+			checkboxes[count].setBackground(themed(Color.LIGHT_GRAY));
 			count++;
 		}
 

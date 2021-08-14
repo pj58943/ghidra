@@ -15,6 +15,8 @@
  */
 package docking.widgets.list;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.List;
 import java.util.function.Function;
@@ -94,7 +96,7 @@ public class GListCellRenderer<E> extends AbstractGCellRenderer implements ListC
 								dropLocation.getIndex() == index);
 			// @formatter:on
 			if (isDropRow) {
-				setBackground(Color.CYAN);
+				setBackground(themed(Color.CYAN));
 			}
 			else {
 				setBackground(getOSDependentBackgroundColor(list, index));

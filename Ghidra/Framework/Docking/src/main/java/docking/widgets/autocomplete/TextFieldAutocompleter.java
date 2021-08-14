@@ -15,6 +15,8 @@
  */
 package docking.widgets.autocomplete;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -125,9 +127,9 @@ public class TextFieldAutocompleter<T> {
 	// Prepare all the swing components (except the window)
 	{
 		content.setBorder(
-			BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.LIGHT_GRAY, Color.GRAY));
+			BorderFactory.createBevelBorder(BevelBorder.RAISED, themed(Color.LIGHT_GRAY), themed(Color.GRAY)));
 		scrollPane.setBorder(
-			BorderFactory.createBevelBorder(BevelBorder.LOWERED, Color.LIGHT_GRAY, Color.GRAY));
+			BorderFactory.createBevelBorder(BevelBorder.LOWERED, themed(Color.LIGHT_GRAY), themed(Color.GRAY)));
 		//content.setFocusable(false);
 
 		scrollPane.getVerticalScrollBar().setFocusable(false);

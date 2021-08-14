@@ -15,6 +15,8 @@
  */
 package ghidra.util.table.field;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.util.Comparator;
@@ -75,7 +77,7 @@ public class MemoryTypeProgramLocationBasedTableColumn
 
 	private class MemoryTypeRenderer extends AbstractGhidraColumnRenderer<MemoryBlock> {
 
-		private Color disabledColor = Color.LIGHT_GRAY;
+		private Color disabledColor = themed(Color.LIGHT_GRAY);
 		private ImageIcon offIcon = ResourceManager.loadImage("images/EmptyIcon16.gif");
 		private ImageIcon onIcon = ResourceManager.loadImage("images/check.png");
 

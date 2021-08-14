@@ -15,6 +15,8 @@
  */
 package docking.help;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.*;
 import java.beans.PropertyChangeEvent;
@@ -629,7 +631,7 @@ public class GHelpBroker extends DefaultHelpBroker {
 
 	private class LocationHintPainter implements AnimationPainter {
 
-		private Color color = new Color(100, 100, 255, 100);
+		private Color color = themed(new Color(100, 100, 255, 100));
 		private Shape paintShape;
 
 		LocationHintPainter(Shape paintShape) {
@@ -681,11 +683,11 @@ public class GHelpBroker extends DefaultHelpBroker {
 			/*
 			 	// Debug
 			Shape box = scaler.createTransformedShape(b);
-			g2d.setColor(Color.GREEN);
+			g2d.setColor(themed(Color.GREEN));
 			g2d.fill(box);
 			
 			box = transform.createTransformedShape(box);
-			g2d.setColor(Color.YELLOW);
+			g2d.setColor(themed(Color.YELLOW));
 			g2d.fill(box);
 			*/
 

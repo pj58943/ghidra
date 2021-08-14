@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.pcode;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.FontMetrics;
 import java.util.*;
@@ -100,16 +102,16 @@ public class PcodeFormatter {
 	}
 
 	private void initPunctuation() {
-		SPACE = new AttributedString(" ", Color.BLUE, metrics);
-		EQUALS = new AttributedString(" = ", Color.BLUE, metrics);
-		COMMA = new AttributedString(",", Color.BLUE, metrics);
-		LEFT_PAREN = new AttributedString("(", Color.BLUE, metrics);
-		RIGHT_PAREN = new AttributedString(")", Color.BLUE, metrics);
-		LEFT_BRACKET = new AttributedString("[", Color.BLUE, metrics);
-		RIGHT_BRACKET = new AttributedString("]", Color.BLUE, metrics);
-		STAR = new AttributedString("*", Color.BLUE, metrics);
-		COLON = new AttributedString(":", Color.BLUE, metrics);
-		QUOTE = new AttributedString("\"", Color.BLUE, metrics);
+		SPACE = new AttributedString(" ", themed(Color.BLUE), metrics);
+		EQUALS = new AttributedString(" = ", themed(Color.BLUE), metrics);
+		COMMA = new AttributedString(",", themed(Color.BLUE), metrics);
+		LEFT_PAREN = new AttributedString("(", themed(Color.BLUE), metrics);
+		RIGHT_PAREN = new AttributedString(")", themed(Color.BLUE), metrics);
+		LEFT_BRACKET = new AttributedString("[", themed(Color.BLUE), metrics);
+		RIGHT_BRACKET = new AttributedString("]", themed(Color.BLUE), metrics);
+		STAR = new AttributedString("*", themed(Color.BLUE), metrics);
+		COLON = new AttributedString(":", themed(Color.BLUE), metrics);
+		QUOTE = new AttributedString("\"", themed(Color.BLUE), metrics);
 	}
 
 	/**
@@ -185,7 +187,7 @@ public class PcodeFormatter {
 		if (PcodeOp.PTRADD == opcode) {
 			// handle label OpTpl
 			String label = "<" + op.getInput()[0].getOffset().getReal() + ">";
-			lineList.add(new AttributedString(label, Color.BLUE, metrics));
+			lineList.add(new AttributedString(label, themed(Color.BLUE), metrics));
 			return new CompositeAttributedString(lineList);
 		}
 
@@ -202,7 +204,7 @@ public class PcodeFormatter {
 			formatVarnodeTpl(program, opcode, -1, output, lineList);
 			lineList.add(EQUALS);
 		}
-		Color color = (opcode == PcodeOp.UNIMPLEMENTED) ? Color.RED : Color.BLUE.darker();
+		Color color = (opcode == PcodeOp.UNIMPLEMENTED) ? themed(Color.RED) : themed(Color.BLUE.darker());
 		lineList.add(new AttributedString(PcodeOp.getMnemonic(opcode), color, metrics));
 		VarnodeTpl[] inputs = op.getInput();
 		for (int i = 0; i < inputs.length; i++) {
@@ -285,7 +287,7 @@ public class PcodeFormatter {
 		// same format as the Varnode.toString
 		String str = "(" + space.getName() + ", 0x" + Long.toHexString(offset.getReal()) + ", " +
 			size.getReal() + ")";
-		lineList.add(new AttributedString(str, Color.BLUE, metrics));
+		lineList.add(new AttributedString(str, themed(Color.BLUE), metrics));
 	}
 
 	private void formatUnique(ConstTpl offset, ConstTpl size, List<AttributedString> lineList) {
@@ -330,7 +332,7 @@ public class PcodeFormatter {
 		}
 		lineList.add(STAR);
 		lineList.add(LEFT_BRACKET);
-		lineList.add(new AttributedString(addrSpace.getName(), Color.BLUE, metrics));
+		lineList.add(new AttributedString(addrSpace.getName(), themed(Color.BLUE), metrics));
 		lineList.add(RIGHT_BRACKET);
 
 		long wordOffset = offsetValue / addrSpace.getAddressableUnitSize();
@@ -387,7 +389,7 @@ public class PcodeFormatter {
 			psuedoOp = "unknown";
 		}
 		lineList.add(QUOTE);
-		lineList.add(new AttributedString(psuedoOp, Color.BLUE, metrics));
+		lineList.add(new AttributedString(psuedoOp, themed(Color.BLUE), metrics));
 		lineList.add(QUOTE);
 	}
 
@@ -395,7 +397,7 @@ public class PcodeFormatter {
 		if (input0.getSpace().isConstSpace() &&
 			input0.getOffset().getType() == ConstTpl.J_RELATIVE) {
 			String label = "<" + input0.getOffset().getReal() + ">";
-			lineList.add(new AttributedString(label, Color.BLUE, metrics));
+			lineList.add(new AttributedString(label, themed(Color.BLUE), metrics));
 			return true;
 		}
 		return false;
@@ -416,7 +418,7 @@ public class PcodeFormatter {
 		else {
 			spaceName = space.getName();
 		}
-		lineList.add(new AttributedString(spaceName, Color.BLUE, metrics));
+		lineList.add(new AttributedString(spaceName, themed(Color.BLUE), metrics));
 		lineList.add(LEFT_PAREN);
 		formatVarnodeTpl(program, -1, 1, input1, lineList);
 		lineList.add(RIGHT_PAREN);

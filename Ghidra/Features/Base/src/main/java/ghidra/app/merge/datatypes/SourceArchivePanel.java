@@ -15,6 +15,8 @@
  */
 package ghidra.app.merge.datatypes;
 
+import static ghidra.docking.util.Theming.themed;
+
 import ghidra.program.model.data.ArchiveType;
 import ghidra.program.model.data.SourceArchive;
 
@@ -59,7 +61,7 @@ class SourceArchivePanel extends JPanel {
 		headingAttrSet = new SimpleAttributeSet();
 		headingAttrSet.addAttribute(StyleConstants.FontFamily, "Monospaced");
 		headingAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
-		headingAttrSet.addAttribute(StyleConstants.Foreground, Color.BLUE);
+		headingAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLUE));
 		
 		valueAttrSet = new SimpleAttributeSet();
 		valueAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
@@ -70,7 +72,7 @@ class SourceArchivePanel extends JPanel {
 		deletedAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
 		deletedAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		deletedAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
-		deletedAttrSet.addAttribute(StyleConstants.Foreground, Color.RED);
+		deletedAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.RED));
 		
 		setSourceArchive(null);
 	}

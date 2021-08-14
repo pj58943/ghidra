@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.references;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
@@ -45,13 +47,13 @@ class InstructionPanel extends JPanel implements ChangeListener {
 
 	private static final int ETCHED_BORDER_THICKNESS = 2;
 
-	private static final Border ETCHED_BORDER = new EtchedBorder(Color.BLACK, Color.GRAY);
+	private static final Border ETCHED_BORDER = new EtchedBorder(themed(Color.BLACK), themed(Color.GRAY));
 	private static final Border EMPTY_BORDER = new EmptyBorder(ETCHED_BORDER_THICKNESS,
 		ETCHED_BORDER_THICKNESS, ETCHED_BORDER_THICKNESS, ETCHED_BORDER_THICKNESS);
 
-	private final static Color UNLOCKED_LABEL_COLOR = Color.blue;
-	private final static Color NOT_IN_MEMORY_COLOR = Color.red;
-	private final static Color DEFAULT_FG_COLOR = Color.black;
+	private final static Color UNLOCKED_LABEL_COLOR = themed(Color.blue);
+	private final static Color NOT_IN_MEMORY_COLOR = themed(Color.red);
+	private final static Color DEFAULT_FG_COLOR = themed(Color.black);
 
 	private static final DataFlavor[] ACCEPTABLE_DROP_FLAVORS =
 		new DataFlavor[] { SelectionTransferable.localProgramSelectionFlavor };

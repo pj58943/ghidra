@@ -15,6 +15,8 @@
  */
 package ghidra.app.tablechooser;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -415,7 +417,7 @@ public class TableChooserDialog extends DialogComponentProvider
 
 	private class WrappingCellRenderer extends GhidraTableCellRenderer {
 
-		private Color pendingColor = new Color(192, 192, 192, 75);
+		private Color pendingColor = themed(new Color(192, 192, 192, 75));
 		private TableCellRenderer delegate;
 
 		@Override
@@ -435,7 +437,7 @@ public class TableChooserDialog extends DialogComponentProvider
 			if (sharedPending.contains(ro)) {
 				superRenderer.setBackground(pendingColor);
 				superRenderer.setForeground(data.getTable().getSelectionForeground());
-				superRenderer.setForeground(Color.BLACK);
+				superRenderer.setForeground(themed(Color.BLACK));
 			}
 
 			return superRenderer;

@@ -15,6 +15,8 @@
  */
 package ghidra.feature.vt.gui.provider.onetomany;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.util.*;
@@ -66,7 +68,7 @@ public abstract class VTMatchOneToManyTableProvider extends ComponentProviderAda
 	private static final String TITLE_PREFIX = "Version Tracking Matches for ";
 	private static final Icon ICON = ResourceManager.loadImage("images/text_list_bullets.png");
 
-	protected static final Color LOCAL_INFO_FOREGROUND_COLOR = new Color(0, 128, 0);
+	protected static final Color LOCAL_INFO_FOREGROUND_COLOR = themed(new Color(0, 128, 0));
 
 	private JComponent component;
 	private MatchThreadedTablePanel tablePanel;

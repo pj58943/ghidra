@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.processors.sleigh;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -231,7 +233,7 @@ public class SpecExtensionPanel extends JPanel {
 			CompilerElement compilerElement = tableModel.getRowObject(row);
 
 			if (compilerElement.status == Status.EXTENSION_ERROR) {
-				setBackground(Color.pink);
+				setBackground(themed(Color.pink));
 			}
 
 			return this;

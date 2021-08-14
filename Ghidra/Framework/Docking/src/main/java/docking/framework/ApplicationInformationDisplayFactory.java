@@ -15,6 +15,8 @@
  */
 package docking.framework;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -115,12 +117,12 @@ public class ApplicationInformationDisplayFactory {
 		final JPanel panel = new JPanel(new BorderLayout());
 		panel.setPreferredSize(new Dimension(400, 400));
 
-		Color background = Color.BLACK;
+		Color background = themed(Color.BLACK);
 
 		panel.setBackground(background);
 
 		JLabel nameLabel = new GLabel(Application.getName());
-		nameLabel.setForeground(new Color(155, 155, 155));
+		nameLabel.setForeground(themed(new Color(155, 155, 155)));
 		Font newFont = new Font("Garamond", Font.BOLD, 35);
 		nameLabel.setFont(newFont);
 		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);

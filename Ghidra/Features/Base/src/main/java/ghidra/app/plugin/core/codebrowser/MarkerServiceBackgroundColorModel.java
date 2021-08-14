@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.codebrowser;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.math.BigInteger;
 
@@ -33,7 +35,7 @@ public class MarkerServiceBackgroundColorModel implements ListingBackgroundColor
 	private MarkerService markerService;
 	private Program program;
 	private AddressIndexMap indexMap;
-	private Color defaultBackgroundColor = Color.WHITE;
+	private Color defaultBackgroundColor = themed(Color.WHITE);
 
 	public MarkerServiceBackgroundColorModel(MarkerService markerService, Program program,
 			AddressIndexMap indexMap) {

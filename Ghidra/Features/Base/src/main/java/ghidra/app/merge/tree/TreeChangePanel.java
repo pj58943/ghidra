@@ -15,6 +15,8 @@
  */
 package ghidra.app.merge.tree;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 
 import javax.swing.*;
@@ -42,8 +44,8 @@ class TreeChangePanel extends JPanel {
 	private final static ImageIcon CHANGED_ICON = ResourceManager.loadImage("images/changed16.gif");
 	private final static ImageIcon NO_CHANGE_ICON =
 		ResourceManager.loadImage("images/EmptyIcon16.gif");
-	private final static Color CHANGED_COLOR = Color.BLACK;
-	private final static Color NO_CHANGE_COLOR = Color.GRAY;
+	private final static Color CHANGED_COLOR = themed(Color.BLACK);
+	private final static Color NO_CHANGE_COLOR = themed(Color.GRAY);
 
 	TreeChangePanel(String title) {
 		super(new BorderLayout());

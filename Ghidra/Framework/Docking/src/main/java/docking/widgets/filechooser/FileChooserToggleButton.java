@@ -15,6 +15,8 @@
  */
 package docking.widgets.filechooser;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -50,7 +52,7 @@ public class FileChooserToggleButton extends JToggleButton {
 	}
 
 	private void initBorder() {
-		setForeground(Color.WHITE);
+		setForeground(themed(Color.WHITE));
 		setOpaque(true);		
 		setHorizontalTextPosition(SwingConstants.CENTER);
 		setVerticalTextPosition(SwingConstants.BOTTOM);

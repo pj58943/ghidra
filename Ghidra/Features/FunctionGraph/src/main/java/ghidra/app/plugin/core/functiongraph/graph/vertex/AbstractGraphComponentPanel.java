@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.functiongraph.graph.vertex;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
@@ -133,7 +135,7 @@ public abstract class AbstractGraphComponentPanel extends JPanel {
 	abstract ProgramLocation getProgramLocation();
 
 	boolean isDefaultBackgroundColor() {
-		return getBackgroundColor().equals(Color.WHITE);
+		return getBackgroundColor().equals(themed(Color.WHITE));
 	}
 
 	boolean isHeaderClick(Component clickedComponent) {

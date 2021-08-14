@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.byteviewer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -815,7 +817,7 @@ public class ByteViewerPanel extends JPanel implements TableColumnModelListener,
 
 		columnHeader.addColumn(ByteViewerComponentProvider.DEFAULT_INDEX_NAME, indexPanel);
 		scrollp.setColumnHeaderComp(columnHeader);
-		compPanel.setBackground(Color.WHITE);
+		compPanel.setBackground(themed(Color.WHITE));
 
 		statusPanel = createStatusPanel();
 		add(scrollp, BorderLayout.CENTER);

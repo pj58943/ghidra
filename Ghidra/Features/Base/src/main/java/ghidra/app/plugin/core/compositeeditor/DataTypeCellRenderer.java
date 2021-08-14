@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.compositeeditor;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Component;
 
@@ -62,7 +64,7 @@ public class DataTypeCellRenderer extends GTableCellRenderer {
 		c.setToolTipText(tooltipText);
 
 		if (useRed) {
-			c.setForeground(Color.RED);
+			c.setForeground(themed(Color.RED));
 		}
 
 		return c;

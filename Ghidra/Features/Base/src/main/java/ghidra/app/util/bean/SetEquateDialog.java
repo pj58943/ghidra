@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.bean;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -147,17 +149,17 @@ public class SetEquateDialog extends DialogComponentProvider {
 				int refCount = eqRowObject.getRefCount();
 				if (refCount > 0) {
 					if (eqRowObject.getEntryName().contains(EquateManager.ERROR_TAG)) {
-						c.setForeground(isSelected ? Color.WHITE : Color.RED);
+						c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.RED));
 					}
 					else {
 						Equate e = eqRowObject.getEquate();
 						if (e != null && !e.isEnumBased()) {
-							c.setForeground(isSelected ? Color.WHITE : Color.BLUE.brighter());
+							c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.BLUE.brighter()));
 						}
 					}
 				}
 				else {
-					c.setForeground(isSelected ? Color.WHITE : Color.GRAY.darker());
+					c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.GRAY.darker()));
 				}
 				return c;
 			}

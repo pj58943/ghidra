@@ -15,6 +15,8 @@
  */
 package ghidra.graph.viewer.satellite;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
@@ -107,7 +109,7 @@ public class CachingSatelliteGraphViewer<V extends VisualVertex, E extends Visua
 		bufferedOverlayImage =
 			new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
 		graphics = (Graphics2D) bufferedOverlayImage.getGraphics();
-		setBackground(Color.WHITE);
+		setBackground(themed(Color.WHITE));
 		renderGraph(graphics);
 		setBackground(backgroundColor);
 		graphics.dispose();

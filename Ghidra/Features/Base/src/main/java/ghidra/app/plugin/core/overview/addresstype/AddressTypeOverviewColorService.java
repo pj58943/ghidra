@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.overview.addresstype;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,13 +46,13 @@ import ghidra.util.HelpLocation;
 public class AddressTypeOverviewColorService
 		implements OverviewColorService, OptionsChangeListener, DomainObjectListener {
 	private static final String OPTIONS_NAME = "Overview";
-	private static final Color DEFAULT_INSTRUCTION_COLOR = new Color(192, 192, 255);
-	private static final Color DEFAULT_DATA_COLOR = new Color(128, 255, 128);
-	private static final Color DEFAULT_FUNCTION_COLOR = new Color(204, 150, 255);
-	private static final Color DEFAULT_UNDEFINED_COLOR = new Color(255, 51, 102);
-	private static final Color DEFAULT_UNINITIALIZED_COLOR = Color.BLACK;
-	private static final Color DEFAULT_EXTERNAL_REF_COLOR = new Color(255, 150, 150);
-	private static final Color DEFAULT_MARKER_COLOR = Color.WHITE;
+	private static final Color DEFAULT_INSTRUCTION_COLOR = themed(new Color(192, 192, 255));
+	private static final Color DEFAULT_DATA_COLOR = themed(new Color(128, 255, 128));
+	private static final Color DEFAULT_FUNCTION_COLOR = themed(new Color(204, 150, 255));
+	private static final Color DEFAULT_UNDEFINED_COLOR = themed(new Color(255, 51, 102));
+	private static final Color DEFAULT_UNINITIALIZED_COLOR = themed(Color.BLACK);
+	private static final Color DEFAULT_EXTERNAL_REF_COLOR = themed(new Color(255, 150, 150));
+	private static final Color DEFAULT_MARKER_COLOR = themed(Color.WHITE);
 
 	Color instructionColor = DEFAULT_INSTRUCTION_COLOR;
 	Color dataColor = DEFAULT_DATA_COLOR;

@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.listingpanel;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 import ghidra.framework.options.ToolOptions;
@@ -42,9 +44,9 @@ public class ListingCodeComparisonOptions {
 	private static final String DEFAULT_UNMATCHED_CODE_UNITS_BACKGROUND_COLOR_DESCRIPTION =
 		"The default background color applied to code units that are unmatched within the listing code comparison window by the address correlator.";
 
-	public static final Color MEDIUM_SKY_BLUE_COLOR = new Color(0x69, 0xcd, 0xe1);
-	public static final Color MEDIUM_GRAY_COLOR = new Color(0xb9, 0xb9, 0xb9);
-	public static final Color SPRING_GREEN_COLOR = new Color(0xaf, 0xff, 0x69);
+	public static final Color MEDIUM_SKY_BLUE_COLOR = themed(new Color(0x69, 0xcd, 0xe1));
+	public static final Color MEDIUM_GRAY_COLOR = themed(new Color(0xb9, 0xb9, 0xb9));
+	public static final Color SPRING_GREEN_COLOR = themed(new Color(0xaf, 0xff, 0x69));
 
 	private static final Color DEFAULT_BYTE_DIFFS_COLOR = SPRING_GREEN_COLOR;
 	private static final Color DEFAULT_MNEMONIC_DIFFS_COLOR = SPRING_GREEN_COLOR;

@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.navigation.locationreferences;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 
 import docking.widgets.fieldpanel.support.Highlight;
@@ -42,7 +44,7 @@ class LocationReferencesHighlighter {
 		"Reference Search" + GhidraOptions.DELIMITER + "Highlight Match Color";
 	private static final String HIGHLIGHT_COLOR_DESCRIPTION =
 		"The highlight color of matches for the 'Show References' searcher";
-	private static Color DEFAULT_HIGHLIGHT_COLOR = new Color(168, 202, 242);
+	private static Color DEFAULT_HIGHLIGHT_COLOR = themed(new Color(168, 202, 242));
 
 	private boolean isHighlighting = false;
 	private final Navigatable navigatable;

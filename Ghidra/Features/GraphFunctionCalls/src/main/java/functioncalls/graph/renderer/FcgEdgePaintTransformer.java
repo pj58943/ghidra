@@ -15,6 +15,8 @@
  */
 package functioncalls.graph.renderer;
 
+import static ghidra.docking.util.Theming.themed;
+
 import java.awt.Color;
 import java.awt.Paint;
 
@@ -27,7 +29,7 @@ import functioncalls.graph.FcgEdge;
  */
 public class FcgEdgePaintTransformer implements Function<FcgEdge, Paint> {
 
-	// private static final Paint LESS_IMPORTANT_COLOR = new Color(125, 125, 125, 75);
+	// private static final Paint LESS_IMPORTANT_COLOR = themed(new Color(125, 125, 125, 75));
 	private Color directColor;
 	private Color indirectColor;
 
