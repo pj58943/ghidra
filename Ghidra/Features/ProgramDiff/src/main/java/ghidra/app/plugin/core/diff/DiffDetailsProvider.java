@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.diff;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -300,7 +302,7 @@ public class DiffDetailsProvider extends ComponentProviderAdapter {
 	}
 
 	private JScrollPane createDetailsPane() {
-		Font font = new Font("Monospaced", Font.PLAIN, 12);
+		Font font = themedFont("Monospaced", Font.PLAIN, 12);
 		textPane = new JTextPane();
 		doc = textPane.getStyledDocument();
 		textPane.setName(DIFF_DETAILS_TEXT_AREA);

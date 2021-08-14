@@ -15,6 +15,8 @@
  */
 package ghidra.framework.main;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.io.InputStream;
 
@@ -57,7 +59,7 @@ public class UserAgreementDialog extends DialogComponentProvider {
 	}
 
 	private JComponent buildWorkPanel() {
-		Font font = new Font("Default", Font.PLAIN, 16);
+		Font font = themedFont("Default", Font.PLAIN, 16);
 		JPanel panel = new JPanel(new BorderLayout());
 		JLabel label = new GDLabel("Ghidra User Agreement", SwingConstants.CENTER);
 		label.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));

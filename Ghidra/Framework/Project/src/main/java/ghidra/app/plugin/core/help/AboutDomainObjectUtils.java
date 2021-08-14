@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.help;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -89,7 +90,7 @@ public class AboutDomainObjectUtils {
 
 	private static JComponent getAboutPanel(DomainFile domainFile, Map<String, String> metadata,
 			String additionalInfo) {
-		Font font = new Font("Monospaced", Font.PLAIN, 12);
+		Font font = themedFont("Monospaced", Font.PLAIN, 12);
 
 		JPanel aboutPanel = new JPanel(new PairLayout());
 		JScrollPane propertyScroll = new JScrollPane(aboutPanel);

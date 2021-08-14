@@ -15,6 +15,8 @@
  */
 package ghidra.feature.fid.debug;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.Font;
 import java.util.*;
 
@@ -29,7 +31,7 @@ import ghidra.util.NumericUtilities;
  * Utility class to handle some debug functions for the FID database.
  */
 public class FidDebugUtils {
-	public static final Font MONOSPACED_FONT = new Font("monospaced", Font.PLAIN, 12);
+	public static final Font MONOSPACED_FONT = themedFont("monospaced", Font.PLAIN, 12);
 
 	/**
 	 * Search the FID system for function records by name substring.

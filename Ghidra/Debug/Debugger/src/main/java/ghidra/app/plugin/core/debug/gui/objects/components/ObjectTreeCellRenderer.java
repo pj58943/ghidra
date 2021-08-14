@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.debug.gui.objects.components;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.util.Map;
@@ -34,8 +35,8 @@ import ghidra.dbg.target.TargetObject;
 class ObjectTreeCellRenderer extends GTreeRenderer {
 
 	private final DebuggerObjectsProvider provider;
-	private Font defaultFont = new Font("Tahoma", Font.PLAIN, 11);
-	private Font unsubscribedFont = new Font("Tahoma", Font.ITALIC, 11);
+	private Font defaultFont = themedFont("Tahoma", Font.PLAIN, 11);
+	private Font unsubscribedFont = themedFont("Tahoma", Font.ITALIC, 11);
 
 	/**
 	 * @param provider

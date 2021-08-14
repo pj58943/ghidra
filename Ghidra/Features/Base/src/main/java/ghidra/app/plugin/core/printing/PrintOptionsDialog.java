@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.printing;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -27,7 +29,7 @@ import ghidra.util.HelpLocation;
 
 public class PrintOptionsDialog extends DialogComponentProvider {
 
-	private final Font HEADER_FONT = new Font("SansSerif", Font.PLAIN, 10);
+	private final Font HEADER_FONT = themedFont("SansSerif", Font.PLAIN, 10);
 	private final FontMetrics HEADER_METRICS = rootPanel.getFontMetrics(HEADER_FONT);
 
 	private boolean selectionEnabled;

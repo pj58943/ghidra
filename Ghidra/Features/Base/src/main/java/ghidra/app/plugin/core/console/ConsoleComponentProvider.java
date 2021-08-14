@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.console;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.PrintWriter;
@@ -48,7 +50,7 @@ public class ConsoleComponentProvider extends ComponentProviderAdapter
 	private static final String CLEAR_GIF = "images/erase16.png";
 	private static final String SCROLL_LOCK_GIF = "images/lock.png";
 
-	private static final Font DEFAULT_FONT = new Font("monospaced", Font.PLAIN, 12);
+	private static final Font DEFAULT_FONT = themedFont("monospaced", Font.PLAIN, 12);
 	private static final String FONT_OPTION_LABEL = "Font";
 	private static final String FONT_DESCRIPTION =
 		"This is the font that will be used in the Console.  " +

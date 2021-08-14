@@ -16,6 +16,7 @@
 package ghidra.framework.plugintool.dialog;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.util.List;
@@ -245,7 +246,7 @@ public class PluginInstallerDialog extends DialogComponentProvider {
 
 		NameCellRenderer() {
 			defaultFont = getFont();
-			boldFont = new Font(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
+			boldFont = themedFont(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
 				defaultFont.getSize());
 			setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
 		}

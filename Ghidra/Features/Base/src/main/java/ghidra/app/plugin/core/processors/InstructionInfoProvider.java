@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.processors;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 
 import javax.swing.*;
@@ -100,7 +102,7 @@ class InstructionInfoProvider extends ComponentProviderAdapter implements Domain
 
 		instructionText = new JTextArea();
 		Font defaultFont = instructionText.getFont();
-		Font fixedWidthFont = new Font("monospaced", defaultFont.getStyle(), 14);
+		Font fixedWidthFont = themedFont("monospaced", defaultFont.getStyle(), 14);
 		instructionText.setFont(fixedWidthFont);
 		instructionText.setEditable(false);
 

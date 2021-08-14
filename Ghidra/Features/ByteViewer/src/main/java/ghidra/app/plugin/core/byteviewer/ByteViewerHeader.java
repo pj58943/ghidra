@@ -16,6 +16,8 @@
  */
 package ghidra.app.plugin.core.byteviewer;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import ghidra.util.table.GhidraTable;
 
 import java.awt.*;
@@ -50,7 +52,7 @@ class ByteViewerHeader extends JTableHeader implements Scrollable {
 
 		this.container = container;
 		components = new HashMap<Component, TableColumn>();
-		Font font = new Font("Tahoma", Font.PLAIN, 11);
+		Font font = themedFont("Tahoma", Font.PLAIN, 11);
 		setFont(font);
 		setResizingAllowed(false);
 		table = new GhidraTable();

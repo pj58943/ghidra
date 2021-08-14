@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.archive;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -114,7 +116,7 @@ public class RestoreDialog extends DialogComponentProvider {
 			}
 		});
 		Font font = archiveBrowse.getFont();
-		archiveBrowse.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
+		archiveBrowse.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
 
 		restoreLabel = new GDLabel(" Restore Directory ");
 		restoreField = new JTextField();
@@ -131,7 +133,7 @@ public class RestoreDialog extends DialogComponentProvider {
 			}
 		});
 		font = restoreBrowse.getFont();
-		restoreBrowse.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
+		restoreBrowse.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
 
 		projectNameLabel = new GDLabel(" Project Name ");
 		projectNameField = new JTextField();

@@ -16,6 +16,7 @@
 package docking.widgets.fieldpanel.internal;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.math.BigInteger;
@@ -128,7 +129,7 @@ public class TestBigLayoutModel implements LayoutModel {
 	}
 
 	public static void main(String[] args) {
-		final Font font = new Font("monospace", Font.PLAIN, 12);
+		final Font font = themedFont("monospace", Font.PLAIN, 12);
 		final JFrame frame = new JFrame();
 		final TestBigLayoutModel model =
 			new TestBigLayoutModel(frame.getFontMetrics(font), "AAA", BigInteger.valueOf(1000000L));

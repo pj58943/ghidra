@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.interpreter;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -83,7 +84,7 @@ public class InterpreterPanel extends JPanel implements OptionsChangeListener {
 	private PluginTool tool;
 
 	private static Font getBasicFont() {
-		return new Font(Font.MONOSPACED, Font.PLAIN, 20);
+		return themedFont(Font.MONOSPACED, Font.PLAIN, 20);
 	}
 
 	private static Font getBoldFont(Font font) {

@@ -16,6 +16,7 @@
 package ghidra.app.util.viewer.field;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.math.BigInteger;
@@ -41,7 +42,7 @@ import ghidra.util.classfinder.ExtensionPoint;
  */
 public abstract class FieldFactory implements ExtensionPoint {
 	public static final String FONT_OPTION_NAME = "BASE FONT";
-	public static final Font DEFAULT_FIELD_FONT = new Font("monospaced", Font.PLAIN, 12);
+	public static final Font DEFAULT_FIELD_FONT = themedFont("monospaced", Font.PLAIN, 12);
 
 	protected FieldFormatModel model;
 	protected String name;
@@ -342,7 +343,7 @@ public abstract class FieldFactory implements ExtensionPoint {
 	private void setMetrics(Font newFont) {
 		defaultMetrics = Toolkit.getDefaultToolkit().getFontMetrics(newFont);
 		for (int i = 0; i < fontMetrics.length; i++) {
-			Font font = new Font(newFont.getFamily(), i, newFont.getSize());
+			Font font = themedFont(newFont.getFamily(), i, newFont.getSize());
 			fontMetrics[i] = Toolkit.getDefaultToolkit().getFontMetrics(font);
 		}
 	}

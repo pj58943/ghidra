@@ -16,6 +16,7 @@
 package ghidra.app.util;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.ComponentEvent;
@@ -30,7 +31,7 @@ import ghidra.program.model.mem.MemoryBlock;
 public class BlockPanel extends JPanel implements ComponentListener {
 	private static final long serialVersionUID = 1L;
 	private static final int SPACING = 5;
-	private static final Font FONT = new Font("SansSerif", Font.PLAIN, 10);
+	private static final Font FONT = themedFont("SansSerif", Font.PLAIN, 10);
 	private AddressPixelMap map;
 	private FontMetrics metrics;
 

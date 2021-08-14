@@ -16,6 +16,7 @@
 package docking.widgets.textfield;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -584,7 +585,7 @@ public class IntegerTextField {
 	 */
 	private class MyTextField extends JTextField {
 
-		private Font hintFont = new Font("Monospaced", Font.PLAIN, 10);
+		private Font hintFont = themedFont("Monospaced", Font.PLAIN, 10);
 		private int hintWidth;
 
 		public MyTextField(int columns) {

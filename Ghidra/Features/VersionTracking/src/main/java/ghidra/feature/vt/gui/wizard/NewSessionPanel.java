@@ -15,6 +15,8 @@
  */
 package ghidra.feature.vt.gui.wizard;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.util.*;
 
@@ -73,14 +75,14 @@ public class NewSessionPanel extends AbstractMageJPanel<VTWizardStateKey> {
 		folderLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		folderLabel.setToolTipText("The folder to store the new Version Tracking Session");
 		folderNameField = new JTextField();
-		folderNameField.setFont(new Font("Monospaced", Font.PLAIN, 12));
+		folderNameField.setFont(themedFont("Monospaced", Font.PLAIN, 12));
 		folderNameField.setEditable(false); // force user to browse to choose
 
 		JButton browseFolderButton =
 			ButtonPanelFactory.createButton(ButtonPanelFactory.BROWSE_TYPE);
 		browseFolderButton.addActionListener(e -> browseDataTreeFolders());
 		Font font = browseFolderButton.getFont();
-		browseFolderButton.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
+		browseFolderButton.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
 
 		JLabel newSessionLabel = new GDLabel("New Session Name: ");
 		newSessionLabel.setToolTipText("The name for the new Version Tracking Session");

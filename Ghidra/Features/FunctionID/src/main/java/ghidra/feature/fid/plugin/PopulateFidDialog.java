@@ -15,6 +15,8 @@
  */
 package ghidra.feature.fid.plugin;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -280,7 +282,7 @@ public class PopulateFidDialog extends DialogComponentProvider {
 	private JButton createBrowseButton() {
 		JButton browseButton = ButtonPanelFactory.createButton(ButtonPanelFactory.BROWSE_TYPE);
 		Font font = browseButton.getFont();
-		browseButton.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
+		browseButton.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
 		return browseButton;
 	}
 

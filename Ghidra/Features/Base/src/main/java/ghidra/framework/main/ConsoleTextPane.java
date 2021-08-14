@@ -16,6 +16,7 @@
 package ghidra.framework.main;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -203,7 +204,7 @@ public class ConsoleTextPane extends JTextPane implements OptionsChangeListener 
 	}
 
 	private void createAttribtues() {
-		createAttributes(new Font("monospaced", Font.PLAIN, 12));
+		createAttributes(themedFont("monospaced", Font.PLAIN, 12));
 	}
 
 	private void createAttributes(Font font) {

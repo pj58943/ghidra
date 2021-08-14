@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.byteviewer;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.math.BigInteger;
@@ -846,7 +847,7 @@ public class ByteViewerPanel extends JPanel implements TableColumnModelListener,
 		insertionField = new GDLabel("00000000");
 		insertionField.setName("Insertion");
 
-		Font f = new Font("SansSerif", Font.PLAIN, 11);
+		Font f = themedFont("SansSerif", Font.PLAIN, 11);
 		startLabel.setFont(f);
 		endLabel.setFont(f);
 		offsetLabel.setFont(f);

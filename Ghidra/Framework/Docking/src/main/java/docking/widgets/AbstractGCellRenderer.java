@@ -16,6 +16,7 @@
 package docking.widgets;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 
@@ -119,8 +120,8 @@ public abstract class AbstractGCellRenderer extends GDHtmlLabel {
 	public void setFont(Font f) {
 		super.setFont(f);
 		defaultFont = f;
-		fixedWidthFont = new Font("monospaced", defaultFont.getStyle(), defaultFont.getSize());
-		boldFont = new Font(defaultFont.getName(), Font.BOLD, defaultFont.getSize());
+		fixedWidthFont = themedFont("monospaced", defaultFont.getStyle(), defaultFont.getSize());
+		boldFont = themedFont(defaultFont.getName(), Font.BOLD, defaultFont.getSize());
 	}
 
 	protected void superSetFont(Font font) {

@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.register;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -92,7 +94,7 @@ public class SetRegisterValueDialog extends DialogComponentProvider {
 				registerChanged();
 			}
 		});
-		f = new Font("monospaced", Font.PLAIN, 13);
+		f = themedFont("monospaced", Font.PLAIN, 13);
 
 		addressRangeList = new JList();
 		addressRangeList.setEnabled(false);

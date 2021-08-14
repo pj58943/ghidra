@@ -16,6 +16,7 @@
 package docking.framework;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -123,7 +124,7 @@ public class ApplicationInformationDisplayFactory {
 
 		JLabel nameLabel = new GLabel(Application.getName());
 		nameLabel.setForeground(themed(new Color(155, 155, 155)));
-		Font newFont = new Font("Garamond", Font.BOLD, 35);
+		Font newFont = themedFont("Garamond", Font.BOLD, 35);
 		nameLabel.setFont(newFont);
 		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nameLabel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));

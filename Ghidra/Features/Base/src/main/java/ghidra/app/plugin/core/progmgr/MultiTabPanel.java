@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.progmgr;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -54,8 +55,8 @@ public class MultiTabPanel extends JPanel {
 	private final static Color BG_SELECTION_COLOR = SELECTED_TAB_COLOR;
 	private final static Color BG_NON_SELECTION_COLOR = UIManager.getColor("Panel.background");
 
-	private static final Font LABEL_FONT = new Font("Tahoma", Font.PLAIN, 11);
-	private static final Font LIST_LABEL_FONT = new Font("Tahoma", Font.BOLD, 9);
+	private static final Font LABEL_FONT = themedFont("Tahoma", Font.PLAIN, 11);
+	private static final Font LIST_LABEL_FONT = themedFont("Tahoma", Font.BOLD, 9);
 	private static final String DEFAULT_HIDDEN_COUNT_STR = "99";
 
 	/** A list of tabs that are hidden from view due to space constraints */

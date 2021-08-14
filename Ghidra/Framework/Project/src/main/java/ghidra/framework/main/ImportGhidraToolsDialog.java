@@ -16,6 +16,7 @@
 package ghidra.framework.main;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -223,7 +224,7 @@ class ImportGhidraToolsDialog extends DialogComponentProvider {
 
 			if (boldFont == null) {
 				Font font = list.getFont();
-				boldFont = new Font(font.getName(), font.getStyle() | Font.BOLD, font.getSize());
+				boldFont = themedFont(font.getName(), font.getStyle() | Font.BOLD, font.getSize());
 			}
 			if (index == -1) {
 				int selected = list.getSelectedIndex();

@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.overview.entropy;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class KnotLabelPanel extends JPanel {
-	private static final Font FONT = new Font("Times New Roman", Font.BOLD, 16);
+	private static final Font FONT = themedFont("Times New Roman", Font.BOLD, 16);
 	private int topBottomMargin = 10;
 	private Palette palette;
 

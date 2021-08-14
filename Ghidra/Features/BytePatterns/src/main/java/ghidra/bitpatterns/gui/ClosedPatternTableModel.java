@@ -15,6 +15,8 @@
  */
 package ghidra.bitpatterns.gui;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.Font;
 import java.util.List;
 
@@ -59,7 +61,7 @@ public class ClosedPatternTableModel extends ThreadedTableModelStub<ClosedPatter
 	protected GColumnRenderer<String> monospacedRenderer = new AbstractGColumnRenderer<String>() {
 		@Override
 		protected void configureFont(JTable table, TableModel model, int column) {
-			Font f = new Font("monospaced", getFixedWidthFont().getStyle(), MONOSPACE_FONT_SIZE);
+			Font f = themedFont("monospaced", getFixedWidthFont().getStyle(), MONOSPACE_FONT_SIZE);
 			setFont(f);
 		}
 

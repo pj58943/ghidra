@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.label;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -128,7 +130,7 @@ class LabelHistoryPanel extends JPanel {
 
 		LabelCellRenderer() {
 			Font f = getFont();
-			monoFont = new Font("monospaced", f.getStyle(), f.getSize());
+			monoFont = themedFont("monospaced", f.getStyle(), f.getSize());
 		}
 
 		@Override

@@ -16,6 +16,7 @@
 package ghidra.framework.plugintool.dialog;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.Color;
 import java.awt.Point;
@@ -236,61 +237,61 @@ class PluginDetailsPanel extends AbstractDetailsPanel {
 	@Override
 	protected void createFieldAttributes() {
 		titleAttrSet = new SimpleAttributeSet();
-		titleAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		titleAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		titleAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		titleAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		titleAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(140, 0, 0)));
 
 		nameAttrSet = new SimpleAttributeSet();
-		nameAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		nameAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		nameAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		nameAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		nameAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(0, 204, 51)));
 
 		depNameAttrSet = new SimpleAttributeSet();
-		depNameAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		depNameAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		depNameAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		depNameAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		depNameAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.RED));
 
 		descrAttrSet = new SimpleAttributeSet();
-		descrAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		descrAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		descrAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		descrAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		descrAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLUE));
 
 		categoriesAttrSet = new SimpleAttributeSet();
-		categoriesAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		categoriesAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		categoriesAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		categoriesAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		categoriesAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(204, 0, 204)));
 
 		classAttrSet = new SimpleAttributeSet();
-		classAttrSet.addAttribute(StyleConstants.FontFamily, "monospaced");
+		classAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("monospaced"));
 		classAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		classAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		classAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLACK));
 
 		locAttrSet = new SimpleAttributeSet();
-		locAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		locAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		locAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		locAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		locAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.DARK_GRAY));
 
 		developerAttrSet = new SimpleAttributeSet();
-		developerAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		developerAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		developerAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		developerAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		developerAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(230, 15, 85)));
 
 		dependencyAttrSet = new SimpleAttributeSet();
-		dependencyAttrSet.addAttribute(StyleConstants.FontFamily, "monospaced");
+		dependencyAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("monospaced"));
 		dependencyAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		dependencyAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		dependencyAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(23, 100, 30)));
 
 		noValueAttrSet = new SimpleAttributeSet();
-		noValueAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		noValueAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		noValueAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		noValueAttrSet.addAttribute(StyleConstants.Italic, Boolean.TRUE);
 		noValueAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(192, 192, 192)));

@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.bean;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -72,7 +74,7 @@ public class FixedBitSizeValueField extends JPanel {
 
 		}
 		add(valueField, BorderLayout.CENTER);
-		Font f2 = new Font("monospaced", Font.PLAIN, 14);
+		Font f2 = themedFont("monospaced", Font.PLAIN, 14);
 		valueField.setFont(f2);
 		valueField.setMargin(new Insets(0,2,0,2));
 

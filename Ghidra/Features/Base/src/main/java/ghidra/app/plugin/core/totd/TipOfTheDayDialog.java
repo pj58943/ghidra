@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.totd;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -54,7 +55,7 @@ class TipOfTheDayDialog extends DialogComponentProvider {
 
 		tipArea = new JTextArea(4, 30);
 		tipArea.setEditable(false);
-		tipArea.setFont(new Font("dialog", Font.PLAIN, 12));
+		tipArea.setFont(themedFont("dialog", Font.PLAIN, 12));
 		tipArea.setWrapStyleWord(true);
 		tipArea.setLineWrap(true);
 		tipArea.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -101,7 +102,7 @@ class TipOfTheDayDialog extends DialogComponentProvider {
 		panel.setBackground(themed(Color.WHITE));
 
 		JLabel label = new GLabel("Did you know...", tipIcon, SwingConstants.LEFT);
-		label.setFont(new Font("dialog", Font.BOLD, 12));
+		label.setFont(themedFont("dialog", Font.BOLD, 12));
 		panel.add(label, BorderLayout.NORTH);
 
 		panel.add(tipScroll, BorderLayout.CENTER);

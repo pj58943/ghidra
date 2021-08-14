@@ -15,6 +15,8 @@
  */
 package ghidra.app.merge.tool;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import ghidra.app.context.ListingActionContext;
 import ghidra.app.context.ListingContextAction;
 import ghidra.app.merge.listing.CodeUnitDetails;
@@ -87,7 +89,7 @@ public class ViewInstructionDetailsAction extends ListingContextAction {
 	}
 
 	private JScrollPane createDetailsPane(String details) {
-		Font font = new Font("Monospaced", Font.PLAIN, 12);
+		Font font = themedFont("Monospaced", Font.PLAIN, 12);
 
 		JTextArea textArea = new JTextArea();
 		textArea.setLineWrap(false);

@@ -16,6 +16,7 @@
 package ghidra.app.merge.tree;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 
@@ -75,7 +76,7 @@ class TreeChangePanel extends JPanel {
 
 		treeNameLabel = new GDLabel("Tree Name");
 		Font font = treeNameLabel.getFont();
-		font = new Font(font.getName(), Font.BOLD, font.getSize());
+		font = themedFont(font.getName(), Font.BOLD, font.getSize());
 		treeNameLabel.setFont(font);
 
 		nameLabel = new GDLabel("Name Changed");

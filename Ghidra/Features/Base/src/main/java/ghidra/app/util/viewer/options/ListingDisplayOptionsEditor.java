@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.options;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.beans.PropertyChangeListener;
@@ -28,7 +30,7 @@ import ghidra.framework.options.*;
  * Class for editing Listing display properties.
  */
 public class ListingDisplayOptionsEditor implements OptionsEditor {
-	public static final Font DEFAULT_FONT = new Font("Monospaced", Font.PLAIN, 12);
+	public static final Font DEFAULT_FONT = themedFont("Monospaced", Font.PLAIN, 12);
 
 	private OptionsGui optionsGui;
 	private Options options;

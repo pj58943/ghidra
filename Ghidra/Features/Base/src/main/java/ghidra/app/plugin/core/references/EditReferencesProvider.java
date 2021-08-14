@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.references;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -1024,7 +1025,7 @@ public class EditReferencesProvider extends ComponentProviderAdapter
 
 		RefCellTextRenderer() {
 			defaultFont = getFont();
-			boldFont = new Font(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
+			boldFont = themedFont(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
 				defaultFont.getSize());
 			setBorder(BorderFactory.createEmptyBorder(0, 3, 0, 0));
 		}

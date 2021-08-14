@@ -16,6 +16,7 @@
 package ghidra.graph.viewer;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -983,7 +984,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 			// this composite softens the text and color of the message
 			g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SrcOver.getRule(), .60f));
 
-			Font font = new Font("Sanf Serif", Font.BOLD | Font.ITALIC, 18);
+			Font font = themedFont("SansSerif", Font.BOLD | Font.ITALIC, 18);
 			g.setFont(font);
 
 			Rectangle stringBounds =

@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.instructionsearch.ui;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.Font;
 
 import javax.swing.JToolBar;
@@ -59,7 +61,7 @@ public abstract class AbstractInstructionTable extends GhidraTable {
 	protected JToolBar toolbar;
 
 	protected InstructionTableCellRenderer renderer =
-		new InstructionTableCellRenderer(new Font("Courier", Font.PLAIN, 14));
+		new InstructionTableCellRenderer(themedFont("Courier", Font.PLAIN, 14));
 
 	protected InstructionSearchData searchData;
 

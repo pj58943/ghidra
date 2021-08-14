@@ -54,9 +54,9 @@ class WrappedFont implements WrappedOption {
 	 */
 	@Override
 	public void readState(SaveState saveState) {
-		String family = saveState.getString(FAMILY, "monospaced");
-		int size = saveState.getInt(SIZE, 12);
-		int style = saveState.getInt(STYLE, Font.PLAIN);
+		String family = saveState.getString(FAMILY, font.getFamily());
+		int size = saveState.getInt(SIZE, font.getSize());
+		int style = saveState.getInt(STYLE, font.getStyle());
 		font = new Font(family, style, size);
 	}
 

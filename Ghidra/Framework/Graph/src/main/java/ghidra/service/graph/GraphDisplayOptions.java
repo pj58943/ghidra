@@ -34,7 +34,7 @@ import ghidra.util.HelpLocation;
 import ghidra.util.WebColors;
 import ghidra.util.bean.opteditor.OptionsVetoException;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 /**
  * Class for managing graph display options. This includes color options for each vertex
@@ -86,7 +86,7 @@ public class GraphDisplayOptions implements OptionsChangeListener {
 	private String defaultLayoutAlgorithmName = LayoutAlgorithmNames.MIN_CROSS_COFFMAN_GRAHAM;
 	private boolean useIcons = true;
 	private GraphLabelPosition labelPosition = GraphLabelPosition.SOUTH;
-	private Font font = new Font("Dialog", Font.BOLD, 18);
+	private Font font = themedFont("Dialog", Font.BOLD, 18);
 	private int arrowLength = 15;
 
 	private int maxNodeCount = 500; // graph display struggles with too many nodes

@@ -16,7 +16,7 @@
 package ghidra.app.decompiler;
 
 import static ghidra.GhidraOptions.*;
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 import static java.time.temporal.ChronoUnit.FOREVER;
 
 import java.awt.Color;
@@ -346,7 +346,7 @@ public class DecompileOptions {
 	private Color defaultSearchHighlightColor = SEARCH_HIGHLIGHT_DEF;
 
 	final static String FONT_MSG = "Display.Font";
-	final static Font DEFAULT_FONT = new Font(Font.MONOSPACED, Font.PLAIN, 12);
+	final static Font DEFAULT_FONT = themedFont(Font.MONOSPACED, Font.PLAIN, 12);
 	private Font defaultFont;
 
 	private final static String CACHED_RESULTS_SIZE_MSG = "Cache Size (Functions)";

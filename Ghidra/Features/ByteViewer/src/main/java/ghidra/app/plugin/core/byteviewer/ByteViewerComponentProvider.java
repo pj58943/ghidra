@@ -17,6 +17,7 @@ package ghidra.app.plugin.core.byteviewer;
 
 import static ghidra.GhidraOptions.*;
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.math.BigInteger;
@@ -52,7 +53,7 @@ public abstract class ByteViewerComponentProvider extends ComponentProviderAdapt
 	private static final String OFFSET_NAME = "Offset";
 	static final int DEFAULT_NUMBER_OF_CHARS = 8;
 
-	static final Font DEFAULT_FONT = new Font("Monospaced", Font.PLAIN, 12);
+	static final Font DEFAULT_FONT = themedFont("Monospaced", Font.PLAIN, 12);
 	static final int DEFAULT_BYTES_PER_LINE = 16;
 	static final Color DEFAULT_MISSING_VALUE_COLOR = themed(Color.blue);
 	static final Color DEFAULT_EDIT_COLOR = themed(Color.red);

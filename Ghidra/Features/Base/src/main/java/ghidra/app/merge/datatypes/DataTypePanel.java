@@ -16,6 +16,7 @@
 package ghidra.app.merge.datatypes;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -88,44 +89,44 @@ class DataTypePanel extends JPanel {
 		textPane.setEditable(false);
 
 		pathAttrSet = new SimpleAttributeSet();
-		pathAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		pathAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		pathAttrSet.addAttribute(StyleConstants.FontSize, new Integer(11));
 		pathAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		pathAttrSet.addAttribute(StyleConstants.Foreground, MergeConstants.CONFLICT_COLOR);
 
 		nameAttrSet = new SimpleAttributeSet();
-		nameAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		nameAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		nameAttrSet.addAttribute(StyleConstants.FontSize, new Integer(11));
 		nameAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 
 		sourceAttrSet = new SimpleAttributeSet();
-		sourceAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		sourceAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		sourceAttrSet.addAttribute(StyleConstants.FontSize, new Integer(11));
 		sourceAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		sourceAttrSet.addAttribute(StyleConstants.Foreground, SOURCE_COLOR);
 
 		offsetAttrSet = new SimpleAttributeSet();
-		offsetAttrSet.addAttribute(StyleConstants.FontFamily, "Monospaced");
+		offsetAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		offsetAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		offsetAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLACK));
 
 		contentAttrSet = new SimpleAttributeSet();
-		contentAttrSet.addAttribute(StyleConstants.FontFamily, "Monospaced");
+		contentAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		contentAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		contentAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLUE));
 
 		fieldNameAttrSet = new SimpleAttributeSet();
-		fieldNameAttrSet.addAttribute(StyleConstants.FontFamily, "Monospaced");
+		fieldNameAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		fieldNameAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		fieldNameAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(204, 0, 204)));
 
 		commentAttrSet = new SimpleAttributeSet();
-		commentAttrSet.addAttribute(StyleConstants.FontFamily, "Monospaced");
+		commentAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		commentAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		commentAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(0, 204, 51)));
 
 		deletedAttrSet = new SimpleAttributeSet();
-		deletedAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		deletedAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		deletedAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		deletedAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		deletedAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.RED));

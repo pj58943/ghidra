@@ -16,6 +16,7 @@
 package docking.framework;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -316,7 +317,7 @@ public class SplashScreen extends JWindow {
 		JLabel titleLabel =
 			new GLabel(ApplicationInformationDisplayFactory.createSplashScreenTitle());
 		Font font = titleLabel.getFont();
-		font = new Font(font.getName(), Font.BOLD, 11);
+		font = themedFont(font.getName(), Font.BOLD, 11);
 		titleLabel.setFont(font);
 		if (foregroundColor == null) {
 			foregroundColor = themed(Color.white);
@@ -328,7 +329,7 @@ public class SplashScreen extends JWindow {
 	}
 
 	private Component createStatusComponent() {
-		Font f = new Font("serif", Font.BOLD, 12);
+		Font f = themedFont("serif", Font.BOLD, 12);
 		statusLabel = new GDLabel(" Loading...");
 		statusLabel.setFont(f);
 

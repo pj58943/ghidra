@@ -16,6 +16,7 @@
 package ghidra.app.util.viewer.options;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -377,7 +378,7 @@ public class OptionsGui extends JPanel {
 				int index, boolean isSelected, boolean cellHasFocus) {
 			setText(value);
 			Font origFont = fontNameField.getFont();
-			setFont(new Font(value.toString(), origFont.getStyle(), origFont.getSize()));
+			setFont(themedFont(value.toString(), origFont.getStyle(), origFont.getSize()));
 
 			setBackground(isSelected ? SELECTED_COLOR : themed(Color.white));
 			setForeground(isSelected ? themed(Color.white) : themed(Color.black));
@@ -743,7 +744,7 @@ public class OptionsGui extends JPanel {
 				metricsMap.put(i, fm);
 			}
 			else {
-				Font font = new Font(baseFont.getName(), style, baseFont.getSize());
+				Font font = themedFont(baseFont.getName(), style, baseFont.getSize());
 				fm = getFontMetrics(font);
 				metricsMap.put(i, fm);
 			}
@@ -793,7 +794,7 @@ public class OptionsGui extends JPanel {
 		if (globalItalicsCheckbox.isSelected()) {
 			style |= Font.ITALIC;
 		}
-		setBaseFont(new Font(name, style, size));
+		setBaseFont(themedFont(name, style, size));
 
 		setSelectedIndex(selectedIndex);
 	}

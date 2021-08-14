@@ -19,6 +19,7 @@
 package docking.widgets.textfield;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -233,7 +234,7 @@ public class LocalDateTextField {
 			super.paintComponent(g);
 
 			if (showFieldDecoration) {
-				Font font = new Font("Monospaced", Font.PLAIN, 10);
+				Font font = themedFont("Monospaced", Font.PLAIN, 10);
 				Font savedFont = g.getFont();
 				g.setFont(font);
 				g.setColor(themed(Color.LIGHT_GRAY));

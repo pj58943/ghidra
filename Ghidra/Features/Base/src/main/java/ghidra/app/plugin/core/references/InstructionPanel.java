@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.references;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -222,7 +223,7 @@ class InstructionPanel extends JPanel implements ChangeListener {
 		addressLabel = new GDLabel("FFFFFFFF"); // use a default
 
 		Font font = addressLabel.getFont();
-		monoFont = new Font("monospaced", font.getStyle(), font.getSize());
+		monoFont = themedFont("monospaced", font.getStyle(), font.getSize());
 		addressLabel.setFont(monoFont);
 		addressLabel.setName("addressLabel");
 

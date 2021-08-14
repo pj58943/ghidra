@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.assembler;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -579,7 +580,7 @@ public class AssemblyDualTextField {
 	 * This is an extension point.
 	 */
 	protected void configureField(JTextField field) {
-		Font mono = new Font(Font.MONOSPACED, Font.PLAIN, 12); // TODO: Font size from options
+		Font mono = themedFont(Font.MONOSPACED, Font.PLAIN, 12); // TODO: Font size from options
 		field.setFont(mono);
 	}
 

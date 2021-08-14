@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.fallthrough;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -195,7 +197,7 @@ class FallThroughDialog extends DialogComponentProvider implements ChangeListene
 		addressLabel = new GDLabel("01001000");
 
 		Font font = addressLabel.getFont();
-		Font monoFont = new Font("monospaced", font.getStyle(), font.getSize());
+		Font monoFont = themedFont("monospaced", font.getStyle(), font.getSize());
 		addressLabel.setFont(monoFont);
 
 		instLabel = new GDLabel("jmp DAT_01001000");

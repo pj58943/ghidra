@@ -16,6 +16,7 @@
 package docking.widgets.table;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.font.TextAttribute;
@@ -391,7 +392,7 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 		public void paintIcon(Component c, Graphics g, int x, int y) {
 			int fontSize = 12;
 			String fontFamily = "arial";
-			Font font = new Font(fontFamily, Font.BOLD, fontSize);
+			Font font = themedFont(fontFamily, Font.BOLD, fontSize);
 			g.setFont(font);
 			FontMetrics fontMetrics = g.getFontMetrics();
 			Rectangle2D stringBounds = fontMetrics.getStringBounds(numberText, g);

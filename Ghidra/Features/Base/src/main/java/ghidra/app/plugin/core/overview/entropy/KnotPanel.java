@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.overview.entropy;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.ComponentEvent;
@@ -36,7 +37,7 @@ import docking.widgets.label.GLabel;
 public class KnotPanel extends JPanel implements ComponentListener {
 	private static final long serialVersionUID = 1L;
 	private static final int SPACING = 5;
-	private static final Font FONT = new Font("SansSerif", Font.PLAIN, 10);
+	private static final Font FONT = themedFont("SansSerif", Font.PLAIN, 10);
 	private Palette palette = null;
 	private FontMetrics metrics;
 

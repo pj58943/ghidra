@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.comments;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -115,17 +116,17 @@ class CommentHistoryPanel extends JPanel {
 
 	private void setUpAttributes() {
 		textAttrSet = new SimpleAttributeSet();
-		textAttrSet.addAttribute(StyleConstants.FontFamily, "Monospaced");
+		textAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		textAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(12));
 		textAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLUE));
 
 		userAttrSet = new SimpleAttributeSet();
-		userAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		userAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		userAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(12));
 		userAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 
 		dateAttrSet = new SimpleAttributeSet();
-		dateAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		dateAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		dateAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		dateAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		dateAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(124, 37, 18)));

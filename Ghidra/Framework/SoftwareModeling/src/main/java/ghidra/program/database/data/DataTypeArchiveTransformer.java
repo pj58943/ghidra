@@ -16,6 +16,7 @@
 package ghidra.program.database.data;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -896,7 +897,7 @@ public class DataTypeArchiveTransformer implements GhidraLaunchable {
 		});
 
 		// Fix up the default fonts that Java 1.5.0 changed to Courier, which looked terrible.
-		Font f = new Font("Monospaced", Font.PLAIN, 12);
+		Font f = themedFont("Monospaced", Font.PLAIN, 12);
 		UIManager.put("PasswordField.font", f);
 		UIManager.put("TextArea.font", f);
 	}

@@ -16,6 +16,7 @@
 package docking.options.editor;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 
@@ -120,7 +121,7 @@ public class ButtonPanelFactory {
 	/**
 	 * Font for the browse button label.
 	 */
-	public final static Font BROWSE_FONT = new Font("Dialog", Font.BOLD, 12);
+	public final static Font BROWSE_FONT = themedFont("Dialog", Font.BOLD, 12);
 
 	/**
 	 * internal values used when creating the panels and buttons

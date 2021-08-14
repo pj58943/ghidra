@@ -17,6 +17,7 @@ package ghidra.framework.plugintool.dialog;
 
 import static ghidra.util.HTMLUtilities.*;
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 
@@ -85,7 +86,7 @@ public abstract class AbstractDetailsPanel extends JPanel {
 	protected SimpleAttributeSet createAttributeSet(Color color) {
 
 		SimpleAttributeSet attrSet = new SimpleAttributeSet();
-		attrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		attrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		attrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		attrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
 		attrSet.addAttribute(StyleConstants.Foreground, color);

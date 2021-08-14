@@ -15,6 +15,8 @@
  */
 package ghidra.app.plugin.core.editor;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
@@ -47,12 +49,12 @@ public class TextEditorComponentProvider extends ComponentProviderAdapter {
 
 	private static final int MAX_UNDO_REDO_SIZE = 50;
 
-	static Font defaultFont = new Font("monospaced", Font.PLAIN, 12);
+	static Font defaultFont = themedFont("monospaced", Font.PLAIN, 12);
 
 	static void restoreState(SaveState saveState) {
-		String name = saveState.getString("DEFAULT_FONT_NAME", "Monospaced");
-		int style = saveState.getInt("DEFAULT_FONT_STYLE", Font.PLAIN);
-		int size = saveState.getInt("DEFAULT_FONT_SIZE", 12);
+		String name = saveState.getString("DEFAULT_FONT_NAME", defaultFont.getName());
+		int style = saveState.getInt("DEFAULT_FONT_STYLE", defaultFont.getStyle());
+		int size = saveState.getInt("DEFAULT_FONT_SIZE", defaultFont.getSize());
 		defaultFont = new Font(name, style, size);
 	}
 

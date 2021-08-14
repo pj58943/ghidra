@@ -15,6 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 
 import ghidra.app.util.HighlightProvider;
@@ -133,7 +135,7 @@ public abstract class AbstractVariableFieldFactory extends FieldFactory {
 	private void setMetrics(Font newFont, ParameterFieldOptions paramFieldOptions) {
 		paramFieldOptions.defaultMetrics = Toolkit.getDefaultToolkit().getFontMetrics(newFont);
 		for (int i = 0; i < paramFieldOptions.fontMetrics.length; i++) {
-			Font font = new Font(newFont.getFamily(), i, newFont.getSize());
+			Font font = themedFont(newFont.getFamily(), i, newFont.getSize());
 			paramFieldOptions.fontMetrics[i] = Toolkit.getDefaultToolkit().getFontMetrics(font);
 		}
 	}

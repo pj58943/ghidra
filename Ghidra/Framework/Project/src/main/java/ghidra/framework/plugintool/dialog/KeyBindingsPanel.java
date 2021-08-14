@@ -15,6 +15,8 @@
  */
 package ghidra.framework.plugintool.dialog;
 
+import static ghidra.docking.util.Theming.themedFont;
+
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -236,7 +238,7 @@ public class KeyBindingsPanel extends JPanel {
 		// make sure the label gets enough space
 		statusLabel.setPreferredSize(new Dimension(0, STATUS_LABEL_HEIGHT));
 
-		Font f = new Font("SansSerif", Font.PLAIN, FONT_SIZE);
+		Font f = themedFont("SansSerif", Font.PLAIN, FONT_SIZE);
 		statusLabel.setFont(f);
 
 		helpButton = new EmptyBorderButton(Icons.HELP_ICON);

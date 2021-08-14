@@ -16,6 +16,7 @@
 package ghidra.app.plugin.core.register;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -496,7 +497,7 @@ class RegisterValueRenderer extends GTableCellRenderer {
 
 	RegisterValueRenderer(JTable table) {
 		setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
-		setFont(new Font("monospaced", Font.PLAIN, 12));
+		setFont(themedFont("monospaced", Font.PLAIN, 12));
 	}
 
 	@Override

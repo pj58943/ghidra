@@ -16,6 +16,7 @@
 package docking.actions;
 
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.themedFont;
 
 import java.awt.*;
 import java.util.*;
@@ -172,7 +173,7 @@ public class KeyEntryDialog extends DialogComponentProvider {
 
 	private void setUpAttributes() {
 		textAttrSet = new SimpleAttributeSet();
-		textAttrSet.addAttribute(StyleConstants.FontFamily, "Tahoma");
+		textAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		textAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		textAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLUE));
 
