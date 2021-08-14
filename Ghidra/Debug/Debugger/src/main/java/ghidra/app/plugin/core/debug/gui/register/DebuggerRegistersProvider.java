@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.debug.gui.register;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -467,7 +467,7 @@ public class DebuggerRegistersProvider extends ComponentProviderAdapter
 			setTitle("[" + DebuggerResources.TITLE_PROVIDER_REGISTERS + "]");
 			setWindowGroup("Debugger.Core.disconnected");
 			setIntraGroupPosition(WindowPosition.STACK);
-			mainPanel.setBorder(BorderFactory.createLineBorder(themed(Color.ORANGE), 2));
+			mainPanel.setBorder(themedBorder(Color.ORANGE, 2));
 			setTransient();
 		}
 		else {

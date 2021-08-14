@@ -18,7 +18,7 @@
  */
 package docking.widgets.filechooser;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -186,7 +186,7 @@ class DirectoryList extends GList<File> implements GhidraFileChooserDirectoryMod
 		});
 
 		listEditor = new JPanel(new BorderLayout());
-		listEditor.setBorder(BorderFactory.createLineBorder(themed(Color.GRAY)));
+		listEditor.setBorder(themedBorder(Color.GRAY));
 
 		listEditor.add(listEditorLabel, BorderLayout.WEST);
 		listEditor.add(listEditorField, BorderLayout.CENTER);

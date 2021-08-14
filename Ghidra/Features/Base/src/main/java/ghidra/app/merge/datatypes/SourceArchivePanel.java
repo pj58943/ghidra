@@ -15,8 +15,7 @@
  */
 package ghidra.app.merge.datatypes;
 
-import static ghidra.docking.util.Theming.themed;
-import static ghidra.docking.util.Theming.themedFont;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.program.model.data.ArchiveType;
 import ghidra.program.model.data.SourceArchive;

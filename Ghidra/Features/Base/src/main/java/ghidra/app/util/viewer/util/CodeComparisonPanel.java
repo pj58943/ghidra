@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.viewer.util;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.event.*;
@@ -56,7 +56,7 @@ public abstract class CodeComparisonPanel<T extends FieldPanelCoordinator> exten
 	protected static final int RIGHT = 1;
 	private static final Color BUBBLE_GUM_PINK_COLOR = themed(new Color(0xff, 0xa5, 0xa5));
 	protected static final Border FOCUS_BORDER =
-		BorderFactory.createMatteBorder(3, 3, 3, 3, BUBBLE_GUM_PINK_COLOR);
+		themedBorder(BUBBLE_GUM_PINK_COLOR, 3, 3, 3, 3);
 	protected static final Border NON_FOCUS_BORDER = BorderFactory.createEmptyBorder(3, 3, 3, 3);
 	protected static final AddressSetView EMPTY_ADDRESS_SET = new AddressSet();
 

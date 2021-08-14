@@ -16,8 +16,7 @@
  */
 package ghidra.framework.task.gui.taskview;
 
-import static ghidra.docking.util.Theming.themed;
-import static ghidra.docking.util.Theming.themedFont;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.framework.task.*;
 import ghidra.framework.task.gui.GProgressBar;

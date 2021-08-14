@@ -15,7 +15,7 @@
  */
 package ghidra.app.merge;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -54,7 +54,7 @@ public class MergeProgressPanel extends JPanel {
 	private JPanel getProgressTitlePanel() {
 		JPanel phasesTitlePanel = new JPanel();
 		Border insideBorder = BorderFactory.createEmptyBorder(0, 0, 2, 0);
-		Border outsideBorder = BorderFactory.createMatteBorder(0, 0, 2, 0, themed(Color.BLUE));
+		Border outsideBorder = themedBorder(Color.BLUE, 0, 0, 2, 0);
 		Border compoundBorder = BorderFactory.createCompoundBorder(outsideBorder, insideBorder);
 		phasesTitlePanel.setBorder(compoundBorder);
 		BoxLayout bl = new BoxLayout(phasesTitlePanel, BoxLayout.X_AXIS);

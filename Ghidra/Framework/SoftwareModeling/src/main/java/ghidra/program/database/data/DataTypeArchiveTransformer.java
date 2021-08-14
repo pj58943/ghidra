@@ -15,8 +15,7 @@
  */
 package ghidra.program.database.data;
 
-import static ghidra.docking.util.Theming.themed;
-import static ghidra.docking.util.Theming.themedFont;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.WindowAdapter;

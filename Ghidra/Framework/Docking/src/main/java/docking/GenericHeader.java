@@ -15,7 +15,7 @@
  */
 package docking;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -70,7 +70,7 @@ public class GenericHeader extends JPanel {
 		BorderLayout layout = new BorderLayout();
 		layout.setVgap(1);
 		setLayout(layout);
-		setBorder(BorderFactory.createLineBorder(themed(Color.GRAY)));
+		setBorder(themedBorder(Color.GRAY));
 		setFocusable(false);
 
 		titlePanel = new TitlePanel();
@@ -208,7 +208,7 @@ public class GenericHeader extends JPanel {
 
 	private void constructMultiLinePanel() {
 		removeAll();
-		toolbar.setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, themed(Color.BLACK)));
+		toolbar.setBorder(themedBorder(Color.BLACK, 1, 0, 0, 0));
 		add(toolbar, BorderLayout.SOUTH);
 		add(titlePanel, BorderLayout.CENTER);
 		add(menuCloseToolbar, BorderLayout.EAST);

@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.assembler;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.event.*;
@@ -175,9 +175,9 @@ public class AssembleDockingAction extends DockingAction {
 			}
 		});
 
-		input.getMnemonicField().setBorder(BorderFactory.createLineBorder(themed(Color.RED), 2));
-		input.getOperandsField().setBorder(BorderFactory.createLineBorder(themed(Color.RED), 2));
-		input.getAssemblyField().setBorder(BorderFactory.createLineBorder(themed(Color.RED), 2));
+		input.getMnemonicField().setBorder(themedBorder(Color.RED, 2));
+		input.getOperandsField().setBorder(themedBorder(Color.RED, 2));
+		input.getAssemblyField().setBorder(themedBorder(Color.RED, 2));
 
 		input.getAutocompleter().addAutocompletionListener(listener);
 		input.addKeyListener(listener);

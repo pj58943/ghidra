@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.function.tags;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.util.*;
@@ -60,7 +60,7 @@ import resources.ResourceManager;
 public class FunctionTagProvider extends ComponentProviderAdapter
 		implements DomainObjectListener {
 
-	private Color BORDER_COLOR = themed(Color.GRAY);
+	private Color BORDER_COLOR = Color.GRAY;
 
 	private SourceTagsPanel sourcePanel;
 	private TargetTagsPanel targetPanel;
@@ -242,9 +242,9 @@ public class FunctionTagProvider extends ComponentProviderAdapter
 		targetPanel = new TargetTagsPanel(this, tool, "Assigned To Function");
 		allFunctionsPanel = new AllFunctionsPanel(program, this, "Functions with Selected Tag");
 		buttonPanel = new FunctionTagButtonPanel(sourcePanel, targetPanel);
-		sourcePanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
-		targetPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
-		allFunctionsPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR));
+		sourcePanel.setBorder(themedBorder(BORDER_COLOR));
+		targetPanel.setBorder(themedBorder(BORDER_COLOR));
+		allFunctionsPanel.setBorder(themedBorder(BORDER_COLOR));
 
 		// If we don't set this, then the splitter won't be able to shrink the
 		// target panels below the size required by its header, which can be large 

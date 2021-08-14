@@ -15,8 +15,7 @@
  */
 package ghidra.graph.viewer;
 
-import static ghidra.docking.util.Theming.themed;
-import static ghidra.docking.util.Theming.themedFont;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -377,7 +376,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 
 		mainPanel.add(layeredPane, BorderLayout.CENTER);
 
-		satellite.setBorder(BorderFactory.createLineBorder(themed(Color.BLACK)));
+		satellite.setBorder(themedBorder(Color.BLACK));
 
 		undockedSatellitePanel = new JPanel(new BorderLayout());
 		undockedSatellitePanel.addComponentListener(new ComponentAdapter() {

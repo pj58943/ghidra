@@ -15,7 +15,7 @@
  */
 package docking.widgets;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -576,7 +576,7 @@ public class DropDownTextField<T> extends JTextField implements GComponent {
 		matchingWindow.setFocusable(false);
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBorder(
-			BorderFactory.createBevelBorder(BevelBorder.RAISED, themed(Color.GRAY), themed(Color.BLACK)));
+			themedBevelBorder(BevelBorder.RAISED, Color.GRAY, Color.BLACK));
 		scrollPane.setFocusable(false);
 		scrollPane.getVerticalScrollBar().setFocusable(false);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);

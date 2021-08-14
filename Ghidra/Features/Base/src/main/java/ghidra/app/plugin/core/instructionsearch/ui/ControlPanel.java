@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.instructionsearch.ui;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 
@@ -62,7 +62,7 @@ public class ControlPanel extends JPanel {
 		gbc.weightx = 1.0;
 		this.add(directionWidget, gbc);
 
-		this.setBorder(BorderFactory.createLineBorder(themed(Color.GRAY)));
+		this.setBorder(themedBorder(Color.GRAY));
 	}
 
 	/**

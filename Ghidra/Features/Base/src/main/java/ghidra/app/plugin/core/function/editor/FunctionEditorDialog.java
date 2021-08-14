@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.function.editor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -211,7 +211,7 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 		thunkedText.setEditable(false);
 		DockingUtils.setTransparent(thunkedText);
 		CompoundBorder border =
-			BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(themed(Color.GRAY)),
+			BorderFactory.createCompoundBorder(themedBorder(Color.GRAY),
 				BorderFactory.createEmptyBorder(0, 5, 0, 5));
 		thunkedText.setBorder(border);
 		thunkedText.setForeground(themed(Color.BLUE));

@@ -16,7 +16,7 @@
  */
 package ghidra.app.nav;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -33,7 +33,7 @@ public class DecoratorPanel extends JPanel {
 	
 	public void setConnnected( boolean isConnected ) {
 		if ( !isConnected ) {
-			setBorder( BorderFactory.createLineBorder( themed(Color.ORANGE), 2 ) );
+			setBorder( themedBorder(Color.ORANGE, 2 ) );
 		}
 		else {
 			setBorder( BorderFactory.createEmptyBorder() );

@@ -15,7 +15,7 @@
  */
 package ghidra.framework.plugintool.dialog;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -94,7 +94,7 @@ public class PluginManagerComponent extends JPanel implements ChangeListener, Sc
 			initializeLabelSection();
 			initializeDescriptionSection();
 
-			setBorder(BorderFactory.createLineBorder(themed(Color.DARK_GRAY)));
+			setBorder(themedBorder(Color.DARK_GRAY));
 			updateCheckBoxState();
 		}
 

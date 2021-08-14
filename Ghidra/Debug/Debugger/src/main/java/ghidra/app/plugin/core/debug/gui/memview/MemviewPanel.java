@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.debug.gui.memview;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -62,7 +62,7 @@ public class MemviewPanel extends JPanel implements MouseListener, MouseMotionLi
 		this.provider = provider;
 		setPreferredSize(new Dimension(barWidth, barHeight));
 		setSize(getPreferredSize());
-		setBorder(BorderFactory.createLineBorder(themed(Color.BLACK), 1));
+		setBorder(themedBorder(Color.BLACK, 1));
 		setFocusable(true);
 
 		addMouseListener(this);

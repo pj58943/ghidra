@@ -15,8 +15,7 @@
  */
 package docking.widgets;
 
-import static ghidra.docking.util.Theming.themed;
-import static ghidra.docking.util.Theming.themedFont;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 
@@ -59,7 +58,7 @@ public abstract class AbstractGCellRenderer extends GDHtmlLabel {
 	public AbstractGCellRenderer() {
 		noFocusBorder = BorderFactory.createEmptyBorder(0, 5, 0, 5);
 		Border innerBorder = BorderFactory.createEmptyBorder(0, 4, 0, 4);
-		Border outerBorder = BorderFactory.createLineBorder(themed(Color.YELLOW), 1);
+		Border outerBorder = themedBorder(Color.YELLOW, 1);
 		focusBorder = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
 		setBorder(noFocusBorder);
 

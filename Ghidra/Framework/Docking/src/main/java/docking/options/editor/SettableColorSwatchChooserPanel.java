@@ -15,7 +15,7 @@
  */
 package docking.options.editor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -121,7 +121,7 @@ public class SettableColorSwatchChooserPanel extends AbstractColorChooserPanel {
 		recentSwatchPanel.addMouseListener(recentSwatchListener);
 
 		Border border =
-			new CompoundBorder(new LineBorder(themed(Color.black)), new LineBorder(themed(Color.white)));
+			new CompoundBorder(themedBorder(Color.black), themedBorder(Color.white));
 		swatchPanel.setBorder(border);
 		gbc.weightx = 1.0;
 		gbc.gridwidth = 2;

@@ -15,7 +15,7 @@
  */
 package help.screenshot;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -189,12 +189,12 @@ public class ImageDialogProvider extends DialogComponentProvider {
 		}
 
 		newLabelPanel.add(createImageLabelComponent("New Image"), BorderLayout.NORTH);
-		newLabelPanel.setBorder(BorderFactory.createLineBorder(themed(Color.black), 20));
+		newLabelPanel.setBorder(themedBorder(Color.black, 20));
 		newLabelPanel.add(newImageLabel, BorderLayout.CENTER);
 
 		JPanel oldLabelPanel = new JPanel(new BorderLayout());
 		oldLabelPanel.add(createImageLabelComponent("Old Image"), BorderLayout.NORTH);
-		oldLabelPanel.setBorder(BorderFactory.createLineBorder(themed(Color.black), 20));
+		oldLabelPanel.setBorder(themedBorder(Color.black, 20));
 		oldLabelPanel.add(oldImageLabel, BorderLayout.CENTER);
 
 		imagePanel.add(oldLabelPanel, BorderLayout.WEST);

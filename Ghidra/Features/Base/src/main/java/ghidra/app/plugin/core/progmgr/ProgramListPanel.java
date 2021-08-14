@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.progmgr;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -149,7 +149,7 @@ class ProgramListPanel extends JPanel {
 
 		// add some padding around the panel
 		Border innerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-		Border outerBorder = BorderFactory.createLineBorder(themed(Color.BLACK));
+		Border outerBorder = themedBorder(Color.BLACK);
 		Border compoundBorder = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
 		setBorder(compoundBorder);
 

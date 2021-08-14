@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.references;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -25,7 +25,6 @@ import java.util.*;
 import java.util.List;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.AbstractTableModel;
@@ -542,7 +541,7 @@ class EditMemoryReferencePanel extends EditReferencePanel {
 		model = new HistoryTableModel(fromCodeUnit.getProgram());
 		displayTable = new JTable(model);
 		displayTable.setTableHeader(null);
-		displayTable.setBorder(new LineBorder(themed(Color.BLACK)));
+		displayTable.setBorder(themedBorder(Color.BLACK));
 		displayTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		displayTable.addMouseListener(new MouseAdapter() {

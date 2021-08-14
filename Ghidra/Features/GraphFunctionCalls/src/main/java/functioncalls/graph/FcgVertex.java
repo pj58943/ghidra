@@ -15,7 +15,7 @@
  */
 package functioncalls.graph;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.geom.Area;
@@ -26,7 +26,6 @@ import java.util.Objects;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 
 import docking.widgets.EmptyBorderButton;
 import docking.widgets.label.GDLabel;
@@ -158,7 +157,7 @@ public class FcgVertex extends AbstractVisualVertex implements VertexShapeProvid
 
 		// calculate the needed size
 		layeredPane = new JLayeredPane();
-		Border border = createDebugBorder(new LineBorder(themed(Color.YELLOW.darker()), 1));
+		Border border = createDebugBorder(themedBorder(Color.YELLOW.darker(), 1));
 		layeredPane.setBorder(border);
 
 		updateLayeredPaneSize();
@@ -248,7 +247,7 @@ public class FcgVertex extends AbstractVisualVertex implements VertexShapeProvid
 		compactShape = (Double) vertexShape.clone();
 		vertexImageLabel.setIcon(new ImageIcon(image));
 
-		Border border = createDebugBorder(new LineBorder(themed(Color.PINK), 1));
+		Border border = createDebugBorder(themedBorder(Color.PINK, 1));
 		vertexImageLabel.setBorder(border);
 	}
 
@@ -297,7 +296,7 @@ public class FcgVertex extends AbstractVisualVertex implements VertexShapeProvid
 
 	private void addNameLabel() {
 
-		Border border = createDebugBorder(new LineBorder(themed(Color.GREEN), 1));
+		Border border = createDebugBorder(themedBorder(Color.GREEN, 1));
 		nameLabel.setBorder(border);
 
 		// assume the vertex label has been bounded

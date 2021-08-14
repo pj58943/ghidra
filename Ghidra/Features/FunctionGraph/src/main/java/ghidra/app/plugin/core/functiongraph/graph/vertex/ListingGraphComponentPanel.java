@@ -18,7 +18,7 @@
  */
 package ghidra.app.plugin.core.functiongraph.graph.vertex;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -28,6 +28,7 @@ import java.util.List;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 
 import docking.ActionContext;
 import docking.GenericHeader;
@@ -135,10 +136,9 @@ public class ListingGraphComponentPanel extends AbstractGraphComponentPanel {
 
 		add(listingPanel, BorderLayout.CENTER);
 
-		BevelBorder beveledBorder =
-			(BevelBorder) BorderFactory.createBevelBorder(BevelBorder.RAISED,
-				themed(new Color(225, 225, 225)), themed(new Color(155, 155, 155)), themed(new Color(96, 96, 96)),
-				themed(new Color(0, 0, 0)));
+		Border beveledBorder = themedBevelBorder(BevelBorder.RAISED,
+				new Color(225, 225, 225), new Color(155, 155, 155),
+				new Color(96, 96, 96), new Color(0, 0, 0));
 		setBorder(beveledBorder);
 
 		addKeyListener(new FieldPanelKeyListener());
@@ -226,7 +226,7 @@ public class ListingGraphComponentPanel extends AbstractGraphComponentPanel {
 
 		JPanel headerPanel = new JPanel(new BorderLayout());
 		headerPanel.add(tooltipTitleLabel);
-		headerPanel.setBorder(BorderFactory.createLineBorder(themed(Color.BLACK)));
+		headerPanel.setBorder(themedBorder(Color.BLACK));
 
 		panel.add(headerPanel, BorderLayout.NORTH);
 		panel.add(previewListingPanel, BorderLayout.CENTER);

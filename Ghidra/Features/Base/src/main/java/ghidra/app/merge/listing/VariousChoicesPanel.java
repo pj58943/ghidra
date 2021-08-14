@@ -15,7 +15,7 @@
  */
 package ghidra.app.merge.listing;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -57,7 +57,7 @@ public class VariousChoicesPanel extends ConflictPanel {
 
 	private final static long serialVersionUID = 1;
 	private static final Border UNDERLINE_BORDER =
-		BorderFactory.createMatteBorder(0, 0, 1, 0, themed(Color.BLACK));
+		themedBorder(Color.BLACK, 0, 0, 1, 0);
 
 	private JPanel rowPanel;
 	private GDHtmlLabel headerLabel;
