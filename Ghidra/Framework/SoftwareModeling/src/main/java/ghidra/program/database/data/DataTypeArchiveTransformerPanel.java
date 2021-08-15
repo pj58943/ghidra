@@ -15,8 +15,6 @@
  */
 package ghidra.program.database.data;
 
-import static ghidra.docking.util.Theming.themedFont;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -101,7 +99,7 @@ public class DataTypeArchiveTransformerPanel extends JPanel {
 			}
 		});
 		Font font = oldBrowseButton.getFont();
-		oldBrowseButton.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
+		oldBrowseButton.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
 		filePanel.add(oldBrowseButton, gbc);
 
 		gbc.gridx = 3;
@@ -139,7 +137,7 @@ public class DataTypeArchiveTransformerPanel extends JPanel {
 			}
 		});
 		Font font = newBrowseButton.getFont();
-		newBrowseButton.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
+		newBrowseButton.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
 		filePanel.add(newBrowseButton, gbc);
 	}
 
@@ -172,7 +170,7 @@ public class DataTypeArchiveTransformerPanel extends JPanel {
 			}
 		});
 		Font font = destinationBrowseButton.getFont();
-		destinationBrowseButton.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
+		destinationBrowseButton.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
 		filePanel.add(destinationBrowseButton, gbc);
 	}
 

@@ -72,7 +72,7 @@ class SourceArchivePanel extends JPanel {
 		deletedAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		deletedAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		deletedAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
-		deletedAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.RED));
+		deletedAttrSet.addAttribute(StyleConstants.Foreground, ALERT_FOREGROUND);
 		
 		setSourceArchive(null);
 	}

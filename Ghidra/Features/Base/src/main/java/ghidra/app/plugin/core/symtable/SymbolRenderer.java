@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.symtable;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -80,7 +80,7 @@ class SymbolRenderer extends GhidraTableCellRenderer {
 		setBold();
 		Color color =
 			(inspector != null) && (value instanceof Symbol) ? inspector.getColor((Symbol) value)
-					: themed(Color.BLACK);
+					: FOREGROUND;
 
 		if (!isSelected) {
 			setForeground(color);

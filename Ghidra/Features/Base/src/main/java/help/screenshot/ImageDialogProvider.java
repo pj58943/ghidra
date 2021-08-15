@@ -145,12 +145,12 @@ public class ImageDialogProvider extends DialogComponentProvider {
 					String selectedItem = (String) shapeCombo.getSelectedItem();
 					if ("Rectangle".equals(selectedItem)) {
 						Rectangle r = new Rectangle(startPoint, new Dimension(width, height));
-						dragShape = new ShapePainter(r, themed(Color.RED));
+						dragShape = new ShapePainter(r, ALERT_FOREGROUND);
 					}
 					else if ("Oval".equals(selectedItem)) {
 						Ellipse2D ellipse =
 							new Ellipse2D.Double(startPoint.x, startPoint.y, width, height);
-						dragShape = new ShapePainter(ellipse, themed(Color.RED));
+						dragShape = new ShapePainter(ellipse, ALERT_FOREGROUND);
 					}
 					else if ("Arrow".equals(selectedItem)) {
 						// TODO
@@ -176,13 +176,13 @@ public class ImageDialogProvider extends DialogComponentProvider {
 
 		newImageLabel = new GIconLabel(new ImageIcon(newImage));
 		newImageLabel.setOpaque(true);
-		newImageLabel.setBackground(themed(Color.BLACK));
+		newImageLabel.setBackground(FOREGROUND);
 		JPanel newLabelPanel = new JPanel(new BorderLayout());
 
 		if (oldImage != null) {
 			oldImageLabel = new GIconLabel(new ImageIcon(oldImage));
 			oldImageLabel.setOpaque(true);
-			oldImageLabel.setBackground(themed(Color.BLACK));
+			oldImageLabel.setBackground(FOREGROUND);
 		}
 		else {
 			oldImageLabel = new GLabel("     Old image not found     ");
@@ -220,7 +220,7 @@ public class ImageDialogProvider extends DialogComponentProvider {
 		JLabel label = new GDHtmlLabel("<html><b><font color='yellow' size='8'>" + name);
 		label.setOpaque(true);
 		//	label.setForeground(themed(Color.YELLOW));
-		label.setBackground(themed(Color.BLACK));
+		label.setBackground(themed(Color.BLACK, "bg"));
 		label.setHorizontalTextPosition(SwingConstants.CENTER);
 		return label;
 	}

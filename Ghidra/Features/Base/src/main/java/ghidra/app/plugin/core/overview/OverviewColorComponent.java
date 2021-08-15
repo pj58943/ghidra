@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.overview;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -40,7 +40,7 @@ import ghidra.util.task.SwingUpdateManager;
  * Uses an {@link OverviewColorService} to get the appropriate color for an address.
  */
 public class OverviewColorComponent extends JPanel implements OverviewProvider {
-	private static final Color DEFAULT_COLOR = themed(Color.GRAY);
+	private static final Color DEFAULT_COLOR = GRAY_FOREGROUND;
 	private OverviewColorService service;
 	private Color[] colors = new Color[0];
 	private final SwingUpdateManager refreshUpdater =
@@ -157,7 +157,7 @@ public class OverviewColorComponent extends JPanel implements OverviewProvider {
 		}
 		BigInteger indexCount = map.getIndexCount();
 		if (indexCount.equals(BigInteger.ZERO)) {
-			Arrays.fill(colors, themed(Color.GRAY));
+			Arrays.fill(colors, GRAY_FOREGROUND);
 			repaint();
 			return;
 		}

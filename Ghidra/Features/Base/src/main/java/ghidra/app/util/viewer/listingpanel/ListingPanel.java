@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.viewer.listingpanel;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -350,7 +350,7 @@ public class ListingPanel extends JPanel implements FieldMouseListener, FieldLoc
 				splitPaneDividerLocation = splitPane.getDividerLocation();
 			}
 			JPanel resizeablePanel = new JPanel(new ScrollpanelResizeablePanelLayout(scroller));
-			resizeablePanel.setBackground(themed(Color.WHITE));
+			resizeablePanel.setBackground(BACKGROUND);
 			resizeablePanel.add(resizeableMarginProvider.getComponent());
 			splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, resizeablePanel, scroller);
 			splitPane.setDividerSize(4);

@@ -21,7 +21,7 @@
 
 package ghidra.app.plugin.core.misc;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.io.IOException;
@@ -211,7 +211,7 @@ public class MyProgramChangesDisplayPlugin extends ProgramPlugin implements Doma
 
 		currentConflictChangeMarks = markerService.createAreaMarker("Changes: Conflicting",
 			"Changes made by others to this program that conflict with my changes", program,
-			CONFLICT_PRIORITY, true, true, false, themed(Color.RED));
+			CONFLICT_PRIORITY, true, true, false, ALERT_FOREGROUND);
 	}
 
 	private void disposeMarkerSets(Program program) {

@@ -15,7 +15,7 @@
  */
 package ghidra.util.table;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -35,7 +35,7 @@ import ghidra.util.table.column.AbstractGColumnRenderer;
  * used directly with {@link PreviewTableCellData} column data.
  */
 public class PreviewDataTableCellRenderer extends AbstractGColumnRenderer<PreviewTableCellData> {
-	private static final Color DEFAULT_OFFCUT_FOREGROUND_COLOR = themed(Color.RED);
+	private static final Color DEFAULT_OFFCUT_FOREGROUND_COLOR = ALERT_FOREGROUND;
 	private static final Color DEFAULT_SELECTED_OFFCUT_FOREGROUND_COLOR = themed(Color.PINK);
 
 	@Override

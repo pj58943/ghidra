@@ -36,7 +36,7 @@ public class BlockPanel extends JPanel implements ComponentListener {
 
 	public BlockPanel() {
 		super();
-		setBackground(themed(Color.WHITE));
+		setBackground(BACKGROUND);
 		addComponentListener(this);
 		metrics = getFontMetrics(FONT);
 		setPreferredSize(
@@ -46,7 +46,7 @@ public class BlockPanel extends JPanel implements ComponentListener {
 	@Override
 	public void paintComponent(Graphics g) {
 
-		g.setColor(themed(Color.BLACK));
+		g.setColor(FOREGROUND);
 		g.setFont(FONT);
 		int height = getHeight();
 

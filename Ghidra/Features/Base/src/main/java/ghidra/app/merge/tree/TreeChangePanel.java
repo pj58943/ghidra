@@ -44,8 +44,8 @@ class TreeChangePanel extends JPanel {
 	private final static ImageIcon CHANGED_ICON = ResourceManager.loadImage("images/changed16.gif");
 	private final static ImageIcon NO_CHANGE_ICON =
 		ResourceManager.loadImage("images/EmptyIcon16.gif");
-	private final static Color CHANGED_COLOR = themed(Color.BLACK);
-	private final static Color NO_CHANGE_COLOR = themed(Color.GRAY);
+	private final static Color CHANGED_COLOR = FOREGROUND;
+	private final static Color NO_CHANGE_COLOR = GRAY_FOREGROUND;
 
 	TreeChangePanel(String title) {
 		super(new BorderLayout());
@@ -75,7 +75,7 @@ class TreeChangePanel extends JPanel {
 
 		treeNameLabel = new GDLabel("Tree Name");
 		Font font = treeNameLabel.getFont();
-		font = themedFont(font.getName(), Font.BOLD, font.getSize());
+		font = new Font(font.getName(), Font.BOLD, font.getSize());
 		treeNameLabel.setFont(font);
 
 		nameLabel = new GDLabel("Name Changed");

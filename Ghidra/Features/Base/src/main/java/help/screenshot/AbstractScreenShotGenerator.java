@@ -15,8 +15,8 @@
  */
 package help.screenshot;
 
+import static ghidra.docking.util.Theming.*;
 import static org.junit.Assert.assertNotNull;
-import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
@@ -786,7 +786,7 @@ public abstract class AbstractScreenShotGenerator extends AbstractGhidraHeadedIn
 		BufferedImage combinedImage =
 			new BufferedImage(rect.width, rect.height, BufferedImage.TYPE_INT_ARGB);
 		Graphics g = combinedImage.getGraphics();
-		g.setColor(themed(Color.WHITE));
+		g.setColor(BACKGROUND);
 		g.fillRect(0, 0, rect.width, rect.height);
 
 		for (Component component : comps) {
@@ -1593,7 +1593,7 @@ public abstract class AbstractScreenShotGenerator extends AbstractGhidraHeadedIn
 	public Image takeSnippet(Rectangle bounds) {
 		int margin = 20;
 		int topMargin = 4;
-		padImage(themed(Color.WHITE), 0, margin, 0, margin);
+		padImage(BACKGROUND, 0, margin, 0, margin);
 		int rise = 8;
 		bounds.width += 2 * margin;
 

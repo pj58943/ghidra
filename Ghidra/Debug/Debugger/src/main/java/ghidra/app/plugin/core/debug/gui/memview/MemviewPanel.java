@@ -62,7 +62,7 @@ public class MemviewPanel extends JPanel implements MouseListener, MouseMotionLi
 		this.provider = provider;
 		setPreferredSize(new Dimension(barWidth, barHeight));
 		setSize(getPreferredSize());
-		setBorder(themedBorder(Color.BLACK, 1));
+		setBorder(CONTRAST_BORDER);
 		setFocusable(true);
 
 		addMouseListener(this);
@@ -131,7 +131,7 @@ public class MemviewPanel extends JPanel implements MouseListener, MouseMotionLi
 			g.translate(currentPixelAddr, currentPixelTime);
 		}
 
-		g.setColor(themed(Color.RED));
+		g.setColor(ALERT_FOREGROUND);
 		g.fillPolygon(locXs, locYs, locXs.length);
 
 		if (vertical) {
@@ -151,7 +151,7 @@ public class MemviewPanel extends JPanel implements MouseListener, MouseMotionLi
 		int y = currentRectangle.y;
 		int w = currentRectangle.width;
 		int h = currentRectangle.height;
-		g.setColor(themed(Color.RED));
+		g.setColor(ALERT_FOREGROUND);
 		g.fillRect(x - 1, y - 1, 1, h + 2);
 		g.fillRect(x - 1, y - 1, w + 2, 1);
 		g.fillRect(x + w + 1, y - 1, 1, h + 2);

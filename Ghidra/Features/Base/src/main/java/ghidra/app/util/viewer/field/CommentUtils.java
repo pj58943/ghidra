@@ -98,7 +98,7 @@ public class CommentUtils {
 		Font dummyFont = themedFont("monospaced", Font.PLAIN, 12);
 		@SuppressWarnings("deprecation")
 		FontMetrics fontMetrics = Toolkit.getDefaultToolkit().getFontMetrics(dummyFont);
-		return new AttributedString("", themed(Color.BLACK), fontMetrics);
+		return new AttributedString("", FOREGROUND, fontMetrics);
 	}
 
 	/**

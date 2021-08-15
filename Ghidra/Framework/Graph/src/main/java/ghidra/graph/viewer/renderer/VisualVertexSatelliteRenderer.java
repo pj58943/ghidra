@@ -15,7 +15,7 @@
  */
 package ghidra.graph.viewer.renderer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 
@@ -100,7 +100,7 @@ public class VisualVertexSatelliteRenderer<V extends VisualVertex, E extends Vis
 			bounds.height + (offset * 2));
 
 		if (isGraphScaledEnoughToBeDifficultToSee(rc)) {
-			g.setColor(themed(Color.BLACK));
+			g.setColor(FOREGROUND);
 			g.drawOval(bounds.x - offset, bounds.y - offset, bounds.width + (offset * 2),
 				bounds.height + (offset * 2));
 			g.drawOval(bounds.x - offset - 1, bounds.y - offset - 1,

@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.instructionsearch.model;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.util.HashSet;
@@ -127,13 +127,13 @@ public class InstructionTableDataObject {
 			case MASKED:
 				backgroundColor =
 					isInstruction ? BACKGROUND_COLOR : BACKGROUND_COLOR_NON_INSTRUCTION;
-				foregroundColor = themed(Color.BLACK);
+				foregroundColor = FOREGROUND;
 				border = BorderFactory.createLoweredSoftBevelBorder();
 				break;
 			case NOT_MASKED:
 				backgroundColor = isInstruction ? BACKGROUND_COLOR_DARKER
 						: BACKGROUND_COLOR_DARKER_NON_INSTRUCTION;
-				foregroundColor = themed(Color.BLACK);
+				foregroundColor = FOREGROUND;
 				border = BorderFactory.createRaisedSoftBevelBorder();
 				break;
 			case NA:

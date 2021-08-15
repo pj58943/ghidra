@@ -15,9 +15,8 @@
  */
 package ghidra.app.util.viewer.field;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
-import java.awt.Color;
 import java.math.BigInteger;
 
 import docking.widgets.fieldpanel.field.*;
@@ -83,7 +82,7 @@ public class SpaceFieldFactory extends FieldFactory {
 					n = -n;
 				}
 				FieldElement[] fes = new FieldElement[n];
-				AttributedString as = new AttributedString("", themed(Color.BLACK), getMetrics());
+				AttributedString as = new AttributedString("", FOREGROUND, getMetrics());
 				for (int i = 0; i < n; i++) {
 					fes[i] = new TextFieldElement(as, 0, 0);
 				}

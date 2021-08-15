@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.function;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.math.BigInteger;
@@ -103,7 +103,7 @@ public class StackDepthFieldFactory extends FieldFactory {
 		if (overrideDepth != null) {
 			String grows = (func.getStackFrame().growsNegative() ? " - " : " + ");
 			depthString = depthString + grows + Integer.toString(overrideDepth, 16);
-			as = new AttributedString(depthString, themed(Color.RED), getMetrics());
+			as = new AttributedString(depthString, ALERT_FOREGROUND, getMetrics());
 		}
 
 		FieldElement text = new TextFieldElement(as, 0, 0);

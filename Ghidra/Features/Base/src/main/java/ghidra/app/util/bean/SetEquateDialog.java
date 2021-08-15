@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.bean;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -37,18 +37,6 @@ import docking.widgets.label.GDLabel;
 import docking.widgets.label.GLabel;
 import docking.widgets.table.GTableCellRenderingData;
 import ghidra.app.context.ListingActionContext;
-/**
- * Dialog for Equate Plugin.
- * Allows the user to enter a name to be used for an equate at a location.
- * The dialog will present the user with a textfield to type in the new name. Additionally,
- * if other equates already exist for the value in question, they will be displayed in
- * a drop down comboBox. If the user types in an invalid equate name (the string is not
- * a valid name or the string is already associated with a different numeric value),
- * an error message will be displayed.  The user can choose whether to apply to current
- * cursor location only (default), or all scalars of the same value in a selection or
- * the entire program. Users also can indicate whether a setEquate should replace any
- * existing equates or only apply to new ones.
- */
 import ghidra.app.services.DataTypeManagerService;
 import ghidra.framework.plugintool.PluginTool;
 import ghidra.program.database.symbol.EquateManager;
@@ -65,6 +53,18 @@ import ghidra.util.layout.VerticalLayout;
 import ghidra.util.table.*;
 import utility.function.Callback;
 
+/**
+ * Dialog for Equate Plugin.
+ * Allows the user to enter a name to be used for an equate at a location.
+ * The dialog will present the user with a textfield to type in the new name. Additionally,
+ * if other equates already exist for the value in question, they will be displayed in
+ * a drop down comboBox. If the user types in an invalid equate name (the string is not
+ * a valid name or the string is already associated with a different numeric value),
+ * an error message will be displayed.  The user can choose whether to apply to current
+ * cursor location only (default), or all scalars of the same value in a selection or
+ * the entire program. Users also can indicate whether a setEquate should replace any
+ * existing equates or only apply to new ones.
+ */
 public class SetEquateDialog extends DialogComponentProvider {
 	public static final int CANCELED = 0;
 	public static final int OK = 1;
@@ -149,17 +149,17 @@ public class SetEquateDialog extends DialogComponentProvider {
 				int refCount = eqRowObject.getRefCount();
 				if (refCount > 0) {
 					if (eqRowObject.getEntryName().contains(EquateManager.ERROR_TAG)) {
-						c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.RED));
+						c.setForeground(isSelected ? SELECTED_FOREGROUND_CONTRAST : ALERT_FOREGROUND);
 					}
 					else {
 						Equate e = eqRowObject.getEquate();
 						if (e != null && !e.isEnumBased()) {
-							c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.BLUE));
+							c.setForeground(isSelected ? SELECTED_FOREGROUND_CONTRAST : themed(Color.BLUE));
 						}
 					}
 				}
 				else {
-					c.setForeground(isSelected ? themed(Color.WHITE) : themed(Color.GRAY.darker()));
+					c.setForeground(isSelected ? SELECTED_FOREGROUND_CONTRAST : themed(Color.GRAY.darker()));
 				}
 				return c;
 			}

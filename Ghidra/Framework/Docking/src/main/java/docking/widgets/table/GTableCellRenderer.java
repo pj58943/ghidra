@@ -157,7 +157,7 @@ public class GTableCellRenderer extends AbstractGCellRenderer implements TableCe
 			setForegroundColor(table, model, value);
 
 			if (row == dropRow) {
-				setBackground(themed(Color.CYAN));
+				setBackground(themed(Color.CYAN, "bg"));
 			}
 			else {
 				setBackground(getOSDependentBackgroundColor(table, row));

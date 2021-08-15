@@ -15,8 +15,6 @@
  */
 package ghidra.app.plugin.core.archive;
 
-import static ghidra.docking.util.Theming.themedFont;
-
 import java.awt.*;
 import java.io.File;
 
@@ -96,7 +94,7 @@ public class ArchiveDialog extends DialogComponentProvider {
 			}
 		});
 		Font font = archiveBrowse.getFont();
-		archiveBrowse.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
+		archiveBrowse.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
 		archiveBrowse.setName("archiveBrowse");
 
 		// Layout the components.

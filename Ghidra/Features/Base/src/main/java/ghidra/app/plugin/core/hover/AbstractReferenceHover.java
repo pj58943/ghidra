@@ -15,8 +15,8 @@
  */
 package ghidra.app.plugin.core.hover;
 
+import static ghidra.docking.util.Theming.*;
 import static ghidra.util.HTMLUtilities.*;
-import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 
@@ -277,7 +277,7 @@ public abstract class AbstractReferenceHover extends AbstractConfigurableHover {
 
 		String message = "Address not in memory";
 		message = HTMLUtilities.italic(message);
-		message = HTMLUtilities.colorString(themed(Color.GRAY), message);
+		message = HTMLUtilities.colorString(GRAY_FOREGROUND, message);
 		buffy.append(message);
 		toolTip.setTipText(buffy.toString());
 		return toolTip;

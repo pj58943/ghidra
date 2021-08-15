@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.osgi;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.io.File;
@@ -106,8 +106,8 @@ public class BundleStatusComponentProvider extends ComponentProviderAdapter {
 
 		bundleStatusTable = new GTable(bundleStatusTableModel);
 		bundleStatusTable.setName("BUNDLESTATUS_TABLE");
-		bundleStatusTable.setSelectionBackground(themed(new Color(204, 204, 255)));
-		bundleStatusTable.setSelectionForeground(themed(Color.BLACK));
+		bundleStatusTable.setSelectionBackground(SELECTED_BACKGROUND);
+		bundleStatusTable.setSelectionForeground(SELECTED_FOREGROUND);
 		bundleStatusTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
 		// give actions a chance to update status when selection changed

@@ -15,7 +15,7 @@
  */
 package docking.util;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -879,7 +879,7 @@ public class AnimationUtils {
 			double cx = emphasizedBounds.getCenterX();
 			double cy = emphasizedBounds.getCenterY();
 			g2d.rotate(rad, cx, cy);
-			g.setColor(themed(Color.BLACK));
+			g.setColor(FOREGROUND);
 
 			int iw = emphasizedBounds.width;
 			int ih = emphasizedBounds.height;

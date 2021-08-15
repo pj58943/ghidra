@@ -15,10 +15,9 @@
  */
 package ghidra.app.util.html;
 
+import static ghidra.docking.util.Theming.*;
 import static ghidra.util.HTMLUtilities.*;
-import static ghidra.docking.util.Theming.themed;
 
-import java.awt.Color;
 import java.util.*;
 
 import ghidra.app.util.ToolTipUtils;
@@ -177,7 +176,7 @@ public class CompositeDataTypeHTMLRepresentation extends HTMLDataTypeRepresentat
 		Iterator<String> warnings = warningLines.iterator();
 		for (; warnings.hasNext();) {
 			String warning = warnings.next();
-			String warningLine = wrapStringInColor(warning, themed(Color.RED));
+			String warningLine = wrapStringInColor(warning, ALERT_FOREGROUND);
 
 			//@formatter:off
 			append(fullHtml, truncatedHtml, lineCount, warningLine, 

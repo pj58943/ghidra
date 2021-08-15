@@ -15,7 +15,7 @@
  */
 package docking.widgets.table.constraint.dialog;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -118,7 +118,7 @@ class ColumnFilterPanel extends JPanel {
 
 	private Component createOrLabel() {
 		JLabel jLabel = new GDLabel("<OR>", SwingConstants.CENTER);
-		jLabel.setForeground(themed(Color.GRAY));
+		jLabel.setForeground(GRAY_FOREGROUND);
 		return jLabel;
 	}
 

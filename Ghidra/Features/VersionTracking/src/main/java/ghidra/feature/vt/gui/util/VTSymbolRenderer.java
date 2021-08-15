@@ -15,7 +15,7 @@
  */
 package ghidra.feature.vt.gui.util;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -51,7 +51,7 @@ public class VTSymbolRenderer extends GhidraTableCellRenderer {
 	private void handleSymbol(Object value, boolean isSelected) {
 		setBold();
 		if (!isSelected) {
-			Color color = themed(Color.BLACK);
+			Color color = FOREGROUND;
 			if (value instanceof Symbol) {
 				Symbol s = (Symbol) value;
 				inspector.setProgram(s.getProgram());

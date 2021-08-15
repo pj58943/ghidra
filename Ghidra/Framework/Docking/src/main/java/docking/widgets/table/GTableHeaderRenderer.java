@@ -42,7 +42,7 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 
 	private static final Color PRIMARY_SORT_GRADIENT_START = themed(new Color(205, 227, 244));
 	private static final Color PRIMARY_SORT_GRADIENT_END = themed(new Color(126, 186, 233));
-	private static final Color DEFAULT_GRADIENT_START = themed(Color.WHITE);
+	private static final Color DEFAULT_GRADIENT_START = BACKGROUND;
 	private static final Color DEFAULT_GRADIENT_END = themed(new Color(215, 215, 215));
 
 	private static final Icon UP_ICON =
@@ -190,10 +190,10 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 	private void setOuterBorder(CustomPaddingBorder border, int column) {
 		if (paintAquaHeaders()) {
 			if (column == 0) {
-				customBorder.setOuterBorder(new NoSidesLineBorder(themed(Color.GRAY)));
+				customBorder.setOuterBorder(new NoSidesLineBorder(themed(Color.GRAY, "line")));
 				return;
 			}
-			customBorder.setOuterBorder(new NoRightSideLineBorder(themed(Color.GRAY)));
+			customBorder.setOuterBorder(new NoRightSideLineBorder(themed(Color.GRAY, "line")));
 		}
 		else {
 			customBorder.setOuterBorder(UIManager.getBorder("TableHeader.cellBorder"));
@@ -407,7 +407,7 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 			int textBaseline = numberHeight;
 
 			AttributedString as = new AttributedString(numberText);
-			as.addAttribute(TextAttribute.FOREGROUND, themed(Color.BLACK));
+			as.addAttribute(TextAttribute.FOREGROUND, FOREGROUND);
 			as.addAttribute(TextAttribute.WEIGHT, TextAttribute.WEIGHT_BOLD);
 			as.addAttribute(TextAttribute.FAMILY, fontFamily);
 			as.addAttribute(TextAttribute.SIZE, (float) fontSize);

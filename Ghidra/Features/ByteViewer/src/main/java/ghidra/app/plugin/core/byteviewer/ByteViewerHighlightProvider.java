@@ -16,7 +16,7 @@
  */
 package ghidra.app.plugin.core.byteviewer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.app.util.HighlightProvider;
 import ghidra.app.util.viewer.field.FieldFactory;
@@ -28,7 +28,7 @@ import docking.widgets.fieldpanel.support.Highlight;
 public class ByteViewerHighlightProvider implements HighlightProvider {
 	private static Highlight[] NO_HIGHLIGHTS = new Highlight[0];
 	private String highlightText;
-	private Color highlightColor = themed(Color.YELLOW);
+	private Color highlightColor = HIGHLIGHT_BACKGROUND;
 
 	public Highlight[] getHighlights(String text, Object obj,
 			Class<? extends FieldFactory> fieldFactoryClass, int cursorTextOffset) {

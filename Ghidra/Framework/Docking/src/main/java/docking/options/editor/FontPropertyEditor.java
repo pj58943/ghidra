@@ -15,8 +15,6 @@
  */
 package docking.options.editor;
 
-import static ghidra.docking.util.Theming.themedFont;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -208,7 +206,7 @@ public class FontPropertyEditor extends PropertyEditorSupport {
 				sizeChoice = (Integer) sizes.getSelectedItem();
 			}
 
-			font = themedFont(fontNameChoice, styleChoice, sizeChoice);
+			font = new Font(fontNameChoice, styleChoice, sizeChoice);
 			fontStringLabel.setFont(font);
 			FontMetrics fm = fontStringLabel.getFontMetrics(font);
 			int height = fm.getHeight();

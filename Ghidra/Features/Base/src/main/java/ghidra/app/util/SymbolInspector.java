@@ -15,7 +15,7 @@
  */
 package ghidra.app.util;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -433,7 +433,7 @@ public class SymbolInspector implements OptionsChangeListener {
 
 	private Color getColor(ScreenElement se) {
 		if (se == null) {
-			return themed(Color.BLACK);
+			return FOREGROUND;
 		}
 		String optionName = se.getColorOptionName();
 		Color color = (Color) cache.get(optionName);

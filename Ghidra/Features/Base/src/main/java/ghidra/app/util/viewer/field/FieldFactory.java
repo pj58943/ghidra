@@ -91,7 +91,7 @@ public abstract class FieldFactory implements ExtensionPoint {
 		// For most fields (defined in optionsGui) these will be set. But "ad hoc" fields won't,
 		// so register something.  A second registration won't change the original
 
-		displayOptions.registerOption(colorOptionName, themed(Color.BLACK), null,
+		displayOptions.registerOption(colorOptionName, FOREGROUND, null,
 			"Sets the " + colorOptionName);
 		displayOptions.registerOption(styleOptionName, -1, null, "Sets the " + style);
 
@@ -196,7 +196,7 @@ public abstract class FieldFactory implements ExtensionPoint {
 	 * Returns the default field color.
 	 */
 	public Color getDefaultColor() {
-		return themed(Color.BLACK);
+		return FOREGROUND;
 	}
 
 	/**
@@ -342,7 +342,7 @@ public abstract class FieldFactory implements ExtensionPoint {
 	private void setMetrics(Font newFont) {
 		defaultMetrics = Toolkit.getDefaultToolkit().getFontMetrics(newFont);
 		for (int i = 0; i < fontMetrics.length; i++) {
-			Font font = themedFont(newFont.getFamily(), i, newFont.getSize());
+			Font font = new Font(newFont.getFamily(), i, newFont.getSize());
 			fontMetrics[i] = Toolkit.getDefaultToolkit().getFontMetrics(font);
 		}
 	}

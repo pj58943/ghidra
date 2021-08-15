@@ -16,7 +16,7 @@
  */
 package ghidra.framework.task.gui.taskview;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.util.layout.VerticalLayout;
 
@@ -33,7 +33,7 @@ public class TaskViewerComponent extends JPanel implements Scrollable {
 
 	public TaskViewerComponent() {
 		super(new VerticalLayout(0));
-		setBackground(themed(Color.WHITE));
+		setBackground(BACKGROUND);
 		setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 	}
 

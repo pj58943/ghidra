@@ -16,7 +16,7 @@
  */
 package docking.widgets.fieldpanel.internal;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 
@@ -45,16 +45,15 @@ public class PaintContext {
 	 * Create a new PaintContext with default color values.
 	 */
 	public PaintContext() {
-		defaultBackground = themed(Color.white);
-		background = themed(Color.white);
-		foreground = themed(Color.black);
+		defaultBackground = BACKGROUND;
+		background = BACKGROUND;
+		foreground = FOREGROUND;
 		selectionColor = themed(new Color(180, 255, 180));
 		highlightColor = themed(new Color(255, 255, 150));
-		selectedHighlightColor = themed(Color.green);
-		focusedCursorColor = themed(Color.RED);
-		cursorColor = focusedCursorColor;
-		invisibleCursorColor = themed(new Color(255, 0, 0, 1));
-		notFocusedCursorColor = themed(Color.PINK);
+		selectedHighlightColor = themed(Color.green, "bg");
+		focusedCursorColor = CURSOR;
+		setCursorColor(focusedCursorColor);
+		notFocusedCursorColor = UNFOCUSED_CURSOR;
 	}
 
 	public PaintContext(PaintContext other) {

@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.analysis;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -220,7 +220,7 @@ public class AnalysisEnablementTableModel
 			// not the default enablement			
 			if (data.isSelected()) {
 				component.setBackground(BG_COLOR_NOT_DEFAULT_ENABLEMENT_SELECTED);
-				component.setForeground(themed(Color.BLACK));
+				component.setForeground(SELECTED_FOREGROUND);
 			}
 			else {
 				component.setBackground(BG_COLOR_NOT_DEFAULT_ENABLEMENT);

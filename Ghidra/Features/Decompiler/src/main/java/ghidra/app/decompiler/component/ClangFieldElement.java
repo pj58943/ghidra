@@ -15,7 +15,7 @@
  */
 package ghidra.app.decompiler.component;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -51,7 +51,7 @@ public class ClangFieldElement extends AbstractTextFieldElement {
 
 		if (token.isMatchingToken()) {
 			// paint a bounding box around the token
-			g.setColor(themed(Color.GRAY));
+			g.setColor(GRAY_FOREGROUND);
 			int offset = 1;
 			g.drawRect(x - offset, y - getHeightAbove() - offset, getStringWidth() + (offset * 2),
 				getHeightAbove() + getHeightBelow() + (offset * 2));

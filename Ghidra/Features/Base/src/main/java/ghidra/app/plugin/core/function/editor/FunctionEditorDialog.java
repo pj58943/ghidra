@@ -211,7 +211,7 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 		thunkedText.setEditable(false);
 		DockingUtils.setTransparent(thunkedText);
 		CompoundBorder border =
-			BorderFactory.createCompoundBorder(themedBorder(Color.GRAY),
+			BorderFactory.createCompoundBorder(NORMAL_BORDER,
 				BorderFactory.createEmptyBorder(0, 5, 0, 5));
 		thunkedText.setBorder(border);
 		thunkedText.setForeground(themed(Color.BLUE));
@@ -226,9 +226,9 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 		scroll = new JScrollPane(verticalScrollPanel);
 		scroll.setBorder(null);
 		scroll.setOpaque(true);
-		scroll.setBackground(themed(Color.WHITE));
-		scroll.getViewport().setBackground(themed(new Color(0, 0, 0, 0))); // transparent
-		scroll.getViewport().setBackground(themed(Color.WHITE));
+		scroll.setBackground(BACKGROUND);
+		scroll.getViewport().setBackground(new Color(0, 0, 0, 0)); // transparent
+		scroll.getViewport().setBackground(BACKGROUND);
 		previewPanel.add(scroll, BorderLayout.CENTER);
 		previewPanel.setBorder(BorderFactory.createLoweredBevelBorder());
 		scroll.getViewport().addMouseListener(new MouseAdapter() {
@@ -664,7 +664,7 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 			if (dataType != null) {
 				setText(dataType.getName());
 				if (dataType.isNotYetDefined()) {
-					color = themed(Color.red);
+					color = ALERT_FOREGROUND;
 				}
 				String toolTipText = ToolTipUtils.getToolTipText(dataType);
 				String headerText = "<HTML><b>" +
@@ -753,17 +753,17 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 				boolean isInvalidStorage =
 					!storage.isValid() || rowData.getFormalDataType().getLength() != storage.size();
 				if (isInvalidStorage) {
-					setForeground(themed(Color.RED));
+					setForeground(ALERT_FOREGROUND);
 					setToolTipText("Invalid Parameter Storage");
 				}
 				else {
-					setForeground(isSelected ? themed(Color.WHITE) : themed(Color.BLACK));
+					setForeground(isSelected ? SELECTED_FOREGROUND_CONTRAST : FOREGROUND);
 					setToolTipText("");
 				}
 				setText(storage.toString());
 			}
 			else {
-				setForeground(isSelected ? themed(Color.WHITE) : themed(Color.BLACK));
+				setForeground(isSelected ? SELECTED_FOREGROUND_CONTRAST : FOREGROUND);
 				setText("");
 				setToolTipText(null);
 			}
@@ -787,7 +787,7 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 
 			ParameterTableModel tableModel = (ParameterTableModel) table.getModel();
 			if (!tableModel.isCellEditable(row, column)) {
-				setForeground(isSelected ? themed(Color.yellow) : themed(Color.gray));
+				setForeground(isSelected ? themed(Color.yellow) : GRAY_FOREGROUND);
 			}
 			else {
 				if (isSelected) {
@@ -855,7 +855,7 @@ public class FunctionEditorDialog extends DialogComponentProvider implements Mod
 			Composite originalComposite = g2d.getComposite();
 			g2d.setComposite(alphaComposite);
 
-			g.setColor(themed(Color.white));
+			g.setColor(BACKGROUND);
 			g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
 			g2d.setComposite(originalComposite);

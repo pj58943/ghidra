@@ -15,8 +15,6 @@
  */
 package ghidra.plugin.importer;
 
-import static ghidra.docking.util.Theming.themedFont;
-
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -242,7 +240,7 @@ public class ImporterDialog extends DialogComponentProvider {
 		});
 
 		Font font = languageButton.getFont();
-		languageButton.setFont(themedFont(font.getName(), Font.BOLD, font.getSize()));
+		languageButton.setFont(new Font(font.getName(), Font.BOLD, font.getSize()));
 
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.add(languageTextField, BorderLayout.CENTER);

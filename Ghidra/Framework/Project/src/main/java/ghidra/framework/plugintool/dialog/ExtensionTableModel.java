@@ -15,7 +15,7 @@
  */
 package ghidra.framework.plugintool.dialog;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -410,14 +410,14 @@ class ExtensionTableModel extends ThreadedTableModel<ExtensionDetails, List<Exte
 
 			ExtensionDetails extension = getSelectedExtension(data.getRowViewIndex());
 			if (data.isSelected()) {
-				comp.setForeground(themed(Color.WHITE));
+				comp.setForeground(SELECTED_FOREGROUND_CONTRAST);
 			}
 			else {
 				if (isValidVersion(extension) || SystemUtilities.isInDevelopmentMode()) {
-					comp.setForeground(themed(Color.BLACK));
+					comp.setForeground(FOREGROUND);
 				}
 				else {
-					comp.setForeground(themed(Color.RED));
+					comp.setForeground(ALERT_FOREGROUND);
 				}
 			}
 			return comp;

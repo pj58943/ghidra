@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.data;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -280,12 +280,12 @@ public class CreateStructureDialog extends DialogComponentProvider {
 	// state.
 	private void setCreateStructureByName(boolean createStructureByName) {
 		if (createStructureByName) {
-			nameBorder.setTitleColor(themed(Color.BLACK));
-			structureBorder.setTitleColor(themed(Color.GRAY));
+			nameBorder.setTitleColor(FOREGROUND);
+			structureBorder.setTitleColor(GRAY_FOREGROUND);
 		}
 		else {
-			nameBorder.setTitleColor(themed(Color.GRAY));
-			structureBorder.setTitleColor(themed(Color.BLACK));
+			nameBorder.setTitleColor(GRAY_FOREGROUND);
+			structureBorder.setTitleColor(FOREGROUND);
 		}
 
 		nameTextField.setEnabled(createStructureByName);

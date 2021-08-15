@@ -208,7 +208,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 
 		PickedState<V> pickedVertexState = viewer.getPickedVertexState();
 		renderContext.setVertexFillPaintTransformer(
-			new PickableVertexPaintTransformer<>(pickedVertexState, themed(Color.WHITE), themed(Color.YELLOW)));
+			new PickableVertexPaintTransformer<>(pickedVertexState, BACKGROUND, HIGHLIGHT_BACKGROUND));
 
 		viewer.setGraphOptions(vgOptions);
 
@@ -376,7 +376,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 
 		mainPanel.add(layeredPane, BorderLayout.CENTER);
 
-		satellite.setBorder(themedBorder(Color.BLACK));
+		satellite.setBorder(CONTRAST_BORDER);
 
 		undockedSatellitePanel = new JPanel(new BorderLayout());
 		undockedSatellitePanel.addComponentListener(new ComponentAdapter() {
@@ -1011,7 +1011,7 @@ public class GraphComponent<V extends VisualVertex, E extends VisualEdge<V>, G e
 			g2.setPaint(bottomToTopGradiant);
 			g2.fillRect(backgroundX, upperY, backgroundWidth, backgroundHeight);
 
-			g2.setPaint(themed(Color.BLACK));
+			g2.setPaint(FOREGROUND);
 			int textX =
 				startX + (isGraphViewStale() ? staleGraphViewPanel.getBounds().width + 5 : 0);
 			g2.drawString(message, textX, startY);

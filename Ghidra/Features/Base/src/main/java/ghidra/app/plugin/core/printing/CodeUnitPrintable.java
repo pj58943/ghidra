@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.printing;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -50,10 +50,10 @@ public class CodeUnitPrintable implements Printable {
 
 	private static final PaintContext PAINT_CONTEXT = new PaintContext();
 	static {
-		PAINT_CONTEXT.setForegroundColor(themed(Color.BLACK));
-		PAINT_CONTEXT.setDefaultBackgroundColor(themed(Color.WHITE));
-		PAINT_CONTEXT.setBackgroundColor(themed(Color.white));
-		PAINT_CONTEXT.setCursorColor(themed(Color.RED));
+		PAINT_CONTEXT.setForegroundColor(FOREGROUND);
+		PAINT_CONTEXT.setDefaultBackgroundColor(BACKGROUND);
+		PAINT_CONTEXT.setBackgroundColor(BACKGROUND);
+		PAINT_CONTEXT.setCursorColor(CURSOR);
 		PAINT_CONTEXT.setSelectionColor(themed(new Color(180, 255, 180)));
 		PAINT_CONTEXT.setHighlightColor(themed(new Color(255, 255, 150)));
 
@@ -74,7 +74,7 @@ public class CodeUnitPrintable implements Printable {
 		this.startDate = startDate;
 
 		if (pod.getMonochrome()) {
-			PAINT_CONTEXT.setPrintColor(themed(Color.BLACK));
+			PAINT_CONTEXT.setPrintColor(FOREGROUND);
 		}
 		else {
 			PAINT_CONTEXT.setPrintColor(null);
@@ -94,7 +94,7 @@ public class CodeUnitPrintable implements Printable {
 		this.startDate = startDate;
 
 		if (pod.getMonochrome()) {
-			PAINT_CONTEXT.setPrintColor(themed(Color.BLACK));
+			PAINT_CONTEXT.setPrintColor(FOREGROUND);
 		}
 		else {
 			PAINT_CONTEXT.setPrintColor(null);
@@ -105,7 +105,7 @@ public class CodeUnitPrintable implements Printable {
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex)
 			throws PrinterException {
 		Graphics2D g2 = GraphicsUtils.getGraphics2D(graphics);
-		g2.setColor(themed(Color.BLACK));
+		g2.setColor(FOREGROUND);
 
 		monitor.setMessage("Printing Page " + (pageIndex + 1));
 		monitor.initialize(100);

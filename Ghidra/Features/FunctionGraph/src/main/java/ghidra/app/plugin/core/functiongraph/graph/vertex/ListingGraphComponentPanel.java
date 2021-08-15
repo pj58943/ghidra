@@ -136,7 +136,8 @@ public class ListingGraphComponentPanel extends AbstractGraphComponentPanel {
 
 		add(listingPanel, BorderLayout.CENTER);
 
-		Border beveledBorder = themedBevelBorder(BevelBorder.RAISED,
+		Border beveledBorder =
+			themedBevelBorder(BevelBorder.RAISED,
 				new Color(225, 225, 225), new Color(155, 155, 155),
 				new Color(96, 96, 96), new Color(0, 0, 0));
 		setBorder(beveledBorder);
@@ -226,7 +227,7 @@ public class ListingGraphComponentPanel extends AbstractGraphComponentPanel {
 
 		JPanel headerPanel = new JPanel(new BorderLayout());
 		headerPanel.add(tooltipTitleLabel);
-		headerPanel.setBorder(themedBorder(Color.BLACK));
+		headerPanel.setBorder(CONTRAST_BORDER);
 
 		panel.add(headerPanel, BorderLayout.NORTH);
 		panel.add(previewListingPanel, BorderLayout.CENTER);

@@ -15,7 +15,7 @@
  */
 package docking.menu;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -252,7 +252,7 @@ public class MultipleActionDockingToolbarButton extends EmptyBorderButton {
 				return; // shouldn't happen
 			}
 
-			g.setColor(themed(Color.BLACK));
+			g.setColor(FOREGROUND);
 			int iconWidth = baseIcon.getIconWidth();
 			int iconHeight = baseIcon.getIconHeight();
 			int insetsPadding = insets.left + insets.right; // the insets of the left icon and the arrow (between the two)

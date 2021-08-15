@@ -15,7 +15,7 @@
  */
 package docking.widgets.table.constrainteditor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 
@@ -55,7 +55,7 @@ public class StringConstraintEditor extends AbstractColumnConstraintEditor<Strin
 		panel.add(textField, BorderLayout.CENTER);
 
 		infoLabel = new GDHtmlLabel("abc");  // temporary text in the label so that it sizes properly
-		infoLabel.setForeground(themed(Color.RED));
+		infoLabel.setForeground(ALERT_FOREGROUND);
 		infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(infoLabel, BorderLayout.SOUTH);
 		return panel;

@@ -52,7 +52,7 @@ public class AddressTypeOverviewColorService
 	private static final Color DEFAULT_UNDEFINED_COLOR = themed(new Color(255, 51, 102));
 	private static final Color DEFAULT_UNINITIALIZED_COLOR = themed(Color.BLACK);
 	private static final Color DEFAULT_EXTERNAL_REF_COLOR = themed(new Color(255, 150, 150));
-	private static final Color DEFAULT_MARKER_COLOR = themed(Color.WHITE);
+	private static final Color DEFAULT_MARKER_COLOR = themed(Color.WHITE, "fg");
 
 	Color instructionColor = DEFAULT_INSTRUCTION_COLOR;
 	Color dataColor = DEFAULT_DATA_COLOR;

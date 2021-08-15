@@ -15,7 +15,7 @@
  */
 package ghidra.graph.viewer.renderer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -77,7 +77,7 @@ public class DebugShape<V, E> implements Paintable {
 
 		g.draw(shape);
 
-		g.setColor(themed(Color.black));
+		g.setColor(FOREGROUND);
 		FontMetrics fontMetrics = g.getFontMetrics();
 		Rectangle2D stringBounds = fontMetrics.getStringBounds(text, g);
 		Point location = shape.getBounds().getLocation();

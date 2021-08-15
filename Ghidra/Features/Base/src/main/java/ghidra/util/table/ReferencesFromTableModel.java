@@ -15,9 +15,8 @@
  */
 package ghidra.util.table;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
-import java.awt.Color;
 import java.awt.Component;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -119,7 +118,7 @@ public class ReferencesFromTableModel extends AddressBasedTableModel<ReferenceEn
 			RefType refType = rowObject.getReferenceType();
 			String text = refType.getName();
 			if (rowObject.isOffcut()) {
-				text = "<html>" + HTMLUtilities.colorString(themed(Color.RED), text + OFFCUT_STRING);
+				text = "<html>" + HTMLUtilities.colorString(ALERT_FOREGROUND, text + OFFCUT_STRING);
 			}
 			return text;
 		}

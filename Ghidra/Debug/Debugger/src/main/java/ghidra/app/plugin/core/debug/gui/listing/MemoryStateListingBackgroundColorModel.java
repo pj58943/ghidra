@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.debug.gui.listing;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.math.BigInteger;
@@ -35,7 +35,7 @@ import ghidra.trace.model.program.TraceProgramView;
 import ghidra.util.ColorUtils;
 
 public class MemoryStateListingBackgroundColorModel implements ListingBackgroundColorModel {
-	private Color defaultBackgroundColor = themed(Color.WHITE);
+	private Color defaultBackgroundColor = BACKGROUND;
 
 	private AddressIndexMap addressIndexMap;
 	private TraceProgramView view;

@@ -117,7 +117,7 @@ public class ApplicationInformationDisplayFactory {
 		final JPanel panel = new JPanel(new BorderLayout());
 		panel.setPreferredSize(new Dimension(400, 400));
 
-		Color background = themed(Color.BLACK);
+		Color background = themed(Color.BLACK, "bg");
 
 		panel.setBackground(background);
 

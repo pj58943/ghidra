@@ -16,7 +16,7 @@
  */
 package ghidra.app.util.viewer.format;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.app.util.HighlightProvider;
 import ghidra.app.util.viewer.field.*;
@@ -55,7 +55,7 @@ public class ErrorListingField extends ListingTextField {
 		String message = t.getMessage() == null ? t.toString() : t.getMessage();
 		AttributedString as =
 			new AttributedString("*Error*: " + message + ".  Double click for Details.",
-				themed(Color.BLACK), ff.getMetrics());
+				FOREGROUND, ff.getMetrics());
 		return new TextFieldElement(as, 0, 0);
 	}
 

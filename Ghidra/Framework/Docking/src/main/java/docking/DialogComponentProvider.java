@@ -15,7 +15,7 @@
  */
 package docking;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -706,7 +706,7 @@ public class DialogComponentProvider
 			case WARNING:
 				return WARNING_COLOR;
 			case ERROR:
-				return themed(Color.red);
+				return ALERT_FOREGROUND;
 			default:
 				return themed(Color.blue);
 		}

@@ -107,7 +107,7 @@ class DataTypePanel extends JPanel {
 		offsetAttrSet = new SimpleAttributeSet();
 		offsetAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		offsetAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
-		offsetAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLACK));
+		offsetAttrSet.addAttribute(StyleConstants.Foreground, FOREGROUND);
 
 		contentAttrSet = new SimpleAttributeSet();
 		contentAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
@@ -117,18 +117,18 @@ class DataTypePanel extends JPanel {
 		fieldNameAttrSet = new SimpleAttributeSet();
 		fieldNameAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		fieldNameAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
-		fieldNameAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(204, 0, 204)));
+		fieldNameAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(204, 0, 204), "field"));
 
 		commentAttrSet = new SimpleAttributeSet();
 		commentAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Monospaced"));
 		commentAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
-		commentAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(0, 204, 51)));
+		commentAttrSet.addAttribute(StyleConstants.Foreground, themed(new Color(0, 204, 51), "comment"));
 
 		deletedAttrSet = new SimpleAttributeSet();
 		deletedAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));
 		deletedAttrSet.addAttribute(StyleConstants.FontSize, new Integer(12));
 		deletedAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
-		deletedAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.RED));
+		deletedAttrSet.addAttribute(StyleConstants.Foreground, ALERT_FOREGROUND);
 
 		setDataType(dataType);
 	}

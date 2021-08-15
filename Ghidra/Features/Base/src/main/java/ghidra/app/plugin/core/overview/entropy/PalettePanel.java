@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.overview.entropy;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 
@@ -47,9 +47,8 @@ public class PalettePanel extends JPanel {
 
 		g.setColor(getBackground());
 		g.fillRect(0, 0, getWidth(), getHeight());
-		g.setColor(themed(Color.BLACK));
+		g.setColor(FOREGROUND);
 		if (palette == null) {
-			g.setColor(themed(Color.BLACK));
 			g.drawRect(0, 0, width - 1, height - 1);
 			return;
 		}
@@ -64,7 +63,7 @@ public class PalettePanel extends JPanel {
 			g.setColor(c);
 			g.fillRect(0, topBottomMargin + i, width, 1);
 		}
-		g.setColor(themed(Color.BLACK));
+		g.setColor(FOREGROUND);
 		g.drawRect(0, topBottomMargin, width - 1, height);
 	}
 

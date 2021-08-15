@@ -269,7 +269,7 @@ class PluginDetailsPanel extends AbstractDetailsPanel {
 		classAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("monospaced"));
 		classAttrSet.addAttribute(StyleConstants.FontSize, Integer.valueOf(11));
 		classAttrSet.addAttribute(StyleConstants.Bold, Boolean.TRUE);
-		classAttrSet.addAttribute(StyleConstants.Foreground, themed(Color.BLACK));
+		classAttrSet.addAttribute(StyleConstants.Foreground, FOREGROUND);
 
 		locAttrSet = new SimpleAttributeSet();
 		locAttrSet.addAttribute(StyleConstants.FontFamily, themedFont("Tahoma"));

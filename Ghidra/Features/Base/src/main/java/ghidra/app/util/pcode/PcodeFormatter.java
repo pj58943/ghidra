@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.pcode;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.FontMetrics;
@@ -204,7 +204,7 @@ public class PcodeFormatter {
 			formatVarnodeTpl(program, opcode, -1, output, lineList);
 			lineList.add(EQUALS);
 		}
-		Color color = (opcode == PcodeOp.UNIMPLEMENTED) ? themed(Color.RED) : themed(Color.BLUE.darker());
+		Color color = (opcode == PcodeOp.UNIMPLEMENTED) ? ALERT_FOREGROUND : themed(Color.BLUE.darker());
 		lineList.add(new AttributedString(PcodeOp.getMnemonic(opcode), color, metrics));
 		VarnodeTpl[] inputs = op.getInput();
 		for (int i = 0; i < inputs.length; i++) {

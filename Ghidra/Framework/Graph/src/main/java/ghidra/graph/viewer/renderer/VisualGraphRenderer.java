@@ -15,7 +15,7 @@
  */
 package ghidra.graph.viewer.renderer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.geom.Point2D;
@@ -146,7 +146,7 @@ public class VisualGraphRenderer<V extends VisualVertex, E extends VisualEdge<V>
 		GraphicsDecorator g = renderContext.getGraphicsContext();
 		Color originalColor = g.getColor();
 		Color gridColor = themed(Color.ORANGE);
-		Color textColor = themed(Color.BLACK);
+		Color textColor = FOREGROUND;
 
 		boolean isCondensed = locationMap.isCondensed();
 		Row<?> lastRow = locationMap.lastRow();

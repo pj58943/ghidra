@@ -16,7 +16,7 @@
  */
 package ghidra.framework.task.gui.taskview;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.framework.task.GScheduledTask;
 import ghidra.framework.task.GTaskGroup;
@@ -74,8 +74,8 @@ public abstract class AbstractTaskInfo implements Comparable<AbstractTaskInfo> {
 		if (component == null) {
 			component = new ScheduledTaskPanel(getLabelText(), getIndention());
 			if (useAnimation) {
-				Color startColor = themed(Color.YELLOW);
-				Color endColor = themed(Color.white);
+				Color startColor = HIGHLIGHT_BACKGROUND;
+				Color endColor = BACKGROUND;
 				backgroundAnimator =
 					PropertySetter.createAnimator(4000, this, "Background", startColor, endColor);
 				backgroundAnimator.start();
@@ -101,7 +101,7 @@ public abstract class AbstractTaskInfo implements Comparable<AbstractTaskInfo> {
 		getComponent().addProgressBar();
 		if (backgroundAnimator != null) {
 			backgroundAnimator.stop();
-			component.setBackground(themed(Color.WHITE));
+			component.setBackground(BACKGROUND);
 			backgroundAnimator = null;
 		}
 		return getComponent().getProgressBar();

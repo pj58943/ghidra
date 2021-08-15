@@ -15,8 +15,8 @@
  */
 package ghidra.graph.viewer.edge.routing;
 
-import static ghidra.graph.viewer.GraphViewerUtils.*;
 import static ghidra.docking.util.Theming.themed;
+import static ghidra.graph.viewer.GraphViewerUtils.*;
 
 import java.awt.*;
 import java.awt.geom.PathIterator;

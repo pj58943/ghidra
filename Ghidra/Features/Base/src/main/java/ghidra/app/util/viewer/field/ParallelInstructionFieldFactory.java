@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.viewer.field;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.math.BigInteger;
@@ -147,6 +147,6 @@ public class ParallelInstructionFieldFactory extends FieldFactory {
 	 */
 	@Override
 	public Color getDefaultColor() {
-		return themed(Color.black);
+		return FOREGROUND;
 	}
 }

@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.viewer.field;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.app.nav.Navigatable;
 import ghidra.app.services.GoToService;
@@ -53,7 +53,7 @@ public class AddressAnnotatedStringHandler implements AnnotatedStringHandler {
 		Address address = program.getAddressFactory().getAddress(text[1]);
 
 		if (address == null) {
-			return new AttributedString("No address: " + text[1], themed(Color.RED),
+			return new AttributedString("No address: " + text[1], ALERT_FOREGROUND,
 				prototypeString.getFontMetrics(0), false, null);
 		}
 

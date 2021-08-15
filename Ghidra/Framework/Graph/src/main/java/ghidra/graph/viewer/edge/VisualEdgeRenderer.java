@@ -15,7 +15,7 @@
  */
 package ghidra.graph.viewer.edge;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -90,8 +90,8 @@ public abstract class VisualEdgeRenderer<V extends VisualVertex, E extends Visua
 
 	private float dashingPatternOffset;
 
-	private Color defaultBaseColor = themed(Color.BLACK);
-	private Color defaultHighlightColor = themed(Color.GRAY);
+	private Color defaultBaseColor = FOREGROUND;
+	private Color defaultHighlightColor = GRAY_FOREGROUND;
 
 	private VisualEdgeArrowRenderingSupport<V, E> arrowRenderingSupport =
 		new VisualEdgeArrowRenderingSupport<>();

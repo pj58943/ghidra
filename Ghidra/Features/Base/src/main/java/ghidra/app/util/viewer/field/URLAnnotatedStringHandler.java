@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.viewer.field;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import ghidra.app.nav.Navigatable;
 import ghidra.app.services.ProgramManager;
@@ -56,7 +56,7 @@ public class URLAnnotatedStringHandler implements AnnotatedStringHandler {
 
 		if (url == null) {
 			return new AttributedString("Invalid URL annotations - not a URL: " + text[1],
-				themed(Color.RED), prototypeString.getFontMetrics(0), false, themed(Color.RED));
+				ALERT_FOREGROUND, prototypeString.getFontMetrics(0), false, ALERT_FOREGROUND);
 		}
 
 		String displayText = url.toExternalForm();

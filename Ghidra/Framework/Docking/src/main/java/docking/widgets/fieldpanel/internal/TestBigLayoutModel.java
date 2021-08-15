@@ -85,9 +85,9 @@ public class TestBigLayoutModel implements LayoutModel {
 		}
 		String text = name + ": This is line " + index +
 			" More text to make line longer abcdefghijklmnopqrstuvwxyzabcdefghijk";
-		FieldElement fe1 = new TextFieldElement(new AttributedString(text, themed(Color.BLACK), fm), 0, 0);
+		FieldElement fe1 = new TextFieldElement(new AttributedString(text, Color.BLACK, fm), 0, 0);
 		FieldElement fe2 =
-			new TextFieldElement(new AttributedString("More text", themed(Color.BLACK), fm), 0, 0);
+			new TextFieldElement(new AttributedString("More text", Color.BLACK, fm), 0, 0);
 		SingleRowLayout layout = new SingleRowLayout(new ClippingTextField(20, 300, fe1, hlFactory),
 			new ClippingTextField(330, 100, fe2, hlFactory));
 
@@ -128,7 +128,7 @@ public class TestBigLayoutModel implements LayoutModel {
 	}
 
 	public static void main(String[] args) {
-		final Font font = themedFont("monospace", Font.PLAIN, 12);
+		final Font font = new Font("monospace", Font.PLAIN, 12);
 		final JFrame frame = new JFrame();
 		final TestBigLayoutModel model =
 			new TestBigLayoutModel(frame.getFontMetrics(font), "AAA", BigInteger.valueOf(1000000L));

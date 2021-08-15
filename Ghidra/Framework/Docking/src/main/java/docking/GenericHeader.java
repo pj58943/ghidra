@@ -70,7 +70,7 @@ public class GenericHeader extends JPanel {
 		BorderLayout layout = new BorderLayout();
 		layout.setVgap(1);
 		setLayout(layout);
-		setBorder(themedBorder(Color.GRAY));
+		setBorder(NORMAL_BORDER);
 		setFocusable(false);
 
 		titlePanel = new TitlePanel();
@@ -349,7 +349,7 @@ public class GenericHeader extends JPanel {
 			setFocusable(false);
 			titleLabel = new GDLabel();
 			titleLabel.setBorder(BorderFactory.createEmptyBorder(0, 6, 0, 0));
-			titleLabel.setForeground(themed(Color.BLACK));
+			titleLabel.setForeground(FOREGROUND);
 			titleLabel.setFocusable(false);
 			add(titleLabel, BorderLayout.CENTER);
 		}
@@ -421,7 +421,7 @@ public class GenericHeader extends JPanel {
 		 */
 		void setSelected(boolean state) {
 			isSelected = state;
-			titleLabel.setForeground(state ? themed(Color.WHITE) : themed(Color.BLACK));
+			titleLabel.setForeground(state ? SELECTED_FOREGROUND_CONTRAST : FOREGROUND);
 			repaint();
 		}
 

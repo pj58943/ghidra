@@ -15,9 +15,8 @@
  */
 package ghidra.app.util.html;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
-import java.awt.Color;
 import java.util.*;
 
 import ghidra.app.util.ToolTipUtils;
@@ -152,7 +151,7 @@ public class TypeDefDataTypeHTMLRepresentation extends HTMLDataTypeRepresentatio
 		Iterator<String> warnings = warningLines.iterator();
 		for (; warnings.hasNext();) {
 			String warning = warnings.next();
-			String warningLine = wrapStringInColor(warning, themed(Color.RED));
+			String warningLine = wrapStringInColor(warning, ALERT_FOREGROUND);
 			buffy.append(warningLine).append(BR);
 		}
 

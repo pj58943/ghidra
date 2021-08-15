@@ -152,7 +152,7 @@ public class MemoryBox {
 		int w = vertical ? getTimePixelWidth() : getAddressPixelWidth();
 		int y = vertical ? getAddressPixelStart() : getTimePixelStart();
 		int h = vertical ? getAddressPixelWidth() : getTimePixelWidth();
-		g.setColor(themed(Color.BLACK));
+		g.setColor(themed(Color.BLACK, "line"));
 		g.fillRect(x - 1, y - 1, w + 2, h + 2);
 		g.setColor(color);
 		g.fillRect(x, y, w, h);
@@ -163,7 +163,7 @@ public class MemoryBox {
 		int w = vertical ? sz : getAddressPixelWidth();
 		int y = vertical ? getAddressPixelStart() : 0;
 		int h = vertical ? getAddressPixelWidth() : sz;
-		g.setColor(themed(Color.BLACK));
+		g.setColor(themed(Color.BLACK, "line"));
 		g.fillRect(x - 1, y - 1, w + 2, h + 2);
 		g.setColor(color);
 		g.fillRect(x, y, w, h);
@@ -174,7 +174,7 @@ public class MemoryBox {
 		int w = vertical ? 1 : sz;
 		int y = vertical ? 0 : getTimePixelStart();
 		int h = vertical ? sz : 1;
-		g.setColor(themed(Color.BLACK));
+		g.setColor(themed(Color.BLACK, "line"));
 		g.fillRect(x - 1, y - 1, w + 2, h + 2);
 		g.setColor(color);
 		g.fillRect(x, y, w, h);

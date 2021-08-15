@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.compositeeditor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
@@ -595,8 +595,8 @@ public abstract class CompositeEditorPanel extends JPanel
 		JScrollPane sp = new JScrollPane(table);
 		table.setPreferredScrollableViewportSize(new Dimension(model.getWidth(), 250));
 		table.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-		//table.setSelectionBackground(SELECTION_COLOR);
-		//table.setSelectionForeground(themed(Color.black));
+		//table.setSelectionBackground(SELECTED_BACKGROUND);
+		//table.setSelectionForeground(SELECTED_FOREGROUND);
 		tablePanel.add(sp, BorderLayout.CENTER);
 		SearchControlPanel searchPanel = new SearchControlPanel(this);
 
@@ -626,7 +626,7 @@ public abstract class CompositeEditorPanel extends JPanel
 			// This can happen on the Mac and is usually white.  This is a simple solution for
 			// that scenario.  If this fails on other platforms, then do something more advanced
 			// at that point.
-			table.setGridColor(themed(Color.GRAY));
+			table.setGridColor(GRAY_FOREGROUND);
 		}
 	}
 

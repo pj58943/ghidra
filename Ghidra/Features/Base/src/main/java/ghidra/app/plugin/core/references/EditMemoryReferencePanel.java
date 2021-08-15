@@ -154,7 +154,7 @@ class EditMemoryReferencePanel extends EditReferencePanel {
 	private void enableOffsetField(boolean state) {
 		offsetCheckbox.setSelected(state);
 		offsetField.setEnabled(state);
-		offsetField.setBackground(state ? themed(Color.WHITE) : getBackground());
+		offsetField.setBackground(state ? BACKGROUND : getBackground());
 		if (!state) {
 			offsetField.setText("0x0");
 		}
@@ -541,7 +541,7 @@ class EditMemoryReferencePanel extends EditReferencePanel {
 		model = new HistoryTableModel(fromCodeUnit.getProgram());
 		displayTable = new JTable(model);
 		displayTable.setTableHeader(null);
-		displayTable.setBorder(themedBorder(Color.BLACK));
+		displayTable.setBorder(CONTRAST_BORDER);
 		displayTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
 		displayTable.addMouseListener(new MouseAdapter() {

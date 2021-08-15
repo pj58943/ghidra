@@ -267,7 +267,7 @@ public class SaveDataDialog extends DialogComponentProvider {
 		yesButton.setEnabled(false);
 		for (int i = 0; i < files.size(); i++) {
 			checkboxes[i] = new GCheckBox(files.get(i).getName());
-			checkboxes[i].setBackground(themed(Color.white));
+			checkboxes[i].setBackground(BACKGROUND);
 			saveable[i] = files.get(i).canSave();
 			if (!saveable[i]) {
 				String text = files.get(i).getName() + readOnlyString;
@@ -304,12 +304,12 @@ public class SaveDataDialog extends DialogComponentProvider {
 
 			if (boldFont == null) {
 				Font font = list.getFont();
-				boldFont = themedFont(font.getName(), font.getStyle() | Font.BOLD, font.getSize());
+				boldFont = new Font(font.getName(), font.getStyle() | Font.BOLD, font.getSize());
 			}
 
 			// set color to red if file cannot be saved 'as is'
 			if (!saveable[index]) {
-				checkboxes[index].setForeground(themed(Color.red));
+				checkboxes[index].setForeground(ALERT_FOREGROUND);
 				checkboxes[index].setFont(boldFont);
 			}
 			return checkboxes[index];

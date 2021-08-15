@@ -15,7 +15,7 @@
  */
 package docking.widgets.filter;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -43,8 +43,8 @@ public class FilterTextField extends JPanel {
 	private static final long MINIMUM_TIME_BETWEEN_FLASHES_MS = 5000;
 	private static final int FLASH_FREQUENCY_MS = 250;
 
-	private static Color FLASH_BACKGROUND_COLOR = themed(Color.WHITE);
-	private static Color FILTERED_BACKGROUND_COLOR = themed(Color.YELLOW);
+	private static Color FLASH_BACKGROUND_COLOR = BACKGROUND;
+	private static Color FILTERED_BACKGROUND_COLOR = HIGHLIGHT_BACKGROUND;
 	/*package*/ static Color UNEDITABLE_BACKGROUND_COLOR = themed(Color.LIGHT_GRAY);
 
 	private Color noFlashColor;

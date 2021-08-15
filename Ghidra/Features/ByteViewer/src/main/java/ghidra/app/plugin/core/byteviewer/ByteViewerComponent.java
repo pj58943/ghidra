@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.byteviewer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.FontMetrics;
@@ -869,7 +869,7 @@ public class ByteViewerComponent extends FieldPanel implements FieldMouseListene
 
 	private class ByteViewerBackgroundColorModel implements BackgroundColorModel {
 
-		private Color defaultBackgroundColor = themed(Color.WHITE);
+		private Color defaultBackgroundColor = BACKGROUND;
 
 		@Override
 		public Color getBackgroundColor(BigInteger index) {

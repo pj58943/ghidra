@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.functiongraph.graph;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.util.*;
@@ -47,8 +47,8 @@ import ghidra.util.UndefinedFunction;
 
 public class FGComponent extends GraphComponent<FGVertex, FGEdge, FunctionGraph> {
 
-	private static final Color END_COLOR = themed(new Color(255, 127, 127));
-	private static final Color START_COLOR = themed(new Color(127, 255, 127));
+	private static final Color END_COLOR = themed(new Color(255, 127, 127), "bg");
+	private static final Color START_COLOR = themed(new Color(127, 255, 127), "bg");
 	private static final Color UNDEFINED_FUNCTION_COLOR = themed(new Color(220, 220, 220));
 
 	/**
@@ -208,7 +208,7 @@ public class FGComponent extends GraphComponent<FGVertex, FGEdge, FunctionGraph>
 		// for background colors when we are zoomed to far to render the listing
 		PickedState<FGVertex> pickedVertexState = viewer.getPickedVertexState();
 		renderContext.setVertexFillPaintTransformer(new FGVertexPickableBackgroundPaintTransformer(
-			pickedVertexState, themed(Color.YELLOW), START_COLOR, END_COLOR));
+			pickedVertexState, HIGHLIGHT_BACKGROUND, START_COLOR, END_COLOR));
 
 		// edge label rendering
 		com.google.common.base.Function<FGEdge, String> edgeLabelTransformer = e -> e.getLabel();
@@ -217,7 +217,7 @@ public class FGComponent extends GraphComponent<FGVertex, FGEdge, FunctionGraph>
 		// note: this label renderer is the stamp for the label; we use another edge label 
 		//       renderer inside of the VisualGraphRenderer
 		VisualGraphEdgeLabelRenderer edgeLabelRenderer =
-			new VisualGraphEdgeLabelRenderer(themed(Color.BLACK));
+			new VisualGraphEdgeLabelRenderer(FOREGROUND);
 		edgeLabelRenderer.setNonPickedForegroundColor(themed(Color.LIGHT_GRAY));
 		edgeLabelRenderer.setRotateEdgeLabels(false);
 		renderContext.setEdgeLabelRenderer(edgeLabelRenderer);
@@ -235,7 +235,7 @@ public class FGComponent extends GraphComponent<FGVertex, FGEdge, FunctionGraph>
 				viewer.setBackground(UNDEFINED_FUNCTION_COLOR);
 			}
 			else {
-				viewer.setBackground(themed(Color.WHITE));
+				viewer.setBackground(BACKGROUND);
 			}
 		}
 
@@ -259,7 +259,7 @@ public class FGComponent extends GraphComponent<FGVertex, FGEdge, FunctionGraph>
 
 		PickedState<FGVertex> pickedVertexState = viewer.getPickedVertexState();
 		renderContext.setVertexFillPaintTransformer(new FGVertexPickableBackgroundPaintTransformer(
-			pickedVertexState, themed(Color.YELLOW), START_COLOR, END_COLOR));
+			pickedVertexState, HIGHLIGHT_BACKGROUND, START_COLOR, END_COLOR));
 
 		viewer.setGraphOptions(vgOptions);
 

@@ -213,7 +213,7 @@ public class ConsoleTextPane extends JTextPane implements OptionsChangeListener 
 		outputAttributeSet.addAttribute(StyleConstants.FontSize, font.getSize());
 		outputAttributeSet.addAttribute(StyleConstants.Italic, font.isItalic());
 		outputAttributeSet.addAttribute(StyleConstants.Bold, font.isBold());
-		outputAttributeSet.addAttribute(StyleConstants.Foreground, themed(Color.BLACK));
+		outputAttributeSet.addAttribute(StyleConstants.Foreground, FOREGROUND);
 
 		errorAttributeSet = new SimpleAttributeSet();
 		errorAttributeSet.addAttribute(CUSTOM_ATTRIBUTE_KEY, ERROR_ATTRIBUTE_VALUE);
@@ -221,7 +221,7 @@ public class ConsoleTextPane extends JTextPane implements OptionsChangeListener 
 		errorAttributeSet.addAttribute(StyleConstants.FontSize, font.getSize());
 		errorAttributeSet.addAttribute(StyleConstants.Italic, font.isItalic());
 		errorAttributeSet.addAttribute(StyleConstants.Bold, font.isBold());
-		errorAttributeSet.addAttribute(StyleConstants.Foreground, themed(Color.RED));
+		errorAttributeSet.addAttribute(StyleConstants.Foreground, ALERT_FOREGROUND);
 	}
 
 	private void doUpdate() {

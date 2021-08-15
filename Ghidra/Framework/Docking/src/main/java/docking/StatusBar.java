@@ -15,7 +15,7 @@
  */
 package docking;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -198,7 +198,7 @@ public class StatusBar extends JPanel {
 		String updatedText = fixupMultilineText(text);
 		statusLabel.setText(updatedText);
 		statusLabel.setToolTipText(getToolTipText());
-		statusLabel.setForeground(themed(Color.BLACK));
+		statusLabel.setForeground(FOREGROUND);
 
 		if (StringUtils.isBlank(updatedText)) {
 			return;

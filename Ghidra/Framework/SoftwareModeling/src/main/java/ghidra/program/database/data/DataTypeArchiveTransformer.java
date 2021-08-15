@@ -832,7 +832,7 @@ public class DataTypeArchiveTransformer implements GhidraLaunchable {
 					statusLabel.setToolTipText(cancelMessage);
 				}
 				catch (Exception exc) {
-					statusLabel.setForeground(themed(Color.red));
+					statusLabel.setForeground(ALERT_FOREGROUND);
 					statusLabel.setText(exc.getMessage());
 					statusLabel.setToolTipText(exc.getMessage());
 					exc.printStackTrace();

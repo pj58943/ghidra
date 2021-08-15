@@ -15,8 +15,6 @@
  */
 package docking.options.editor;
 
-import static ghidra.docking.util.Theming.themedFont;
-
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.MouseListener;
@@ -110,7 +108,7 @@ public class FileChooserEditor extends PropertyEditorSupport {
 			textField.setText(currentFileValue != null ? currentFileValue.getAbsolutePath() : "");
 			browseButton = ButtonPanelFactory.createButton(ButtonPanelFactory.BROWSE_TYPE);
 			Font f = browseButton.getFont();
-			f = themedFont(f.getName(), Font.BOLD, f.getSize());
+			f = new Font(f.getName(), Font.BOLD, f.getSize());
 			browseButton.setFont(f);
 
 			add(textField);

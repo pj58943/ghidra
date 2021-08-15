@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.script;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -371,7 +371,7 @@ class GhidraScriptTableModel extends GDynamicColumnTableModel<ResourceFile, Obje
 				KeyBindingsInfo info = (KeyBindingsInfo) value;
 
 				if (info.errorMessage != null) {
-					component.setForeground(themed(Color.RED));
+					component.setForeground(ALERT_FOREGROUND);
 					component.setToolTipText(info.errorMessage);
 				}
 				else {
@@ -381,7 +381,7 @@ class GhidraScriptTableModel extends GDynamicColumnTableModel<ResourceFile, Obje
 					}
 
 					if (info.hasAction) {
-						component.setForeground(themed(Color.BLACK));
+						component.setForeground(FOREGROUND);
 						component.setToolTipText("Keybinding for action in tool" + keybindingText);
 					}
 					else {
@@ -392,7 +392,7 @@ class GhidraScriptTableModel extends GDynamicColumnTableModel<ResourceFile, Obje
 
 				if (isSelected) {
 					Color selectedForegroundColor =
-						(info.errorMessage != null) ? themed(Color.PINK) : themed(Color.WHITE);
+						(info.errorMessage != null) ? themed(Color.PINK) : SELECTED_FOREGROUND_CONTRAST;
 					component.setForeground(selectedForegroundColor);
 				}
 				return component;

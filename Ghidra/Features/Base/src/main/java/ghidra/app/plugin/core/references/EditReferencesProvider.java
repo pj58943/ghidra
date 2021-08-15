@@ -1024,7 +1024,7 @@ public class EditReferencesProvider extends ComponentProviderAdapter
 
 		RefCellTextRenderer() {
 			defaultFont = getFont();
-			boldFont = themedFont(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
+			boldFont = new Font(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
 				defaultFont.getSize());
 			setBorder(BorderFactory.createEmptyBorder(0, 3, 0, 0));
 		}
@@ -1062,7 +1062,7 @@ public class EditReferencesProvider extends ComponentProviderAdapter
 				// set color to red if address does not exist in memory
 
 				if (bad) {
-					setForeground(themed(Color.red));
+					setForeground(ALERT_FOREGROUND);
 					setFont(boldFont);
 				}
 				else {

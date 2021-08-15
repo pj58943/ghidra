@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.codebrowser;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
@@ -858,9 +858,9 @@ public class CodeBrowserPlugin extends Plugin
 			GhidraOptions.DEFAULT_HIGHLIGHT_COLOR, helpLocation,
 			"The highlight color in the browser.");
 
-		fieldOptions.registerOption(CURSOR_COLOR, themed(Color.RED), helpLocation,
+		fieldOptions.registerOption(CURSOR_COLOR, CURSOR, helpLocation,
 			"The color of the cursor in the browser.");
-		fieldOptions.registerOption(UNFOCUSED_CURSOR_COLOR, themed(Color.PINK), helpLocation,
+		fieldOptions.registerOption(UNFOCUSED_CURSOR_COLOR, UNFOCUSED_CURSOR, helpLocation,
 			"The color of the cursor in the browser when the browser does not have focus.");
 		fieldOptions.registerOption(BLINK_CURSOR, true, helpLocation,
 			"When selected, the cursor will blink when the containing window is focused.");
@@ -892,10 +892,10 @@ public class CodeBrowserPlugin extends Plugin
 			highlightMarkers.setMarkerColor(color);
 		}
 
-		color = fieldOptions.getColor(CURSOR_COLOR, themed(Color.RED));
+		color = fieldOptions.getColor(CURSOR_COLOR, CURSOR);
 		fieldPanel.setFocusedCursorColor(color);
 
-		color = fieldOptions.getColor(UNFOCUSED_CURSOR_COLOR, themed(Color.PINK));
+		color = fieldOptions.getColor(UNFOCUSED_CURSOR_COLOR, UNFOCUSED_CURSOR);
 		fieldPanel.setNonFocusCursorColor(color);
 
 		Boolean isBlinkCursor = fieldOptions.getBoolean(BLINK_CURSOR, true);

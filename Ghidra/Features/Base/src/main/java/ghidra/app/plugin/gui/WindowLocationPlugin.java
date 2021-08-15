@@ -126,7 +126,7 @@ public class WindowLocationPlugin extends Plugin {
 			Dimension size = getSize();
 			double panelWidth = size.getWidth();
 			double panelHeight = size.getHeight();
-			setBackground(themed(Color.BLACK));
+			setBackground(themed(Color.BLACK, "bg"));
 			g.fillRect(0, 0, (int) panelWidth, (int) panelHeight);
 
 			Graphics2D g2d = (Graphics2D) g;

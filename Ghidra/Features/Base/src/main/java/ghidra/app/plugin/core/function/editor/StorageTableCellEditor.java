@@ -15,9 +15,8 @@
  */
 package ghidra.app.plugin.core.function.editor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.util.EventObject;
@@ -55,7 +54,7 @@ class StorageTableCellEditor extends AbstractCellEditor implements TableCellEdit
 			boolean isSelected, int row, int column) {
 		String stringValue = value == null ? "" : value.toString();
 		JTextField field = new JTextField(stringValue);
-		field.setBackground(themed(Color.yellow));
+		field.setBackground(HIGHLIGHT_BACKGROUND);
 		field.setEditable(false);
 		ParameterTableModel tableModel = (ParameterTableModel) table.getModel();
 		FunctionVariableData rowData = tableModel.getRowObject(row);

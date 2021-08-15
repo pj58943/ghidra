@@ -817,7 +817,7 @@ public class ByteViewerPanel extends JPanel implements TableColumnModelListener,
 
 		columnHeader.addColumn(ByteViewerComponentProvider.DEFAULT_INDEX_NAME, indexPanel);
 		scrollp.setColumnHeaderComp(columnHeader);
-		compPanel.setBackground(themed(Color.WHITE));
+		compPanel.setBackground(BACKGROUND);
 
 		statusPanel = createStatusPanel();
 		add(scrollp, BorderLayout.CENTER);

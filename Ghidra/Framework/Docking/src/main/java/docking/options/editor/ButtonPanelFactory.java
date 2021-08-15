@@ -101,7 +101,7 @@ public class ButtonPanelFactory {
 	public final static Icon BROWSE_ICON = new Icon() {
 		@Override
 		public void paintIcon(Component c, Graphics g, int x, int y) {
-			g.setColor(themed(Color.BLACK));
+			g.setColor(FOREGROUND);
 			g.fillRect(x, y + 5, 2, 2);
 			g.fillRect(x + 4, y + 5, 2, 2);
 			g.fillRect(x + 8, y + 5, 2, 2);

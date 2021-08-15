@@ -47,7 +47,7 @@ public class PluginManagerComponent extends JPanel implements ChangeListener, Sc
 	PluginManagerComponent(PluginTool tool) {
 		super(new VerticalLayout(2));
 		setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-		setBackground(themed(Color.WHITE));
+		setBackground(BACKGROUND);
 		this.tool = tool;
 		model = new PluginConfigurationModel(tool, this);
 		List<PluginPackage> pluginPackages = model.getPluginPackages();
@@ -79,7 +79,7 @@ public class PluginManagerComponent extends JPanel implements ChangeListener, Sc
 	}
 
 	private class PluginPackageComponent extends JPanel {
-		private final Color BG = themed(Color.white);
+		private final Color BG = BACKGROUND;
 		private final PluginPackage pluginPackage;
 		private final GCheckBox checkBox;
 		
@@ -136,7 +136,7 @@ public class PluginManagerComponent extends JPanel implements ChangeListener, Sc
 			
 			final GLabel nameLabel = new GLabel(pluginPackage.getName());
 			nameLabel.setFont(nameLabel.getFont().deriveFont(18f));
-			nameLabel.setForeground(themed(Color.BLACK));
+			nameLabel.setForeground(FOREGROUND);
 			labelPanel.add(nameLabel);
 			
 			final HyperlinkComponent configureHyperlink = createConfigureHyperlink();
@@ -167,7 +167,7 @@ public class PluginManagerComponent extends JPanel implements ChangeListener, Sc
 			final String htmlDescription = enchanceDescription(pluginPackage.getDescription());
 			
 			final JLabel descriptionlabel = new GHtmlLabel(htmlDescription);
-			descriptionlabel.setForeground(themed(Color.GRAY));
+			descriptionlabel.setForeground(GRAY_FOREGROUND);
 			descriptionlabel.setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
 			descriptionlabel.setVerticalAlignment(SwingConstants.TOP);
 			descriptionlabel.setToolTipText(

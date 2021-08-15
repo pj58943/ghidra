@@ -16,7 +16,7 @@
  */
 package ghidra.app.plugin.core.symboltree;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -210,7 +210,7 @@ for ( Area element : ticker ) {
         
         int channel = 0;
         int blue = 255;
-        Color textColor = themed(Color.BLACK);
+        Color textColor = FOREGROUND;
         for ( int i = 0; i < ticker.length; i++ ) {
             
             
@@ -241,7 +241,7 @@ private void paintText( Graphics2D graphics, Color color, double textPosition ) 
     FontRenderContext context = graphics.getFontRenderContext();
     TextLayout layout = new TextLayout( text, getFont(), context );
     Rectangle2D bounds = layout.getBounds();
-    graphics.setColor( themed(Color.BLACK) );
+    graphics.setColor( FOREGROUND );
     layout.draw( graphics, (float) (getWidth() - bounds.getWidth()) / 2,
         (float) (textPosition + layout.getLeading() + 2 * layout.getAscent() ) );
 }    

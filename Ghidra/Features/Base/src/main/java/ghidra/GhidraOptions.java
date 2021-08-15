@@ -158,7 +158,7 @@ public interface GhidraOptions {
 
 	final String HIGHLIGHT_CURSOR_LINE_COLOR = "Cursor." + HIGHLIGHT_CURSOR_LINE_COLOR_OPTION_NAME;
 
-	final Color DEFAULT_CURSOR_LINE_COLOR = themed(new Color(232, 242, 254));
+	final Color DEFAULT_CURSOR_LINE_COLOR = themed(new Color(232, 242, 254), "cursorLine");
 
 	final String HIGHLIGHT_CURSOR_LINE_OPTION_NAME = "Highlight Cursor Line";
 

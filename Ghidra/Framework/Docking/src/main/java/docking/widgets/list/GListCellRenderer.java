@@ -96,7 +96,7 @@ public class GListCellRenderer<E> extends AbstractGCellRenderer implements ListC
 								dropLocation.getIndex() == index);
 			// @formatter:on
 			if (isDropRow) {
-				setBackground(themed(Color.CYAN));
+				setBackground(themed(Color.CYAN, "bg"));
 			}
 			else {
 				setBackground(getOSDependentBackgroundColor(list, index));

@@ -15,7 +15,7 @@
  */
 package docking.widgets.textfield;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 
@@ -42,7 +42,7 @@ public class HintTextField extends JTextField {
 	private String hint;
 
 	private Color INVALID_COLOR = themed(new Color(255, 225, 225));
-	private Color VALID_COLOR = themed(Color.WHITE);
+	private Color VALID_COLOR = BACKGROUND;
 	private Color defaultBackgroundColor;
 
 	/**
@@ -181,7 +181,7 @@ public class HintTextField extends JTextField {
 	 */
 	private void setAttributes() {
 		setFont(getFont().deriveFont(Font.PLAIN));
-		setForeground(themed(Color.BLACK));
+		setForeground(FOREGROUND);
 	}
 
 	/**

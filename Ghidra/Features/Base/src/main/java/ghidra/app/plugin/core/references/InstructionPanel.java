@@ -47,13 +47,13 @@ class InstructionPanel extends JPanel implements ChangeListener {
 
 	private static final int ETCHED_BORDER_THICKNESS = 2;
 
-	private static final Border ETCHED_BORDER = new EtchedBorder(themed(Color.BLACK), themed(Color.GRAY));
+	private static final Border ETCHED_BORDER = themedBorder(Color.BLACK, Color.GRAY);
 	private static final Border EMPTY_BORDER = new EmptyBorder(ETCHED_BORDER_THICKNESS,
 		ETCHED_BORDER_THICKNESS, ETCHED_BORDER_THICKNESS, ETCHED_BORDER_THICKNESS);
 
 	private final static Color UNLOCKED_LABEL_COLOR = themed(Color.blue);
-	private final static Color NOT_IN_MEMORY_COLOR = themed(Color.red);
-	private final static Color DEFAULT_FG_COLOR = themed(Color.black);
+	private final static Color NOT_IN_MEMORY_COLOR = ALERT_FOREGROUND;
+	private final static Color DEFAULT_FG_COLOR = FOREGROUND;
 
 	private static final DataFlavor[] ACCEPTABLE_DROP_FLAVORS =
 		new DataFlavor[] { SelectionTransferable.localProgramSelectionFlavor };

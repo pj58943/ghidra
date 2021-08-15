@@ -216,7 +216,7 @@ public class AssemblyDualTextField {
 		private String text;
 
 		public AssemblyError(String text, String desc) {
-			super(text, desc, themed(Color.RED), 1);
+			super(text, desc, ALERT_FOREGROUND, 1);
 			this.text = text;
 		}
 

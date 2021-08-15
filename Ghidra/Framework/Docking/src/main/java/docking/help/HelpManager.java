@@ -15,8 +15,6 @@
  */
 package docking.help;
 
-import static ghidra.docking.util.Theming.themed;
-
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -35,6 +33,7 @@ import javax.swing.UIManager;
 import docking.ComponentProvider;
 import docking.action.DockingActionIf;
 import generic.util.WindowUtilities;
+import ghidra.docking.util.Theming;
 import ghidra.util.*;
 import ghidra.util.exception.AssertException;
 import ghidra.util.exception.CancelledException;
@@ -675,8 +674,12 @@ public class HelpManager implements HelpService {
 	 * you can see the highlights when you do a search in the JavaHelp.
 	 */
 	private void setColorResources() {
-		UIManager.put("EditorPane.selectionBackground", themed(new Color(204, 204, 255)));
-		UIManager.put("EditorPane.selectionForeground", UIManager.get("EditorPane.foreground"));
+		// pj: presumably this is fixing some issue with a default LaF; we leave
+		// it in place by default but disable it when themed.
+		if (!Theming.isThemed()) {
+			UIManager.put("EditorPane.selectionBackground", new Color(204, 204, 255));
+			UIManager.put("EditorPane.selectionForeground", UIManager.get("EditorPane.foreground"));
+		}
 	}
 
 	private void displayHelpInfo(Object helpObj, HelpLocation loc, Window parent) {

@@ -149,7 +149,7 @@ class ProgramListPanel extends JPanel {
 
 		// add some padding around the panel
 		Border innerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
-		Border outerBorder = themedBorder(Color.BLACK);
+		Border outerBorder = CONTRAST_BORDER;
 		Border compoundBorder = BorderFactory.createCompoundBorder(outerBorder, innerBorder);
 		setBorder(compoundBorder);
 

@@ -15,7 +15,7 @@
  */
 package functioncalls.graph.renderer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Paint;

@@ -89,7 +89,7 @@ class ObjectTreeCellRenderer extends GTreeRenderer {
 			if (container.isSubscribed()) {
 				Color color = provider
 						.getColor(DebuggerObjectsProvider.OPTION_NAME_SUBSCRIBED_FOREGROUND_COLOR);
-				if (!color.equals(themed(Color.BLACK))) {
+				if (!color.equals(FOREGROUND)) {
 					component.setForeground(color);
 				}
 			}
@@ -99,7 +99,7 @@ class ObjectTreeCellRenderer extends GTreeRenderer {
 				if (last instanceof ObjectNode) {
 					ObjectContainer selection = ((ObjectNode) last).getContainer();
 					if (container.equals(selection)) {
-						component.setForeground(themed(Color.WHITE));
+						component.setForeground(SELECTED_FOREGROUND_CONTRAST);
 					}
 				}
 			}

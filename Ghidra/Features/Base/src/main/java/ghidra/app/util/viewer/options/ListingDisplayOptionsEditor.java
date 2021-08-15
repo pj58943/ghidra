@@ -30,7 +30,7 @@ import ghidra.framework.options.*;
  * Class for editing Listing display properties.
  */
 public class ListingDisplayOptionsEditor implements OptionsEditor {
-	public static final Font DEFAULT_FONT = themedFont("Monospaced", Font.PLAIN, 12);
+	public static final Font DEFAULT_FONT = themedFont(new Font("Monospaced", Font.PLAIN, 12), "code");
 
 	private OptionsGui optionsGui;
 	private Options options;

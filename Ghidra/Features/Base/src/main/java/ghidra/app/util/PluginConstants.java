@@ -15,7 +15,7 @@
  */
 package ghidra.app.util;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 
@@ -101,6 +101,6 @@ public interface PluginConstants {
 	 * Default highlight color used when something to highlight is at the current
 	 * address. 
 	 */
-	public static final Color SEARCH_HIGHLIGHT_CURRENT_ADDR_COLOR = themed(Color.YELLOW);
+	public static final Color SEARCH_HIGHLIGHT_CURRENT_ADDR_COLOR = HIGHLIGHT_BACKGROUND;
 
 }

@@ -117,7 +117,7 @@ public class VisualGraphMouseTrackingGraphMousePlugin<V extends VisualVertex,
 
 		// we get a lot of these events, so don't record them all
 		if (++mouseMovedCount % 5 == 0) {
-			addPointMousePaintable(e, themed(new Color(0, 255, 0, 127))); // greenish	
+			addPointMousePaintable(e, themed(new Color(0, 255, 0, 127))); // greenish
 		}
 	}
 

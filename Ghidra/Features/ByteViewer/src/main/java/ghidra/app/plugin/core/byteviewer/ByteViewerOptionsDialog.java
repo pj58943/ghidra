@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.byteviewer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -268,10 +268,10 @@ public class ByteViewerOptionsDialog extends DialogComponentProvider
 			JCheckBox checkBox = entry.getValue();
 			DataFormatModel model = provider.getDataFormatModel(entry.getKey());
 			if (model.validateBytesPerLine(bytesPerLine)) {
-				checkBox.setForeground(themed(Color.BLACK));
+				checkBox.setForeground(FOREGROUND);
 			}
 			else {
-				checkBox.setForeground(themed(Color.RED));
+				checkBox.setForeground(ALERT_FOREGROUND);
 				isBad |= checkBox.isSelected();
 			}
 		}

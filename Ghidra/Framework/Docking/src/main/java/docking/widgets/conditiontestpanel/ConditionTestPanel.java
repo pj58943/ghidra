@@ -15,7 +15,7 @@
  */
 package docking.widgets.conditiontestpanel;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -125,7 +125,7 @@ public class ConditionTestPanel extends JPanel {
 		overallProgressBar.setProgress(conditionTestModel.getCompletedTestCount());
 		Color color = themed(Color.GREEN);
 		if (conditionTestModel.getErrorCount() > 0) {
-			color = themed(Color.RED);
+			color = ALERT_FOREGROUND;
 		}
 		else if (conditionTestModel.getWarningCount() > 0) {
 			color = themed(Color.YELLOW);

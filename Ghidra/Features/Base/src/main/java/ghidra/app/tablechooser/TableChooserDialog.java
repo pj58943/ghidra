@@ -15,7 +15,7 @@
  */
 package ghidra.app.tablechooser;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -437,7 +437,7 @@ public class TableChooserDialog extends DialogComponentProvider
 			if (sharedPending.contains(ro)) {
 				superRenderer.setBackground(pendingColor);
 				superRenderer.setForeground(data.getTable().getSelectionForeground());
-				superRenderer.setForeground(themed(Color.BLACK));
+				superRenderer.setForeground(FOREGROUND); // ?? why do we set the foreground and then immediately overwrite it?
 			}
 
 			return superRenderer;

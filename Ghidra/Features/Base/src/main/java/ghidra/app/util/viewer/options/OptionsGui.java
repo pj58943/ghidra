@@ -45,85 +45,85 @@ import ghidra.util.SystemUtilities;
  */
 public class OptionsGui extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private static final Color DARK_GREEN = themed(new Color(0, 128, 0));
-	private static final Color BLUE_GREEN = themed(new Color(0, 128, 64));
-	private static final Color DARK_BLUE = themed(new Color(0, 0, 128));
-	private static final Color PALE_BLUE = themed(new Color(128, 128, 255));
-	private static final Color YELLOW_ORANGE = themed(new Color(155, 150, 50));
-	private static final Color PURPLE = themed(new Color(155, 50, 155));
-	private static final Color DEEP_PURPLE = themed(new Color(75, 0, 130));
-	private static final Color DARK_PURPLE = themed(new Color(102, 0, 102));
-	private static final Color DARK_CYAN = themed(new Color(0, 102, 102));
-	private static final Color DARK_ORANGE = themed(new Color(255, 128, 0));
-	private static final Color DARK_RED = themed(new Color(130, 0, 75));
+	private static final Color DARK_GREEN = new Color(0, 128, 0);
+	private static final Color BLUE_GREEN = new Color(0, 128, 64);
+	private static final Color DARK_BLUE = new Color(0, 0, 128);
+	private static final Color PALE_BLUE = new Color(128, 128, 255);
+	private static final Color YELLOW_ORANGE = new Color(155, 150, 50);
+	private static final Color PURPLE = new Color(155, 50, 155);
+	private static final Color DEEP_PURPLE = new Color(75, 0, 130);
+	private static final Color DARK_PURPLE = new Color(102, 0, 102);
+	private static final Color DARK_CYAN = new Color(0, 102, 102);
+	private static final Color DARK_ORANGE = new Color(255, 128, 0);
+	private static final Color DARK_RED = new Color(130, 0, 75);
 	private static final Highlight[] NO_HIGHLIGHTS = new Highlight[0];
 	private static final HighlightFactory hlFactory =
 		(field, text, cursorTextOffset) -> NO_HIGHLIGHTS;
 
 	public static final ScreenElement COMMENT_AUTO =
-		new ScreenElement("Comment, Automatic", themed(Color.LIGHT_GRAY));
-	public static final ScreenElement ADDRESS = new ScreenElement("Address", themed(Color.BLACK));
-	public static final ScreenElement BACKGROUND = new ScreenElement("Background", themed(Color.WHITE));
+		new ScreenElement("Comment, Automatic", themed(Color.LIGHT_GRAY, "comment"));
+	public static final ScreenElement ADDRESS = new ScreenElement("Address", themed(Color.BLACK, "address"));
+	public static final ScreenElement BACKGROUND = new ScreenElement("Background", CODE_BACKGROUND);
 	public static final ScreenElement BAD_REF_ADDR =
-		new ScreenElement("Bad Reference Address", themed(Color.RED));
-	public static final ScreenElement BYTES = new ScreenElement("Bytes", themed(Color.BLUE));
-	public static final ScreenElement CONSTANT = new ScreenElement("Constant", BLUE_GREEN);
+		new ScreenElement("Bad Reference Address", themed(Color.RED, "address"));
+	public static final ScreenElement BYTES = new ScreenElement("Bytes", themed(Color.BLUE, "bytes"));
+	public static final ScreenElement CONSTANT = new ScreenElement("Constant", themed(BLUE_GREEN, "constant"));
 	public static final ScreenElement LABELS_UNREFD =
-		new ScreenElement("Labels, Unreferenced", themed(Color.BLACK));
-	public static final ScreenElement ENTRY_POINT = new ScreenElement("Entry Point", themed(Color.MAGENTA));
+		new ScreenElement("Labels, Unreferenced", themed(Color.BLACK, "label"));
+	public static final ScreenElement ENTRY_POINT = new ScreenElement("Entry Point", themed(Color.MAGENTA, "label"));
 	public static final ScreenElement COMMENT_EOL =
-		new ScreenElement("Comment, EOL", "EOL Comment", themed(Color.BLUE));
+		new ScreenElement("Comment, EOL", "EOL Comment", themed(Color.BLUE, "comment"));
 	public static final ScreenElement EXT_REF_RESOLVED =
-		new ScreenElement("External Reference, Resolved", themed(Color.CYAN.darker().darker()));
-	public static final ScreenElement FIELD_NAME = new ScreenElement("Field Name", themed(Color.BLACK));
+		new ScreenElement("External Reference, Resolved", themed(Color.CYAN.darker().darker(), "external"));
+	public static final ScreenElement FIELD_NAME = new ScreenElement("Field Name", themed(Color.BLACK, "field"));
 	public static final ScreenElement FUN_CALL_FIXUP =
-		new ScreenElement("Function Call-Fixup", themed(new Color(255, 0, 204)));
-	public static final ScreenElement FUN_NAME = new ScreenElement("Function Name", themed(Color.BLUE));
+		new ScreenElement("Function Call-Fixup", themed(new Color(255, 0, 204), "fixup"));
+	public static final ScreenElement FUN_NAME = new ScreenElement("Function Name", themed(Color.BLUE, "function"));
 	public static final ScreenElement FUN_PARAMS =
-		new ScreenElement("Function Parameters", themed(Color.BLACK));
-	public static final ScreenElement FUN_TAG = new ScreenElement("Function Tag", DARK_RED);
+		new ScreenElement("Function Parameters", themed(Color.BLACK, "parameter"));
+	public static final ScreenElement FUN_TAG = new ScreenElement("Function Tag", themed(DARK_RED, "functionTag"));
 	public static final ScreenElement FUN_AUTO_PARAMS =
-		new ScreenElement("Function Auto-Parameters", themed(Color.GRAY));
+		new ScreenElement("Function Auto-Parameters", themed(Color.GRAY, "parameter"));
 	public static final ScreenElement FUN_RET_TYPE =
-		new ScreenElement("Function Return Type", themed(Color.BLACK));
+		new ScreenElement("Function Return Type", themed(Color.BLACK, "type"));
 	public static final ScreenElement COMMENT_REPEATABLE =
-		new ScreenElement("Comment, Repeatable", DARK_ORANGE);
+		new ScreenElement("Comment, Repeatable", themed(DARK_ORANGE, "comment"));
 	public static final ScreenElement COMMENT_REF_REPEAT =
-		new ScreenElement("Comment, Referenced Repeatable", themed(new Color(190, 190, 255)));
-	public static final ScreenElement LABELS_LOCAL = new ScreenElement("Labels, Local", BLUE_GREEN);
+		new ScreenElement("Comment, Referenced Repeatable", themed(new Color(190, 190, 255), "comment"));
+	public static final ScreenElement LABELS_LOCAL = new ScreenElement("Labels, Local", themed(BLUE_GREEN, "label"));
 	public static final ScreenElement MNEMONIC_OVERRIDE =
-		new ScreenElement("Mnemonic, Override", themed(new Color(255, 0, 204)));
-	public static final ScreenElement MNEMONIC = new ScreenElement("Mnemonic", DARK_BLUE);
+		new ScreenElement("Mnemonic, Override", themed(new Color(255, 0, 204), "mnemonic"));
+	public static final ScreenElement MNEMONIC = new ScreenElement("Mnemonic", themed(DARK_BLUE, "mnemonic"));
 	public static final ScreenElement FLOW_ARROW_NON_ACTIVE =
-		new ScreenElement("Flow Arrow, Not Active", themed(new Color(160, 160, 160)));
+		new ScreenElement("Flow Arrow, Not Active", themed(new Color(160, 160, 160), "flow"));
 	public static final ScreenElement FLOW_ARROW_ACTIVE =
-		new ScreenElement("Flow Arrow, Active", themed(Color.BLACK));
+		new ScreenElement("Flow Arrow, Active", themed(Color.BLACK, "flow"));
 	public static final ScreenElement FLOW_ARROW_SELECTED =
-		new ScreenElement("Flow Arrow, Selected", themed(new Color(0, 200, 0)));
+		new ScreenElement("Flow Arrow, Selected", themed(new Color(0, 200, 0), "flow"));
 	public static final ScreenElement LABELS_NON_PRIMARY =
-		new ScreenElement("Labels, Non-primary", YELLOW_ORANGE);
+		new ScreenElement("Labels, Non-primary", themed(YELLOW_ORANGE, "label"));
 	public static final ScreenElement COMMENT_PLATE =
-		new ScreenElement("Comment, Plate", "Plate Comment", themed(Color.GRAY));
+		new ScreenElement("Comment, Plate", "Plate Comment", themed(Color.GRAY, "comment"));
 	public static final ScreenElement COMMENT_POST =
-		new ScreenElement("Comment, Post", "Post-Comment", themed(Color.BLUE));
+		new ScreenElement("Comment, Post", "Post-Comment", themed(Color.BLUE, "comment"));
 	public static final ScreenElement COMMENT_PRE =
-		new ScreenElement("Comment, Pre", "Pre-Comment", DEEP_PURPLE);
+		new ScreenElement("Comment, Pre", "Pre-Comment", themed(DEEP_PURPLE, "comment"));
 	public static final ScreenElement LABELS_PRIMARY =
-		new ScreenElement("Labels, Primary", DARK_BLUE);
-	public static final ScreenElement SEPARATOR = new ScreenElement("Separator", themed(Color.BLACK));
-	public static final ScreenElement VARIABLE = new ScreenElement("Variable", PURPLE);
+		new ScreenElement("Labels, Primary", themed(DARK_BLUE, "label"));
+	public static final ScreenElement SEPARATOR = new ScreenElement("Separator", themed(Color.BLACK, "separator"));
+	public static final ScreenElement VARIABLE = new ScreenElement("Variable", themed(PURPLE, "variable"));
 	public static final ScreenElement PARAMETER_CUSTOM =
-		new ScreenElement("Parameter, Custom Storage", DARK_PURPLE);
+		new ScreenElement("Parameter, Custom Storage", themed(DARK_PURPLE, "parameter"));
 	public static final ScreenElement PARAMETER_DYNAMIC =
-		new ScreenElement("Parameter, Dynamic Storage", DARK_CYAN);
-	public static final ScreenElement VERSION_TRAK = new ScreenElement("Version Track", PURPLE);
-	public static final ScreenElement XREF = new ScreenElement("XRef", DARK_GREEN);
-	public static final ScreenElement XREF_OFFCUT = new ScreenElement("XRef, Offcut", themed(Color.GRAY));
-	public static final ScreenElement XREF_READ = new ScreenElement("XRef Read", themed(Color.BLUE));
-	public static final ScreenElement XREF_WRITE = new ScreenElement("XRef Write", DARK_ORANGE);
-	public static final ScreenElement XREF_OTHER = new ScreenElement("XRef Other", themed(Color.BLACK));
-	public static final ScreenElement REGISTERS = new ScreenElement("Registers", YELLOW_ORANGE);
-	public static final ScreenElement UNDERLINE = new ScreenElement("Underline", PALE_BLUE);
+		new ScreenElement("Parameter, Dynamic Storage", themed(DARK_CYAN, "parameter"));
+	public static final ScreenElement VERSION_TRAK = new ScreenElement("Version Track", themed(PURPLE, "versionTrack"));
+	public static final ScreenElement XREF = new ScreenElement("XRef", themed(DARK_GREEN, "xref"));
+	public static final ScreenElement XREF_OFFCUT = new ScreenElement("XRef, Offcut", themed(Color.GRAY, "xref"));
+	public static final ScreenElement XREF_READ = new ScreenElement("XRef Read", themed(Color.BLUE, "xref"));
+	public static final ScreenElement XREF_WRITE = new ScreenElement("XRef Write", themed(DARK_ORANGE, "xref"));
+	public static final ScreenElement XREF_OTHER = new ScreenElement("XRef Other", themed(Color.BLACK, "xref"));
+	public static final ScreenElement REGISTERS = new ScreenElement("Registers", themed(YELLOW_ORANGE, "register"));
+	public static final ScreenElement UNDERLINE = new ScreenElement("Underline", themed(PALE_BLUE, "underline"));
 
 	static ScreenElement[] elements = { ADDRESS, BACKGROUND, BAD_REF_ADDR, BYTES, COMMENT_AUTO,
 		COMMENT_EOL, COMMENT_PLATE, COMMENT_POST, COMMENT_PRE, COMMENT_REPEATABLE,
@@ -342,12 +342,12 @@ public class OptionsGui extends JPanel {
 		GraphicsEnvironment gEnv = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		String envfonts[] = gEnv.getAvailableFontFamilyNames();
 		fontNameField = new GComboBox<>(envfonts);
-		fontNameField.setBackground(themed(Color.white));
+		fontNameField.setBackground(CODE_BACKGROUND);
 		fontNameField.setRenderer(new FontRenderer());
 		panel1.add(fontNameField);
 
 		fontSizeField = new GComboBox<>(IntStream.rangeClosed(6, 32).boxed().toArray(Integer[]::new));
-		fontSizeField.setBackground(themed(Color.white));
+		fontSizeField.setBackground(CODE_BACKGROUND);
 		panel1.add(fontSizeField);
 		panel.add(panel1, BorderLayout.NORTH);
 
@@ -377,10 +377,10 @@ public class OptionsGui extends JPanel {
 				int index, boolean isSelected, boolean cellHasFocus) {
 			setText(value);
 			Font origFont = fontNameField.getFont();
-			setFont(themedFont(value.toString(), origFont.getStyle(), origFont.getSize()));
+			setFont(new Font(value.toString(), origFont.getStyle(), origFont.getSize()));
 
-			setBackground(isSelected ? SELECTED_COLOR : themed(Color.white));
-			setForeground(isSelected ? themed(Color.white) : themed(Color.black));
+			setBackground(isSelected ? SELECTED_COLOR : CODE_BACKGROUND);
+			setForeground(isSelected ? SELECTED_FOREGROUND_CONTRAST : FOREGROUND);
 
 			return this;
 		}
@@ -408,7 +408,7 @@ public class OptionsGui extends JPanel {
 		subPanel = new JPanel(new BorderLayout());
 		subPanel.setBorder(BorderFactory.createTitledBorder(border, "Color"));
 		colorPanel = new JPanel();
-		colorPanel.setBackground(themed(Color.white));
+		colorPanel.setBackground(CODE_BACKGROUND);
 		subPanel.add(colorPanel, BorderLayout.CENTER);
 		panel.add(subPanel, BorderLayout.NORTH);
 		return panel;
@@ -743,7 +743,7 @@ public class OptionsGui extends JPanel {
 				metricsMap.put(i, fm);
 			}
 			else {
-				Font font = themedFont(baseFont.getName(), style, baseFont.getSize());
+				Font font = new Font(baseFont.getName(), style, baseFont.getSize());
 				fm = getFontMetrics(font);
 				metricsMap.put(i, fm);
 			}
@@ -793,7 +793,7 @@ public class OptionsGui extends JPanel {
 		if (globalItalicsCheckbox.isSelected()) {
 			style |= Font.ITALIC;
 		}
-		setBaseFont(themedFont(name, style, size));
+		setBaseFont(new Font(name, style, size));
 
 		setSelectedIndex(selectedIndex);
 	}

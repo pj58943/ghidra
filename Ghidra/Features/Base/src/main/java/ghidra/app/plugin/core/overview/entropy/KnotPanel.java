@@ -65,7 +65,7 @@ public class KnotPanel extends JPanel implements ComponentListener {
 			return;
 		}
 
-		g.setColor(themed(Color.BLACK));
+		g.setColor(FOREGROUND);
 		g.setFont(FONT);
 		int height = getHeight();
 		int width = getWidth();
@@ -138,7 +138,7 @@ public class KnotPanel extends JPanel implements ComponentListener {
 		for (KnotRecord record : knots) {
 			JLabel label = new GLabel(record.name);
 			label.setFont(FONT);
-			label.setBorder(new ToplessLineBorder(themed(Color.BLACK)));
+			label.setBorder(new ToplessLineBorder(themed(Color.BLACK, "line")));
 			label.setHorizontalAlignment(SwingConstants.CENTER);
 			label.setToolTipText(record.name);
 

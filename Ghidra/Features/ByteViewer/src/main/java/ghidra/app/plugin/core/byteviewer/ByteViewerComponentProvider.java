@@ -258,7 +258,7 @@ public abstract class ByteViewerComponentProvider extends ComponentProviderAdapt
 			CURSOR_HIGHLIGHT_BUTTON_NAME, GhidraOptions.CURSOR_MOUSE_BUTTON_NAMES.MIDDLE);
 		panel.setHighlightButton(mouseButton.getMouseEventID());
 
-		panel.setMouseButtonHighlightColor(opt.getColor(HIGHLIGHT_COLOR_NAME, themed(Color.YELLOW)));
+		panel.setMouseButtonHighlightColor(opt.getColor(HIGHLIGHT_COLOR_NAME, HIGHLIGHT_BACKGROUND));
 
 		opt.addOptionsChangeListener(this);
 	}

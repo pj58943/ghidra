@@ -15,8 +15,8 @@
  */
 package ghidra.app.util;
 
+import static ghidra.docking.util.Theming.*;
 import static ghidra.util.HTMLUtilities.*;
-import static ghidra.docking.util.Theming.themed;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -165,7 +165,7 @@ public class ToolTipUtils {
 			dt = DataType.DEFAULT;
 		}
 
-		buf.append(colorString(themed(Color.BLACK), friendlyEncodeHTML(dt.getName())));
+		buf.append(colorString(FOREGROUND, friendlyEncodeHTML(dt.getName())));
 		buf.append(HTML_SPACE);
 		buf.append(friendlyEncodeHTML(s.getName()));
 
@@ -259,7 +259,7 @@ public class ToolTipUtils {
 		StringBuilder buf = new StringBuilder();
 		buf.append("<tr><td width=10>&nbsp;</td>"); // indent
 		buf.append("<td width=\"1%\">");
-		buf.append(colorString(themed(Color.BLACK), friendlyEncodeHTML(type)));
+		buf.append(colorString(FOREGROUND, friendlyEncodeHTML(type)));
 		buf.append("</td><td width=\"1%\">");
 		Color paramColor =
 			param.getFunction().hasCustomVariableStorage() ? PARAM_CUSTOM_STORAGE_COLOR
@@ -396,7 +396,7 @@ public class ToolTipUtils {
 		}
 
 		StringBuilder pb = new StringBuilder();
-		pb.append(colorString(themed(Color.BLACK), friendlyEncodeHTML(type)));
+		pb.append(colorString(FOREGROUND, friendlyEncodeHTML(type)));
 		pb.append(HTML_SPACE);
 
 		pb.append(colorString(PARAM_NAME_COLOR, friendlyEncodeHTML(name)));

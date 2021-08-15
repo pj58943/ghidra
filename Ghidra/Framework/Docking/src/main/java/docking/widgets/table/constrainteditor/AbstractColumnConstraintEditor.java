@@ -15,7 +15,7 @@
  */
 package docking.widgets.table.constrainteditor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -208,7 +208,7 @@ public abstract class AbstractColumnConstraintEditor<T> implements ColumnConstra
 	 * @return an HTML string suitable for a JLabel.
 	 */
 	protected final static String formatStatus(String message, boolean error) {
-		Color color = error ? themed(Color.RED) : themed(Color.BLACK);
+		Color color = error ? ALERT_FOREGROUND : FOREGROUND;
 		String messageWithFont = HTMLUtilities.setFont(message, color, 12);
 		String html = HTMLUtilities.wrapAsHTML(messageWithFont);
 		return html;

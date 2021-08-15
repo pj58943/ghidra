@@ -245,7 +245,7 @@ public class PluginInstallerDialog extends DialogComponentProvider {
 
 		NameCellRenderer() {
 			defaultFont = getFont();
-			boldFont = themedFont(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
+			boldFont = new Font(defaultFont.getName(), defaultFont.getStyle() | Font.BOLD,
 				defaultFont.getSize());
 			setBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0));
 		}

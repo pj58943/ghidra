@@ -371,7 +371,7 @@ public class ColumnFilterDialog<R> extends DialogComponentProvider
 
 	private GLabel createLogicalOperationLabel(LogicOperation op) {
 		GLabel label = new GLabel("<" + op + ">", SwingConstants.CENTER);
-		label.setForeground(themed(Color.GRAY));
+		label.setForeground(GRAY_FOREGROUND);
 		return label;
 	}
 

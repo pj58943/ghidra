@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.compositeeditor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -44,8 +44,8 @@ public class BitFieldPlacementComponent extends JPanel implements Scrollable {
 
 	private static final int LENEND_BOX_SIZE = 16;
 
-	private static final Color TEXT_COLOR = themed(Color.black);
-	private static final Color LINE_COLOR = themed(Color.black);
+	private static final Color TEXT_COLOR = FOREGROUND;
+	private static final Color LINE_COLOR = FOREGROUND;
 	private static final Color BYTE_HEADER_COLOR = themed(new Color(0xdfdfdf));
 	private static final Color UNDEFINED_BIT_COLOR = themed(new Color(0xf8f8f8));
 	private static final Color ACTIVE_BITFIELD_BITS_COLOR = themed(Color.green);

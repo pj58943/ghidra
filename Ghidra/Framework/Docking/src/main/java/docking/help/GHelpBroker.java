@@ -683,11 +683,11 @@ public class GHelpBroker extends DefaultHelpBroker {
 			/*
 			 	// Debug
 			Shape box = scaler.createTransformedShape(b);
-			g2d.setColor(themed(Color.GREEN));
+			g2d.setColor(Color.GREEN);
 			g2d.fill(box);
 			
 			box = transform.createTransformedShape(box);
-			g2d.setColor(themed(Color.YELLOW));
+			g2d.setColor(Color.YELLOW);
 			g2d.fill(box);
 			*/
 

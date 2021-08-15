@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.datamgr.editor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.*;

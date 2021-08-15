@@ -176,7 +176,7 @@ class ImportGhidraToolsDialog extends DialogComponentProvider {
 		while (itr.hasNext()) {
 			tools[count] = itr.next();
 			checkboxes[count] = new GCheckBox(tools[count], false);
-			checkboxes[count].setBackground(themed(Color.WHITE));
+			checkboxes[count].setBackground(BACKGROUND);
 			count++;
 		}
 
@@ -223,7 +223,7 @@ class ImportGhidraToolsDialog extends DialogComponentProvider {
 
 			if (boldFont == null) {
 				Font font = list.getFont();
-				boldFont = themedFont(font.getName(), font.getStyle() | Font.BOLD, font.getSize());
+				boldFont = new Font(font.getName(), font.getStyle() | Font.BOLD, font.getSize());
 			}
 			if (index == -1) {
 				int selected = list.getSelectedIndex();

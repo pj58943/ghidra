@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.viewer.field;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.FontMetrics;
@@ -95,7 +95,7 @@ public class VariableLocFieldFactory extends AbstractVariableFieldFactory {
 		boolean hasInvalidStorage = !var.isValid();
 		String loc = var.getVariableStorage().toString();
 		AttributedString as = new AttributedString(getStorageIcon(fontMetrics, hasInvalidStorage),
-			loc, hasInvalidStorage ? themed(Color.RED) : getColor(var), fontMetrics, false, null);
+			loc, hasInvalidStorage ? ALERT_FOREGROUND : getColor(var), fontMetrics, false, null);
 		FieldElement field = new TextFieldElement(as, 0, 0);
 		return ListingTextField.createSingleLineTextField(this, proxy, field, startX + varWidth,
 			width, hlProvider);

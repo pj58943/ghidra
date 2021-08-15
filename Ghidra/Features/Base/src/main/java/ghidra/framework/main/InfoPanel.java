@@ -15,7 +15,7 @@
  */
 package ghidra.framework.main;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -176,7 +176,7 @@ class InfoPanel extends JPanel {
 		Font font = versionLabel.getFont();
 		font = font.deriveFont(14f).deriveFont(Font.BOLD);
 		versionLabel.setFont(font);
-		versionLabel.setForeground(themed(Color.BLACK));
+		versionLabel.setForeground(FOREGROUND);
 		return versionLabel;
 	}
 

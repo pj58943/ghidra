@@ -91,8 +91,8 @@ public class GhidraColorMap {
 
 	public IndexColorModel getColorModel() {
 		Color[] colors =
-			new Color[] { themed(new Color(190, 255, 0)), themed(Color.red), themed(new Color(128, 128, 128)), themed(Color.cyan),
-				themed(Color.magenta), };
+			new Color[] { themed(new Color(190, 255, 0)), themed(Color.red),
+				themed(Color.gray), themed(Color.cyan), themed(Color.magenta), };
 
 		byte[] red = new byte[colors.length];
 		byte[] grn = new byte[colors.length];

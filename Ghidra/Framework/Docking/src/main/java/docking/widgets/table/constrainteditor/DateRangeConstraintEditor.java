@@ -15,7 +15,7 @@
  */
 package docking.widgets.table.constrainteditor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.time.*;
@@ -111,7 +111,7 @@ public class DateRangeConstraintEditor extends AbstractColumnConstraintEditor<Lo
 		panel.add(controlPanel);
 
 		infoLabel = new GDHtmlLabel();
-		infoLabel.setForeground(themed(Color.GRAY));
+		infoLabel.setForeground(GRAY_FOREGROUND);
 		infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(infoLabel);
 

@@ -62,7 +62,7 @@ public class ControlPanel extends JPanel {
 		gbc.weightx = 1.0;
 		this.add(directionWidget, gbc);
 
-		this.setBorder(themedBorder(Color.GRAY));
+		this.setBorder(NORMAL_BORDER);
 	}
 
 	/**

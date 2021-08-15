@@ -121,7 +121,7 @@ public class SettableColorSwatchChooserPanel extends AbstractColorChooserPanel {
 		recentSwatchPanel.addMouseListener(recentSwatchListener);
 
 		Border border =
-			new CompoundBorder(themedBorder(Color.black), themedBorder(Color.white));
+			new CompoundBorder(CONTRAST_BORDER, themedBorder(Color.white));
 		swatchPanel.setBorder(border);
 		gbc.weightx = 1.0;
 		gbc.gridwidth = 2;
@@ -224,7 +224,7 @@ class SwatchPanel extends JPanel {
 		initColors();
 		setToolTipText(""); // register for events
 		setOpaque(true);
-		setBackground(themed(Color.white));
+		setBackground(BACKGROUND);
 		setRequestFocusEnabled(false);
 	}
 
@@ -253,7 +253,7 @@ class SwatchPanel extends JPanel {
 				}
 				int y = row * (swatchSize.height + gap.height);
 				g.fillRect(x, y, swatchSize.width, swatchSize.height);
-				g.setColor(themed(Color.black));
+				g.setColor(FOREGROUND);
 				g.drawLine(x + swatchSize.width - 1, y, x + swatchSize.width - 1,
 					y + swatchSize.height - 1);
 				g.drawLine(x, y + swatchSize.height - 1, x + swatchSize.width - 1,

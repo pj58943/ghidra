@@ -15,8 +15,8 @@
  */
 package ghidra.graph.visualization;
 
+import static ghidra.docking.util.Theming.*;
 import static org.jungrapht.visualization.MultiLayerTransformer.Layer.*;
-import static ghidra.docking.util.Theming.themed;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -52,7 +52,7 @@ public class FileChooserToggleButton extends JToggleButton {
 	}
 
 	private void initBorder() {
-		setForeground(themed(Color.WHITE));
+		setForeground(themed(Color.WHITE, "fg"));
 		setOpaque(true);		
 		setHorizontalTextPosition(SwingConstants.CENTER);
 		setVerticalTextPosition(SwingConstants.BOTTOM);

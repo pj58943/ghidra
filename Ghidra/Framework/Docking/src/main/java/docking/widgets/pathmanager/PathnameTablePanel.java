@@ -15,7 +15,7 @@
  */
 package docking.widgets.pathmanager;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.io.File;
@@ -225,7 +225,7 @@ public class PathnameTablePanel extends JPanel {
 
 		pathnameTable.setPreferredScrollableViewportSize(new Dimension(330, 200));
 		pathnameTable.setSelectionBackground(selectionColor);
-		pathnameTable.setSelectionForeground(themed(Color.BLACK));
+		pathnameTable.setSelectionForeground(FOREGROUND);
 		pathnameTable.setTableHeader(null);
 		pathnameTable.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		JScrollPane scrollPane = new JScrollPane(pathnameTable);
@@ -285,7 +285,7 @@ public class PathnameTablePanel extends JPanel {
 
 				label.setText(pathName.toString());
 				Color fg = isSelected ? table.getSelectionForeground() : table.getForeground();
-				label.setForeground(!fileExists ? themed(Color.RED) : fg);
+				label.setForeground(!fileExists ? ALERT_FOREGROUND : fg);
 
 				return label;
 			}

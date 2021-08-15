@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.colorizer;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.util.Collections;
@@ -88,7 +88,7 @@ class ColorizingServiceProvider implements ColorizingService {
 	public Color getColorFromUser(Color suggestedColor) {
 		if (colorChooser == null) {
 			colorChooser =
-				new GhidraColorChooser(suggestedColor == null ? themed(Color.WHITE) : suggestedColor);
+				new GhidraColorChooser(suggestedColor == null ? BACKGROUND : suggestedColor);
 			colorChooser.setTitle(COLOR_CHOOSER_TITLE);
 			if (savedColorHistory != null) {
 				colorChooser.setColorHistory(savedColorHistory);

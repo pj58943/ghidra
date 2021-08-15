@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.datamgr;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 
@@ -74,12 +74,12 @@ class DataTypeComparePanel extends JPanel {
 		add(rightPanel);
 		dtLabel1 = new GDHtmlLabel();
 		dtLabel1.setOpaque(true);
-		dtLabel1.setBackground(themed(Color.WHITE));
+		dtLabel1.setBackground(BACKGROUND);
 		dtLabel1.setBorder(BorderFactory.createEmptyBorder(2, 8, 0, 0));
 		dtLabel1.setVerticalAlignment(SwingConstants.TOP);
 		dtLabel2 = new GDHtmlLabel();
 		dtLabel2.setOpaque(true);
-		dtLabel2.setBackground(themed(Color.WHITE));
+		dtLabel2.setBackground(BACKGROUND);
 		dtLabel2.setBorder(BorderFactory.createEmptyBorder(2, 8, 0, 0));
 		dtLabel2.setVerticalAlignment(SwingConstants.TOP);
 

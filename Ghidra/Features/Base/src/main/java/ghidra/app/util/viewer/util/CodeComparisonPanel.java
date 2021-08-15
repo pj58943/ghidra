@@ -54,7 +54,7 @@ public abstract class CodeComparisonPanel<T extends FieldPanelCoordinator> exten
 
 	protected static final int LEFT = 0;
 	protected static final int RIGHT = 1;
-	private static final Color BUBBLE_GUM_PINK_COLOR = themed(new Color(0xff, 0xa5, 0xa5));
+	private static final Color BUBBLE_GUM_PINK_COLOR = new Color(0xff, 0xa5, 0xa5);
 	protected static final Border FOCUS_BORDER =
 		themedBorder(BUBBLE_GUM_PINK_COLOR, 3, 3, 3, 3);
 	protected static final Border NON_FOCUS_BORDER = BorderFactory.createEmptyBorder(3, 3, 3, 3);

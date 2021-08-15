@@ -40,7 +40,7 @@ import resources.ResourceManager;
  */
 public class MultiTabPanel extends JPanel {
 
-	private final static Color SELECTED_TAB_COLOR = themed(new Color(120, 140, 189));
+	private final static Color SELECTED_TAB_COLOR = SELECTED_BACKGROUND_CONTRAST;
 	private final static Color HIGHLIGHTED_TAB_COLOR = SELECTED_TAB_COLOR.brighter();
 	private final static Icon EMPTY16_ICON = ResourceManager.loadImage("images/EmptyIcon16.gif");
 	private final static Icon EMPTY8_ICON = ResourceManager.loadImage("images/empty8x16.png");
@@ -49,10 +49,10 @@ public class MultiTabPanel extends JPanel {
 	private final static Icon LIST_ICON = ResourceManager.loadImage("images/VCRFastForward.gif");
 	private final static Icon TRANSIENT_ICON = ResourceManager.loadImage("images/link.png", 8, 16);
 
-	private final static Color TEXT_SELECTION_COLOR = themed(Color.WHITE);
-	private final static Color TEXT_NON_SELECTION_COLOR = UIManager.getColor("Tree.textForeground");
+	private final static Color TEXT_SELECTION_COLOR = SELECTED_FOREGROUND_CONTRAST;
+	private final static Color TEXT_NON_SELECTION_COLOR = UIManager.getColor("controlText");
 	private final static Color BG_SELECTION_COLOR = SELECTED_TAB_COLOR;
-	private final static Color BG_NON_SELECTION_COLOR = UIManager.getColor("Panel.background");
+	private final static Color BG_NON_SELECTION_COLOR = UIManager.getColor("control");
 
 	private static final Font LABEL_FONT = themedFont("Tahoma", Font.PLAIN, 11);
 	private static final Font LIST_LABEL_FONT = themedFont("Tahoma", Font.BOLD, 9);
@@ -987,9 +987,9 @@ public class MultiTabPanel extends JPanel {
 		@Override
 		void paintHighlightedColor(boolean paintHighlight) {
 			super.paintHighlightedColor(paintHighlight);
-			Color foreground = themed(Color.WHITE);
+			Color foreground = TEXT_SELECTION_COLOR;
 			if (paintHighlight) {
-				foreground = themed(Color.BLACK);
+				foreground = SELECTED_FOREGROUND;
 			}
 
 			// this tab is selected, so change the foreground to be readable

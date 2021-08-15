@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.debug.gui;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -265,22 +265,22 @@ public interface DebuggerResources {
 	ImageIcon ICON_REGISTER_MARKER = ResourceManager.loadImage("images/register-marker.png");
 
 	String OPTION_NAME_COLORS_REGISTER_STALE = "Colors.Stale Registers";
-	Color DEFAULT_COLOR_REGISTER_STALE = themed(Color.GRAY);
+	Color DEFAULT_COLOR_REGISTER_STALE = GRAY_FOREGROUND;
 	String OPTION_NAME_COLORS_REGISTER_STALE_SEL = "Colors.Stale Registers (selected)";
 	Color DEFAULT_COLOR_REGISTER_STALE_SEL = themed(Color.LIGHT_GRAY);
 	String OPTION_NAME_COLORS_REGISTER_CHANGED = "Colors.Changed Registers";
-	Color DEFAULT_COLOR_REGISTER_CHANGED = themed(Color.RED);
+	Color DEFAULT_COLOR_REGISTER_CHANGED = ALERT_FOREGROUND;
 	String OPTION_NAME_COLORS_REGISTER_CHANGED_SEL = "Colors.Changed Registers (selected)";
-	Color DEFAULT_COLOR_REGISTER_CHANGED_SEL = ColorUtils.blend(themed(Color.RED), themed(Color.WHITE), 0.5f);
+	Color DEFAULT_COLOR_REGISTER_CHANGED_SEL = themed(ColorUtils.blend(Color.RED, Color.WHITE, 0.5f));
 
 	String OPTION_NAME_COLORS_WATCH_STALE = "Colors.Stale Watches";
-	Color DEFAULT_COLOR_WATCH_STALE = themed(Color.GRAY);
+	Color DEFAULT_COLOR_WATCH_STALE = GRAY_FOREGROUND;
 	String OPTION_NAME_COLORS_WATCH_STALE_SEL = "Colors.Stale Watches (selected)";
 	Color DEFAULT_COLOR_WATCH_STALE_SEL = themed(Color.LIGHT_GRAY);
 	String OPTION_NAME_COLORS_WATCH_CHANGED = "Colors.Changed Watches";
-	Color DEFAULT_COLOR_WATCH_CHANGED = themed(Color.RED);
+	Color DEFAULT_COLOR_WATCH_CHANGED = ALERT_FOREGROUND;
 	String OPTION_NAME_COLORS_WATCH_CHANGED_SEL = "Colors.Changed Watches (selected)";
-	Color DEFAULT_COLOR_WATCH_CHANGED_SEL = ColorUtils.blend(themed(Color.RED), themed(Color.WHITE), 0.5f);
+	Color DEFAULT_COLOR_WATCH_CHANGED_SEL = themed(ColorUtils.blend(Color.RED, Color.WHITE, 0.5f));
 
 	String OPTION_NAME_COLORS_PCODE_COUNTER = "Colors.Pcode Counter";
 	Color DEFAULT_COLOR_PCODE_COUNTER = themed(new Color(0.75f, 0.875f, 0.75f));

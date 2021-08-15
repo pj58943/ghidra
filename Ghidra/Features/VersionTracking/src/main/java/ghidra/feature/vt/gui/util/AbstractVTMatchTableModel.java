@@ -19,7 +19,7 @@ package ghidra.feature.vt.gui.util;
 import static ghidra.feature.vt.gui.provider.matchtable.MultipleLabelsRenderer.MultipleLabelsRendererType.DESTINATION;
 import static ghidra.feature.vt.gui.provider.matchtable.MultipleLabelsRenderer.MultipleLabelsRendererType.SOURCE;
 import static ghidra.feature.vt.gui.util.MungedAssocationAndMarkupItemStatus.*;
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -591,7 +591,7 @@ public abstract class AbstractVTMatchTableModel extends AddressBasedTableModel<V
 						}
 					}
 					else {
-						renderer.setForeground(themed(Color.RED));
+						renderer.setForeground(ALERT_FOREGROUND);
 					}
 
 					renderer.setOpaque(true);
@@ -716,11 +716,11 @@ public abstract class AbstractVTMatchTableModel extends AddressBasedTableModel<V
 					if (!address.isMemoryAddress() && symbolInspector != null) {
 						Symbol s = program.getSymbolTable().getPrimarySymbol(address);
 						symbolInspector.setProgram(program);
-						Color c = (s != null) ? symbolInspector.getColor(s) : themed(Color.RED);
+						Color c = (s != null) ? symbolInspector.getColor(s) : ALERT_FOREGROUND;
 						setForeground(c);
 					}
 					else if (!program.getMemory().contains(address)) {
-						setForeground(themed(Color.RED));
+						setForeground(ALERT_FOREGROUND);
 					}
 
 					renderer.setOpaque(true);
@@ -830,7 +830,7 @@ public abstract class AbstractVTMatchTableModel extends AddressBasedTableModel<V
 						}
 					}
 					else {
-						renderer.setForeground(themed(Color.RED));
+						renderer.setForeground(ALERT_FOREGROUND);
 					}
 
 					renderer.setOpaque(true);
@@ -955,11 +955,11 @@ public abstract class AbstractVTMatchTableModel extends AddressBasedTableModel<V
 					if (!address.isMemoryAddress() && symbolInspector != null) {
 						Symbol s = program.getSymbolTable().getPrimarySymbol(address);
 						symbolInspector.setProgram(program);
-						Color c = (s != null) ? symbolInspector.getColor(s) : themed(Color.RED);
+						Color c = (s != null) ? symbolInspector.getColor(s) : ALERT_FOREGROUND;
 						setForeground(c);
 					}
 					else if (!program.getMemory().contains(address)) {
-						setForeground(themed(Color.RED));
+						setForeground(ALERT_FOREGROUND);
 					}
 
 					renderer.setOpaque(true);

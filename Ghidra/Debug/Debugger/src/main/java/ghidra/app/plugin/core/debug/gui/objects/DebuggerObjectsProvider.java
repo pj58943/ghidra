@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.debug.gui.objects;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -119,13 +119,13 @@ public class DebuggerObjectsProvider extends ComponentProviderAdapter
 		description = "The default foreground color of items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color defaultForegroundColor = themed(Color.BLACK);
+	Color defaultForegroundColor = FOREGROUND;
 	@AutoOptionDefined( //
 		name = OPTION_NAME_DEFAULT_BACKGROUND_COLOR, //
 		description = "The default background color of items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color defaultBackgroundColor = themed(Color.WHITE);
+	Color defaultBackgroundColor = BACKGROUND;
 
 	@AutoOptionDefined( //
 		name = OPTION_NAME_INVISIBLE_FOREGROUND_COLOR, //
@@ -144,19 +144,19 @@ public class DebuggerObjectsProvider extends ComponentProviderAdapter
 		description = "The foreground color for modified items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color modifiedForegroundColor = themed(Color.RED);
+	Color modifiedForegroundColor = ALERT_FOREGROUND;
 	@AutoOptionDefined( //
 		name = OPTION_NAME_SUBSCRIBED_FOREGROUND_COLOR, //
 		description = "The foreground color for subscribed items in the objects tree", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color subscribedForegroundColor = themed(Color.BLACK);
+	Color subscribedForegroundColor = FOREGROUND;
 	@AutoOptionDefined( //
 		name = OPTION_NAME_ERROR_FOREGROUND_COLOR, //
 		description = "The foreground color for items in error", //
 		help = @HelpInfo(anchor = "colors") //
 	)
-	Color errorForegroundColor = themed(Color.RED);
+	Color errorForegroundColor = ALERT_FOREGROUND;
 	@AutoOptionDefined( //
 		name = OPTION_NAME_INTRINSIC_FOREGROUND_COLOR, //
 		description = "The foreground color for intrinsic items in the objects tree", //
@@ -1713,7 +1713,7 @@ public class DebuggerObjectsProvider extends ComponentProviderAdapter
 			case OPTION_NAME_TARGET_FOREGROUND_COLOR:
 				return targetForegroundColor;
 			default:
-				return themed(Color.BLACK);
+				return FOREGROUND;
 		}
 	}
 

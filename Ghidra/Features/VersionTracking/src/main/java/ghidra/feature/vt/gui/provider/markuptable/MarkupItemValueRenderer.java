@@ -15,9 +15,8 @@
  */
 package ghidra.feature.vt.gui.provider.markuptable;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
-import java.awt.Color;
 import java.awt.Component;
 
 import org.apache.commons.lang3.StringUtils;
@@ -96,7 +95,7 @@ public class MarkupItemValueRenderer extends AbstractGhidraColumnRenderer<String
 
 		setBold();
 		if (!isSelected) {
-			setForeground(themed(Color.BLACK));
+			setForeground(FOREGROUND);
 		}
 
 		return;

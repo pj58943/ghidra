@@ -15,9 +15,8 @@
  */
 package docking.widgets.table.constrainteditor;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
-import java.awt.Color;
 import java.awt.Component;
 
 import javax.swing.JLabel;
@@ -52,7 +51,7 @@ public final class DummyConstraintEditor<T> implements ColumnConstraintEditor<T>
 		JPanel panel = new JPanel();
 
 		JLabel errorLabel = new GDHtmlLabel(
-			"<html>" + HTMLUtilities.bold(HTMLUtilities.colorString(themed(Color.RED), message)));
+			"<html>" + HTMLUtilities.bold(HTMLUtilities.colorString(ALERT_FOREGROUND, message)));
 
 		panel.add(errorLabel);
 

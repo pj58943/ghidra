@@ -15,7 +15,7 @@
  */
 package ghidra.app.util.viewer.field;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.beans.PropertyEditor;
@@ -292,7 +292,7 @@ public class XRefFieldFactory extends FieldFactory {
 
 		boolean tooMany = totalXrefs > maxXRefs;
 
-		AttributedString delimiter = new AttributedString(delim, themed(Color.BLACK), getMetrics());
+		AttributedString delimiter = new AttributedString(delim, FOREGROUND, getMetrics());
 		FieldElement[] elements = new FieldElement[tooMany ? maxXRefs + 1 : totalXrefs];
 		Function currentFunction =
 			pgm.getFunctionManager().getFunctionContaining(cu.getMinAddress());

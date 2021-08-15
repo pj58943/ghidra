@@ -15,7 +15,7 @@
  */
 package ghidra.app.plugin.core.instructionsearch;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.Color;
 import java.util.HashSet;
@@ -141,7 +141,7 @@ public class InstructionSearchPlugin extends ProgramPlugin {
 		}
 		if (!isSelectionSizeValid(selection)) {
 			dialog.displayMessage("Invalid selection.  Cannot select more than " +
-				MAX_SELECTION_SIZE + " instructions and/or data items.", themed(Color.RED));
+				MAX_SELECTION_SIZE + " instructions and/or data items.", ALERT_FOREGROUND);
 			return false;
 		}
 
@@ -151,7 +151,7 @@ public class InstructionSearchPlugin extends ProgramPlugin {
 			}
 		}
 		catch (InvalidInputException e) {
-			dialog.displayMessage(e.getMessage(), themed(Color.RED));
+			dialog.displayMessage(e.getMessage(), ALERT_FOREGROUND);
 			return false;
 		}
 

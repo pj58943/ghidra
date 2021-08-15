@@ -15,8 +15,8 @@
  */
 package help.screenshot;
 
-import static org.junit.Assert.assertNotNull;
 import static ghidra.docking.util.Theming.themed;
+import static org.junit.Assert.assertNotNull;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

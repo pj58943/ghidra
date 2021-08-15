@@ -48,8 +48,8 @@ public class InterpreterPanel extends JPanel implements OptionsChangeListener {
 		"This is the font that will be used in the Console.  " +
 			"Double-click the font example to change it.";
 
-	private static final Color NORMAL_COLOR = themed(Color.black);
-	private static final Color ERROR_COLOR = themed(Color.red);
+	private static final Color NORMAL_COLOR = FOREGROUND;
+	private static final Color ERROR_COLOR = ALERT_FOREGROUND;
 
 	public enum TextType {
 		STDOUT, STDERR, STDIN;

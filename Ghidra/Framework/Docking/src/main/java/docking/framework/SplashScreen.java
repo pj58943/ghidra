@@ -316,10 +316,10 @@ public class SplashScreen extends JWindow {
 		JLabel titleLabel =
 			new GLabel(ApplicationInformationDisplayFactory.createSplashScreenTitle());
 		Font font = titleLabel.getFont();
-		font = themedFont(font.getName(), Font.BOLD, 11);
+		font = new Font(font.getName(), Font.BOLD, 11);
 		titleLabel.setFont(font);
 		if (foregroundColor == null) {
-			foregroundColor = themed(Color.white);
+			foregroundColor = themed(Color.white, "fg");
 		}
 		titleLabel.setForeground(foregroundColor);
 		titlePanel.add(titleLabel, BorderLayout.CENTER);

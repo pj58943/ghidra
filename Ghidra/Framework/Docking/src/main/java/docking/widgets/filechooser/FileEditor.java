@@ -117,7 +117,7 @@ class FileEditor extends AbstractCellEditor implements TableCellEditor {
 		// match the spacing of non-editing cells
 		editor.setBorder(
 			BorderFactory.createCompoundBorder(BorderFactory.createEmptyBorder(0, 5, 0, 0),
-				themedBorder(Color.GRAY)));
+				NORMAL_BORDER));
 	}
 
 	private void handleDoubleClick(Point p) {
