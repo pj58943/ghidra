@@ -44,6 +44,7 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 	private static final Color PRIMARY_SORT_GRADIENT_END = themed(new Color(126, 186, 233));
 	private static final Color DEFAULT_GRADIENT_START = BACKGROUND;
 	private static final Color DEFAULT_GRADIENT_END = themed(new Color(215, 215, 215));
+	private static final boolean CYCLIC_GRADIENTS = !UIManager.getBoolean("GTableHeader.disableCyclicGradient");
 
 	private static final Icon UP_ICON =
 		ResourceManager.getScaledIcon(Icons.SORT_ASCENDING_ICON, 14, 14);
@@ -223,10 +224,10 @@ public class GTableHeaderRenderer extends JPanel implements TableCellRenderer {
 	protected Paint getBackgroundPaint() {
 		if (isPaintingPrimarySortColumn) {
 			return new GradientPaint(0, 0, PRIMARY_SORT_GRADIENT_START, 0, getHeight() - 11,
-				PRIMARY_SORT_GRADIENT_END, true);
+				PRIMARY_SORT_GRADIENT_END, CYCLIC_GRADIENTS);
 		}
 		return new GradientPaint(0, 0, DEFAULT_GRADIENT_START, 0, getHeight() - 11,
-			DEFAULT_GRADIENT_END, true);
+			DEFAULT_GRADIENT_END, CYCLIC_GRADIENTS);
 	}
 
 	private void updateHelpIcon(JTable table, int currentColumnIndex, Icon icon) {

@@ -51,6 +51,8 @@ import ghidra.util.exception.AssertException;
 import ghidra.util.exception.CancelledException;
 import ghidra.util.task.TaskMonitor;
 
+import javax.swing.UIManager;
+
 /**
  * A layout that uses the decompiler to show code nesting based upon conditional logic.
  *
@@ -88,6 +90,13 @@ public class DecompilerNestedLayout extends AbstractFGLayout {
 
 	/** An amount by which edges entering a vertex from the left are offset to avoid overlapping */
 	private static final int EDGE_OFFSET_INCOMING_FROM_LEFT = EDGE_SPACING;
+
+	/** The alpha level in [0, 1) to apply to return edges when dimming is enabled */
+	private static final double DIMMED_RETURN_EDGE_ALPHA;
+	static {
+		var def = UIManager.get("DecompilerNestedLayout.dimmedReturnEdgeAlpha");
+		DIMMED_RETURN_EDGE_ALPHA = def instanceof Number ? ((Number) def).doubleValue() : .25;
+	}
 
 	private DecompilerBlockGraph blockGraphRoot;
 
@@ -821,7 +830,7 @@ public class DecompilerNestedLayout extends AbstractFGLayout {
 		// assumption: edges that move to the left in this layout are return flows that happen
 		//             after the code block has been executed.  We dim those a bit so that they
 		//             produce less clutter.
-		e.setDefaultAlpha(.25);
+		e.setDefaultAlpha(DIMMED_RETURN_EDGE_ALPHA);
 	}
 
 	private FGVertex getRightmostVertex(LayoutLocationMap<FGVertex, FGEdge> layoutLocations,
