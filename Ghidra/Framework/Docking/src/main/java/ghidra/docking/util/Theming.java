@@ -25,7 +25,7 @@ import java.awt.*;
  * Lightweight theming API designed to enable runtime visual adjustments
  * with minimal changes to existing code.
  */
-public final class Theming {
+public final class Theming implements ThemeConstants {
 	private Theming() {}
 
 	static Theme theme;
