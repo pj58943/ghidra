@@ -19,6 +19,7 @@ import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.math.BigInteger;
+import java.time.Duration;
 import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -60,10 +61,12 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 	final static String OPTIONS_TITLE = "Decompiler";
 
 	private static Icon REFRESH_ICON = Icons.REFRESH_ICON;
+	private static Icon REFRESH_NOT_NEEDED_ICON = ResourceManager.getDisabledIcon(REFRESH_ICON, 60);
 	static final ImageIcon C_SOURCE_ICON =
 		ResourceManager.loadImage("images/decompileFunction.gif");
 
 	private DockingAction graphASTControlFlowAction;
+	private DockingAction refreshAction;
 
 	private final DecompilePlugin plugin;
 	private ClipboardService clipboardService;
@@ -75,7 +78,7 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 	private ProgramSelection currentSelection;
 
 	private DecompilerController controller;
-	private DecoratorPanel decorationPanel;
+	private PendingRefreshDecoratorPanel decorationPanel;
 	private ClangHighlightController highlightController;
 
 	private ViewerPosition pendingViewerPosition;
@@ -120,7 +123,7 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 		// TODO move the hl controller into the panel
 		highlightController = new LocationClangHighlightController();
 		decompilerPanel.setHighlightController(highlightController);
-		decorationPanel = new DecoratorPanel(decompilerPanel, isConnected);
+		decorationPanel = new PendingRefreshDecoratorPanel(decompilerPanel, isConnected, this::refresh);
 
 		if (!isConnected) {
 			setTransient();
@@ -305,7 +308,7 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 		decompilerOptions.grabFromToolAndProgram(plugin, opt, program);
 		controller.setOptions(decompilerOptions);
 		if (currentLocation != null) {
-			controller.refreshDisplay(program, currentLocation, null);
+			controller.requestRefreshDisplay(currentLocation);
 		}
 	}
 
@@ -505,6 +508,19 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 		updateTitle();
 		contextChanged();
 		controller.setSelection(currentSelection);
+	}
+
+	@Override
+	public boolean setStale(Duration estimatedRefreshTime) {
+		if (estimatedRefreshTime == null) {
+			refreshAction.getToolBarData().setIcon(REFRESH_NOT_NEEDED_ICON);
+			decorationPanel.hideBanner();
+		}
+		else {
+			refreshAction.getToolBarData().setIcon(REFRESH_ICON);
+			decorationPanel.displayBanner(estimatedRefreshTime);
+		}
+		return true;
 	}
 
 	@Override
@@ -720,7 +736,7 @@ public class DecompilerProvider extends NavigatableComponentProviderAdapter
 		SelectAllAction selectAllAction =
 			new SelectAllAction(owner, controller.getDecompilerPanel());
 
-		DockingAction refreshAction = new DockingAction("Refresh", owner) {
+		refreshAction = new DockingAction("Refresh", owner) {
 			@Override
 			public void actionPerformed(ActionContext context) {
 				refresh();

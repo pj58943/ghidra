@@ -16,6 +16,8 @@
 package ghidra.app.decompiler;
 
 import java.io.InputStream;
+import java.time.Duration;
+import java.time.Instant;
 
 import ghidra.program.model.lang.CompilerSpec;
 import ghidra.program.model.lang.Language;
@@ -62,10 +64,11 @@ public class DecompileResults {
 	private ClangTokenGroup docroot; // C code parsed from XML
 	private String errMsg; // Error message from decompiler
 	private DecompileProcess.DisposeState processState;
+	private Duration timeTaken; // time taken to decompile
 
 	public DecompileResults(Function f, Language language, CompilerSpec compilerSpec,
 			PcodeDataTypeManager d, String e, InputStream raw,
-			DecompileProcess.DisposeState processState) {
+			DecompileProcess.DisposeState processState, Instant startTime) {
 		function = f;
 		this.language = language;
 		this.compilerSpec = compilerSpec;
@@ -76,6 +79,7 @@ public class DecompileResults {
 		docroot = null;
 		//dumpResults(raw);
 		parseRawString(raw);
+		timeTaken = Duration.between(startTime, Instant.now());
 	}
 
 //	private void dumpResults(String raw) {
@@ -143,6 +147,15 @@ public class DecompileResults {
 	 */
 	public boolean failedToStart() {
 		return processState == DecompileProcess.DisposeState.DISPOSED_ON_STARTUP_FAILURE;
+	}
+
+	/**
+	 * Return the amount of wall-clock time that elapsed between the start of
+	 * decompilation and the results becoming available.
+	 * @return duration
+	 */
+	public Duration getTimeTaken() {
+		return timeTaken;
 	}
 
 	/**
