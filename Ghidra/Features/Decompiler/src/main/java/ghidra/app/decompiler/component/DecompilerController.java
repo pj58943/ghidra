@@ -107,6 +107,7 @@ public class DecompilerController {
 			decompilerPanel.setLocation(location, viewerPosition);
 			return;
 		}
+		callbackHandler.setStale(null);
 		decompilerMgr.decompile(program, location, viewerPosition, null, false);
 	}
 
@@ -180,6 +181,7 @@ public class DecompilerController {
 		decompilerPanel.setDecompileData(decompileData);
 		decompilerPanel.setSelection(currentSelection);
 		callbackHandler.decompileDataChanged(decompileData);
+		callbackHandler.setStale(null);
 	}
 
 	private void updateCache(DecompileData decompileData) {
@@ -213,6 +215,26 @@ public class DecompilerController {
 	public void refreshDisplay(Program program, ProgramLocation location, File debugFile) {
 		clearCache();
 		decompilerMgr.decompile(program, location, null, debugFile, true);
+	}
+
+	/**
+	 * Indicates that the decompilation is out of date.  If the new location is in a
+	 * different function or the current decompilation was quick to compute, refresh
+	 * the display immediately; otherwise set a flag to notify the user that they
+	 * should refresh when convenient.
+	 * @param location  the location to display
+	 */
+	public void requestRefreshDisplay(ProgramLocation location) {
+		if (decompilerPanel.containsLocation(location) && hasDecompileResults() && !isDecompiling()) {
+			var time = currentDecompileData.getDecompileResults().getTimeTaken();
+			if (time.compareTo(decompilerPanel.getOptions().getSlowThreshold()) > 0) {
+				// Try to notify the user; if the callback handler does not know
+				// how to do that, fall back on refreshing now.
+				if (callbackHandler.setStale(time)) return;
+			}
+		}
+
+		refreshDisplay(location.getProgram(), location, null);
 	}
 
 	public boolean hasDecompileResults() {

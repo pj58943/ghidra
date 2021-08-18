@@ -22,6 +22,8 @@ import ghidra.program.util.ProgramSelection;
 import ghidra.util.bean.field.AnnotatedTextFieldElement;
 import utility.function.Callback;
 
+import java.time.Duration;
+
 public interface DecompilerCallbackHandler {
 
 	void decompileDataChanged(DecompileData decompileData);
@@ -29,6 +31,19 @@ public interface DecompilerCallbackHandler {
 	void contextChanged();
 
 	void setStatusMessage(String message);
+
+	/**
+	 * Report that the decompile data is stale (if the parameter is non-null)
+	 * or that it has been refreshed (if the parameter is null).
+	 *
+	 * @param estimatedRefreshTime If non-null, the estimated time required to
+	 * refresh the data based on the previous decompilation.
+	 * @return true if the report was made, false if this functionality is not
+	 * available.
+	 */
+	default boolean setStale(Duration estimatedRefreshTime) {
+		return false;
+	}
 
 	void locationChanged(ProgramLocation programLocation);
 

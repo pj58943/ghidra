@@ -22,6 +22,7 @@
 package ghidra.app.decompiler;
 
 import java.io.*;
+import java.time.Instant;
 
 import generic.jar.ResourceFile;
 import ghidra.app.plugin.processors.sleigh.SleighLanguage;
@@ -706,9 +707,10 @@ public class DecompInterface {
 			monitor.addCancelledListener(monitorListener);
 		}
 
+		var start = Instant.now();
 		if (program == null) {
 			return new DecompileResults(func, pcodelanguage, null, dtmanage, decompileMessage, null,
-				DecompileProcess.DisposeState.DISPOSED_ON_CANCEL);
+				DecompileProcess.DisposeState.DISPOSED_ON_CANCEL, start);
 		}
 
 		try {
@@ -754,7 +756,7 @@ public class DecompInterface {
 			stream = res.getInputStream();
 		}
 		return new DecompileResults(func, pcodelanguage, compilerSpec, dtmanage, decompileMessage,
-			stream, processState);
+			stream, processState, start);
 	}
 
 	/**

@@ -2790,6 +2790,28 @@
 	</para>
       </listitem>
     </varlistentry>
+    <varlistentry id="GeneralSlowThreshold">
+      <term><emphasis role="bold">Threshold for Slow Decompilation (seconds)</emphasis></term>
+      <listitem>
+	<para>
+	  This option sets a threshold for considering decompilation of a function to be slow.
+	  If the decompiler requires more than this amount of time to produce results, Ghidra
+	  will not automatically repeat the decompilation whenever the program changes: instead
+	  it will display a notification banner informing the user that the view will not be
+	  up-to-date until it has been refreshed manually.
+	</para>
+	<para>
+	  To prevent automatic decompilation on changes entirely, set the threshold to 0.
+	  To disable the threshold, so decompilation is always automatic regardless of how long
+	  it may take, set it to a negative value.
+	</para>
+	<para>
+	  Note that this only applies to automatic decompilation triggered by changes to the
+	  program; it does not affect decompilation when triggered by other actions such as
+	  navigation.
+	</para>
+      </listitem>
+    </varlistentry>
     <varlistentry id="GeneralMaxInstruction">
       <term><emphasis role="bold">Max Instructions per Function</emphasis></term>
       <listitem>

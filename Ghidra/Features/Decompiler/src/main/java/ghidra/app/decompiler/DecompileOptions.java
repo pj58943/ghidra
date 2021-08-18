@@ -16,10 +16,12 @@
 package ghidra.app.decompiler;
 
 import static ghidra.GhidraOptions.*;
+import static java.time.temporal.ChronoUnit.FOREVER;
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
+import java.time.Duration;
 
 import ghidra.GhidraOptions.CURSOR_MOUSE_BUTTON_NAMES;
 import ghidra.app.util.HelpTopics;
@@ -178,9 +180,6 @@ public class DecompileOptions {
 	private final static String COMMENTSTYLE_OPTIONSTRING = "Display.Comment style";
 	private final static String COMMENTSTYLE_OPTIONDESCRIPTION =
 		"Choice between either the C style comments /* */ or C++ style // ";
-	public static final int SUGGESTED_DECOMPILE_TIMEOUT_SECS = 30;
-	public static final int SUGGESTED_MAX_PAYLOAD_BYTES = 50;
-	public static final int SUGGESTED_MAX_INSTRUCTIONS = 100000;		// Must match Architecture::resetDefaultsInternal
 
 	public enum CommentStyleEnum {
 
@@ -356,11 +355,19 @@ public class DecompileOptions {
 
 	private final static String LINE_NUMBER_MSG = "Display.Display Line Numbers";
 	private final static String DECOMPILE_TIMEOUT = "Decompiler Timeout (seconds)";
+	private final static String SLOW_THRESHOLD_SECS = "Threshold for Slow Decompilation (seconds)";
 	private final static String PAYLOAD_LIMIT = "Decompiler Max-Payload (MBytes)";
 	private final static String MAX_INSTRUCTIONS = "Max Instructions per Function";
 	private final static Boolean LINE_NUMBER_DEF = Boolean.TRUE;
+
+	public static final int SUGGESTED_DECOMPILE_TIMEOUT_SECS = 30;
+	public static final int SUGGESTED_SLOW_THRESHOLD_SECS = 5;
+	public static final int SUGGESTED_MAX_PAYLOAD_BYTES = 50;
+	public static final int SUGGESTED_MAX_INSTRUCTIONS = 100000;		// Must match Architecture::resetDefaultsInternal
+
 	private boolean displayLineNumbers;
 	private int decompileTimeoutSeconds;
+	private int slowThresholdSeconds;
 	private int payloadLimitMBytes;
 	private int maxIntructionsPer;
 	private int cachedResultsSize;
@@ -409,6 +416,7 @@ public class DecompileOptions {
 		displayLanguage = ProgramCompilerSpec.DECOMPILER_OUTPUT_DEF;
 		protoEvalModel = "default";
 		decompileTimeoutSeconds = SUGGESTED_DECOMPILE_TIMEOUT_SECS;
+		slowThresholdSeconds = SUGGESTED_SLOW_THRESHOLD_SECS;
 		payloadLimitMBytes = SUGGESTED_MAX_PAYLOAD_BYTES;
 		maxIntructionsPer = SUGGESTED_MAX_INSTRUCTIONS;
 		cachedResultsSize = SUGGESTED_CACHED_RESULTS_SIZE;
@@ -475,6 +483,7 @@ public class DecompileOptions {
 		defaultSearchHighlightColor = opt.getColor(SEARCH_HIGHLIGHT_MSG, SEARCH_HIGHLIGHT_DEF);
 		displayLineNumbers = opt.getBoolean(LINE_NUMBER_MSG, LINE_NUMBER_DEF);
 		decompileTimeoutSeconds = opt.getInt(DECOMPILE_TIMEOUT, SUGGESTED_DECOMPILE_TIMEOUT_SECS);
+		slowThresholdSeconds = opt.getInt(SLOW_THRESHOLD_SECS, SUGGESTED_SLOW_THRESHOLD_SECS);
 		payloadLimitMBytes = opt.getInt(PAYLOAD_LIMIT, SUGGESTED_MAX_PAYLOAD_BYTES);
 		maxIntructionsPer = opt.getInt(MAX_INSTRUCTIONS, SUGGESTED_MAX_INSTRUCTIONS);
 		cachedResultsSize = opt.getInt(CACHED_RESULTS_SIZE_MSG, SUGGESTED_CACHED_RESULTS_SIZE);
@@ -653,9 +662,13 @@ public class DecompileOptions {
 			"The number of seconds to allow the decompiler to run before terminating the " +
 				"decompiler.\nCurrently this does not affect the UI, which will run indefinitely. " +
 				"This setting currently only affects background analysis that uses the decompiler.");
+		opt.registerOption(SLOW_THRESHOLD_SECS, SUGGESTED_SLOW_THRESHOLD_SECS,
+			new HelpLocation(HelpTopics.DECOMPILER, "GeneralSlowThreshold"),
+				"The number of seconds above which decompilation of a function is " +
+				"considered too slow to repeat automatically on program changes.");
 		opt.registerOption(PAYLOAD_LIMIT, SUGGESTED_MAX_PAYLOAD_BYTES,
 			new HelpLocation(HelpTopics.DECOMPILER, "GeneralMaxPayload"),
-			"The maximum size of the decompiler result payload in MBYtes (Suggested value: 50).");
+			"The maximum size of the decompiler result payload in MBytes (Suggested value: 50).");
 		opt.registerOption(MAX_INSTRUCTIONS, SUGGESTED_MAX_INSTRUCTIONS,
 			new HelpLocation(HelpTopics.DECOMPILER, "GeneralMaxInstruction"),
 			"The maximum number of instructions decompiled in a single function");
@@ -957,6 +970,11 @@ public class DecompileOptions {
 
 	public void setDefaultTimeout(int timeout) {
 		decompileTimeoutSeconds = timeout;
+	}
+
+	public Duration getSlowThreshold() {
+		return slowThresholdSeconds < 0 ? FOREVER.getDuration()
+				: Duration.ofSeconds(slowThresholdSeconds);
 	}
 
 	public int getMaxPayloadMBytes() {
