@@ -15,6 +15,8 @@
  */
 package ghidra.docking.util;
 
+import resources.ResourceManager;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -54,5 +56,9 @@ public interface Theme {
 
 	default String getFontFamily(String defaultValue) {
 		return defaultValue;
+	}
+
+	default ImageIcon getIcon(String resourceName) {
+		return ResourceManager.loadImage(resourceName);
 	}
 }

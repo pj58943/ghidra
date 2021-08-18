@@ -16,6 +16,7 @@
 package ghidra.docking.util;
 
 import ghidra.util.*;
+import resources.ResourceManager;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -228,5 +229,9 @@ public final class Theming implements ThemeConstants {
 	public static Font themedFont(Font defaultValue, String contextHint) {
 		var font = theme != null ? theme.getFont(defaultValue, contextHint) : defaultValue;
 		return SystemUtilities.adjustForFontSizeOverride(font);
+	}
+
+	public static ImageIcon themedIcon(String resourceName) {
+		return theme != null ? theme.getIcon(resourceName) : ResourceManager.loadImage(resourceName);
 	}
 }

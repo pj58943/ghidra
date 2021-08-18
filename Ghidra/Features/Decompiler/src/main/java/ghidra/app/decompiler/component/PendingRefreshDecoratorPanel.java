@@ -17,7 +17,6 @@ package ghidra.app.decompiler.component;
 
 import docking.widgets.EmptyBorderButton;
 import ghidra.app.nav.DecoratorPanel;
-import resources.Icons;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,7 +24,7 @@ import java.awt.event.*;
 import java.time.Duration;
 import java.util.Arrays;
 
-import static ghidra.docking.util.Theming.themed;
+import static ghidra.docking.util.Theming.*;
 
 public class PendingRefreshDecoratorPanel extends DecoratorPanel {
 
@@ -56,7 +55,7 @@ public class PendingRefreshDecoratorPanel extends DecoratorPanel {
 			}
 		});
 
-		var dismiss = new EmptyBorderButton(Icons.get("images/close16.gif"));
+		var dismiss = new EmptyBorderButton(themedIcon("images/close16.gif"));
 		dismiss.setBackground(themed(new Color(0xffff96)));
 		dismiss.setToolTipText("Dismiss this message without refreshing.");
 		dismiss.addActionListener(event -> hideBanner());

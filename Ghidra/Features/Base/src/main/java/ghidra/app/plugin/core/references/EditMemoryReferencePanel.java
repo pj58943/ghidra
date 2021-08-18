@@ -43,11 +43,10 @@ import ghidra.program.model.symbol.*;
 import ghidra.program.util.OperandFieldLocation;
 import ghidra.program.util.ProgramLocation;
 import ghidra.util.layout.PairLayout;
-import resources.ResourceManager;
 
 class EditMemoryReferencePanel extends EditReferencePanel {
 
-	private static ImageIcon PULLDOWN_ICON = ResourceManager.loadImage("images/menu16.gif");
+	private static ImageIcon PULLDOWN_ICON = themedIcon("images/menu16.gif");
 
 	private static final RefType[] MEM_REF_TYPES = RefTypeFactory.getMemoryRefTypes();
 

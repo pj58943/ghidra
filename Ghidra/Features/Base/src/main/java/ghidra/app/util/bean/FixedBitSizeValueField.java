@@ -15,8 +15,7 @@
  */
 package ghidra.app.util.bean;
 
-import static ghidra.docking.util.Theming.themedFont;
-
+import static ghidra.docking.util.Theming.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -30,14 +29,13 @@ import javax.swing.event.ChangeListener;
 import javax.swing.text.*;
 
 import docking.widgets.SmallBorderButton;
-import resources.ResourceManager;
 
 
 /**
  *
  */
 public class FixedBitSizeValueField extends JPanel {
-	private static final ImageIcon DROP_DOWN_MENU_ICON = ResourceManager.loadImage("images/menu16.gif");
+	private static final ImageIcon DROP_DOWN_MENU_ICON = themedIcon("images/menu16.gif");
 	protected JTextField valueField;
 	protected JButton menuButton;
 	private PlainDocument doc;
